@@ -11,7 +11,7 @@ The script searches youtube for a specific `SEARCH_TERM` and returns all videos 
 - Thumbnail Image Link
 - Publish Day
 
-Data is then added to the output file 'TEDx-ytt-output.csv' and statistics on all numerical data is output to 'TEDx-ytt-statistics.csv'
+Data is then added to the output file `TEDx-ytt-output.csv`and statistics on all numerical data is output to `TEDx-ytt-statistics.csv`
 
 ## Getting Started
 
@@ -57,15 +57,16 @@ Then, install all required modules. If Python is added to your environment varia
  <>This might be excluded in further versions
  <>todo: automatically make new file on first startup
  
- Add an empty file named 'TEDx-ytt-data.csv' to the folder where 'TEDx-ytt.py' is located.
+ Add an empty file named `TEDx-ytt-data.csv` to the folder where `TEDx-ytt.py` is located.
  
- Open 'TEDx-ytt.py' in a text editor or IDE and adjust the options that can be found at the top of the script to fit your criteria.
+ Open `TEDx-ytt.py` in a text editor or IDE and adjust the options that can be found at the top of the script to fit your criteria.
  
  ```python 
 #CUSTOMIZE HERE
-MAX_RESULTS = 300
-SEARCH_TERM = "TEDxTUM"
-SEARCH = False
+MAX_RESULTS = 300 #number of search results used from search request. Note: 50 results = 1 search request in API (100 API points)
+SEARCH_TERM = "TEDxTUM" #Term to search for - your TEDx's name
+SEARCH = False  #Switch to enable / disable searching for new videos
+UPDATE = True #Switch to enable / disable updating statistics
 #END
  ```
  
