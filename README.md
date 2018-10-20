@@ -54,26 +54,25 @@ Then, install all required modules. If Python is added to your environment varia
  Next, in the same folder where 'TEDx-ytt.py' is located, add an empty file named 'yapi.txt' to your **local** copy (make sure it is **not** added to your git and synchronized with any publically available repository!). 
  Paste your Youtube API Public Data key ([here is how to get one](https://www.slickremix.com/docs/get-api-key-for-youtube/)) into the file and save it.
  
- <>This might be excluded in further versions
- <>todo: automatically make new file on first startup
- 
- Add an empty file named `TEDx-ytt-data.csv` to the folder where `TEDx-ytt.py` is located.
- 
  Open `TEDx-ytt.py` in a text editor or IDE and adjust the options that can be found at the top of the script to fit your criteria.
  
  ```python 
-#CUSTOMIZE HERE
-MAX_RESULTS = 300 #number of search results used from search request. Note: 50 results = 1 search request in API (100 API points)
+################
+#CUSTOMIZE HERE#
+################
 SEARCH_TERM = "TEDxTUM" #Term to search for - your TEDx's name
-SEARCH = False  #Switch to enable / disable searching for new videos
-UPDATE = True #Switch to enable / disable updating statistics
-#END
+SEARCH = True  #Switch searching for new videos on/off
+MAX_RESULTS = 200 #number of search results used from search request. Note: 50 results = 1 search request in API (100 API points)
+UPDATE = True #Switch updating statistics on/off
+#ADVANCED
+CONSOLE_LOG = False #Switch logging output to python console on/off
+################
+#END CUSTOMIZE #
+################
+
+
  ```
- 
-
-
-End with an example of getting some data out of the system or using it for a little demo
-
+For most cases it will be sufficient to set `SEARCH_TERM` accordingly and keep everything else as is. If there are no new videos, setting `SEARCH` to `False` will save on google quota cost (costs: 100 per search of 50 results).
 
 
 
