@@ -12,7 +12,7 @@ The script searches youtube for a specific `SEARCH_TERM` and returns all videos 
 - Thumbnail Image Link
 - Publish Day
 
-Data is then added with a time stamp in each row to the output file `TEDx-ytt-output.csv` and statistics on all numerical data is output to `TEDx-ytt-statistics.csv`. 
+Data is then added with a time stamp in each row to the output file `[BASE_FILENAME]-output.csv` and statistics on all numerical data is output to `[BASE_FILENAME]-statistics.csv`. 
 
 
 ## Getting Started
@@ -56,34 +56,53 @@ Then, install all required modules. If Python is added to your environment varia
  Next, in the same folder where 'TEDx-ytt.py' is located, add an empty file named 'yapi.txt' to your **local** copy (make sure it is **not** added to your git and synchronized with any publically available repository!). 
  Paste your Youtube API Public Data key ([here is how to get one](https://www.slickremix.com/docs/get-api-key-for-youtube/)) into the file and save it.
  
- Open `TEDx-ytt.py` in a text editor or IDE and adjust the options that can be found at the top of the script to fit your criteria.
+If you want to run the script manually later, open `TEDx-ytt.py` in a text editor or IDE and adjust the options that can be found at the top of the script to fit your criteria.
  
  ```python 
 ##################
 # CUSTOMIZE HERE #
 ##################
-SEARCH_TERM = "TEDxTUM"  # Term to search for - your TEDx's name
-SEARCH = True  # Switch searching for new videos on/off
+SEARCH_TERM = 'TEDxTUM'  # Term to search for - your TEDx's name
+SEARCH = False  # Switch searching for new videos on/off
 MAX_RESULTS = 200  # number of search results used from search request.
-UPDATE = True  # Switch updating statistics on/off
+UPDATE = False  # Switch updating statistics on/off
 # ADVANCED
+BASE_FILENAME = 'TEDx-ytt'  # base filename for output files
 CONSOLE_LOG = False  # Switch logging output to python console on/off
 #################
 # END CUSTOMIZE #
 #################
-
-
  ```
+ 
 For most cases it will be sufficient to set `SEARCH_TERM` accordingly and keep everything else as is. If there are no new videos, setting `SEARCH` to `False` will save on google quota cost (costs: 100 per search of 50 results).
 
 
 ## Deployment
 
-To add today's data to both the -output and -stastics
+To add today's youtube data to both the  `[BASE_FILENAME]-output` and `[BASE_FILENAME]-stastics` simply run the script with `UPDATE = True`.
 
-## Contributing
+The paramters `SEARCH_TERM, SEARCH, MAX_RESULTS, UPDATE, BASE_FILENAME, CONSOLE_LOG` can also be passed as optional arguments to the script when running it from the command line or automation tools.
+An argument and its value are passed to the script through the following syntax:
+´´´
+tedy-ytt.py ARGUMENT VALUE ARGUMENT2 VALUE2
+´´´
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+| short argument | long argument   | paramter      | type   |
+|----------------|-----------------|---------------|--------|
+| -h             | --help          |               |        |
+| -q             | --search_term   | SEARCH_TERM   | string |
+| -s             | --search        | SEARCH        | bool   |
+| -m             | --max_results   | MAX_RESULTS   | int    |
+| -u             | --update        | UPDATE        | bool   |
+| -f             | --base_filename | BASE_FILENAME | string |
+| -l             | --console_log   | CONSOLE_LOG   | bool   |
+
+
+
+Besides manually running the script you could also automate running it
+- on Windows:  e.g. using Windows Task Scheduler ([like this]())
+- on Mac:      e.g. using Automator (e.g. [like this](http://naelshiab.com/tutorial-how-to-automatically-run-your-scripts-on-your-computer/))
+- on any UNIX: e.g. Using CRON ([like this](https://www.raspberrypi.org/documentation/linux/usage/cron.md)) 
 
 ## Authors
 
