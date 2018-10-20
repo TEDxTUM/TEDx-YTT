@@ -86,7 +86,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Authors
 
-* **Julian M. Dlugosch ** - *Initial work* - [JuMaD](https://github.com/JuMaD)
+* **Julian M. Dlugosch** - *Initial work* - [JuMaD](https://github.com/JuMaD)
 
 See also the list of [contributors](https://github.com/JuMaD/TEDx-YTT/CONTRIBUTORS.txt) who participated in this project.
 
