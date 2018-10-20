@@ -4,6 +4,7 @@ import datetime
 import logging
 import sys
 import argparse
+from argparse import RawTextHelpFormatter
 
 
 
@@ -17,7 +18,7 @@ SEARCH = False  # Switch searching for new videos on/off
 MAX_RESULTS = 200  # number of search results used from search request.
 UPDATE = False  # Switch updating statistics on/off
 # ADVANCED
-BASE_FILENAME = 'TEDx-ytt'
+BASE_FILENAME = 'TEDx-ytt'   # base filename for output files
 CONSOLE_LOG = False  # Switch logging output to python console on/off
 #################
 # END CUSTOMIZE #
@@ -240,12 +241,19 @@ if __name__ == '__main__':
     #Parse args
 
     parser = argparse.ArgumentParser(description='Search for a TEDx on youtube and '
-                                                 'return stats to all videos with that TEDx in title.')
+                                                 'return stats to all videos with that TEDx in title.\n'
+                                                 'Current arguments are:\n'
+                                                 f'SEARCH_TERM = \t{SEARCH_TERM}\n'
+                                                 f'SEARCH = \t{SEARCH}\n'
+                                                 f'MAX_RESULTS = \t{SEARCH}\n'
+                                                 f'UPDATE = \t{UPDATE}\n'
+                                                 f'BASE_FILENAME = {BASE_FILENAME}\n'
+                                                 f'CONSOLE_LOG = \t{CONSOLE_LOG}\n', formatter_class=RawTextHelpFormatter)
     parser.add_argument('-q', '--search_term', help='Term to search for - your TEDx\'s name', type=str)
     parser.add_argument('-s', '--search', help='Switch searching for new videos on/off', type=bool)
     parser.add_argument('-m', '--max_results', help='Number of search results used from search request.', type=int)
     parser.add_argument('-u', '--update', help='Switch updating statistics on/off', type=bool)
-    parser.add_argument('-f', '--base_filename', help='Term to search for - your TEDx\'s name', type=str)
+    parser.add_argument('-f', '--base_filename', help='Base filename for output files', type=str)
     parser.add_argument('-l', '--console_log', help='Switch logging output to python console on/off', type=bool)
     args = parser.parse_args()
 
@@ -256,7 +264,7 @@ if __name__ == '__main__':
     if args.max_results:
         MAX_RESULTS = args.max_results
     if args.update:
-        SUPDATE = args.update
+        UPDATE = args.update
     if args.base_filename:
         BASE_FILENAME = args.search_term
     if args.console_log:
