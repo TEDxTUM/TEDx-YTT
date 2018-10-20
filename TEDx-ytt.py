@@ -4,37 +4,34 @@ import datetime
 import logging
 import sys
 
-logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s %(levelname)s %(message)s',
-                    filename='log.log',
-                    filemode='w')
-root = logging.getLogger()
-ch = logging.StreamHandler(sys.stdout)
-ch.setLevel(logging.DEBUG)
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-ch.setFormatter(formatter)
-root.addHandler(ch)
+
+##################
+# CUSTOMIZE HERE #
+##################
+SEARCH_TERM = 'TEDxTUM'  # Term to search for - your TEDx's name
+SEARCH = True  # Switch searching for new videos on/off
+MAX_RESULTS = 200  # number of search results used from search request.
+UPDATE = True  # Switch updating statistics on/off
+# ADVANCED
+BASE_FILENAME = 'TEDx-ytt'
+CONSOLE_LOG = False  # Switch logging output to python console on/off
+#################
+# END CUSTOMIZE #
+#################
 
 
-
-YAPI_FILE = open("yapi.txt", "r")
-MAX_RESULTS = 300
-SEARCH_TERM = "TEDxTUM"
-SEARCH = False
-
-
-def youtube_search(search_term, max_results, youtube):
+def youtube_search(search_term, max_results, client):
     """
     Returns the IDs of videos (as csv) that fit a certain search term 
-    :param search_term:
-    :param max_results:
-    :param youtube:
-    :return: 
+    :param search_term: The term to search for
+    :param max_results: Maximum number of search results to consider. Each search returns 50 results per iteration.
+    :param client: youtube API client
+    :return: Comma seperated list of youtube IDs
     """
-    logging.info(f"Searching for youtube videos with search term \'{SEARCH_TERM}\'")
+    logging.info(f'Searching for youtube videos with search term \'{SEARCH_TERM}\'')
 
     if max_results > 50:
-        search_response = youtube.search().list(
+        search_response = client.search().list(
             q=search_term,
             maxResults=50,
             part='id,snippet',
@@ -61,7 +58,7 @@ def youtube_search(search_term, max_results, youtube):
             for search_result in search_response.get('items', []):
                 if SEARCH_TERM.upper() in search_result['snippet']['title'].upper():
                     videos.append(search_result['id']['videoId'])
-                    print("Found new video: " + search_result['snippet']['title'])
+                    logging.debug('Found new video: ' + search_result['snippet']['title'])
             token = search_response.get('nextPageToken', None)
             remaining_results = max_results - 50
 
@@ -75,21 +72,21 @@ def youtube_search(search_term, max_results, youtube):
         videos = []
 
         for search_result in search_response.get('items', []):
-            if "TEDXTUM" in search_result['snippet']['title'].upper():
+            if 'TEDXTUM' in search_result['snippet']['title'].upper():
                 videos.append(search_result['id']['videoId'])
 
-    logging.info(f"...done!")
+    logging.info(f'...done!')
     return '\n'.join(videos)
 
 
-def get_youtube_data(ids_str, youtube):
+def get_youtube_data(ids_str, client):
     """
     Get youtube data from a list of videos
-    :param ids_str: Youtube IDs of all videos to be analysed, comma seperated
-    :param youtube: youtube client (from youtube API)
+    :param ids_str: Youtube IDs of all videos to be analysed, comma separated
+    :param client: youtube client (from youtube API)
     :return:    Pandas Dataframe with video IDs and all metrics & information from snippet and statistics
     """
-    logging.info(f"Getting data from youtube ...")
+    logging.info(f'Getting data from youtube ...')
 
     ids = []
     titles = []
@@ -99,7 +96,7 @@ def get_youtube_data(ids_str, youtube):
     views = []
     likes = []
     dislikes = []
-    favs = []
+    favourites = []
     comments = []
 
     published = []
@@ -107,17 +104,17 @@ def get_youtube_data(ids_str, youtube):
     dates = []
 
     keys = [
-        "ID",
-        "Title",
-        "Thumbnail",
-        "Tags",
-        "Views",
-        "Likes",
-        "Dislikes",
-        "Favourite Count",
-        "Comment Count",
-        "Date",
-        "Published on"
+        'ID',
+        'Title',
+        'Thumbnail',
+        'Tags',
+        'Views',
+        'Likes',
+        'Dislikes',
+        'Favourite Count',
+        'Comment Count',
+        'Date',
+        'Published on'
     ]
     values = [ids,
               titles,
@@ -126,14 +123,14 @@ def get_youtube_data(ids_str, youtube):
               views,
               likes,
               dislikes,
-              favs,
+              favourites,
               comments,
               dates,
               published
               ]
 
     for id in ids_str.split(','):
-        response = youtube.videos().list(
+        response = client.videos().list(
             part='id,'
                  'snippet,'
                  ' statistics',
@@ -152,7 +149,7 @@ def get_youtube_data(ids_str, youtube):
             views.append(result['statistics'].get('viewCount', '0'))
             likes.append(result['statistics'].get('likeCount', '0'))
             dislikes.append(result['statistics'].get('dislikeCount', '0'))
-            favs.append(result['statistics'].get('favoriteCount', '0'))
+            favourites.append(result['statistics'].get('favoriteCount', '0'))
             comments.append(result['statistics'].get('commentCount', '0'))
 
             dates.append(date)
@@ -161,24 +158,92 @@ def get_youtube_data(ids_str, youtube):
     df = pd.DataFrame(d)
     df.set_index(['Date', 'ID'], inplace=True)
 
-    logging.info(f"...done!")
+    logging.info(f'...done!')
     return df
 
 
 def load_data(filename):
     """
-    Return data frame from file
-    :param filename:
-    :return:
+    Loads a csv into a dataframe with multi-index ['Date', 'ID']
+    :param filename: Name of the csv file
+    :return: pandas dataframe containing the data with  multi-index ['Date', 'ID']
     """
-    logging.info(f"Loading old data from {filename}")
-    df = pd.read_csv(filename, sep=";", encoding='latin-1')
-    df.set_index(['Date', 'ID'], inplace=True)
-    logging.info(f"...done!")
+    logging.info(f'Loading old data from {filename}')
+    try:
+        df = pd.read_csv(filename, sep=';', encoding='latin-1')
+        df.set_index(['Date', 'ID'], inplace=True)
+    except FileNotFoundError:
+        logging.warning(f'File {filename} does not exist! Continuing without loading old data.')
+        df = None
+
+    logging.info(f'...done!')
+    return df
+
+# todo: unify load_data functions
+
+
+def load_stats_data(filename):
+    """
+    Loads a csv into a dataframe with multi-index ['Date', 'Metric']
+    :param filename: Name of the csv file
+    :return: pandas dataframe containing the data with  multi-index ['Date', 'ID']
+    """
+
+    logging.info(f'Loading old statistics from {filename}')
+    try:
+        df = pd.read_csv(filename, sep=';', encoding='latin-1')
+        df.set_index(['Date', 'Metric'], inplace=True)
+    except FileNotFoundError:
+        logging.warning(f'File {filename} does not exist! Continuing without loading old data.')
+        df = None
+
+    logging.info(f'...done!')
+
     return df
 
 
+def calc_stats(df):
+    """
+    Calculates statistics (pd.describe()) on all numeric columns
+    :param df: pandas df to be described
+    :return: pandas df with all statistics and multi-index ['Date', 'Metric']
+    """
+
+    logging.info('Calculating statistics ... ')
+    df_copy = df.copy()
+    df_copy.drop(labels=['Published on', 'Tags', 'Thumbnail', 'Title'], axis=1, inplace=True)
+
+    dates = []
+    date = datetime.datetime.now().date()
+    described = df_copy.astype('float64').describe(include='all')
+
+    for row in range(0, described.shape[0]):
+        dates.append(date)
+
+    described['Date'] = dates
+    described.reset_index(inplace=True)
+
+    described.rename(columns={'index': 'Metric'}, inplace=True)
+
+    described.set_index(['Date', 'Metric'], inplace=True)
+    logging.info('... done')
+
+    return described
+
+
 if __name__ == '__main__':
+    logging.basicConfig(level=logging.DEBUG,
+                        format='%(asctime)s %(levelname)s %(message)s',
+                        filename='log.log',
+                        filemode='w')
+    if CONSOLE_LOG:
+        root = logging.getLogger()
+        ch = logging.StreamHandler(sys.stdout)
+        ch.setLevel(logging.DEBUG)
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        ch.setFormatter(formatter)
+        root.addHandler(ch)
+    YAPI_FILE = open('yapi.txt', 'r')
 
     DEVELOPER_KEY = YAPI_FILE.read()
     YOUTUBE_API_SERVICE_NAME = 'youtube'
@@ -187,21 +252,50 @@ if __name__ == '__main__':
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
                     developerKey=DEVELOPER_KEY)
 
-    old_df = load_data('tedx-ytt-output.csv')
+    old_df = load_data(f'{BASE_FILENAME}-output.csv')
 
     if SEARCH:
-        yt_ids = youtube_search(SEARCH_TERM, MAX_RESULTS, youtube=youtube)
+        yt_ids = youtube_search(SEARCH_TERM, MAX_RESULTS, client=youtube)
     else:
-        yt_ids = ','.join(old_df.index.levels[1])
+        try:
+            yt_ids = ','.join(old_df.index.levels[1])
+        except:
+            logging.warning('There is no old data available. Please run script again with SEARCH = True.')
+            yt_ids = None
+            exit(1)
 
-    new_df = get_youtube_data(yt_ids.replace('\n', ','), youtube)
+    if UPDATE and yt_ids is not None:
+        new_df = get_youtube_data(yt_ids.replace('\n', ','), youtube)
+        if old_df is not None:
+            final_df = pd.concat([old_df, new_df], axis=0, join='inner')
+            final_df.drop_duplicates(inplace=True)
 
-    try:
-        final_df = pd.concat([old_df, new_df], axis=0, join='inner')
-        final_df.drop_duplicates(inplace=True)
-    except:
-        final_df = new_df
-    logging.info("Saving data ...")
-    final_df.to_csv("tedx-ytt-output.csv", sep=';')
-    final_df.describe().to_csv("tedx-ytt-statistics.csv", sep=";")
-    logging.info(f"...done!")
+        else:
+            final_df = new_df
+    else:
+        final_df = old_df
+        new_df = old_df
+
+    old_stats_df = load_stats_data(f'{BASE_FILENAME}-statistics.csv')
+
+    if old_stats_df is not None and UPDATE:
+        new_stats_df = calc_stats(new_df)
+        final_stats_df = pd.concat([old_stats_df, new_stats_df], axis=0, join='inner')
+        final_stats_df.drop_duplicates(inplace=True)
+
+    elif UPDATE:
+        new_stats_df = calc_stats(new_df)
+        final_stats_df = new_stats_df
+
+    elif old_stats_df is not None:
+        final_stats_df = old_stats_df
+    else:
+        final_stats_df = calc_stats(new_df)
+
+    logging.info('Saving data ...')
+
+    final_df.to_csv(f'{BASE_FILENAME}-output.csv', sep=';')
+    final_stats_df.to_csv(f'{BASE_FILENAME}-statistics.csv', sep=';')
+
+    logging.info(f'...done!')
+    print('Done!')
