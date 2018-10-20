@@ -55,8 +55,9 @@ Then, install all required modules. If Python is added to your environment varia
  
  Next, in the same folder where 'TEDx-ytt.py' is located, add an empty file named 'yapi.txt' to your **local** copy (make sure it is **not** added to your git and synchronized with any publically available repository!). 
  Paste your Youtube API Public Data key ([here is how to get one](https://www.slickremix.com/docs/get-api-key-for-youtube/)) into the file and save it.
+Also delete the example files `tedx-ytt-output.csv` and  `tedx-ytt-statistics.csv` from this folder. 
  
-If you want to run the script manually later, open `TEDx-ytt.py` in a text editor or IDE and adjust the options that can be found at the top of the script to fit your criteria.
+If you want to run the script manually, open `TEDx-ytt.py` in a text editor or IDE and adjust the options that can be found at the top of the script to fit your criteria.
  
  ```python 
 ##################
@@ -81,11 +82,14 @@ For most cases it will be sufficient to set `SEARCH_TERM` accordingly and keep e
 
 To add today's youtube data to both the  `[BASE_FILENAME]-output` and `[BASE_FILENAME]-stastics` simply run the script with `UPDATE = True`.
 
-The paramters `SEARCH_TERM, SEARCH, MAX_RESULTS, UPDATE, BASE_FILENAME, CONSOLE_LOG` can also be passed as optional arguments to the script when running it from the command line or automation tools.
+The paramters `SEARCH_TERM, SEARCH, MAX_RESULTS, UPDATE, BASE_FILENAME, CONSOLE_LOG` can be either set directly in the script (See last step in [Installing](Installing)) or be passed as optional arguments to the script when running it from the command line.
+
 An argument and its value are passed to the script through the following syntax:
-´´´
+
+ ```cmd
 tedy-ytt.py ARGUMENT VALUE ARGUMENT2 VALUE2
-´´´
+ ```
+The following table sums up how the parameters of the script can be set and which data types are expected
 
 | short argument | long argument   | paramter      | type   |
 |----------------|-----------------|---------------|--------|
@@ -97,12 +101,23 @@ tedy-ytt.py ARGUMENT VALUE ARGUMENT2 VALUE2
 | -f             | --base_filename | BASE_FILENAME | string |
 | -l             | --console_log   | CONSOLE_LOG   | bool   |
 
-
-
-Besides manually running the script you could also automate running it
+All arguments are optional. Calling 
+```cmd
+tedx-ytt.py -h
+ ```
+ will show how the parameters are currently set within `tedy-ytt.py`.
+ 
+ Besides manually running the script you could also automate running it
 - on Windows:  e.g. using Windows Task Scheduler ([like this]())
 - on Mac:      e.g. using Automator (e.g. [like this](http://naelshiab.com/tutorial-how-to-automatically-run-your-scripts-on-your-computer/))
 - on any UNIX: e.g. Using CRON ([like this](https://www.raspberrypi.org/documentation/linux/usage/cron.md)) 
+ 
+### Example
+To start a new search with `200` results for `TEDxMoon` and save the results to files starting with `moon-landing` run
+
+```cmd
+tedx-ytt.py -q TEDxMoon -s True -u True -m 200 -f moon-landing
+```
 
 ## Authors
 
