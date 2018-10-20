@@ -1,6 +1,21 @@
 from googleapiclient.discovery import build
 import pandas as pd
 import datetime
+import logging
+import sys
+
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(levelname)s %(message)s',
+                    filename='log.log',
+                    filemode='w')
+root = logging.getLogger()
+ch = logging.StreamHandler(sys.stdout)
+ch.setLevel(logging.DEBUG)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+ch.setFormatter(formatter)
+root.addHandler(ch)
+
+
 
 YAPI_FILE = open("yapi.txt", "r")
 MAX_RESULTS = 300
@@ -16,6 +31,7 @@ def youtube_search(search_term, max_results, youtube):
     :param youtube:
     :return: 
     """
+    logging.info(f"Searching for youtube videos with search term \'{SEARCH_TERM}\'")
 
     if max_results > 50:
         search_response = youtube.search().list(
@@ -62,6 +78,7 @@ def youtube_search(search_term, max_results, youtube):
             if "TEDXTUM" in search_result['snippet']['title'].upper():
                 videos.append(search_result['id']['videoId'])
 
+    logging.info(f"...done!")
     return '\n'.join(videos)
 
 
@@ -72,6 +89,7 @@ def get_youtube_data(ids_str, youtube):
     :param youtube: youtube client (from youtube API)
     :return:    Pandas Dataframe with video IDs and all metrics & information from snippet and statistics
     """
+    logging.info(f"Getting data from youtube ...")
 
     ids = []
     titles = []
@@ -143,6 +161,7 @@ def get_youtube_data(ids_str, youtube):
     df = pd.DataFrame(d)
     df.set_index(['Date', 'ID'], inplace=True)
 
+    logging.info(f"...done!")
     return df
 
 
@@ -152,10 +171,10 @@ def load_data(filename):
     :param filename:
     :return:
     """
-
+    logging.info(f"Loading old data from {filename}")
     df = pd.read_csv(filename, sep=";", encoding='latin-1')
     df.set_index(['Date', 'ID'], inplace=True)
-
+    logging.info(f"...done!")
     return df
 
 
@@ -168,7 +187,7 @@ if __name__ == '__main__':
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
                     developerKey=DEVELOPER_KEY)
 
-    old_df = load_data('tedy-ytt-output.csv')
+    old_df = load_data('tedx-ytt-output.csv')
 
     if SEARCH:
         yt_ids = youtube_search(SEARCH_TERM, MAX_RESULTS, youtube=youtube)
@@ -182,4 +201,7 @@ if __name__ == '__main__':
         final_df.drop_duplicates(inplace=True)
     except:
         final_df = new_df
-    final_df.to_csv("tedy-ytt-output.csv", sep=';')
+    logging.info("Saving data ...")
+    final_df.to_csv("tedx-ytt-output.csv", sep=';')
+    final_df.describe().to_csv("tedx-ytt-statistics.csv", sep=";")
+    logging.info(f"...done!")
