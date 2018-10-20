@@ -1,5 +1,6 @@
-# TEDx-YTT --> WIP!!!
-A youtube tracker for TEDx videos that tracks data of a specific TEDx using the google API.
+# TEDx-YTT
+A youtube tracker (YTT) for TEDx videos that tracks data of a specific TEDx using the google API.
+
 The script searches youtube for a specific `SEARCH_TERM` and returns all videos with `SEARCH_TERM` in their title as well as their:
 - Title
 - Youtube ID
@@ -11,7 +12,8 @@ The script searches youtube for a specific `SEARCH_TERM` and returns all videos 
 - Thumbnail Image Link
 - Publish Day
 
-Data is then added to the output file `TEDx-ytt-output.csv`and statistics on all numerical data is output to `TEDx-ytt-statistics.csv`
+Data is then added with a time stamp in each row to the output file `TEDx-ytt-output.csv` and statistics on all numerical data is output to `TEDx-ytt-statistics.csv`. 
+
 
 ## Getting Started
 
@@ -57,28 +59,27 @@ Then, install all required modules. If Python is added to your environment varia
  Open `TEDx-ytt.py` in a text editor or IDE and adjust the options that can be found at the top of the script to fit your criteria.
  
  ```python 
-################
-#CUSTOMIZE HERE#
-################
-SEARCH_TERM = "TEDxTUM" #Term to search for - your TEDx's name
-SEARCH = True  #Switch searching for new videos on/off
-MAX_RESULTS = 200 #number of search results used from search request. Note: 50 results = 1 search request in API (100 API points)
-UPDATE = True #Switch updating statistics on/off
-#ADVANCED
-CONSOLE_LOG = False #Switch logging output to python console on/off
-################
-#END CUSTOMIZE #
-################
+##################
+# CUSTOMIZE HERE #
+##################
+SEARCH_TERM = "TEDxTUM"  # Term to search for - your TEDx's name
+SEARCH = True  # Switch searching for new videos on/off
+MAX_RESULTS = 200  # number of search results used from search request.
+UPDATE = True  # Switch updating statistics on/off
+# ADVANCED
+CONSOLE_LOG = False  # Switch logging output to python console on/off
+#################
+# END CUSTOMIZE #
+#################
 
 
  ```
 For most cases it will be sufficient to set `SEARCH_TERM` accordingly and keep everything else as is. If there are no new videos, setting `SEARCH` to `False` will save on google quota cost (costs: 100 per search of 50 results).
 
 
-
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+To add today's data to both the -output and -stastics
 
 ## Contributing
 
