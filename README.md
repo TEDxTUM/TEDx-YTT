@@ -1,7 +1,7 @@
 # TEDx-YTT
 A youtube tracker (YTT) for TEDx videos that tracks data of a specific TEDx using the google API.
 
-The script searches youtube for a specific `SEARCH_TERM` and returns all videos with `SEARCH_TERM` in their title as well as their:
+The script searches youtube for a specific `SEARCH_TERM` (e.g. the TEDx name) and returns all videos with `SEARCH_TERM` in their title as well as their:
 - Title
 - Youtube ID
 - View Count
