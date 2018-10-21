@@ -123,7 +123,7 @@ tedx-ytt.py -q TEDxMoon -s True -u True -m 200 -f moon-landing
 
 * **Julian M. Dlugosch** - *Initial work* - [JuMaD](https://github.com/JuMaD)
 
-See also the list of [contributors](https://github.com/JuMaD/TEDx-YTT/CONTRIBUTORS.txt) who participated in this project.
+See also the list of [contributors](https://github.com/JuMaD/TEDx-YTT/graphs/contributors) who participated in this project.
 
 ## License
 
