@@ -131,4 +131,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](https://gi
 
 ## Acknowledgments
 
-* TEDx... for the idea to built a tracker based on Youtube API
+* TEDxWilmington for the idea to built a tracker based on the Youtube Data API
