@@ -87,7 +87,7 @@ The paramters `SEARCH_TERM, SEARCH, MAX_RESULTS, UPDATE, BASE_FILENAME, CONSOLE_
 An argument and its value are passed to the script through the following syntax:
 
  ```cmd
-tedy-ytt.py ARGUMENT VALUE ARGUMENT2 VALUE2
+tedx-ytt.py ARGUMENT VALUE ARGUMENT2 VALUE2
  ```
 The following table sums up how the parameters of the script can be set and which data types are expected
 
@@ -105,7 +105,7 @@ All arguments are optional. Calling
 ```cmd
 tedx-ytt.py -h
  ```
- will show how the parameters are currently set within `tedy-ytt.py`.
+ will show how the parameters are currently set within `tedx-ytt.py`.
  
  Besides manually running the script you could also automate running it
 - on Windows:  e.g. using Windows Task Scheduler ([like this]())
