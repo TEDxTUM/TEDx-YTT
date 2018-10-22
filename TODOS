@@ -1,0 +1,4 @@
+- round results from df.describe() to avoid data format challenges (., confusion)
+- push file handling (open(yapi, r)) into with statement to ensure cleanup
+- re-write logging into decorator
+- combine load_data functions 
