@@ -1,4 +1,4 @@
-2018-10-20 17:56:46,506 WARNING file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
+2018-10-24 07:24:56,552 WARNING file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
 Traceback (most recent call last):
   File "C:\Users\Julian\Anaconda3\lib\site-packages\googleapiclient\discovery_cache\__init__.py", line 36, in autodetect
     from google.appengine.api import memcache
@@ -26,10 +26,10 @@ Traceback (most recent call last):
   File "C:\Users\Julian\Anaconda3\lib\site-packages\googleapiclient\discovery_cache\file_cache.py", line 41, in <module>
     'file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth')
 ImportError: file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
-2018-10-20 17:56:46,507 INFO URL being requested: GET https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest
-2018-10-20 17:56:47,983 INFO Loading old data from TEDx-ytt-output.csv
-2018-10-20 17:56:47,988 INFO ...done!
-2018-10-20 17:56:47,988 INFO Loading old statistics from TEDx-ytt-statistics.csv
-2018-10-20 17:56:47,991 INFO ...done!
-2018-10-20 17:56:47,992 INFO Saving data ...
-2018-10-20 17:56:47,996 INFO ...done!
+2018-10-24 07:24:56,553 INFO URL being requested: GET https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest
+2018-10-24 07:24:57,860 INFO Loading old data from TEDx-ytt-output.csv
+2018-10-24 07:24:57,867 INFO ...done!
+2018-10-24 07:24:57,867 INFO Loading old statistics from TEDx-ytt-statistics.csv
+2018-10-24 07:24:57,871 INFO ...done!
+2018-10-24 07:24:57,871 INFO Saving data ...
+2018-10-24 07:24:57,877 INFO ...done!

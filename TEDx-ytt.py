@@ -13,13 +13,14 @@ from argparse import RawTextHelpFormatter
 ##################
 # CUSTOMIZE HERE #
 ##################
+# todo: move customization to config file
 SEARCH_TERM = 'TEDxTUM'  # Term to search for - your TEDx's name
 SEARCH = False  # Switch searching for new videos on/off
 MAX_RESULTS = 200  # number of search results used from search request.
 UPDATE = False  # Switch updating statistics on/off
 # ADVANCED
 BASE_FILENAME = 'TEDx-ytt'   # base filename for output files
-CONSOLE_LOG = False  # Switch logging output to python console on/off
+CONSOLE_LOG = True  # Switch logging output to python console on/off
 #################
 # END CUSTOMIZE #
 #################
@@ -212,7 +213,7 @@ def calc_stats(df):
     """
     Calculates statistics (pd.describe()) on all numeric columns
     :param df: pandas df to be described
-    :return: pandas df with all statistics and multi-index ['Date', 'Metric']
+    :return: pandas df with all statistics (rounded to integer) and multi-index ['Date', 'Metric']
     """
 
     logging.info('Calculating statistics ... ')
@@ -234,7 +235,7 @@ def calc_stats(df):
     described.set_index(['Date', 'Metric'], inplace=True)
     logging.info('... done')
 
-    return described
+    return described.round()
 
 
 if __name__ == '__main__':
@@ -332,8 +333,8 @@ if __name__ == '__main__':
 
     logging.info('Saving data ...')
 
-    final_df.to_csv(f'{BASE_FILENAME}-output.csv', sep=';')
-    final_stats_df.to_csv(f'{BASE_FILENAME}-statistics.csv', sep=';')
+    final_df.to_csv(f'{BASE_FILENAME}-output.csv', sep=';', encoding='latin-1')
+    final_stats_df.to_csv(f'{BASE_FILENAME}-statistics.csv', sep=';', encoding='latin-1')
 
     logging.info(f'...done!')
     print('Done!')
