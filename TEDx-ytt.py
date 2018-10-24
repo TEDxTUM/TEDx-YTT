@@ -20,13 +20,29 @@ MAX_RESULTS = 200  # number of search results used from search request.
 UPDATE = True  # Switch updating statistics on/off
 # ADVANCED
 BASE_FILENAME = 'TEDx-ytt'   # base filename for output files
-CONSOLE_LOG = True  # Switch logging output to python console on/off
+CONSOLE_LOG = True # Switch logging output to python console on/off
+LOG_RETURNS = False
 #################
 # END CUSTOMIZE #
 #################
 
 
 
+def trace(function):
+  def wrapper(*args, **kwargs):
+    logging.info(f'TRACE: Calling {function.__name__}() '
+              f'with {args}, {kwargs}')
+    result = function(*args, **kwargs)
+    if LOG_RETURNS:
+        print(f'TRACE: {function.__name__}() '
+                f'returned {result!r}')
+    else:
+        print(f'TRACE: {function.__name__}() finished')
+    return result
+  return wrapper
+
+
+@trace
 def youtube_search(search_term, max_results, client):
     """
     Returns the IDs of videos (as csv) that fit a certain search term 
@@ -35,7 +51,6 @@ def youtube_search(search_term, max_results, client):
     :param client: youtube API client
     :return: Comma seperated list of youtube IDs
     """
-    logging.info(f'Searching for youtube videos with search term \'{SEARCH_TERM}\'')
 
     if max_results > 50:
         search_response = client.search().list(
@@ -82,10 +97,10 @@ def youtube_search(search_term, max_results, client):
             if 'TEDXTUM' in search_result['snippet']['title'].upper():
                 videos.append(search_result['id']['videoId'])
 
-    logging.info(f'...done!')
+
     return '\n'.join(videos)
 
-
+@trace
 def get_youtube_data(ids_str, client):
     """
     Get youtube data from a list of videos
@@ -93,7 +108,6 @@ def get_youtube_data(ids_str, client):
     :param client: youtube client (from youtube API)
     :return:    Pandas Dataframe with video IDs and all metrics & information from snippet and statistics
     """
-    logging.info(f'Getting data from youtube ...')
 
     ids = []
     titles = []
@@ -165,17 +179,16 @@ def get_youtube_data(ids_str, client):
     df = pd.DataFrame(d)
     df.set_index(['Date', 'ID'], inplace=True)
 
-    logging.info(f'...done!')
     return df
 
-
+@trace
 def load_data(filename):
     """
     Loads a csv into a dataframe with multi-index ['Date', 'ID']
     :param filename: Name of the csv file
     :return: pandas dataframe containing the data with  multi-index ['Date', 'ID']
     """
-    logging.info(f'Loading old data from {filename}')
+
     try:
         df = pd.read_csv(filename, sep=';', encoding='latin-1')
         df.set_index(['Date', 'ID'], inplace=True)
@@ -183,7 +196,6 @@ def load_data(filename):
         logging.warning(f'File {filename} does not exist! Continuing without loading old data.')
         df = None
 
-    logging.info(f'...done!')
     return df
 
 # todo: unify load_data functions
@@ -208,7 +220,7 @@ def load_stats_data(filename):
 
     return df
 
-
+@trace
 def calc_stats(df):
     """
     Calculates statistics (pd.describe()) on all numeric columns
@@ -216,7 +228,6 @@ def calc_stats(df):
     :return: pandas df with all statistics (rounded to integer) and multi-index ['Date', 'Metric']
     """
 
-    logging.info('Calculating statistics ... ')
     df_copy = df.copy()
     df_copy.drop(labels=['Published on', 'Tags', 'Thumbnail', 'Title'], axis=1, inplace=True)
 
@@ -233,7 +244,6 @@ def calc_stats(df):
     described.rename(columns={'index': 'Metric'}, inplace=True)
 
     described.set_index(['Date', 'Metric'], inplace=True)
-    logging.info('... done')
 
     return described.round()
 
@@ -332,9 +342,8 @@ if __name__ == '__main__':
         final_stats_df = calc_stats(new_df)
 
     logging.info('Saving data ...')
-
     final_df.to_csv(f'{BASE_FILENAME}-output.csv', sep=';')
     final_stats_df.to_csv(f'{BASE_FILENAME}-statistics.csv', sep=';')
-
     logging.info(f'...done!')
+
     print('Done!')

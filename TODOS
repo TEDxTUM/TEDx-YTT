@@ -4,15 +4,6 @@
    
 - re-write logging into decorator
 
-def logging(function)
-  def wrapper(*args, **kwargs):
-    logging.info(f'Calling {function.__name__}() '
-              f'with {args}, {kwargs}')
-    result = function(*args, **kwargs)
-    print(f'{function.__name__}() '
-              f'returned {result!r}')
-    return result
-  return wrapper
   
 @logging 
 
