@@ -56,67 +56,77 @@ Then, install all required modules. If Python is added to your environment varia
  Next, in the same folder where 'TEDx-ytt.py' is located, add an empty file named 'yapi.txt' to your **local** copy (make sure it is **not** added to your git and synchronized with any publically available repository!). 
  Paste your Youtube API Public Data key ([here is how to get one](https://www.slickremix.com/docs/get-api-key-for-youtube/)) into the file and save it.
 Also delete the example files `tedx-ytt-output.csv` and  `tedx-ytt-statistics.csv` from this folder. 
- 
-If you want to run the script manually, open `TEDx-ytt.py` in a text editor or IDE and adjust the options that can be found at the top of the script to fit your criteria.
- 
- ```python 
-##################
-# CUSTOMIZE HERE #
-##################
-SEARCH_TERM = 'TEDxTUM'  # Term to search for - your TEDx's name
-SEARCH = False  # Switch searching for new videos on/off
-MAX_RESULTS = 200  # number of search results used from search request.
-UPDATE = False  # Switch updating statistics on/off
-# ADVANCED
-BASE_FILENAME = 'TEDx-ytt'  # base filename for output files
-CONSOLE_LOG = False  # Switch logging output to python console on/off
-#################
-# END CUSTOMIZE #
-#################
- ```
- 
-For most cases it will be sufficient to set `SEARCH_TERM` accordingly and keep everything else as is. If there are no new videos, setting `SEARCH` to `False` will save on google quota cost (costs: 100 per search of 50 results).
+  
 
 
 ## Deployment
+The script has the following parameters:
 
-To add today's youtube data to both the  `[BASE_FILENAME]-output` and `[BASE_FILENAME]-stastics` simply run the script with `UPDATE = True`.
+| Parameters | Type | Description |
+| ---------- | ---- | ----------- |
+| `SEARCH_TERM`              | string | The search term that is matched in youtube search and video title.
+| `SEARCH`                   | bool   | Turns searching for new videos on and off. To save API points set this `False` if you know there aren't any new videos.
+| `MAX_RESULTS`              | int    | Maximum results analyzed from youtube search with `SEARCH_TERM`. Every API call returns 50 results, i.e. multiples of 50 make sense.
+| `UPDATE`                   | bool   | Defines whether `[BASE_FILENAME]-output` and `[BASE_FILENAME]-stastics` are updated with new data from youtube.
+| `BASE_FILENAME`            | string | Defines how `[BASE_FILENAME]-output` and `[BASE_FILENAME]-stastics` are named.
+| `CONSOLE_LOG` (advanced)   | bool   | Turns logging in console on and off.
+| `LOG_RETURN` (advanced)     | bool   | Turns logging of results of function calls in console on and off.
 
-The paramters `SEARCH_TERM, SEARCH, MAX_RESULTS, UPDATE, BASE_FILENAME, CONSOLE_LOG` can be either set directly in the script (See last step in [Installing](Installing)) or be passed as optional arguments to the script when running it from the command line.
+The advanced parameters are for debugging purposes and should be `False` in normal usage.
+All parameters can be set manually in the `config.ini` file in the same folder as `tedx-ytt.py` or passed as options when running the script from command line.
+Always make sure, all parameters are well defined within the `config.ini` file!
 
-An argument and its value are passed to the script through the following syntax:
+In command line, an argument (representing a parameter) and its value are passed to the script through the following syntax:
 
  ```cmd
 tedx-ytt.py ARGUMENT VALUE ARGUMENT2 VALUE2
  ```
 The following table sums up how the parameters of the script can be set and which data types are expected
 
-| short argument | long argument   | paramter      | type   |
-|----------------|-----------------|---------------|--------|
-| -h             | --help          |               |        |
-| -q             | --search_term   | SEARCH_TERM   | string |
-| -s             | --search        | SEARCH        | bool   |
-| -m             | --max_results   | MAX_RESULTS   | int    |
-| -u             | --update        | UPDATE        | bool   |
-| -f             | --base_filename | BASE_FILENAME | string |
-| -l             | --console_log   | CONSOLE_LOG   | bool   |
+| short argument | long argument   | paramter       | type   |
+|----------------|-----------------|--------------- |--------|
+| -h             | --help          |                |        |
+| -q             | --search_term   | `SEARCH_TERM`  | string |
+| -s             | --search        | `SEARCH`       | bool   |
+| -m             | --max_results   | `MAX_RESULTS`  | int    |
+| -u             | --update        | `UPDATE`       | bool   |
+| -f             | --base_filename | `BASE_FILENAME`| string |
+| -l             | --console_log   | `CONSOLE_LOG`  | bool   |
+| -r             | --log_return    | `LOG_RETURN`   | bool   |
 
-All arguments are optional. Calling 
+All arguments are optional. Calling: 
 ```cmd
 tedx-ytt.py -h
  ```
- will show how the parameters are currently set within `tedx-ytt.py`.
+ will show how the parameters are currently set.
  
  Besides manually running the script you could also automate running it
 - on Windows:  e.g. using Windows Task Scheduler ([like this]())
 - on Mac:      e.g. using Automator (e.g. [like this](http://naelshiab.com/tutorial-how-to-automatically-run-your-scripts-on-your-computer/))
 - on any UNIX: e.g. Using CRON ([like this](https://www.raspberrypi.org/documentation/linux/usage/cron.md)) 
+
+The script could run once a day/week automatically on an EC2 AWS server, providing you with daily / weekly statistics on all your videos.
  
 ### Example
 To start a new search with `200` results for `TEDxMoon` and save the results to files starting with `moon-landing` run
 
 ```cmd
 tedx-ytt.py -q TEDxMoon -s True -u True -m 200 -f moon-landing
+```
+
+or change the `config.ini` to:
+
+```buildoutcfg
+[Standard]
+search_term = TEDxMoon
+search = True
+max_results = 200
+update = True
+base_filename = moon-landing
+
+[Advanced]
+console_log = False
+log_returns = False
 ```
 
 ## Authors
