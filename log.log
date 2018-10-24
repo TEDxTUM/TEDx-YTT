@@ -1,4 +1,4 @@
-2018-10-24 07:24:56,552 WARNING file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
+2018-10-24 07:28:18,126 WARNING file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
 Traceback (most recent call last):
   File "C:\Users\Julian\Anaconda3\lib\site-packages\googleapiclient\discovery_cache\__init__.py", line 36, in autodetect
     from google.appengine.api import memcache
@@ -26,10 +26,80 @@ Traceback (most recent call last):
   File "C:\Users\Julian\Anaconda3\lib\site-packages\googleapiclient\discovery_cache\file_cache.py", line 41, in <module>
     'file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth')
 ImportError: file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
-2018-10-24 07:24:56,553 INFO URL being requested: GET https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest
-2018-10-24 07:24:57,860 INFO Loading old data from TEDx-ytt-output.csv
-2018-10-24 07:24:57,867 INFO ...done!
-2018-10-24 07:24:57,867 INFO Loading old statistics from TEDx-ytt-statistics.csv
-2018-10-24 07:24:57,871 INFO ...done!
-2018-10-24 07:24:57,871 INFO Saving data ...
-2018-10-24 07:24:57,877 INFO ...done!
+2018-10-24 07:28:18,127 INFO URL being requested: GET https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest
+2018-10-24 07:28:19,415 INFO Loading old data from TEDx-ytt-output.csv
+2018-10-24 07:28:19,422 INFO ...done!
+2018-10-24 07:28:19,422 INFO Getting data from youtube ...
+2018-10-24 07:28:19,430 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=-NhZ4ioHb9E&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:19,604 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=-guxUgF_eTU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:19,680 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=0NDL0AgRK0c&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:19,794 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=0qVOUD76JOg&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:19,867 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=13kgrPyNTfY&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:19,935 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=1E-QkFUAt5A&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:20,009 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=2B91UE0gHps&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:20,084 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=36186S-RsKY&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:20,162 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3DyrDKYhSi8&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:20,242 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3Xpj5Gj9pgo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:20,322 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3_ZXhYD9QJg&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:20,398 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3uLp0C6G__w&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:20,475 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=5U6Cc1hmdY0&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:20,550 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=5zFOUgtiZeQ&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:20,619 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=62aI5Oy4S4g&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:20,700 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=68LGsvpn7vk&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:20,777 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=6MxbegZtAII&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:20,849 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=76pnQkP-xG4&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:20,928 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=CFHvNNcEIDo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:21,005 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=D6_J7FfgWVc&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:21,079 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=Dbvp5LxY6Kw&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:21,141 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=EJDpbsvWdsg&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:21,214 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=FjBsr9w3-Gk&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:21,290 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=HCjBM23nQ0s&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:21,367 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=IDixuVrDABY&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:21,449 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=IdRbCJzpIAM&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:21,524 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=JR_DmkV4Jlw&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:21,602 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=KCLdryjDl6E&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:21,674 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=LQEbC8QfbyU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:21,754 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=LjQDLg_KuJg&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:21,830 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NG2CsLrCCY8&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:21,901 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NQ9uWbZ285Q&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:21,984 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=O54JCIDqWwM&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:22,060 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=OE3mguWXRRU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:22,139 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=OKQ-mpv0tWI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:22,210 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=OiqnbYywGcI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:22,280 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=PpiVaGPyDG4&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:22,361 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=TEQpfEb8vsE&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:22,440 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=U5DoJ_jCt7E&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:22,527 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=VxQ5R9-Jfm8&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:22,602 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=WGPQM1J7Jcw&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:22,692 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=XnQHVXMhzBo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:22,780 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=YPMD7iNZT24&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:22,846 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=YTKgizpzmtQ&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:22,922 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=Z2TQQhTx6EQ&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:23,002 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=Zark1jrC7EU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:23,077 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=ab_yh2HoJ7o&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:23,158 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=d_eaG5QcA_U&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:23,233 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=fkxl1hSmb28&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:23,309 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=g17OHKBm50I&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:23,385 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=gPZc1fZcgL8&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:23,460 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=gnK7Lg56DjI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:23,534 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=iaemojsQDFw&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:23,607 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=iq5SLf6xPFQ&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:23,682 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=iuIisjRIcVI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:23,764 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=k_BVvupSChc&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:23,843 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=ke4lI_1xCrU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:23,921 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=m-9z9M9dsq0&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:24,002 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=m4w-FV6eERI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:24,074 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=mK6IdD4GXPo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:24,162 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=mxbfx7YXBIo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:24,229 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=myl722kHxbU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:24,310 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=q5Mc26ihCXc&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:24,386 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=sRVxPE1cguo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:24,464 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=sfgTmRiGWWE&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:24,532 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=w-QoDqBMe2k&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-10-24 07:28:24,607 INFO ...done!
+2018-10-24 07:28:24,621 INFO Loading old statistics from TEDx-ytt-statistics.csv
+2018-10-24 07:28:24,625 INFO ...done!
+2018-10-24 07:28:24,625 INFO Calculating statistics ... 
+2018-10-24 07:28:24,639 INFO ... done
+2018-10-24 07:28:24,644 INFO Saving data ...
+2018-10-24 07:28:24,651 INFO ...done!

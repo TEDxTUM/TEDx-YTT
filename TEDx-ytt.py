@@ -17,7 +17,7 @@ from argparse import RawTextHelpFormatter
 SEARCH_TERM = 'TEDxTUM'  # Term to search for - your TEDx's name
 SEARCH = False  # Switch searching for new videos on/off
 MAX_RESULTS = 200  # number of search results used from search request.
-UPDATE = False  # Switch updating statistics on/off
+UPDATE = True  # Switch updating statistics on/off
 # ADVANCED
 BASE_FILENAME = 'TEDx-ytt'   # base filename for output files
 CONSOLE_LOG = True  # Switch logging output to python console on/off
@@ -282,9 +282,9 @@ if __name__ == '__main__':
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         ch.setFormatter(formatter)
         root.addHandler(ch)
-    YAPI_FILE = open('yapi.txt', 'r')
+    with open('yapi.txt') as file:
+        DEVELOPER_KEY = file.read()
 
-    DEVELOPER_KEY = YAPI_FILE.read()
     YOUTUBE_API_SERVICE_NAME = 'youtube'
     YOUTUBE_API_VERSION = 'v3'
 
@@ -333,8 +333,8 @@ if __name__ == '__main__':
 
     logging.info('Saving data ...')
 
-    final_df.to_csv(f'{BASE_FILENAME}-output.csv', sep=';', encoding='latin-1')
-    final_stats_df.to_csv(f'{BASE_FILENAME}-statistics.csv', sep=';', encoding='latin-1')
+    final_df.to_csv(f'{BASE_FILENAME}-output.csv', sep=';')
+    final_stats_df.to_csv(f'{BASE_FILENAME}-statistics.csv', sep=';')
 
     logging.info(f'...done!')
     print('Done!')
