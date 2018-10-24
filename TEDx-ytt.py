@@ -7,18 +7,20 @@ import argparse
 import configparser
 from argparse import RawTextHelpFormatter
 
-def trace(function):
-  def wrapper(*args, **kwargs):
-    logging.info(f'TRACE: Calling {function.__name__}() '
-              f'with {args}, {kwargs}')
-    result = function(*args, **kwargs)
-    if LOG_RETURNS:
-        print(f'TRACE: {function.__name__}() '
-                f'returned {result!r}')
-    else:
-        print(f'TRACE: {function.__name__}() finished')
-    return result
-  return wrapper
+
+def trace(funct):
+    def wrapper(*args, **kwargs):
+        logging.info(f'TRACE: Calling {funct.__name__}() '
+                     f'with {args}, {kwargs}')
+        result = funct(*args, **kwargs)
+        if LOG_RETURNS:
+            print(f'TRACE: {funct.__name__}() '
+                  f'returned {result!r}')
+        else:
+            print(f'TRACE: {funct.__name__}() finished')
+        return result
+
+    return wrapper
 
 
 @trace
@@ -76,8 +78,8 @@ def youtube_search(search_term, max_results, client):
             if 'TEDXTUM' in search_result['snippet']['title'].upper():
                 videos.append(search_result['id']['videoId'])
 
-
     return '\n'.join(videos)
+
 
 @trace
 def get_youtube_data(ids_str, client):
@@ -160,8 +162,9 @@ def get_youtube_data(ids_str, client):
 
     return df
 
+
 @trace
-def load_data(filename, indizes):
+def load_data(filename, indices):
     """
     Loads a csv into a dataframe with multi-index ['Date', 'ID']
     :param filename: Name of the csv file
@@ -171,14 +174,13 @@ def load_data(filename, indizes):
     logging.info(f'Loading old data from {filename}')
     try:
         df = pd.read_csv(filename, sep=';', encoding='latin-1')
-        df.set_index(indizes, inplace=True)
+        df.set_index(indices, inplace=True)
     except FileNotFoundError:
         logging.warning(f'File {filename} does not exist! Continuing without loading old data.')
         df = None
 
     logging.info(f'...done!')
     return df
-
 
 
 @trace
@@ -211,7 +213,7 @@ def calc_stats(df):
 
 if __name__ == '__main__':
 
-    #Parse config
+    # Parse config
     config = configparser.ConfigParser()
     config.read('config.ini')
 
@@ -223,8 +225,7 @@ if __name__ == '__main__':
     CONSOLE_LOG = config.getboolean('Advanced', 'CONSOLE_LOG')  # Switch logging output to python console on/off
     LOG_RETURNS = config.getboolean('Advanced', 'LOG_RETURNS')
 
-
-    #Parse args
+    # Parse args
     parser = argparse.ArgumentParser(description='Search for a TEDx on youtube and '
                                                  'return stats to all videos with that TEDx in title.\n'
                                                  'Current arguments are:\n'
@@ -233,7 +234,8 @@ if __name__ == '__main__':
                                                  f'MAX_RESULTS = \t{SEARCH}\n'
                                                  f'UPDATE = \t{UPDATE}\n'
                                                  f'BASE_FILENAME = {BASE_FILENAME}\n'
-                                                 f'CONSOLE_LOG = \t{CONSOLE_LOG}\n', formatter_class=RawTextHelpFormatter)
+                                                 f'CONSOLE_LOG = \t{CONSOLE_LOG}\n',
+                                     formatter_class=RawTextHelpFormatter)
     parser.add_argument('-q', '--search_term', help='Term to search for - your TEDx\'s name', type=str)
     parser.add_argument('-s', '--search', help='Switch searching for new videos on/off', type=bool)
     parser.add_argument('-m', '--max_results', help='Number of search results used from search request.', type=int)
@@ -258,7 +260,7 @@ if __name__ == '__main__':
     if args.log_return:
         LOG_RETURNS = args.log_return
 
-    #Logging
+    # Logging
     logging.basicConfig(level=logging.DEBUG,
                         format='%(asctime)s %(levelname)s %(message)s',
                         filename='log.log',
@@ -279,7 +281,7 @@ if __name__ == '__main__':
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
                     developerKey=DEVELOPER_KEY)
 
-    old_df = load_data(f'{BASE_FILENAME}-output.csv', ['Date','ID'])
+    old_df = load_data(f'{BASE_FILENAME}-output.csv', ['Date', 'ID'])
 
     if SEARCH:
         yt_ids = youtube_search(SEARCH_TERM, MAX_RESULTS, client=youtube)
@@ -324,7 +326,7 @@ if __name__ == '__main__':
     final_stats_df.to_csv(f'{BASE_FILENAME}-statistics.csv', sep=';')
     logging.info(f'...done!')
 
-    #write config
+    # write config
     logging.info('Saving config ...')
     cfgfile = open('config.ini', 'w')
     config.write(cfgfile)
