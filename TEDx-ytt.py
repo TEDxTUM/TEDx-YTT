@@ -272,6 +272,9 @@ if __name__ == '__main__':
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         ch.setFormatter(formatter)
         root.addHandler(ch)
+
+
+    # The magic starts here
     with open('yapi.txt') as file:
         DEVELOPER_KEY = file.read()
 
