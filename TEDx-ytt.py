@@ -248,6 +248,7 @@ if __name__ == '__main__':
     parser.add_argument('-u', '--update', help='Switch updating statistics on/off', type=bool)
     parser.add_argument('-f', '--base_filename', help='Base filename for output files', type=str)
     parser.add_argument('-l', '--console_log', help='Switch logging output to python console on/off', type=bool)
+    parser.add_argument('-r', '--log_return', help='Switch output of funcions in console on/off', type=bool)
     args = parser.parse_args()
 
     if args.search_term:
@@ -262,6 +263,9 @@ if __name__ == '__main__':
         BASE_FILENAME = args.search_term
     if args.console_log:
         CONSOLE_LOG = args.search_term
+    if args.log_return:
+        LOG_RETURNS = args.log_return
+
     #Logging
     logging.basicConfig(level=logging.DEBUG,
                         format='%(asctime)s %(levelname)s %(message)s',
