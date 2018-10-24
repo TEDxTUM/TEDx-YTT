@@ -4,29 +4,8 @@ import datetime
 import logging
 import sys
 import argparse
+import configparser
 from argparse import RawTextHelpFormatter
-
-
-
-
-
-##################
-# CUSTOMIZE HERE #
-##################
-# todo: move customization to config file
-SEARCH_TERM = 'TEDxTUM'  # Term to search for - your TEDx's name
-SEARCH = False  # Switch searching for new videos on/off
-MAX_RESULTS = 200  # number of search results used from search request.
-UPDATE = True  # Switch updating statistics on/off
-# ADVANCED
-BASE_FILENAME = 'TEDx-ytt'   # base filename for output files
-CONSOLE_LOG = True # Switch logging output to python console on/off
-LOG_RETURNS = False
-#################
-# END CUSTOMIZE #
-#################
-
-
 
 def trace(function):
   def wrapper(*args, **kwargs):
@@ -231,8 +210,21 @@ def calc_stats(df):
 
 
 if __name__ == '__main__':
-    #Parse args
 
+    #Parse config
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+
+    SEARCH_TERM = config.get('Standard', 'SEARCH_TERM')
+    SEARCH = config.getboolean('Standard', 'SEARCH')  # Switch searching for new videos on/off
+    MAX_RESULTS = config.getint('Standard', 'MAX_RESULTS')  # number of search results used from search request.
+    UPDATE = config.getboolean('Standard', 'UPDATE')  # Switch updating statistics on/off
+    BASE_FILENAME = config.get('Standard', 'BASE_FILENAME')  # base filename for output files
+    CONSOLE_LOG = config.getboolean('Advanced', 'CONSOLE_LOG')  # Switch logging output to python console on/off
+    LOG_RETURNS = config.getboolean('Advanced', 'LOG_RETURNS')
+
+
+    #Parse args
     parser = argparse.ArgumentParser(description='Search for a TEDx on youtube and '
                                                  'return stats to all videos with that TEDx in title.\n'
                                                  'Current arguments are:\n'
@@ -330,6 +322,14 @@ if __name__ == '__main__':
     logging.info('Saving data ...')
     final_df.to_csv(f'{BASE_FILENAME}-output.csv', sep=';')
     final_stats_df.to_csv(f'{BASE_FILENAME}-statistics.csv', sep=';')
+    logging.info(f'...done!')
+
+    #write config
+    logging.info('Saving config ...')
+    cfgfile = open('config.ini', 'w')
+    config.write(cfgfile)
+    cfgfile.close()
+
     logging.info(f'...done!')
 
     print('Done!')
