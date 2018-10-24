@@ -53,7 +53,7 @@ Then, install all required modules. If Python is added to your environment varia
  pip install --upgrade google-api-python-client
  ```
  
- Next, in the same folder where 'TEDx-ytt.py' is located, add an empty file named 'yapi.txt' to your **local** copy (make sure it is **not** added to your git and synchronized with any publically available repository!). 
+ Next, in the same folder where 'TEDx-ytt.py' is located, add an empty file named 'yapi.txt' to your **local** copy (make sure it is **not** added to your git and synchronized with any public repository!). 
  Paste your Youtube API Public Data key ([here is how to get one](https://www.slickremix.com/docs/get-api-key-for-youtube/)) into the file and save it.
 Also delete the example files `tedx-ytt-output.csv` and  `tedx-ytt-statistics.csv` from this folder. 
   
@@ -65,7 +65,7 @@ The script has the following parameters:
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
 | `SEARCH_TERM`              | string | The search term that is matched in youtube search and video title.
-| `SEARCH`                   | bool   | Turns searching for new videos on and off. To save API points set this `False` if you know there aren't any new videos.
+| `SEARCH`                   | bool   | Turns searching for new videos on and off. To save API points set this `False` if you know there are not any new videos.
 | `MAX_RESULTS`              | int    | Maximum results analyzed from youtube search with `SEARCH_TERM`. Every API call returns 50 results, i.e. multiples of 50 make sense.
 | `UPDATE`                   | bool   | Defines whether `[BASE_FILENAME]-output` and `[BASE_FILENAME]-stastics` are updated with new data from youtube.
 | `BASE_FILENAME`            | string | Defines how `[BASE_FILENAME]-output` and `[BASE_FILENAME]-stastics` are named.
@@ -83,7 +83,7 @@ tedx-ytt.py ARGUMENT VALUE ARGUMENT2 VALUE2
  ```
 The following table sums up how the parameters of the script can be set and which data types are expected
 
-| short argument | long argument   | paramter       | type   |
+| short argument | long argument   | parameter       | type   |
 |----------------|-----------------|--------------- |--------|
 | -h             | --help          |                |        |
 | -q             | --search_term   | `SEARCH_TERM`  | string |

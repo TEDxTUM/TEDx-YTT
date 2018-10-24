@@ -28,7 +28,7 @@ def youtube_search(search_term, max_results, client):
     :param search_term: The term to search for
     :param max_results: Maximum number of search results to consider. Each search returns 50 results per iteration.
     :param client: youtube API client
-    :return: Comma seperated list of youtube IDs
+    :return: Comma separated list of youtube IDs
     """
 
     if max_results > 50:
@@ -165,7 +165,7 @@ def load_data(filename, indizes):
     """
     Loads a csv into a dataframe with multi-index ['Date', 'ID']
     :param filename: Name of the csv file
-    :param indizes: array of indizies
+    :param indices: array of indices
     :return: pandas dataframe containing the data with  multi-index ['Date', 'ID']
     """
     logging.info(f'Loading old data from {filename}')
@@ -240,7 +240,7 @@ if __name__ == '__main__':
     parser.add_argument('-u', '--update', help='Switch updating statistics on/off', type=bool)
     parser.add_argument('-f', '--base_filename', help='Base filename for output files', type=str)
     parser.add_argument('-l', '--console_log', help='Switch logging output to python console on/off', type=bool)
-    parser.add_argument('-r', '--log_return', help='Switch output of funcions in console on/off', type=bool)
+    parser.add_argument('-r', '--log_return', help='Switch output of functions in console on/off', type=bool)
     args = parser.parse_args()
 
     if args.search_term:
