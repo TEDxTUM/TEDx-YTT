@@ -182,43 +182,25 @@ def get_youtube_data(ids_str, client):
     return df
 
 @trace
-def load_data(filename):
+def load_data(filename, indizes):
     """
     Loads a csv into a dataframe with multi-index ['Date', 'ID']
     :param filename: Name of the csv file
+    :param indizes: array of indizies
     :return: pandas dataframe containing the data with  multi-index ['Date', 'ID']
     """
-
+    logging.info(f'Loading old data from {filename}')
     try:
         df = pd.read_csv(filename, sep=';', encoding='latin-1')
-        df.set_index(['Date', 'ID'], inplace=True)
-    except FileNotFoundError:
-        logging.warning(f'File {filename} does not exist! Continuing without loading old data.')
-        df = None
-
-    return df
-
-# todo: unify load_data functions
-
-
-def load_stats_data(filename):
-    """
-    Loads a csv into a dataframe with multi-index ['Date', 'Metric']
-    :param filename: Name of the csv file
-    :return: pandas dataframe containing the data with  multi-index ['Date', 'ID']
-    """
-
-    logging.info(f'Loading old statistics from {filename}')
-    try:
-        df = pd.read_csv(filename, sep=';', encoding='latin-1')
-        df.set_index(['Date', 'Metric'], inplace=True)
+        df.set_index(indizes, inplace=True)
     except FileNotFoundError:
         logging.warning(f'File {filename} does not exist! Continuing without loading old data.')
         df = None
 
     logging.info(f'...done!')
-
     return df
+
+
 
 @trace
 def calc_stats(df):
@@ -301,7 +283,7 @@ if __name__ == '__main__':
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
                     developerKey=DEVELOPER_KEY)
 
-    old_df = load_data(f'{BASE_FILENAME}-output.csv')
+    old_df = load_data(f'{BASE_FILENAME}-output.csv', ['Date','ID'])
 
     if SEARCH:
         yt_ids = youtube_search(SEARCH_TERM, MAX_RESULTS, client=youtube)
@@ -325,7 +307,7 @@ if __name__ == '__main__':
         final_df = old_df
         new_df = old_df
 
-    old_stats_df = load_stats_data(f'{BASE_FILENAME}-statistics.csv')
+    old_stats_df = load_data(f'{BASE_FILENAME}-statistics.csv', ['Date', 'Metric'])
 
     if old_stats_df is not None and UPDATE:
         new_stats_df = calc_stats(new_df)
