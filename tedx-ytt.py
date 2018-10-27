@@ -7,7 +7,7 @@ import argparse
 import configparser
 from argparse import RawTextHelpFormatter
 
-import json
+import os
 
 
 def trace(funct):
@@ -221,11 +221,12 @@ if __name__ == '__main__':
     config.read('config.ini')
 
     SEARCH_TERM = config.get('Standard', 'SEARCH_TERM')
-    SEARCH = config.getboolean('Standard', 'SEARCH')  # Switch searching for new videos on/off
-    MAX_RESULTS = config.getint('Standard', 'MAX_RESULTS')  # number of search results used from search request.
-    UPDATE = config.getboolean('Standard', 'UPDATE')  # Switch updating statistics on/off
-    BASE_FILENAME = config.get('Standard', 'BASE_FILENAME')  # base filename for output files
-    CONSOLE_LOG = config.getboolean('Advanced', 'CONSOLE_LOG')  # Switch logging output to python console on/off
+    SEARCH = config.getboolean('Standard', 'SEARCH')
+    MAX_RESULTS = config.getint('Standard', 'MAX_RESULTS')
+    UPDATE = config.getboolean('Standard', 'UPDATE')
+    BASE_FILENAME = config.get('Standard', 'BASE_FILENAME')
+    DIRECTORY = config.get('Standard', 'DIRECTORY')
+    CONSOLE_LOG = config.getboolean('Advanced', 'CONSOLE_LOG')
     LOG_RETURNS = config.getboolean('Advanced', 'LOG_RETURNS')
 
     # Parse args
@@ -237,7 +238,8 @@ if __name__ == '__main__':
                                                  f'MAX_RESULTS = \t{SEARCH}\n'
                                                  f'UPDATE = \t{UPDATE}\n'
                                                  f'BASE_FILENAME = {BASE_FILENAME}\n'
-                                                 f'CONSOLE_LOG = \t{CONSOLE_LOG}\n',
+                                                 f'CONSOLE_LOG = \t{CONSOLE_LOG}\n'
+                                                 f'DIRECTORY = \t{DIRECTORY}\n',
                                      formatter_class=RawTextHelpFormatter)
     parser.add_argument('-q', '--search_term', help='Term to search for - your TEDx\'s name', type=str)
     parser.add_argument('-s', '--search', help='Switch searching for new videos on/off', type=bool)
@@ -246,6 +248,7 @@ if __name__ == '__main__':
     parser.add_argument('-f', '--base_filename', help='Base filename for output files', type=str)
     parser.add_argument('-l', '--console_log', help='Switch logging output to python console on/off', type=bool)
     parser.add_argument('-r', '--log_return', help='Switch output of functions in console on/off', type=bool)
+    parser.add_argument('-d', '--directory', help='Directory where the output should be saved to', type=str)
     args = parser.parse_args()
 
     if args.search_term:
@@ -262,6 +265,8 @@ if __name__ == '__main__':
         CONSOLE_LOG = args.search_term
     if args.log_return:
         LOG_RETURNS = args.log_return
+    if args.directory:
+        DIRECTORY = args.directory
 
     # Logging
     logging.basicConfig(level=logging.DEBUG,
@@ -276,6 +281,17 @@ if __name__ == '__main__':
         ch.setFormatter(formatter)
         root.addHandler(ch)
 
+    # get directory where the data is saved
+    if DIRECTORY == 'current':
+        save_dir = os.getcwd()
+    else:
+        save_dir = os.path.abspath(os.sep)
+        rel_dir = DIRECTORY.split('/')
+        for string in rel_dir:
+            if string != '':
+                save_dir = os.path.join(save_dir, string)
+
+    logging.info(f'Save directory: {save_dir}')
 
     # The magic starts here
     with open('yapi.txt') as file:
@@ -287,7 +303,7 @@ if __name__ == '__main__':
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
                     developerKey=DEVELOPER_KEY)
 
-    old_df = load_data(f'{BASE_FILENAME}-output.csv', ['Date', 'ID'])
+    old_df = load_data(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), ['Date', 'ID'])
 
     if SEARCH:
         yt_ids = youtube_search(SEARCH_TERM, MAX_RESULTS, client=youtube)
@@ -311,7 +327,7 @@ if __name__ == '__main__':
         final_df = old_df
         new_df = old_df
 
-    old_stats_df = load_data(f'{BASE_FILENAME}-statistics.csv', ['Date', 'Metric'])
+    old_stats_df = load_data(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), ['Date', 'Metric'])
 
     if old_stats_df is not None and UPDATE:
         new_stats_df = calc_stats(new_df)
@@ -327,9 +343,11 @@ if __name__ == '__main__':
     else:
         final_stats_df = calc_stats(new_df)
 
+    # save data
     logging.info('Saving data ...')
-    final_df.to_csv(f'{BASE_FILENAME}-output.csv', sep=';')
-    final_stats_df.to_csv(f'{BASE_FILENAME}-statistics.csv', sep=';')
+
+    final_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), sep=';')
+    final_stats_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), sep=';')
     logging.info(f'...done!')
 
     # write config
