@@ -109,7 +109,9 @@ tedx-ytt.py -h
 
 The script could run once a day/week automatically on an EC2 AWS server, providing you with daily / weekly statistics on all your videos.
  
-### Example
+### Examples
+
+#### Running the script
 To start a new search with `200` results for `TEDxMoon` and save the results to files starting with `moon-landing` run
 
 ```cmd
@@ -132,6 +134,46 @@ log_returns = False
 directory = current
 
 ```
+#### Slice the result (using pandas)
+
+If you want to slice the results (i.e. view only certain row-column combinations) this could be done in python using pandas.
+
+First you have to import pandas and read in the file
+```python
+import pandas as pd
+
+df = pd.read_csv(yourFilename, sep=';', encoding='latin-1')
+```
+
+Then you set the indices. For `[BASE_FILENAME]-output.csv` this is `Date` and `ID` and for `[BASE_FILENAME]-output.csv` 
+you choose `Date` and `Metric`:
+```python
+df.set_index(['Date','Metric'], inplace=True)
+```
+You can then slice the dataframe by adressing the column by its name though `df.name`. If you want to slice the `Views` 
+column, this would be:
+```python
+views = df.Views
+```
+
+To slice for a value within an index column use `df.xs(key=KEY, level=LEVEL, drop_level=True)`. 
+This returns all rows that have the value `KEY` in index column `LEVEL` and removes the index column (`drop_level=True`)
+If you want to keep the index column set `drop_level=False`.
+To only list mean values from the above example, use:
+```python
+views.xs(key='mean', level='Metric', drop_level=True)
+```
+
+So all you have to do to return e.g. a time-row of mean values of the statistics and save it as csv is:
+```python
+import pandas as pd
+
+df = pd.read_csv(YOURFILE, sep=';', encoding='latin-1')
+df.set_index(['Date','Metric'], inplace=True)
+df.Views.xs(key='mean', level='Metric', drop_level=True).to_csv(SAVEFILE, sep=';')
+
+```
+
 
 ## Authors
 
