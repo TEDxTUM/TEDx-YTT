@@ -7,6 +7,8 @@ import argparse
 import configparser
 from argparse import RawTextHelpFormatter
 
+import json
+
 
 def trace(funct):
     def wrapper(*args, **kwargs):
@@ -39,6 +41,7 @@ def youtube_search(search_term, max_results, client):
             maxResults=50,
             part='id,snippet',
             type='video',
+            channelId='UCsT0YIqwnpJCM-mx7-gSA4Q'
         ).execute()
 
         videos = []
@@ -50,7 +53,7 @@ def youtube_search(search_term, max_results, client):
         remaining_results = max_results - 50
 
         while token is not None and remaining_results > 50:
-            search_response = youtube.search().list(
+            search_response = client.search().list(
                 q=search_term,
                 maxResults=50,
                 part='id,snippet',
@@ -66,7 +69,7 @@ def youtube_search(search_term, max_results, client):
             remaining_results = max_results - 50
 
     else:
-        search_response = youtube.search().list(
+        search_response = client.search().list(
             q=search_term,
             maxResults=max_results,
             part='id,snippet',
