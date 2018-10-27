@@ -69,7 +69,7 @@ The script has the following parameters:
 | `MAX_RESULTS`              | int    | Maximum results analyzed from youtube search with `SEARCH_TERM`. Every API call returns 50 results, i.e. multiples of 50 make sense.
 | `UPDATE`                   | bool   | Defines whether `[BASE_FILENAME]-output` and `[BASE_FILENAME]-stastics` are updated with new data from youtube.
 | `BASE_FILENAME`            | string | Defines how `[BASE_FILENAME]-output` and `[BASE_FILENAME]-stastics` are named.
-| `DIRECTORY`      | string   | Directory (relative to root) where `[BASE_FILENAME]-output` and `[BASE_FILENAME]-stastics` are saved. Use keyword `current` to set it the same dirctory the script is runnning in.
+| `DIRECTORY`      | string   | Directory (relative to root) where `[BASE_FILENAME]-output` and `[BASE_FILENAME]-stastics` are saved. Denote sub-directories by ´/´ (Forward slash). Use keyword `current` to set it the same dirctory the script is runnning in.
 | `CONSOLE_LOG` (advanced)   | bool   | Turns logging in console on and off.
 | `LOG_RETURN` (advanced)     | bool   | Turns logging of results of function calls in console on and off.
 
