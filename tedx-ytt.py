@@ -12,9 +12,10 @@ import os
 
 def trace(funct):
     def wrapper(*args, **kwargs):
-        logging.info(f'TRACE: Calling {funct.__name__}() '
-                     f'with {args}, {kwargs}')
-        result = funct(*args, **kwargs)
+        if CONSOLE_LOG:
+            logging.info(f'TRACE: Calling {funct.__name__}() '
+                         f'with {args}, {kwargs}')
+            result = funct(*args, **kwargs)
         if LOG_RETURNS:
             print(f'TRACE: {funct.__name__}() '
                   f'returned {result!r}')
