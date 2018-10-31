@@ -13,9 +13,9 @@ import os
 def trace(funct):
     def wrapper(*args, **kwargs):
         if CONSOLE_LOG:
-            logging.info(f'TRACE: Calling {funct.__name__}() '
-                         f'with {args}, {kwargs}')
-            result = funct(*args, **kwargs)
+        	logging.info(f'TRACE: Calling {funct.__name__}() '
+                	     f'with {args}, {kwargs}')
+       	result = funct(*args, **kwargs)
         if LOG_RETURNS:
             print(f'TRACE: {funct.__name__}() '
                   f'returned {result!r}')
@@ -219,7 +219,7 @@ if __name__ == '__main__':
 
     # Parse config
     config = configparser.ConfigParser()
-    config.read('config.ini')
+    config.read(os.path.join(sys.path[0],'config.ini'))
 
     SEARCH_TERM = config.get('Standard', 'SEARCH_TERM')
     SEARCH = config.getboolean('Standard', 'SEARCH')
@@ -295,7 +295,7 @@ if __name__ == '__main__':
     logging.info(f'Save directory: {save_dir}')
 
     # The magic starts here
-    with open('yapi.txt') as file:
+    with open(os.path.join(sys.path[0],'yapi.txt')) as file:
         DEVELOPER_KEY = file.read()
 
     YOUTUBE_API_SERVICE_NAME = 'youtube'
