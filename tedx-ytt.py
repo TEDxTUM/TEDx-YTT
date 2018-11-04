@@ -177,7 +177,7 @@ def load_data(filename, indices):
     """
     logging.info(f'Loading old data from {filename}')
     try:
-        df = pd.read_csv(filename, sep=';', encoding='latin-1')
+        df = pd.read_csv(filename, sep=';', encoding='latin-1', parse_dates=['Date'])
         df.set_index(indices, inplace=True)
     except FileNotFoundError:
         logging.warning(f'File {filename} does not exist! Continuing without loading old data.')
