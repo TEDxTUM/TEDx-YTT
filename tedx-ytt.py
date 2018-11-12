@@ -38,7 +38,7 @@ def youtube_search(search_term, max_results, client):
 
     if max_results > 50:
         search_response = client.search().list(
-            q=search_term,
+            q=f'{search_term}*',
             maxResults=50,
             part='id,snippet',
             type='video',
