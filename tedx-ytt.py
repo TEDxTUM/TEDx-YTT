@@ -55,17 +55,24 @@ def youtube_search(search_term, max_results, client):
 
         while token is not None and remaining_results > 50:
             search_response = client.search().list(
-                q=search_term,
+                q=f'{search_term}*',
                 maxResults=50,
                 part='id,snippet',
                 type='video',
+                channelId = 'UCsT0YIqwnpJCM-mx7-gSA4Q',
                 pageToken=token
             ).execute()
-
+            discard_counter = 0
             for search_result in search_response.get('items', []):
                 if SEARCH_TERM.upper() in search_result['snippet']['title'].upper():
                     videos.append(search_result['id']['videoId'])
                     logging.debug('Found new video: ' + search_result['snippet']['title'])
+                else:
+                    logging.debug('Discarded video: ' + search_result['snippet']['title'])
+                    discard_counter += 1
+
+            logging.debug(f'Discarded video count:{discard_counter}')
+
             token = search_response.get('nextPageToken', None)
             remaining_results = max_results - 50
 
@@ -96,6 +103,9 @@ def get_youtube_data(ids_str, client):
 
     ids = []
     titles = []
+    speakers = []
+    tedxs = []
+
     thumbnail_urls = []
     tags = []
 
@@ -112,6 +122,8 @@ def get_youtube_data(ids_str, client):
     keys = [
         'ID',
         'Title',
+        'Speaker Name',
+        #'Tedx Name'
         'Thumbnail',
         'Tags',
         'Views',
@@ -124,6 +136,8 @@ def get_youtube_data(ids_str, client):
     ]
     values = [ids,
               titles,
+              speakers,
+              #tedx,
               thumbnail_urls,
               tags,
               views,
@@ -146,7 +160,21 @@ def get_youtube_data(ids_str, client):
         date = datetime.datetime.now().date()
 
         for result in response.get('items', []):
-            titles.append(result['snippet']['title'])
+            title =result['snippet']['title']
+            if '|' in title:
+                from_title = [x.strip() for x in title.split('|')]
+
+                title = from_title[0]
+                speaker = from_title[1]
+                #tedx = from_title[2]
+                print(f'title {title}')
+                print(f'speaker {speaker}')
+
+                titles.append(title)
+                speakers.append(speaker)
+            else:
+                titles.append(title)
+                speakers.append('n/a')
             thumbnail_urls.append(result['snippet']['thumbnails']['medium']['url'])
             tags.append(','.join(result['snippet'].get('tags', 'NONE')))
             ids.append(result['id'])
@@ -163,6 +191,8 @@ def get_youtube_data(ids_str, client):
     d = dict(zip(keys, values))
     df = pd.DataFrame(d)
     df.set_index(['Date', 'ID'], inplace=True)
+
+
 
     return df
 
@@ -196,7 +226,7 @@ def calc_stats(df):
     """
 
     df_copy = df.copy()
-    df_copy.drop(labels=['Published on', 'Tags', 'Thumbnail', 'Title'], axis=1, inplace=True)
+    df_copy.drop(labels=['Published on', 'Tags', 'Thumbnail', 'Title', 'Speaker Name'], axis=1, inplace=True)
 
     dates = []
     date = datetime.datetime.now().date()
