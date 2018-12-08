@@ -17,10 +17,10 @@ def trace(funct):
                 	     f'with {args}, {kwargs}')
        	result = funct(*args, **kwargs)
         if LOG_RETURNS:
-            print(f'TRACE: {funct.__name__}() '
+            logging.info(f'TRACE: {funct.__name__}() '
                   f'returned {result!r}')
         else:
-            print(f'TRACE: {funct.__name__}() finished')
+            logging.info(f'TRACE: {funct.__name__}() finished')
         return result
 
     return wrapper
@@ -29,7 +29,7 @@ def trace(funct):
 @trace
 def youtube_search(search_term, max_results, client):
     """
-    Returns the IDs of videos (as csv) that fit a certain search term 
+    Returns the IDs of videos (as csv) that fit a certain search term
     :param search_term: The term to search for
     :param max_results: Maximum number of search results to consider. Each search returns 50 results per iteration.
     :param client: youtube API client
@@ -359,4 +359,4 @@ if __name__ == '__main__':
 
     logging.info(f'...done!')
 
-    print('Done!')
+    logging.info('Done with everything!')

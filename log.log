@@ -1,5 +1,5 @@
-2018-10-27 14:13:28,755 INFO Save directory: C:\Users\Julian\GitHub\TEDx-YTT
-2018-10-27 14:13:28,758 WARNING file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
+2018-12-08 22:50:12,114 INFO Save directory: C:\Users\Julian\GitHub\TEDx-YTT
+2018-12-08 22:50:12,119 WARNING file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
 Traceback (most recent call last):
   File "C:\Users\Julian\Anaconda3\lib\site-packages\googleapiclient\discovery_cache\__init__.py", line 36, in autodetect
     from google.appengine.api import memcache
@@ -27,14 +27,466 @@ Traceback (most recent call last):
   File "C:\Users\Julian\Anaconda3\lib\site-packages\googleapiclient\discovery_cache\file_cache.py", line 41, in <module>
     'file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth')
 ImportError: file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
-2018-10-27 14:13:28,759 INFO URL being requested: GET https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest
-2018-10-27 14:13:30,219 INFO TRACE: Calling load_data() with ('C:\\Users\\Julian\\GitHub\\TEDx-YTT\\tedx-ytt-output.csv', ['Date', 'ID']), {}
-2018-10-27 14:13:30,219 INFO Loading old data from C:\Users\Julian\GitHub\TEDx-YTT\tedx-ytt-output.csv
-2018-10-27 14:13:30,226 INFO ...done!
-2018-10-27 14:13:30,227 INFO TRACE: Calling load_data() with ('C:\\Users\\Julian\\GitHub\\TEDx-YTT\\tedx-ytt-statistics.csv', ['Date', 'Metric']), {}
-2018-10-27 14:13:30,227 INFO Loading old data from C:\Users\Julian\GitHub\TEDx-YTT\tedx-ytt-statistics.csv
-2018-10-27 14:13:30,248 INFO ...done!
-2018-10-27 14:13:30,248 INFO Saving data ...
-2018-10-27 14:13:30,257 INFO ...done!
-2018-10-27 14:13:30,257 INFO Saving config ...
-2018-10-27 14:13:30,259 INFO ...done!
+2018-12-08 22:50:12,121 INFO URL being requested: GET https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest
+2018-12-08 22:50:13,537 INFO TRACE: Calling load_data() with ('C:\\Users\\Julian\\GitHub\\TEDx-YTT\\tedx-ytt-output.csv', ['Date', 'ID']), {}
+2018-12-08 22:50:13,537 INFO Loading old data from C:\Users\Julian\GitHub\TEDx-YTT\tedx-ytt-output.csv
+2018-12-08 22:50:13,549 INFO ...done!
+2018-12-08 22:50:13,549 INFO TRACE: Calling get_youtube_data() with ('-NhZ4ioHb9E,-guxUgF_eTU,0NDL0AgRK0c,0qVOUD76JOg,13kgrPyNTfY,1E-QkFUAt5A,2B91UE0gHps,36186S-RsKY,3DyrDKYhSi8,3Xpj5Gj9pgo,3_ZXhYD9QJg,3uLp0C6G__w,5U6Cc1hmdY0,5zFOUgtiZeQ,62aI5Oy4S4g,68LGsvpn7vk,6MxbegZtAII,76pnQkP-xG4,CFHvNNcEIDo,D6_J7FfgWVc,Dbvp5LxY6Kw,EJDpbsvWdsg,FjBsr9w3-Gk,HCjBM23nQ0s,IDixuVrDABY,IdRbCJzpIAM,JR_DmkV4Jlw,KCLdryjDl6E,LQEbC8QfbyU,LjQDLg_KuJg,NG2CsLrCCY8,NQ9uWbZ285Q,O54JCIDqWwM,OE3mguWXRRU,OKQ-mpv0tWI,OiqnbYywGcI,PpiVaGPyDG4,TEQpfEb8vsE,U5DoJ_jCt7E,VxQ5R9-Jfm8,WGPQM1J7Jcw,XnQHVXMhzBo,YPMD7iNZT24,YTKgizpzmtQ,Z2TQQhTx6EQ,Zark1jrC7EU,ab_yh2HoJ7o,d_eaG5QcA_U,fkxl1hSmb28,g17OHKBm50I,gPZc1fZcgL8,gnK7Lg56DjI,iaemojsQDFw,iq5SLf6xPFQ,iuIisjRIcVI,k_BVvupSChc,ke4lI_1xCrU,m-9z9M9dsq0,m4w-FV6eERI,mK6IdD4GXPo,mxbfx7YXBIo,myl722kHxbU,q5Mc26ihCXc,sRVxPE1cguo,sfgTmRiGWWE,w-QoDqBMe2k', <googleapiclient.discovery.Resource object at 0x000001C12957EF98>), {}
+2018-12-08 22:50:13,575 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=-NhZ4ioHb9E&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:13,759 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=-guxUgF_eTU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:13,843 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=0NDL0AgRK0c&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:13,925 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=0qVOUD76JOg&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:14,009 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=13kgrPyNTfY&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:14,120 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=1E-QkFUAt5A&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:14,213 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=2B91UE0gHps&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:14,314 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=36186S-RsKY&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:14,406 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3DyrDKYhSi8&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:14,494 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3Xpj5Gj9pgo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:14,624 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3_ZXhYD9QJg&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:14,723 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3uLp0C6G__w&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:14,815 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=5U6Cc1hmdY0&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:14,944 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=5zFOUgtiZeQ&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:15,028 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=62aI5Oy4S4g&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:15,109 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=68LGsvpn7vk&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:15,253 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=6MxbegZtAII&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:15,357 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=76pnQkP-xG4&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:15,439 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=CFHvNNcEIDo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:15,529 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=D6_J7FfgWVc&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:15,617 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=Dbvp5LxY6Kw&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:15,709 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=EJDpbsvWdsg&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:15,787 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=FjBsr9w3-Gk&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:15,906 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=HCjBM23nQ0s&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:15,990 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=IDixuVrDABY&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:16,090 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=IdRbCJzpIAM&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:16,202 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=JR_DmkV4Jlw&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:16,320 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=KCLdryjDl6E&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:16,413 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=LQEbC8QfbyU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:16,531 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=LjQDLg_KuJg&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:16,621 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NG2CsLrCCY8&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:16,731 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NQ9uWbZ285Q&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:16,831 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=O54JCIDqWwM&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:16,914 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=OE3mguWXRRU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:17,014 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=OKQ-mpv0tWI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:17,093 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=OiqnbYywGcI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:17,199 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=PpiVaGPyDG4&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:17,294 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=TEQpfEb8vsE&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:17,398 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=U5DoJ_jCt7E&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:17,505 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=VxQ5R9-Jfm8&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:17,639 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=WGPQM1J7Jcw&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:17,726 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=XnQHVXMhzBo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:17,830 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=YPMD7iNZT24&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:17,931 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=YTKgizpzmtQ&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:18,046 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=Z2TQQhTx6EQ&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:18,148 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=Zark1jrC7EU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:18,249 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=ab_yh2HoJ7o&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:18,338 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=d_eaG5QcA_U&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:18,447 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=fkxl1hSmb28&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:18,554 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=g17OHKBm50I&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:18,631 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=gPZc1fZcgL8&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:18,736 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=gnK7Lg56DjI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:18,837 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=iaemojsQDFw&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:18,926 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=iq5SLf6xPFQ&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:19,007 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=iuIisjRIcVI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:19,087 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=k_BVvupSChc&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:19,188 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=ke4lI_1xCrU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:19,304 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=m-9z9M9dsq0&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:19,404 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=m4w-FV6eERI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:19,489 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=mK6IdD4GXPo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:19,586 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=mxbfx7YXBIo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:19,689 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=myl722kHxbU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:19,794 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=q5Mc26ihCXc&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:19,890 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=sRVxPE1cguo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:19,989 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=sfgTmRiGWWE&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:20,082 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=w-QoDqBMe2k&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-08 22:50:20,191 INFO TRACE: Calling load_data() with ('C:\\Users\\Julian\\GitHub\\TEDx-YTT\\tedx-ytt-statistics.csv', ['Date', 'Metric']), {}
+2018-12-08 22:50:20,191 INFO Loading old data from C:\Users\Julian\GitHub\TEDx-YTT\tedx-ytt-statistics.csv
+2018-12-08 22:50:20,196 INFO ...done!
+2018-12-08 22:50:20,218 INFO TRACE: Calling calc_stats() with (                       Comment Count Dislikes Favourite Count  Likes  \
+Date       ID                                                          
+2018-12-08 -NhZ4ioHb9E             0        0               0     15   
+           -guxUgF_eTU             3        8               0     59   
+           0NDL0AgRK0c             1        0               0     20   
+           0qVOUD76JOg           122       68               0   3158   
+           13kgrPyNTfY             0        1               0      9   
+           1E-QkFUAt5A             2        0               0     22   
+           2B91UE0gHps             0        0               0      3   
+           36186S-RsKY             9        5               0    112   
+           3DyrDKYhSi8             0        3               0    119   
+           3Xpj5Gj9pgo             0        0               0     34   
+           3_ZXhYD9QJg             0        1               0      8   
+           3uLp0C6G__w           216       46               0   1477   
+           5U6Cc1hmdY0             2        3               0     56   
+           5zFOUgtiZeQ             0        0               0      3   
+           62aI5Oy4S4g             4        1               0     28   
+           68LGsvpn7vk             0        0               0      1   
+           6MxbegZtAII             3        0               0     18   
+           76pnQkP-xG4             1        0               0     67   
+           CFHvNNcEIDo             0        1               0      9   
+           D6_J7FfgWVc            96      277               0   4077   
+           Dbvp5LxY6Kw             0        0               0      2   
+           EJDpbsvWdsg           119      221               0   1043   
+           FjBsr9w3-Gk             1        1               0     26   
+           HCjBM23nQ0s             2        2               0     72   
+           IDixuVrDABY             1        4               0    131   
+           IdRbCJzpIAM             0        0               0      0   
+           JR_DmkV4Jlw             0        0               0     49   
+           KCLdryjDl6E            95      208               0   4086   
+           LQEbC8QfbyU             3       15               0     92   
+           LjQDLg_KuJg             0        1               0      0   
+...                              ...      ...             ...    ...   
+           PpiVaGPyDG4             0        0               0      2   
+           TEQpfEb8vsE             0        0               0      4   
+           U5DoJ_jCt7E             0        1               0     20   
+           VxQ5R9-Jfm8             0        0               0      0   
+           WGPQM1J7Jcw            19        7               0     82   
+           XnQHVXMhzBo            13        4               0    189   
+           YPMD7iNZT24             0        0               0      6   
+           YTKgizpzmtQ             1        3               0     16   
+           Z2TQQhTx6EQ             3        0               0     36   
+           Zark1jrC7EU             2        0               0     19   
+           ab_yh2HoJ7o             4       14               0     51   
+           d_eaG5QcA_U             0        0               0      6   
+           fkxl1hSmb28             0        0               0     19   
+           g17OHKBm50I             0        0               0      5   
+           gPZc1fZcgL8             4        5               0     19   
+           gnK7Lg56DjI             0        0               0     22   
+           iaemojsQDFw             1        1               0     26   
+           iq5SLf6xPFQ           568       86               0  16539   
+           iuIisjRIcVI            81      162               0   4495   
+           k_BVvupSChc            42       22               0    204   
+           ke4lI_1xCrU             2        4               0     18   
+           m-9z9M9dsq0             0        0               0      3   
+           m4w-FV6eERI             1        0               0     33   
+           mK6IdD4GXPo             4        2               0    364   
+           mxbfx7YXBIo             0        0               0      9   
+           myl722kHxbU            15        3               0    139   
+           q5Mc26ihCXc             0        0               0      2   
+           sRVxPE1cguo             4        2               0     70   
+           sfgTmRiGWWE             0        0               0      1   
+           w-QoDqBMe2k             1        3               0     80   
+
+                                    Published on  \
+Date       ID                                      
+2018-12-08 -NhZ4ioHb9E  2018-02-21T21:53:10.000Z   
+           -guxUgF_eTU  2015-12-22T18:36:24.000Z   
+           0NDL0AgRK0c  2018-02-21T21:53:50.000Z   
+           0qVOUD76JOg  2015-12-07T19:46:38.000Z   
+           13kgrPyNTfY  2018-09-30T09:45:00.000Z   
+           1E-QkFUAt5A  2018-09-08T15:30:00.000Z   
+           2B91UE0gHps  2017-02-14T15:28:51.000Z   
+           36186S-RsKY  2016-01-29T16:28:55.000Z   
+           3DyrDKYhSi8  2015-12-14T18:43:42.000Z   
+           3Xpj5Gj9pgo  2016-01-18T18:34:08.000Z   
+           3_ZXhYD9QJg  2015-12-01T16:39:38.000Z   
+           3uLp0C6G__w  2017-02-10T17:11:15.000Z   
+           5U6Cc1hmdY0  2015-12-18T15:51:53.000Z   
+           5zFOUgtiZeQ  2015-07-31T22:10:44.000Z   
+           62aI5Oy4S4g  2018-02-21T21:48:51.000Z   
+           68LGsvpn7vk  2018-01-17T23:18:07.000Z   
+           6MxbegZtAII  2017-02-10T17:11:18.000Z   
+           76pnQkP-xG4  2017-02-10T17:11:17.000Z   
+           CFHvNNcEIDo  2017-02-14T15:28:52.000Z   
+           D6_J7FfgWVc  2018-02-21T21:50:47.000Z   
+           Dbvp5LxY6Kw  2017-09-25T16:00:02.000Z   
+           EJDpbsvWdsg  2017-02-14T15:28:53.000Z   
+           FjBsr9w3-Gk  2016-10-05T20:08:36.000Z   
+           HCjBM23nQ0s  2016-01-08T21:08:32.000Z   
+           IDixuVrDABY  2014-07-23T18:55:18.000Z   
+           IdRbCJzpIAM  2018-10-02T08:19:26.000Z   
+           JR_DmkV4Jlw  2014-07-25T22:15:03.000Z   
+           KCLdryjDl6E  2017-02-10T17:11:16.000Z   
+           LQEbC8QfbyU  2014-07-25T22:15:03.000Z   
+           LjQDLg_KuJg  2018-09-23T09:48:47.000Z   
+...                                          ...   
+           PpiVaGPyDG4  2016-10-23T17:24:58.000Z   
+           TEQpfEb8vsE  2015-08-06T08:06:47.000Z   
+           U5DoJ_jCt7E  2018-02-21T21:46:38.000Z   
+           VxQ5R9-Jfm8  2018-01-24T20:39:47.000Z   
+           WGPQM1J7Jcw  2018-02-21T21:55:30.000Z   
+           XnQHVXMhzBo  2016-01-05T16:34:27.000Z   
+           YPMD7iNZT24  2016-07-17T10:53:38.000Z   
+           YTKgizpzmtQ  2014-07-23T18:55:49.000Z   
+           Z2TQQhTx6EQ  2016-01-12T20:04:05.000Z   
+           Zark1jrC7EU  2014-07-23T18:55:49.000Z   
+           ab_yh2HoJ7o  2017-02-10T17:11:20.000Z   
+           d_eaG5QcA_U  2015-05-25T21:18:34.000Z   
+           fkxl1hSmb28  2016-04-24T08:22:28.000Z   
+           g17OHKBm50I  2018-02-21T21:48:18.000Z   
+           gPZc1fZcgL8  2015-12-09T22:29:50.000Z   
+           gnK7Lg56DjI  2016-01-03T06:04:47.000Z   
+           iaemojsQDFw  2018-02-21T21:54:07.000Z   
+           iq5SLf6xPFQ  2018-02-21T21:46:59.000Z   
+           iuIisjRIcVI  2017-02-09T19:43:41.000Z   
+           k_BVvupSChc  2018-02-21T21:54:28.000Z   
+           ke4lI_1xCrU  2014-07-25T22:15:03.000Z   
+           m-9z9M9dsq0  2018-02-22T09:05:14.000Z   
+           m4w-FV6eERI  2017-02-17T17:48:43.000Z   
+           mK6IdD4GXPo  2015-12-29T19:05:20.000Z   
+           mxbfx7YXBIo  2018-02-22T09:05:14.000Z   
+           myl722kHxbU  2015-12-26T20:36:51.000Z   
+           q5Mc26ihCXc  2015-08-16T14:50:17.000Z   
+           sRVxPE1cguo  2016-02-02T21:04:07.000Z   
+           sfgTmRiGWWE  2018-02-11T20:44:06.000Z   
+           w-QoDqBMe2k  2017-02-10T19:55:43.000Z   
+
+                                                                     Tags  \
+Date       ID                                                               
+2018-12-08 -NhZ4ioHb9E  TEDxTalks,English,Global Issues,Activism,Anima...   
+           -guxUgF_eTU  TEDxTalks,English,Germany,Entertainment,Art,Co...   
+           0NDL0AgRK0c  TEDxTalks,English,Technology,Computers,Future,...   
+           0qVOUD76JOg  TEDxTalks,English,Germany,Technology,AI,Art,Co...   
+           13kgrPyNTfY  TEDxTUM,TEDx,Technology,Entertainment,Design,C...   
+           1E-QkFUAt5A  TEDxTalks,English,Science (hard),Biology,Chemi...   
+           2B91UE0gHps       TEDxTalks,English,Germany,Entertainment,Band   
+           36186S-RsKY  TEDxTalks,English,Germany,Design,Classroom,Dat...   
+           3DyrDKYhSi8  TEDxTalks,English,Germany,Business,Communicati...   
+           3Xpj5Gj9pgo  TEDxTalks,English,Germany,Social Science,Behav...   
+           3_ZXhYD9QJg  TEDxTUM,TUM,TED,TEDx,FACETS,TEDxTUM2015,IdeasW...   
+           3uLp0C6G__w  TEDxTalks,English,Germany,Science (hard),Anima...   
+           5U6Cc1hmdY0  TEDxTalks,English,Germany,Science (hard),Big p...   
+           5zFOUgtiZeQ                                            TEDxTUM   
+           62aI5Oy4S4g  TEDxTalks,English,Global Issues,Activism,Caree...   
+           68LGsvpn7vk           ted,tedx,ideas,ted talks,public speaking   
+           6MxbegZtAII  TEDxTalks,English,Germany,Art,Adventure,Arts e...   
+           76pnQkP-xG4  TEDxTalks,English,Germany,Technology,Big Data,...   
+           CFHvNNcEIDo  TEDxTalks,English,Germany,Entertainment,Dance ...   
+           D6_J7FfgWVc  TEDxTalks,English,Life,Community,Compassion,Em...   
+           Dbvp5LxY6Kw  tedx,ted talks,ted,carl sagan,technology,desig...   
+           EJDpbsvWdsg  TEDxTalks,English,Germany,Entertainment,Aging,...   
+           FjBsr9w3-Gk  ted talks,tedx,ideas,inspiration,tu munich,sci...   
+           HCjBM23nQ0s  TEDxTalks,English,Germany,Technology,AI,Cognit...   
+           IDixuVrDABY  Business,Germany,ted x,ted,English,tedx,Career...   
+           IdRbCJzpIAM                       TED,TEDxTUM,Music,Orchestral   
+           JR_DmkV4Jlw  English,Germany,Computer Science,ted talk,Life...   
+           KCLdryjDl6E  TEDxTalks,English,Germany,Education,Consciousn...   
+           LQEbC8QfbyU  TEDxTalks,ted talk,Computer Science,Germany,te...   
+           LjQDLg_KuJg                tedxtum,tedx,talks,experience,event   
+...                                                                   ...   
+           PpiVaGPyDG4                    tedx,ted talks,inspiration,team   
+           TEQpfEb8vsE  TEDxTUM,TEDx,TUM,Technical University Of Munic...   
+           U5DoJ_jCt7E  TEDxTalks,English,Technology,Elderly,Future,In...   
+           VxQ5R9-Jfm8  Dokumentation,Doku,Dokumentarfilm,Reportage,TV...   
+           WGPQM1J7Jcw  TEDxTalks,English,Science (hard),Exploration,P...   
+           XnQHVXMhzBo  TEDxTalks,English,Germany,Entertainment,Medita...   
+           YPMD7iNZT24  TED Talks,TEDx,Technische Universität München,...   
+           YTKgizpzmtQ  Humanities,ted,Social Justice,Sociology,Medici...   
+           Z2TQQhTx6EQ  TEDxTalks,English,Germany,Life,Choice,Compassi...   
+           Zark1jrC7EU  ted,Health,tedx,ted x,Science (hard),tedx talk...   
+           ab_yh2HoJ7o  TEDxTalks,English,Germany,Technology,Aging,Bio...   
+           d_eaG5QcA_U                                tedx,tu münchen,tum   
+           fkxl1hSmb28  ted,tedx,funny,comedy,sketch,tum,technische un...   
+           g17OHKBm50I  TEDxTalks,English,Technology,Computers,Design,...   
+           gPZc1fZcgL8  TEDxTalks,English,Germany,Global Issues,Activi...   
+           gnK7Lg56DjI  TEDxTalks,English,Germany,Health,Activism,Big ...   
+           iaemojsQDFw  TEDxTalks,English,Life,Cancer,Communication,Co...   
+           iq5SLf6xPFQ  TEDxTalks,English,Life,Career,Exploration,Life...   
+           iuIisjRIcVI  TEDxTalks,English,Germany,Life,Achievement,Ant...   
+           k_BVvupSChc  TEDxTalks,English,Science (hard),AIDS,Future,G...   
+           ke4lI_1xCrU  English,Germany,ted talk,Global Issues,Social ...   
+           m-9z9M9dsq0  tedx,tedxtum,music,performance,poetry,violin,b...   
+           m4w-FV6eERI  TEDxTalks,English,Germany,Science (hard),Brain...   
+           mK6IdD4GXPo  TEDxTalks,English,Germany,Global Issues,Activi...   
+           mxbfx7YXBIo     tedx,tedxtum,comedy,performance,improv,ukulele   
+           myl722kHxbU  TEDxTalks,English,Germany,Life,Change,Communit...   
+           q5Mc26ihCXc  TED,TEDx,TEDxTUM,TUM,Technical University Of M...   
+           sRVxPE1cguo  TEDxTalks,English,Germany,Art,Brand,Communicat...   
+           sfgTmRiGWWE        TEDx,TEDxTUM,TUM,Munich,Ideasworthspreading   
+           w-QoDqBMe2k  TEDxTalks,English,Germany,Technology,3D Techno...   
+
+                                                               Thumbnail  \
+Date       ID                                                              
+2018-12-08 -NhZ4ioHb9E  https://i.ytimg.com/vi/-NhZ4ioHb9E/mqdefault.jpg   
+           -guxUgF_eTU  https://i.ytimg.com/vi/-guxUgF_eTU/mqdefault.jpg   
+           0NDL0AgRK0c  https://i.ytimg.com/vi/0NDL0AgRK0c/mqdefault.jpg   
+           0qVOUD76JOg  https://i.ytimg.com/vi/0qVOUD76JOg/mqdefault.jpg   
+           13kgrPyNTfY  https://i.ytimg.com/vi/13kgrPyNTfY/mqdefault.jpg   
+           1E-QkFUAt5A  https://i.ytimg.com/vi/1E-QkFUAt5A/mqdefault.jpg   
+           2B91UE0gHps  https://i.ytimg.com/vi/2B91UE0gHps/mqdefault.jpg   
+           36186S-RsKY  https://i.ytimg.com/vi/36186S-RsKY/mqdefault.jpg   
+           3DyrDKYhSi8  https://i.ytimg.com/vi/3DyrDKYhSi8/mqdefault.jpg   
+           3Xpj5Gj9pgo  https://i.ytimg.com/vi/3Xpj5Gj9pgo/mqdefault.jpg   
+           3_ZXhYD9QJg  https://i.ytimg.com/vi/3_ZXhYD9QJg/mqdefault.jpg   
+           3uLp0C6G__w  https://i.ytimg.com/vi/3uLp0C6G__w/mqdefault.jpg   
+           5U6Cc1hmdY0  https://i.ytimg.com/vi/5U6Cc1hmdY0/mqdefault.jpg   
+           5zFOUgtiZeQ  https://i.ytimg.com/vi/5zFOUgtiZeQ/mqdefault.jpg   
+           62aI5Oy4S4g  https://i.ytimg.com/vi/62aI5Oy4S4g/mqdefault.jpg   
+           68LGsvpn7vk  https://i.ytimg.com/vi/68LGsvpn7vk/mqdefault.jpg   
+           6MxbegZtAII  https://i.ytimg.com/vi/6MxbegZtAII/mqdefault.jpg   
+           76pnQkP-xG4  https://i.ytimg.com/vi/76pnQkP-xG4/mqdefault.jpg   
+           CFHvNNcEIDo  https://i.ytimg.com/vi/CFHvNNcEIDo/mqdefault.jpg   
+           D6_J7FfgWVc  https://i.ytimg.com/vi/D6_J7FfgWVc/mqdefault.jpg   
+           Dbvp5LxY6Kw  https://i.ytimg.com/vi/Dbvp5LxY6Kw/mqdefault.jpg   
+           EJDpbsvWdsg  https://i.ytimg.com/vi/EJDpbsvWdsg/mqdefault.jpg   
+           FjBsr9w3-Gk  https://i.ytimg.com/vi/FjBsr9w3-Gk/mqdefault.jpg   
+           HCjBM23nQ0s  https://i.ytimg.com/vi/HCjBM23nQ0s/mqdefault.jpg   
+           IDixuVrDABY  https://i.ytimg.com/vi/IDixuVrDABY/mqdefault.jpg   
+           IdRbCJzpIAM  https://i.ytimg.com/vi/IdRbCJzpIAM/mqdefault.jpg   
+           JR_DmkV4Jlw  https://i.ytimg.com/vi/JR_DmkV4Jlw/mqdefault.jpg   
+           KCLdryjDl6E  https://i.ytimg.com/vi/KCLdryjDl6E/mqdefault.jpg   
+           LQEbC8QfbyU  https://i.ytimg.com/vi/LQEbC8QfbyU/mqdefault.jpg   
+           LjQDLg_KuJg  https://i.ytimg.com/vi/LjQDLg_KuJg/mqdefault.jpg   
+...                                                                  ...   
+           PpiVaGPyDG4  https://i.ytimg.com/vi/PpiVaGPyDG4/mqdefault.jpg   
+           TEQpfEb8vsE  https://i.ytimg.com/vi/TEQpfEb8vsE/mqdefault.jpg   
+           U5DoJ_jCt7E  https://i.ytimg.com/vi/U5DoJ_jCt7E/mqdefault.jpg   
+           VxQ5R9-Jfm8  https://i.ytimg.com/vi/VxQ5R9-Jfm8/mqdefault.jpg   
+           WGPQM1J7Jcw  https://i.ytimg.com/vi/WGPQM1J7Jcw/mqdefault.jpg   
+           XnQHVXMhzBo  https://i.ytimg.com/vi/XnQHVXMhzBo/mqdefault.jpg   
+           YPMD7iNZT24  https://i.ytimg.com/vi/YPMD7iNZT24/mqdefault.jpg   
+           YTKgizpzmtQ  https://i.ytimg.com/vi/YTKgizpzmtQ/mqdefault.jpg   
+           Z2TQQhTx6EQ  https://i.ytimg.com/vi/Z2TQQhTx6EQ/mqdefault.jpg   
+           Zark1jrC7EU  https://i.ytimg.com/vi/Zark1jrC7EU/mqdefault.jpg   
+           ab_yh2HoJ7o  https://i.ytimg.com/vi/ab_yh2HoJ7o/mqdefault.jpg   
+           d_eaG5QcA_U  https://i.ytimg.com/vi/d_eaG5QcA_U/mqdefault.jpg   
+           fkxl1hSmb28  https://i.ytimg.com/vi/fkxl1hSmb28/mqdefault.jpg   
+           g17OHKBm50I  https://i.ytimg.com/vi/g17OHKBm50I/mqdefault.jpg   
+           gPZc1fZcgL8  https://i.ytimg.com/vi/gPZc1fZcgL8/mqdefault.jpg   
+           gnK7Lg56DjI  https://i.ytimg.com/vi/gnK7Lg56DjI/mqdefault.jpg   
+           iaemojsQDFw  https://i.ytimg.com/vi/iaemojsQDFw/mqdefault.jpg   
+           iq5SLf6xPFQ  https://i.ytimg.com/vi/iq5SLf6xPFQ/mqdefault.jpg   
+           iuIisjRIcVI  https://i.ytimg.com/vi/iuIisjRIcVI/mqdefault.jpg   
+           k_BVvupSChc  https://i.ytimg.com/vi/k_BVvupSChc/mqdefault.jpg   
+           ke4lI_1xCrU  https://i.ytimg.com/vi/ke4lI_1xCrU/mqdefault.jpg   
+           m-9z9M9dsq0  https://i.ytimg.com/vi/m-9z9M9dsq0/mqdefault.jpg   
+           m4w-FV6eERI  https://i.ytimg.com/vi/m4w-FV6eERI/mqdefault.jpg   
+           mK6IdD4GXPo  https://i.ytimg.com/vi/mK6IdD4GXPo/mqdefault.jpg   
+           mxbfx7YXBIo  https://i.ytimg.com/vi/mxbfx7YXBIo/mqdefault.jpg   
+           myl722kHxbU  https://i.ytimg.com/vi/myl722kHxbU/mqdefault.jpg   
+           q5Mc26ihCXc  https://i.ytimg.com/vi/q5Mc26ihCXc/mqdefault.jpg   
+           sRVxPE1cguo  https://i.ytimg.com/vi/sRVxPE1cguo/mqdefault.jpg   
+           sfgTmRiGWWE  https://i.ytimg.com/vi/sfgTmRiGWWE/mqdefault.jpg   
+           w-QoDqBMe2k  https://i.ytimg.com/vi/w-QoDqBMe2k/mqdefault.jpg   
+
+                                                                    Title  \
+Date       ID                                                               
+2018-12-08 -NhZ4ioHb9E  Loss of a Species – A Giant, Extinct | Thomas ...   
+           -guxUgF_eTU          Live Improv Theater | Bake This | TEDxTUM   
+           0NDL0AgRK0c  Deep Learning Beyond Cats and Dogs | Nils Thue...   
+           0qVOUD76JOg   The art of neural networks | Mike Tyka | TEDxTUM   
+           13kgrPyNTfY                 TEDxTUM 2018: Conscious Reflection   
+           1E-QkFUAt5A  Molecular machines of the future | Hendrik Die...   
+           2B91UE0gHps      Acoustic Performance | Peak to Peak | TEDxTUM   
+           36186S-RsKY  Why data should be over-the-counter | Jenny Ra...   
+           3DyrDKYhSi8  The natural way of managing leaders | Erik Rin...   
+           3Xpj5Gj9pgo  What virtual reality can tell us about human n...   
+           3_ZXhYD9QJg  Jenny Rankin Speed Lists all 50 US States | TE...   
+           3uLp0C6G__w  The fascinating intelligence of birds | August...   
+           5U6Cc1hmdY0  A question of survival: Why we hunted the Higg...   
+           5zFOUgtiZeQ                          TEDxTUM Whisper Challenge   
+           62aI5Oy4S4g  The Glue That Holds Society Together | Jürgen ...   
+           68LGsvpn7vk                Q&A Between Sessions | TEDxTUM 2017   
+           6MxbegZtAII  Create a universe out of a single line | Simon...   
+           76pnQkP-xG4  A vision of the responsive city of the future ...   
+           CFHvNNcEIDo  Contemporary & Jazz Dance | Alina Groder & Sun...   
+           D6_J7FfgWVc  6 Steps to Improve Your Emotional Intelligence...   
+           Dbvp5LxY6Kw                                Starstuff | TEDxTUM   
+           EJDpbsvWdsg  Born in Ireland, made in Germany | Mel Kelly |...   
+           FjBsr9w3-Gk                           TEDxTUM 2016 - Entelechy   
+           HCjBM23nQ0s  Robots that learn from us | Dongheui Lee | TED...   
+           IDixuVrDABY  How do we learn from failure? | Dean Shepherd ...   
+           IdRbCJzpIAM         TEDxTUM: Conscious Reflection (Music only)   
+           JR_DmkV4Jlw   Design beyond the shape | Benoit Jacob | TEDxTUM   
+           KCLdryjDl6E  Memory techniques - Your secret weapon in the ...   
+           LQEbC8QfbyU  Robots with muscles: inspired by nature | Rafa...   
+           LjQDLg_KuJg                What you get from attending TEDxTUM   
+...                                                                   ...   
+           PpiVaGPyDG4                        Meet the TEDxTUM 2016 Team!   
+           TEQpfEb8vsE                       TEDxTUM 2015 Organizing Team   
+           U5DoJ_jCt7E  The Robotic Future of Elderly Care | Thomas Bo...   
+           VxQ5R9-Jfm8  The fascinating intelligence of birds | August...   
+           WGPQM1J7Jcw  What Is Inside a Neutron Star? | Laura Fabbiet...   
+           XnQHVXMhzBo                    Opus Epicus | Mandara | TEDxTUM   
+           YPMD7iNZT24                      finding eXploration | TEDxTUM   
+           YTKgizpzmtQ  There can be no human 2.0 without a humanity 2...   
+           Z2TQQhTx6EQ  What I do to live the life I want | Petra Dorf...   
+           Zark1jrC7EU  Personalized health -- harnessing the power of...   
+           ab_yh2HoJ7o  Building our future with synthetic biology | J...   
+           d_eaG5QcA_U                          Team Event | TEDxTUM 2015   
+           fkxl1hSmb28                         The Speaker | TEDxTUM 2016   
+           g17OHKBm50I  Less queuing, more safety - the power of crowd...   
+           gPZc1fZcgL8  Refugees - a homemade challenge | Melusine Rei...   
+           gnK7Lg56DjI  How patient innovation improves lives | Pedro ...   
+           iaemojsQDFw  Laugh, Think, Cry, Laugh Again | Jessamyn Fair...   
+           iq5SLf6xPFQ  Are you living the life you want to live? | Ta...   
+           iuIisjRIcVI  Motivate yourself with visions, goals and will...   
+           k_BVvupSChc  HIV - Curing the Incurable | Daniel Aaron Dona...   
+           ke4lI_1xCrU  Mega events and the developing world | James M...   
+           m-9z9M9dsq0  TEDxTUM 2017 Introduction - Re-Formations of T...   
+           m4w-FV6eERI  The potential of brain stimulation | Sandro Kr...   
+           mK6IdD4GXPo  The time is now for a sustainable food revolut...   
+           mxbfx7YXBIo  TEDxTUM 2017 Ending | Jessamyn Fairfield's com...   
+           myl722kHxbU  Feeling welcomed and empowered | Essraa Nawar ...   
+           q5Mc26ihCXc                              TEDxTUM 2015 - FACETS   
+           sRVxPE1cguo  Stick Up: The layers of tape art | Max Zorn an...   
+           sfgTmRiGWWE      TEDxTUM Re-Formations of Tomorrow Impressions   
+           w-QoDqBMe2k  Medical Augmented Reality: coming soon to (ope...   
+
+                         Views  
+Date       ID                   
+2018-12-08 -NhZ4ioHb9E     806  
+           -guxUgF_eTU    6866  
+           0NDL0AgRK0c     861  
+           0qVOUD76JOg  211263  
+           13kgrPyNTfY    1237  
+           1E-QkFUAt5A     866  
+           2B91UE0gHps     520  
+           36186S-RsKY   10867  
+           3DyrDKYhSi8   10697  
+           3Xpj5Gj9pgo    2438  
+           3_ZXhYD9QJg     336  
+           3uLp0C6G__w   93056  
+           5U6Cc1hmdY0    4222  
+           5zFOUgtiZeQ     336  
+           62aI5Oy4S4g    1301  
+           68LGsvpn7vk     110  
+           6MxbegZtAII     877  
+           76pnQkP-xG4    4729  
+           CFHvNNcEIDo     783  
+           D6_J7FfgWVc  302877  
+           Dbvp5LxY6Kw     107  
+           EJDpbsvWdsg  124077  
+           FjBsr9w3-Gk    3083  
+           HCjBM23nQ0s    5475  
+           IDixuVrDABY   17257  
+           IdRbCJzpIAM      20  
+           JR_DmkV4Jlw    5250  
+           KCLdryjDl6E  383839  
+           LQEbC8QfbyU   12701  
+           LjQDLg_KuJg     291  
+...                        ...  
+           PpiVaGPyDG4     414  
+           TEQpfEb8vsE     510  
+           U5DoJ_jCt7E    1035  
+           VxQ5R9-Jfm8      36  
+           WGPQM1J7Jcw    5670  
+           XnQHVXMhzBo   13072  
+           YPMD7iNZT24     249  
+           YTKgizpzmtQ    2410  
+           Z2TQQhTx6EQ    2117  
+           Zark1jrC7EU    2338  
+           ab_yh2HoJ7o    3153  
+           d_eaG5QcA_U     165  
+           fkxl1hSmb28     997  
+           g17OHKBm50I     372  
+           gPZc1fZcgL8    1723  
+           gnK7Lg56DjI    1792  
+           iaemojsQDFw     934  
+           iq5SLf6xPFQ  222802  
+           iuIisjRIcVI  270699  
+           k_BVvupSChc   18212  
+           ke4lI_1xCrU    3861  
+           m-9z9M9dsq0     275  
+           m4w-FV6eERI    2760  
+           mK6IdD4GXPo   66028  
+           mxbfx7YXBIo     256  
+           myl722kHxbU    7902  
+           q5Mc26ihCXc     402  
+           sRVxPE1cguo    6980  
+           sfgTmRiGWWE     118  
+           w-QoDqBMe2k    6548  
+
+[66 rows x 9 columns],), {}
+2018-12-08 22:50:20,241 INFO Saving data ...
+2018-12-08 22:50:20,248 INFO ...done!
+2018-12-08 22:50:20,248 INFO Saving config ...
+2018-12-08 22:50:20,249 INFO ...done!
