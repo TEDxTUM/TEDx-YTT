@@ -177,7 +177,7 @@ def load_data(filename, indices):
     """
     logging.info(f'Loading old data from {filename}')
     try:
-        df = pd.read_csv(filename, sep=';', encoding='latin-1', parse_dates=['Date'])
+        df = pd.read_csv(filename, sep=';', encoding='utf-8', parse_dates=['Date'])
         df.set_index(indices, inplace=True)
     except FileNotFoundError:
         logging.warning(f'File {filename} does not exist! Continuing without loading old data.')
@@ -347,8 +347,8 @@ if __name__ == '__main__':
     # save data
     logging.info('Saving data ...')
 
-    final_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), sep=';')
-    final_stats_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), sep=';')
+    final_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), sep=';', encoding='utf-8')
+    final_stats_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), sep=';', encoding='utf-8')
     logging.info(f'...done!')
 
     # write config
