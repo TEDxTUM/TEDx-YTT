@@ -35,63 +35,60 @@ def youtube_search(search_term, max_results, client):
     :param client: youtube API client
     :return: Comma separated list of youtube IDs
     """
-    variations = ['', 'Salon', 'Women']
-    videos = []
 
-    for suffix in variations:
-        search_term_s = f'intitle:{search_term}{suffix}'
-        if max_results > 50:
+    if max_results > 50:
+        search_response = client.search().list(
+            q=f'{search_term}*',
+            maxResults=50,
+            part='id,snippet',
+            type='video',
+            channelId='UCsT0YIqwnpJCM-mx7-gSA4Q'
+        ).execute()
+
+        videos = []
+        for search_result in search_response.get('items', []):
+            if SEARCH_TERM.upper() in search_result['snippet']['title'].upper():
+                videos.append(search_result['id']['videoId'])
+
+        token = search_response.get('nextPageToken', None)
+        remaining_results = max_results - 50
+
+        while token is not None and remaining_results > 50:
             search_response = client.search().list(
-                q=f'{search_term_s}',
+                q=f'{search_term}*',
                 maxResults=50,
                 part='id,snippet',
                 type='video',
-                channelId='UCsT0YIqwnpJCM-mx7-gSA4Q'
+                channelId = 'UCsT0YIqwnpJCM-mx7-gSA4Q',
+                pageToken=token
             ).execute()
-
-
+            discard_counter = 0
             for search_result in search_response.get('items', []):
                 if SEARCH_TERM.upper() in search_result['snippet']['title'].upper():
                     videos.append(search_result['id']['videoId'])
+                    logging.debug('Found new video: ' + search_result['snippet']['title'])
+                else:
+                    logging.debug('Discarded video: ' + search_result['snippet']['title'])
+                    discard_counter += 1
+
+            logging.debug(f'Discarded video count:{discard_counter}')
 
             token = search_response.get('nextPageToken', None)
             remaining_results = max_results - 50
-            logging.debug(f'Remaining Search Results 1: {remaining_results}')
 
-            while token is not None and remaining_results > 50:
-                search_response = client.search().list(
-                    q=f'{search_term_s}',
-                    maxResults=50,
-                    part='id,snippet',
-                    type='video',
-                    channelId = 'UCsT0YIqwnpJCM-mx7-gSA4Q',
-                    pageToken=token
-                ).execute()
-                discard_counter = 0
-                for search_result in search_response.get('items', []):
-                    if SEARCH_TERM.upper() in search_result['snippet']['title'].upper():
-                        videos.append(search_result['id']['videoId'])
-                        logging.debug('Found new video: ' + search_result['snippet']['title'])
-                    else:
-                        logging.debug('Discarded video: ' + search_result['snippet']['title'])
-                        discard_counter += 1
+    else:
+        search_response = client.search().list(
+            q=search_term,
+            maxResults=max_results,
+            part='id,snippet',
+            type='video',
+            channelId='UCsT0YIqwnpJCM-mx7-gSA4Q'
+        ).execute()
+        videos = []
 
-                logging.debug(f'Discarded video count:{discard_counter}')
-
-                token = search_response.get('nextPageToken', None)
-                remaining_results = remaining_results - 50
-                logging.debug(f'Remaining Search Results 2: {remaining_results}')
-
-        else:
-            search_response = client.search().list(
-                q=f'{search_term_s}',
-                maxResults=max_results,
-                part='id,snippet',
-                type='video',
-                channelId = 'UCsT0YIqwnpJCM-mx7-gSA4Q'
-            ).execute()
-            videos = []
-
+        for search_result in search_response.get('items', []):
+            if 'TEDXTUM' in search_result['snippet']['title'].upper():
+                videos.append(search_result['id']['videoId'])
 
 
     return '\n'.join(videos)
