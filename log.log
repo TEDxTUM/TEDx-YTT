@@ -1,5 +1,5 @@
-2018-12-09 02:18:47,347 INFO Save directory: C:\Users\Julian\GitHub\TEDx-YTT
-2018-12-09 02:18:47,350 WARNING file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
+2018-12-09 16:51:56,348 INFO Save directory: C:\Users\Julian\GitHub\TEDx-YTT
+2018-12-09 16:51:56,351 WARNING file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
 Traceback (most recent call last):
   File "C:\Users\Julian\Anaconda3\lib\site-packages\googleapiclient\discovery_cache\__init__.py", line 36, in autodetect
     from google.appengine.api import memcache
@@ -27,604 +27,605 @@ Traceback (most recent call last):
   File "C:\Users\Julian\Anaconda3\lib\site-packages\googleapiclient\discovery_cache\file_cache.py", line 41, in <module>
     'file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth')
 ImportError: file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
-2018-12-09 02:18:47,351 INFO URL being requested: GET https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest
-2018-12-09 02:18:48,826 INFO TRACE: Calling load_data() with ('C:\\Users\\Julian\\GitHub\\TEDx-YTT\\tedx-ytt-output.csv', ['Date', 'ID']), {}
-2018-12-09 02:18:48,826 INFO Loading old data from C:\Users\Julian\GitHub\TEDx-YTT\tedx-ytt-output.csv
-2018-12-09 02:18:48,827 WARNING File C:\Users\Julian\GitHub\TEDx-YTT\tedx-ytt-output.csv does not exist! Continuing without loading old data.
-2018-12-09 02:18:48,827 INFO ...done!
-2018-12-09 02:18:48,827 INFO TRACE: load_data() finished
-2018-12-09 02:18:48,827 INFO TRACE: Calling youtube_search() with ('TEDxTUM', 400), {'client': <googleapiclient.discovery.Resource object at 0x000002209B9E1278>}
-2018-12-09 02:18:48,829 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:49,304 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CDIQAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:49,628 DEBUG Discarded video: How to Read a Book a Day | Jordan Harry | TEDxBathUniversity
-2018-12-09 02:18:49,629 DEBUG Found new video: A question of survival: Why we hunted the Higgs | Steven Goldfarb | TEDxTUM
-2018-12-09 02:18:49,629 DEBUG Found new video: Design beyond the shape | Benoit Jacob | TEDxTUM
-2018-12-09 02:18:49,629 DEBUG Found new video: A vision of the responsive city of the future | Gerhard Schmitt | TEDxTUM
-2018-12-09 02:18:49,629 DEBUG Found new video: Laugh, Think, Cry, Laugh Again | Jessamyn Fairfield | TEDxTUM
-2018-12-09 02:18:49,630 DEBUG Found new video: Using tiny magnets for computation | Markus Becherer | TEDxTUMSalon
-2018-12-09 02:18:49,630 DEBUG Discarded video: How to Find Your Passion and Make it Your Job | Emma Rosen | TEDxYouth@Manchester
-2018-12-09 02:18:49,630 DEBUG Found new video: Medical Augmented Reality: coming soon to (operating) theaters near you | Nassir Navab | TEDxTUM
-2018-12-09 02:18:49,630 DEBUG Discarded video: Germany: Low Crime, Clean Prisons, Lessons for America | Jeff Rosen | TEDxMountainViewHighSchool
-2018-12-09 02:18:49,631 DEBUG Discarded video: Paying Attention & Mindfulness | Sam Chase | TEDxNYU
-2018-12-09 02:18:49,631 DEBUG Discarded video: How to draw to remember more | Graham Shaw | TEDxVienna
-2018-12-09 02:18:49,631 DEBUG Discarded video: How to manage your mental health | Leon Taylor | TEDxClapham
-2018-12-09 02:18:49,631 DEBUG Discarded video: Reimagining compassion as power | Tim Dawes | TEDxSeattle
-2018-12-09 02:18:49,632 DEBUG Discarded video: The psychology of self-motivation | Scott Geller | TEDxVirginiaTech
-2018-12-09 02:18:49,632 DEBUG Discarded video: Change Your Mindset and Achieve Anything | Colin O'Brady | TEDxPortland
-2018-12-09 02:18:49,632 DEBUG Discarded video: One simple idea to improve mental well-being worldwide | Ben Channon | TEDxCardiffUniversity
-2018-12-09 02:18:49,632 DEBUG Discarded video: The People Currency: Practicing Emotional Intelligence | Jason Bridges | TEDxWabashCollege
-2018-12-09 02:18:49,633 DEBUG Discarded video: Supermassive black holes: most powerful objects in the universe | Martin Gaskell | TEDxMeritAcademy
-2018-12-09 02:18:49,633 DEBUG Discarded video: Want to learn better? Start mind mapping | Hazel Wagner | TEDxNaperville
-2018-12-09 02:18:49,633 DEBUG Discarded video: All the lonely people | Karen Dolva | TEDxArendal
-2018-12-09 02:18:49,633 DEBUG Discarded video: Adult bullying: The epidemic no one talks about | Kevin Ward | TEDxSantaBarbara
-2018-12-09 02:18:49,634 DEBUG Discarded video: Reconsider the way you live. Get more time for what you love. | Nayana Mawilmada | TEDxKandy
-2018-12-09 02:18:49,634 DEBUG Discarded video: Emotional laws are the answer for better relationships: Diana Wais at TEDxThessaloniki
-2018-12-09 02:18:49,634 DEBUG Discarded video: Just Give Up. It's for the Best. | Bri Hall | TEDxBethesda
-2018-12-09 02:18:49,634 DEBUG Discarded video: Great leadership comes down to only two rules | Peter Anderton | TEDxDerby
-2018-12-09 02:18:49,635 DEBUG Discarded video: Self-Love, be Intentional | Caitlyn Roux | TEDxYouth@CapeTown
-2018-12-09 02:18:49,635 DEBUG Discarded video: Own Your Behaviours, Master Your Communication, Determine Your Success | Louise Evans | TEDxGenova
-2018-12-09 02:18:49,635 DEBUG Discarded video: The Power of Emotional Intelligence | Travis Bradberry | TEDxUCIrvine
-2018-12-09 02:18:49,635 DEBUG Discarded video: Cliteracy | Sophia Wallace | TEDxSalford
-2018-12-09 02:18:49,635 DEBUG Discarded video: Historical myths | Dr. John van Wyhe | TEDxNUS
-2018-12-09 02:18:49,636 DEBUG Discarded video: Stop trying so hard. Achieve more by doing less. | Bethany Butzer | TEDxUNYP
-2018-12-09 02:18:49,636 DEBUG Discarded video: Can we make quantum technology work? | Leo Kouwenhoven | TEDxAmsterdam
-2018-12-09 02:18:49,636 DEBUG Discarded video: Clarity in the Future Through Self-Reflection | Victoria Herrera | TEDxLyceumPhilippinesUniversity
-2018-12-09 02:18:49,636 DEBUG Discarded video: Emotional Mastery: The Gifted Wisdom of Unpleasant Feelings | Dr Joan Rosenberg | TEDxSantaBarbara
-2018-12-09 02:18:49,637 DEBUG Discarded video: Become who you really are | Andrea Pennington | TEDxIUM
-2018-12-09 02:18:49,637 DEBUG Discarded video: Alien worlds and extraterrestrial life – where are they?! | Brad Gibson | TEDxHull
-2018-12-09 02:18:49,637 DEBUG Discarded video: Make Emotional Intelligence Great Again | Janice Gassam | TEDxHofstraUniversity
-2018-12-09 02:18:49,637 DEBUG Discarded video: The ideal business plan | George Koukis | TEDxChalkida
-2018-12-09 02:18:49,637 DEBUG Discarded video: Girl Up: The Secrets to an Extraordinary Life | Courtney Ferrell | TEDxRVA
-2018-12-09 02:18:49,637 DEBUG Discarded video: Self-Transformation Through Mindfulness | Dr. David Vago | TEDxNashville
-2018-12-09 02:18:49,638 DEBUG Discarded video: A visual diary: On dementia and caregiving | Tony Luciani | TEDxCambridge
-2018-12-09 02:18:49,638 DEBUG Discarded video: The Happiness Meter | Jesse Itzler | TEDxHickory
-2018-12-09 02:18:49,638 DEBUG Discarded video: When art collides with data | Carrie Roy | TEDxMileHighWomen
-2018-12-09 02:18:49,638 DEBUG Discarded video: FINDING AWE  IN LIFE | Hafid Ghori | TEDxYouth@TWSDubai
-2018-12-09 02:18:49,638 DEBUG Discarded video: Empathy + Gratitude = Success | David Meltzer | TEDxMissionViejo
-2018-12-09 02:18:49,639 DEBUG Discarded video: How to become a memory master | Idriz Zogaj | TEDxGoteborg
-2018-12-09 02:18:49,639 DEBUG Discarded video: What facing 200 prison years taught me about happiness | Shaun Attwood | TEDxHSG
-2018-12-09 02:18:49,639 DEBUG Discarded video: MIND MAPPING FOR EDUCATION | Mayumbula Michael Chikwililwa | TEDxUniversityofNamibia
-2018-12-09 02:18:49,639 DEBUG Discarded video: Doers, Dreamers, and the Differences Between Them | Joshua York | TEDxLivoniaCCLibrary
-2018-12-09 02:18:49,639 DEBUG Discarded video: 7 things to do before you graduate college | Liz Wessel | TEDxRutgers
-2018-12-09 02:18:49,640 DEBUG Discarded video count:44
-2018-12-09 02:18:49,641 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CGQQAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:49,964 DEBUG Discarded video: Dealing with a Heartbreak - From Negative to Positive | Ravinder Singh | TEDxThaparUniversity
-2018-12-09 02:18:49,964 DEBUG Discarded video: Re-evolve Your Memory | Dr. Tharaka Gunarathne | TEDxUniversityOfAberdeen
-2018-12-09 02:18:49,964 DEBUG Discarded video: Why you feel what you feel | Alan Watkins | TEDxOxford
-2018-12-09 02:18:49,964 DEBUG Discarded video: Wie man aus Scheiße Bonbons macht | Fabian Wichmann | TEDxMünchen
-2018-12-09 02:18:49,965 DEBUG Discarded video: Words: Your Most Powerful Weapon | Evy Poumpouras | TEDxStLouisWomen
-2018-12-09 02:18:49,965 DEBUG Discarded video: The Rise of Artificial Intelligence through Deep Learning | Yoshua Bengio | TEDxMontreal
-2018-12-09 02:18:49,965 DEBUG Discarded video: Putting the 'Human' Back in H.I.V. | Arik Hartmann | TEDxVermilionStreet
-2018-12-09 02:18:49,965 DEBUG Discarded video: Want to improve your memory-Do this everyday | Krishan Chahal | TEDxMMUSadopurAmbala
-2018-12-09 02:18:49,965 DEBUG Discarded video: "How We've Been Misled by 'Emotional Intelligence'" | Kris Girrell | TEDxNatick
-2018-12-09 02:18:49,965 DEBUG Discarded video: Ending the pursuit of perfection | Iskra Lawrence | TEDxUniversityofNevada
-2018-12-09 02:18:49,965 DEBUG Discarded video: Ways to improve your Memory | Prateek Yadav | TEDxUPES
-2018-12-09 02:18:49,967 DEBUG Discarded video: A Memory Without Limits: Prof. Giuliana Mazzoni at TEDxHull
-2018-12-09 02:18:49,967 DEBUG Discarded video: Ireland, tourism, language: Will Notini at TEDxGallatin
-2018-12-09 02:18:49,967 DEBUG Discarded video: The light and dark of emotional intelligence | Alison Bacon | TEDxPlymouthUniversity
-2018-12-09 02:18:49,967 DEBUG Discarded video: Telephone spam/scam problem? Bring in the robots. | Roger Anderson | TEDxNaperville
-2018-12-09 02:18:49,967 DEBUG Discarded video: Improvisation exercises (part 1): Vicky Saye Henderson at TEDxColumbiaSC
-2018-12-09 02:18:49,967 DEBUG Discarded video: Stop Waiting for Life to Happen | Peter Sage | TEDxKlagenfurt
-2018-12-09 02:18:49,967 DEBUG Discarded video: What Raising 12 Million Dollars Taught Me | Brooke Linville | TEDxBoise
-2018-12-09 02:18:49,968 DEBUG Discarded video: I Like Myself, America and You Can't Stop Me. | Quinta Brunson | TEDxUCSD
-2018-12-09 02:18:49,968 DEBUG Discarded video: The Invisible Force - self-image – enables you to achieve great goals | Dan Lok | TEDxStanleyPark
-2018-12-09 02:18:49,968 DEBUG Discarded video: How do smart people make smart decisions? | Gerd Gigerenzer | TEDxNorrköping
-2018-12-09 02:18:49,968 DEBUG Discarded video: We find each other in the details | Olivia Gatwood | TEDxABQ
-2018-12-09 02:18:49,968 DEBUG Discarded video: The hidden power of not (always) fitting in. | Marianne Cantwell | TEDxNorwichED
-2018-12-09 02:18:49,968 DEBUG Discarded video: Feelings: Handle them before they handle you | Mandy Saligari | TEDxGuildford
-2018-12-09 02:18:49,968 DEBUG Discarded video: You’ve been warned! | The Warning | TEDxUniversityofNevada
-2018-12-09 02:18:49,968 DEBUG Discarded video: Everything is Connected -- Here's How: | Tom Chi | TEDxTaipei
-2018-12-09 02:18:49,968 DEBUG Discarded video: What animals are thinking and feeling, and why it should matter | Carl Safina | TEDxMidAtlantic
-2018-12-09 02:18:49,968 DEBUG Discarded video: Your roots are there to help you | Rozmari De Meo | TEDxVitosha
-2018-12-09 02:18:49,968 DEBUG Discarded video: How I memorize piano music | Jocelyn Swigger | TEDxGettysburgCollege
-2018-12-09 02:18:49,969 DEBUG Discarded video: Conquering Fear | Geoff Thompson | TEDxLeamingtonSpa
-2018-12-09 02:18:49,969 DEBUG Discarded video: The Deep End of Deep Learning | Hugo Larochelle | TEDxBoston
-2018-12-09 02:18:49,969 DEBUG Discarded video: Natural Bodybuilding: Become the best version of yourself | Mischa Janiec | TEDxHSG
-2018-12-09 02:18:49,969 DEBUG Discarded video: Higgs Boson - What You Don't Know: Dan Hooper, Ph.D. at TEDxNaperville
-2018-12-09 02:18:49,970 DEBUG Discarded video: What does the Quran really say about a Muslim woman's hijab? | Samina Ali | TEDxUniversityofNevada
-2018-12-09 02:18:49,970 DEBUG Discarded video: Memory -- Unlocked | Chester Lian | TEDxYouth@BeaconStreet
-2018-12-09 02:18:49,970 DEBUG Discarded video: Synthetic biology - what should we be vibrating about?: Drew Endy at TEDxStanford
-2018-12-09 02:18:49,970 DEBUG Discarded video: How dogs love us | Dr. Gregory Berns | TEDxAtlanta
-2018-12-09 02:18:49,970 DEBUG Discarded video: What if Schools Taught Us How to Learn | Jonathan Levi | TEDxWhiteCity
-2018-12-09 02:18:49,970 DEBUG Discarded video: I’m Mexican. Does that change your assumptions about me? | Vanessa Vancour | TEDxUniversityofNevada
-2018-12-09 02:18:49,970 DEBUG Discarded video: Willpower | Evelyne Binsack | TEDxZurich
-2018-12-09 02:18:49,970 DEBUG Discarded video: Draw like a child; see like a master | Kate Hayward | TEDxSanAntonio
-2018-12-09 02:18:49,970 DEBUG Discarded video: How to stop your thoughts from controlling your life | Albert Hobohm | TEDxKTH
-2018-12-09 02:18:49,970 DEBUG Discarded video: Memory and the Elastic Brain | Hillary Schwarb | TEDxUIUC
-2018-12-09 02:18:49,970 DEBUG Discarded video: What is Narcissism | Satinder Brar | TEDxMilton
-2018-12-09 02:18:49,971 DEBUG Discarded video: What can we learn from the world's "most humane" prison? | Ryan Cox | TEDxSanAntonio 2013
-2018-12-09 02:18:49,971 DEBUG Discarded video: Ich esse Fleisch! | Frank Kühne | TEDxFrankfurt
-2018-12-09 02:18:49,971 DEBUG Discarded video: The power of kindness | Orly Wahba | TEDxStPeterPort
-2018-12-09 02:18:49,971 DEBUG Discarded video count:50
-2018-12-09 02:18:49,972 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CJYBEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:50,325 DEBUG Discarded video: Why What We Feel Matters More Than What We Think. | Natasha Sharma | TEDxStMaryCSSchool
-2018-12-09 02:18:50,325 DEBUG Discarded video: My way of improving students' memory skills | Serdar Arat | TEDxEdgemontSchool
-2018-12-09 02:18:50,326 DEBUG Discarded video: Empowerment through confidence | Harnaam Kaur | TEDxWarwick
-2018-12-09 02:18:50,326 DEBUG Discarded video: The internet of things | Jordan Duffy | TEDxSouthBank
-2018-12-09 02:18:50,326 DEBUG Discarded video: The neuroscience of social intelligence: Bill von Hippel at TEDxUQ 2014
-2018-12-09 02:18:50,326 DEBUG Discarded video: Omnichannel: Retail (R)evolution | Kilian Wagner | TEDxHSG
-2018-12-09 02:18:50,326 DEBUG Discarded video: HIV cure: what lies beneath? | Dr Virginie Gautier | TEDxUCD
-2018-12-09 02:18:50,326 DEBUG Discarded video: Acting more rational - changing our automatic behavior | Ashley Zahabian | TEDxStanleyPark
-2018-12-09 02:18:50,326 DEBUG Discarded video: Believe in Yourself First | Mohammed AlMuftada | TEDxOMC
-2018-12-09 02:18:50,327 DEBUG Discarded video: Failure is knowledge, knowledge is success | Tim Gibson | TEDxGriffithUniversity
-2018-12-09 02:18:50,327 DEBUG Discarded video: Grenzen im Kopf | Tina Weinmayer | TEDxStuttgart
-2018-12-09 02:18:50,327 DEBUG Discarded video: What we can learn from building on mars | Peter Zurbrügg | TEDxLausanne
-2018-12-09 02:18:50,327 DEBUG Discarded video: Artificial Intelligence and the future | André LeBlanc | TEDxMoncton
-2018-12-09 02:18:50,327 DEBUG Discarded video: The Power of a Pet | Rustin Moore | TEDxOhioStateUniversity
-2018-12-09 02:18:50,327 DEBUG Discarded video: Neutron Stars: Beyond Ordinary Stellar Objects | Arnau Rios Huguet | TEDxSurreyUniversity
-2018-12-09 02:18:50,327 DEBUG Discarded video: Emotions are Contagious: Spreading Emotional Intelligence | Joelle Hadley | TEDxArrowheadRanch
-2018-12-09 02:18:50,328 DEBUG Discarded video: Life's way too short not to live your Bucket List | Travis Bell | TEDxMelbourne
-2018-12-09 02:18:50,328 DEBUG Discarded video: The world's smartest animals | Mathias Osvath | TEDxLundUniversity
-2018-12-09 02:18:50,328 DEBUG Discarded video: A guide to believing in yourself (but for real this time) | Catherine Reitman | TEDxToronto
-2018-12-09 02:18:50,328 DEBUG Discarded video: Not What but Why: Machine Learning for Understanding Genomics | Barbara Engelhardt | TEDxBoston
-2018-12-09 02:18:50,328 DEBUG Discarded video: The Ties that Bind: One Health | Sharon Deem | TEDxGatewayArchSalon
-2018-12-09 02:18:50,328 DEBUG Discarded video: The Tor Project, protecting online anonimity: Jacob Appelbaum at TEDxFlanders
-2018-12-09 02:18:50,328 DEBUG Discarded video: Opening Doors for Refugees in the IT Industry | Christian Hirsig | TEDxZurich
-2018-12-09 02:18:50,328 DEBUG Discarded video: The Physics of Music | Nitin Sawhney & Nicki Wells | TEDxGateway
-2018-12-09 02:18:50,329 DEBUG Discarded video: Distraction is literally killing us | Paul Atchley | TEDxYouth@KC
-2018-12-09 02:18:50,329 DEBUG Discarded video: What is after the 4th dimension? | Baher Shehata | TEDxQatarUniversity
-2018-12-09 02:18:50,329 DEBUG Discarded video: PrEP for HIV Prevention:  The Best Worst Kept Secret | Raphael Landovitz | TEDxUCLA
-2018-12-09 02:18:50,329 DEBUG Discarded video: The art of improvisation: Steve Matuszak at TEDxVirginiaTech
-2018-12-09 02:18:50,329 DEBUG Discarded video: Is Your Memory Just an Illusion? | A Tua Memória é Apenas Uma Ilusão? | Julia Shaw | TEDxPorto
-2018-12-09 02:18:50,329 DEBUG Discarded video: Live Life to the fullest | Nick Martin | TEDxFHKufstein
-2018-12-09 02:18:50,329 DEBUG Discarded video: Medical Errors: The Silent Killer in Medicine | Carol Gunn | TEDxFargo
-2018-12-09 02:18:50,329 DEBUG Discarded video: Are Emotions Contagious in the Workplace? | Brandon Smith | TEDxEmory
-2018-12-09 02:18:50,330 DEBUG Discarded video: Techniques to Enhance Learning and Memory | Nancy D. Chiaravalloti | TEDxHerndon
-2018-12-09 02:18:50,330 DEBUG Discarded video: Learning from failure | David Damberger | TEDxYYC
-2018-12-09 02:18:50,330 DEBUG Discarded video: Curing a Disease Called Stigma | Mark Lacsamana | TEDxTaftAve
-2018-12-09 02:18:50,330 DEBUG Discarded video: The mind and methods of a Memory Champion | Boris Nikolai Konrad | TEDxStrijp
-2018-12-09 02:18:50,330 DEBUG Discarded video: Life Inside an Eating Disorder | Alexa Petropoulos | TEDxGrossePointeSouthHS
-2018-12-09 02:18:50,330 DEBUG Discarded video: Will care robots care? | Astrid Weiss | TEDxTUWien
-2018-12-09 02:18:50,330 DEBUG Discarded video: How People Crush Fears and Expand Comfort Zones | Corey Poirier | TEDxCanmore
-2018-12-09 02:18:50,331 DEBUG Discarded video: Beyond mute | Shaela Niles | TEDxSnoIsleLibraries
-2018-12-09 02:18:50,331 DEBUG Discarded video: Wer bin ich - und wenn ja, wo? | Leonie Müller | TEDxKoeln
-2018-12-09 02:18:50,331 DEBUG Discarded video: Why should technology care about us? | Andrew Doherty | TEDxFrankfurt
-2018-12-09 02:18:50,331 DEBUG Discarded video: Advancing the treatment of HIV/AIDS until there is a cure: Jim Demarest at TEDxElonUniversity
-2018-12-09 02:18:50,331 DEBUG Discarded video: Instantly recalling understanding: Kevin Horsley at TEDxPretoria
-2018-12-09 02:18:50,331 DEBUG Discarded video: AI Is Eating Our World | Fabian Westerheide | TEDxHeidelberg
-2018-12-09 02:18:50,332 DEBUG Discarded video: Music For Hang: Davide Swarup at TEDxSalford
-2018-12-09 02:18:50,333 DEBUG Discarded video: How to control emotion and influence behavior | Dawn Goldworm | TEDxEast
-2018-12-09 02:18:50,333 DEBUG Discarded video: Master Your Stress | Gina Van Luven | TEDxAPUKL
-2018-12-09 02:18:50,333 DEBUG Discarded video: Augmented Reality, science fiction is now science fact | Ryan Groom | TEDxMoncton
-2018-12-09 02:18:50,333 DEBUG Discarded video count:50
-2018-12-09 02:18:50,334 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CMgBEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:50,654 DEBUG Discarded video: Adventure is now | Victor Morgan | TEDxHSG
-2018-12-09 02:18:50,654 DEBUG Discarded video: The Forgotten Virus (HIV-2) | Mohamed Mahdi | TEDxDebrecenUniversity
-2018-12-09 02:18:50,654 DEBUG Discarded video: I would rather have HIV than a broken leg: Edward O'Bryan at TEDxCharleston
-2018-12-09 02:18:50,654 DEBUG Discarded video: Are You Addicted to Learning? | Hélio Vogas | TEDxFSUJena
-2018-12-09 02:18:50,654 DEBUG Discarded video: Too Much Confidence Is NOT Your Problem | Dre Baldwin | TEDxUNLV
-2018-12-09 02:18:50,654 DEBUG Found new video: Molecular machines of the future | Hendrik Dietz | TEDxTUMSalon
-2018-12-09 02:18:50,654 DEBUG Discarded video: Self-Awareness, Influence, and Partnerships | Anton Rabie | TEDxYouth@Toronto
-2018-12-09 02:18:50,654 DEBUG Discarded video: How to live life like you're dying | Patrick Condon | TEDxURI
-2018-12-09 02:18:50,654 DEBUG Discarded video: Three Experiments of My Life | Saveen Hegde | TEDxMSRIT
-2018-12-09 02:18:50,655 DEBUG Discarded video: Ocean Acidification in Washington State: Shallin Busch, PhD at TEDxTheEvergreenStateCollege
-2018-12-09 02:18:50,655 DEBUG Discarded video: Engineered in Your Imagination | Danielle George | TEDxYouth@Manchester
-2018-12-09 02:18:50,655 DEBUG Discarded video: The Food Truck Of Tomorrow | Samay Bansal | TEDxUWCSEA
-2018-12-09 02:18:50,655 DEBUG Discarded video: The light side of the dark side. | Iona Macgregor | TEDxMelbourne
-2018-12-09 02:18:50,655 DEBUG Discarded video: Why social-emotional intelligence matters in school | Kate Karafotas | TEDxYouth@ISPrague
-2018-12-09 02:18:50,655 DEBUG Discarded video: The Science of Living | Dave Fuehrer | TEDxRochester
-2018-12-09 02:18:50,655 DEBUG Discarded video: Animal Welfare and the Future of Zoos | Ron Kagan | TEDxOaklandUniversity
-2018-12-09 02:18:50,655 DEBUG Discarded video: New isn't easy: Henrik Fisker at TEDxChapmanU
-2018-12-09 02:18:50,655 DEBUG Discarded video: The truth about the food you are eating - or think you are | Mats-Eric Nilsson | TEDxStockholmSalon
-2018-12-09 02:18:50,655 DEBUG Discarded video: The Effects of 3D Printing and Open Source on Prosthetics | Lee Cleaveland | TEDxMSU
-2018-12-09 02:18:50,655 DEBUG Discarded video: Irish on purpose: Shaun Leonard at TEDxUNLV
-2018-12-09 02:18:50,655 DEBUG Discarded video: Do animals think and feel? | Sy Montgomery | TEDxAmoskeagMillyard
-2018-12-09 02:18:50,656 DEBUG Discarded video: How to die happy | Madlena Komitova | TEDxVitosha
-2018-12-09 02:18:50,656 DEBUG Discarded video: Rethinking Smart Cities | Nigel Jacob | TEDxBermuda
-2018-12-09 02:18:50,656 DEBUG Discarded video: How to make a neural network in your bedroom | Brittany Wenger |a TEDxCERN
-2018-12-09 02:18:50,656 DEBUG Discarded video: The Art of Negotiation | Maria Ploumaki | TEDxYouth@Zurich
-2018-12-09 02:18:50,656 DEBUG Discarded video: Embracing Failure: Kola Karim at TEDxLagos
-2018-12-09 02:18:50,656 DEBUG Discarded video: Overcoming FEAR & Taking Risks | Martha Namundjebo Tilahun | TEDxUniversityofNamibia
-2018-12-09 02:18:50,656 DEBUG Discarded video: Freedom and the Third Brain | Michael Sanders | TEDxSanJuanIsland
-2018-12-09 02:18:50,656 DEBUG Discarded video: Does video gaming ruin people's lives? | Antonius van Rooij | TEDxGhent
-2018-12-09 02:18:50,656 DEBUG Discarded video: Swipe left for sex: love & HIV in the age of Grindr | Scott Fried | TEDxPSU
-2018-12-09 02:18:50,656 DEBUG Discarded video: Courage - The Missing Link in Emotional Intelligence: Dr. Paul Wieand at TEDxLehighRiver
-2018-12-09 02:18:50,656 DEBUG Discarded video: How can we change education now | Hashem Al-Ghaili | TEDxZagreb
-2018-12-09 02:18:50,656 DEBUG Discarded video: Adaptability creates opportunities | Jasper Reid | TEDxFMS
-2018-12-09 02:18:50,657 DEBUG Discarded video: Improvisation exercises (part 3): Vicky Saye Henderson at TEDxColumbiaSC
-2018-12-09 02:18:50,657 DEBUG Discarded video: Are All Plastics Created Evil? | Rannveig Magnúsdóttir | TEDxReykjavik
-2018-12-09 02:18:50,657 DEBUG Discarded video: Improvisation exercises (part 2): Vicky Saye Henderson at TEDxColumbiaSC
-2018-12-09 02:18:50,657 DEBUG Discarded video: Emotional Intelligence- The Skills Our Students Deserve | Ronen Habib | TEDxGunnHighSchool
-2018-12-09 02:18:50,657 DEBUG Discarded video: What if we helped refugees to help themselves? | Alexander Betts | TEDxVienna
-2018-12-09 02:18:50,657 DEBUG Discarded video: Millennials as Spiritual Free Agents | Steve Miller | TEDxUSD
-2018-12-09 02:18:50,657 DEBUG Discarded video: Let's Talk About Ugly Vegetables And Fruits | Mike Meinhardt | TEDxUniversityofNevada
-2018-12-09 02:18:50,657 DEBUG Discarded video: Using Brain Stimulation to Treat Symptoms of Parkinson’s Disease | Nga Chau | TEDxLancaster
-2018-12-09 02:18:50,657 DEBUG Discarded video: The art of memory: Daniel Kilov at TEDxMacquarieUniversity
-2018-12-09 02:18:50,657 DEBUG Discarded video: Lets Allow a Fair Trade in Kidneys | Frederike Ambagtsheer | TEDxAmsterdam
-2018-12-09 02:18:50,657 DEBUG Discarded video: Venn Diagram Religions An Interfaith Approach to Coexist | Timur Saka | TEDxOnondagaCommunityCollege
-2018-12-09 02:18:50,658 DEBUG Discarded video: 8 Days A Week...Live By Design, Not By Default | Adam Cobb | TEDxSantaBarbara
-2018-12-09 02:18:50,658 DEBUG Discarded video: An open letter: Making hard choices | Sai Tamhankar | TEDxNMIMSHyderabad
-2018-12-09 02:18:50,658 DEBUG Discarded video: Lessons for life from an improvised musical  | The Showstoppers | TEDxWhitehall
-2018-12-09 02:18:50,658 DEBUG Discarded video: How art & technology predict the future | Andrew McWilliams | TEDxVilnius
-2018-12-09 02:18:50,658 DEBUG Discarded video: Digital freedom: Virtual reality, avatars, and multiple identities: Jim Blascovich at TEDxWinnipeg
-2018-12-09 02:18:50,658 DEBUG Discarded video: Cultural intelligence: the competitive edge for leaders | Julia Middleton | TEDxEastEnd
-2018-12-09 02:18:50,658 DEBUG Discarded video count:49
-2018-12-09 02:18:50,659 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CPoBEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:51,043 DEBUG Discarded video: Wie Gründer geboren werden | Michael M. Gielnik | TEDxLeuphanaUniversityLüneburg
-2018-12-09 02:18:51,044 DEBUG Discarded video: Train your senses to learn faster | Martin Spang Olsen | TEDxCopenhagenSalon
-2018-12-09 02:18:51,044 DEBUG Discarded video: Real change through virtual reality | David Sackman | TEDxEastEnd
-2018-12-09 02:18:51,044 DEBUG Discarded video: Beauty works -- objectivity, aesthetics & design | Mark Rigley | TEDxKanata
-2018-12-09 02:18:51,044 DEBUG Discarded video: Alzheimer and memory palaces: Kasper Bormans at TEDxLeuven
-2018-12-09 02:18:51,044 DEBUG Discarded video: Green technologies for the future: biomimetics in architecture | Barbara Widera | TEDxWSB
-2018-12-09 02:18:51,044 DEBUG Discarded video: The gardeners of the forest | Ian Redmond | TEDxSouthamptonUniversity
-2018-12-09 02:18:51,044 DEBUG Discarded video: Nature of the Graviton | Claudia de Rham | TEDxCLESalon
-2018-12-09 02:18:51,045 DEBUG Discarded video: Choosing to be a ‘Jack of All Trades’ | Dr. Jonathan Griffiths | TEDxNantwich
-2018-12-09 02:18:51,045 DEBUG Discarded video: Walking and Running: Bio-Inspired Robotics | Jonathan Hurst | TEDxOregonStateU
-2018-12-09 02:18:51,045 DEBUG Discarded video: Increase your self-awareness with one simple fix | Tasha Eurich | TEDxMileHigh
-2018-12-09 02:18:51,045 DEBUG Discarded video: Changing the Human Story with CRISPR-Cas9 | Elaine Shults | TEDxCU
-2018-12-09 02:18:51,045 DEBUG Discarded video: Why SMART goals are only HALF smart | Osamede Arhunmwunde | TEDxUniversityofWinnipeg
-2018-12-09 02:18:51,045 DEBUG Discarded video: I am HIV-positive. So what? | Avin Tan | TEDxNTU
-2018-12-09 02:18:51,045 DEBUG Discarded video: From Syria to Germany in three stories | Kareem Kousa, Yusuf Zein & Ibrahim Andrun | TEDxStGeorg
-2018-12-09 02:18:51,045 DEBUG Discarded video: What if we could talk to animals? | Pea Horsley | TEDxLimassol
-2018-12-09 02:18:51,045 DEBUG Discarded video: TEDxAdelaide - Michelle McDonnell - Transcranial Magnetic Stimulation
-2018-12-09 02:18:51,045 DEBUG Discarded video: High-Tech High-Spirits | Mette Sillesen | TEDxOdense
-2018-12-09 02:18:51,046 DEBUG Discarded video: Improv comedy will change the world | Jennifer Hunter | TEDxLSSU
-2018-12-09 02:18:51,046 DEBUG Discarded video: Robots, spaceships, and greeblies -- build your dream: Chris Lee at TEDxNashville
-2018-12-09 02:18:51,046 DEBUG Discarded video: How we founded Lonely Planet | Tony Wheeler | TEDxSingapore
-2018-12-09 02:18:51,046 DEBUG Discarded video: National Service Can Make America Great Again | Joe Kearns Goodwin | TEDxBeaconStreet
-2018-12-09 02:18:51,046 DEBUG Discarded video: Dreams givers | Her Vang | TEDxYouth@Bonn
-2018-12-09 02:18:51,046 DEBUG Discarded video: Synthetic muscle from nano and the rubber band | Richard Spontak | TEDxNCSU
-2018-12-09 02:18:51,046 DEBUG Discarded video: La importancia de crecer | Alicia Coronil | TEDxUDeustoMadrid
-2018-12-09 02:18:51,046 DEBUG Discarded video: How to Enjoy & Remember Every Lecture | Eran Katz | TEDxWhiteCity
-2018-12-09 02:18:51,046 DEBUG Discarded video: New Technologies for the Treatment of Mental Health | Chip Fisher | TEDxBeaconStreet
-2018-12-09 02:18:51,046 DEBUG Discarded video: View from above | Ernesto Gainza | TEDxLjubljana
-2018-12-09 02:18:51,046 DEBUG Discarded video: Rethinking Memory & Retention of Learning: Tips for Parents: Tracy Dignum at TEDxWestVancouverED
-2018-12-09 02:18:51,047 DEBUG Discarded video: The emergence of the end of HIV | Will Nutland | TEDxLSHTM
-2018-12-09 02:18:51,047 DEBUG Discarded video: Uncovering the secrets of immortal animals | Jules Howard | TEDxEastEnd
-2018-12-09 02:18:51,047 DEBUG Discarded video: Talking Is Easy | Hamad Al Amari | TEDxYouth@DPSMIS
-2018-12-09 02:18:51,047 DEBUG Discarded video: Our Secret Stories | Ben Okri | TEDxInstitutLeRosey
-2018-12-09 02:18:51,047 DEBUG Discarded video: Why Running for Office is Worth the Risk | Sofia Pereira | TEDxHumboldtBay
-2018-12-09 02:18:51,047 DEBUG Discarded video: Half the Truth | Ami Vitale | TEDxShanghai
-2018-12-09 02:18:51,047 DEBUG Discarded video: Why the web is dead | Christian Heilmann | TEDxThessaloniki
-2018-12-09 02:18:51,047 DEBUG Discarded video: How Ambition Saved my Life | Kimberly Larsen | TEDxBergen
-2018-12-09 02:18:51,047 DEBUG Discarded video: Post-Truth Poetry | Dottie James | TEDxYouth@AICS
-2018-12-09 02:18:51,047 DEBUG Discarded video: How Can We Become More Self-Motivated? | Kyra G. | TEDxYouth@LCJSMS
-2018-12-09 02:18:51,047 DEBUG Discarded video: Creating a Free HIV Vaccine | Naveen Jain | TEDxMoorgate
-2018-12-09 02:18:51,047 DEBUG Discarded video: Follow Through the Follow-Through | Jonathan Scales | TEDxAsheville
-2018-12-09 02:18:51,048 DEBUG Discarded video: How to talk to birds | Astacianna Hatcher | TEDxBrighton
-2018-12-09 02:18:51,048 DEBUG Discarded video: Crafting Emotional Intelligence | Janelle Chase-Mayers | TEDxBridgetown
-2018-12-09 02:18:51,048 DEBUG Discarded video: Native Men Are Being Raped | Nico Juárez | TEDxOU
-2018-12-09 02:18:51,048 DEBUG Discarded video: The Inmate, The Student, And Tolstoy | Andrew Kaufman | TEDxCharlottesville
-2018-12-09 02:18:51,048 DEBUG Discarded video: Why we need a Fashion Revolution? | Orsola De Castro | TEDxUAL
-2018-12-09 02:18:51,048 DEBUG Discarded video: How to be the best version of yourself | Raquel Caballero | TEDxKlagenfurt
-2018-12-09 02:18:51,048 DEBUG Discarded video: The language of feelings | Alex Willcock | TEDxGlasgow
-2018-12-09 02:18:51,048 DEBUG Discarded video: The secret of memory: Daniel Kilov at TEDxManly
-2018-12-09 02:18:51,048 DEBUG Discarded video: Where augmented reality meets healthcare | Nadine Hachach-Haram | TEDxCoventGardenWomen
-2018-12-09 02:18:51,048 DEBUG Discarded video count:50
-2018-12-09 02:18:51,049 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CKwCEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:51,474 DEBUG Discarded video: From AIDS to global health | Stefano Vella | TEDxMünchenSalon
-2018-12-09 02:18:51,475 DEBUG Discarded video: The six golden rules of improvisation | Claudine Ullman | TEDxJohannesburg
-2018-12-09 02:18:51,475 DEBUG Discarded video: Deepmind and the Future of the Finance Industry | Matthew Dixon | TEDxIIT
-2018-12-09 02:18:51,475 DEBUG Discarded video: Virtual Reality: Jump Into the Story | Eric Darnell | TEDxCincinnati
-2018-12-09 02:18:51,476 DEBUG Discarded video: Why I do not fear Artificial Intelligence | Carl Henrik Ek | TEDxKTH
-2018-12-09 02:18:51,476 DEBUG Discarded video: Follow the dreams that belong to you | Ayisha Narimanova | TEDxBHOS
-2018-12-09 02:18:51,476 DEBUG Discarded video: Imagine that being yourself could get you killed | Adam Kashmiry | TEDxGlasgow
-2018-12-09 02:18:51,476 DEBUG Discarded video: The American Dream in the Trump Nightmare | Omid Safi | TEDxDurham
-2018-12-09 02:18:51,477 DEBUG Discarded video: Understanding avalanche risk: A new paradigm | Dr. Jordy Hendrikx | TEDxBozeman
-2018-12-09 02:18:51,477 DEBUG Discarded video: Ideas worth improvising | International Theater Stockholm | TEDxStockholm
-2018-12-09 02:18:51,477 DEBUG Discarded video: Why We Must Embrace “Small Data” | Martin Lindstrom | TEDxHarvardCollegeSalon
-2018-12-09 02:18:51,477 DEBUG Discarded video: Artificial Intelligence will empower us, not exterminate us | Oren Etzioni | TEDxSeattle
-2018-12-09 02:18:51,478 DEBUG Discarded video: Why Your Doctor Should Daydream: The Importance of Creativity | David Hindin | TEDxWilmingtonSalon
-2018-12-09 02:18:51,478 DEBUG Discarded video: Futuro sin presente | Alejandro Olivares | TEDxPaseoSantaLucía
-2018-12-09 02:18:51,478 DEBUG Discarded video: Deep brain stimulation: Xavier Vasques at TEDxMontpellier
-2018-12-09 02:18:51,478 DEBUG Discarded video: Participation ciudadana y democracia | Juan Francisco Trujillo | TEDxQuito
-2018-12-09 02:18:51,479 DEBUG Discarded video: Vital Signs… Balancing Real Life | Harry James | TEDxStouffville
-2018-12-09 02:18:51,479 DEBUG Discarded video: Emotional Intelligence - The Key to Success | Tazeen Ahmad | TEDxBergen
-2018-12-09 02:18:51,479 DEBUG Discarded video: The origin story of an over-achiever | Patricia Walsh | TEDxLakeTravisHigh
-2018-12-09 02:18:51,479 DEBUG Discarded video: Suusad risti - kes otsustab? Kus on vandenõu? | Kersti Kaljulaid | TEDxToompea
-2018-12-09 02:18:51,480 DEBUG Discarded video: Ravens and the evolution of intelligence | Jorg Massen | TEDxArnhem
-2018-12-09 02:18:51,480 DEBUG Discarded video: Robots helping people with dementia | Wendy Moyle | TEDxGriffithUniversity
-2018-12-09 02:18:51,480 DEBUG Discarded video: What will we do when the robots can feel? | Daniel Faggella | TEDxAmoskeagMillyard
-2018-12-09 02:18:51,481 DEBUG Discarded video: Teaching for 21st Century | Karin Schmidlin | TEDxUW
-2018-12-09 02:18:51,481 DEBUG Discarded video: The Things We Make, Make Us. | Jay Pooley | TEDxUofT
-2018-12-09 02:18:51,481 DEBUG Discarded video: Crea. Com una obsessió es transforma en un ofici: Paula Bonet at TEDxLaValldUixo
-2018-12-09 02:18:51,482 DEBUG Discarded video: Does your social circle determine how much you care? | David Hudson | TEDxBrum
-2018-12-09 02:18:51,482 DEBUG Discarded video: TEDxKnoxville - Austin Church - Learning to Love Failure
-2018-12-09 02:18:51,482 DEBUG Discarded video: Three moments that changed the world | Roma Agrawal | TEDxRoyalHolloway
-2018-12-09 02:18:51,483 DEBUG Discarded video: Make Meaning Your Compass | Julie Wilkes | TEDxClevelandStateUniversity
-2018-12-09 02:18:51,483 DEBUG Discarded video: Fenway-side chat - TEDx hears from Linda Henry | Linda Henry | TEDxBeaconStreetSalon
-2018-12-09 02:18:51,483 DEBUG Discarded video: The best college major you've never heard of | Anne Perkins | TEDxBozeman
-2018-12-09 02:18:51,483 DEBUG Discarded video: Why Successful Organizations Fail: Danny DeLaRosa at TEDxReno
-2018-12-09 02:18:51,484 DEBUG Discarded video: Building communities around sustainable food systems:  Stephen Sherwood at TEDxWageningen
-2018-12-09 02:18:51,484 DEBUG Discarded video: How to not get eaten by a cannibal | Guillaume Dulude | TEDxMontreal
-2018-12-09 02:18:51,484 DEBUG Discarded video: Curing health care systems | Ellen van de Poel | TEDxErasmusUniversity
-2018-12-09 02:18:51,485 DEBUG Discarded video: Shakespeare, Marlowe, and their Jews: John Kleiner at TEDxWilliamsCollege
-2018-12-09 02:18:51,485 DEBUG Discarded video: How to get rid of Kim K architecture | Trung Mai | TEDxHanoi
-2018-12-09 02:18:51,487 DEBUG Discarded video: Is Fast Fashion a Good Thing? | Trewin Restorick | TEDxYouth@Brum
-2018-12-09 02:18:51,487 DEBUG Discarded video: Virtual Reality and Theater: Simulacra and Simulation | William Cusick | TEDxJerseyCity
-2018-12-09 02:18:51,487 DEBUG Discarded video: Bird Brain -- fact or fiction? | Debbie Kelly | TEDxUManitoba
-2018-12-09 02:18:51,487 DEBUG Discarded video: The art of improvisation | Rapid Fire Theatre | TEDxEdmonton
-2018-12-09 02:18:51,488 DEBUG Discarded video: Brain hacking: Can brain stimulation make you smarter? | Roi Cohen Kadosh | TEDxBrixton
-2018-12-09 02:18:51,488 DEBUG Discarded video: The brain is wired for unity: Zoran Josipovic at TEDxLowerEastSide
-2018-12-09 02:18:51,488 DEBUG Discarded video: Thoughts about the bottom billion on a smart device | Arjita Sethi | TEDxSanFrancisco
-2018-12-09 02:18:51,488 DEBUG Discarded video: The Challenges & Opportunities of Augmented Reality | Edward Miller | TEDxSevenoaksSchool
-2018-12-09 02:18:51,489 DEBUG Discarded video: The Mystic 'Bhulan' | Dr. Uzma Khan | TEDxLahore
-2018-12-09 02:18:51,489 DEBUG Discarded video: How to get your mojo back | Phil Anthony M | TEDxHSG
-2018-12-09 02:18:51,489 DEBUG Discarded video: Using Emotional Intelligence to Help Women Feel their Best | Purva Gupta | TEDxLynbrookHighSchool
-2018-12-09 02:18:51,489 DEBUG Discarded video count:50
-2018-12-09 02:18:51,491 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CN4CEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:52,006 DEBUG Discarded video: How can you use virtual reality to reduce pain? | Marcin Czub | TEDxWroclaw
-2018-12-09 02:18:52,006 DEBUG Discarded video: Listening to data from the Large Hadron Collider | Lily Asquith |TEDxZurich
-2018-12-09 02:18:52,006 DEBUG Found new video: Science, art and the Big Bang | Judith Egger | TEDxTUMSalon
-2018-12-09 02:18:52,007 DEBUG Discarded video: WHY I RETURNED TO A WAR ZONE TO START A WOMEN’S MOVEMENT FOR PEACE | Riya Yuyada | TEDxKakumaCamp
-2018-12-09 02:18:52,007 DEBUG Discarded video: Social control, an Irish perspective | Eugene Griffin | TEDxYouth@TASOK
-2018-12-09 02:18:52,007 DEBUG Discarded video: Synthetic Biology: Now and The Future | Geoffrey Baldwin | TEDxImperialCollege
-2018-12-09 02:18:52,007 DEBUG Discarded video: Removing the Negative from HIV+: David Gere at TEDxGateway 2013
-2018-12-09 02:18:52,007 DEBUG Discarded video: Nature and Breaking the Mould | Nandita Mukand | TEDxNITW
-2018-12-09 02:18:52,008 DEBUG Discarded video: Eytan Millstone | TEDxCrescentSchool
-2018-12-09 02:18:52,008 DEBUG Discarded video: Beyond the Wheelchair | Dr. William Tan | TEDxSIM
-2018-12-09 02:18:52,008 DEBUG Discarded video: Failure Is Part of Success: Eduardo Zanatta at TEDxBYU
-2018-12-09 02:18:52,008 DEBUG Discarded video: All Equal All Different | Linda Bellos | TEDxSurreyUniversity
-2018-12-09 02:18:52,008 DEBUG Discarded video: Esperanto, the International Language | David Malone | TEDxChadwickSchool
-2018-12-09 02:18:52,008 DEBUG Discarded video: Refugees struggle with the same things we do | Dunya Habash | TEDxBirmingham
-2018-12-09 02:18:52,008 DEBUG Discarded video: Is 3D printing the next industrial revolution? | Herbert Hermens | TEDxBendigo
-2018-12-09 02:18:52,008 DEBUG Discarded video: Should we Worry About Artificial Intelligence? | Daniel Dippold | TEDxSuffolkUniversity
-2018-12-09 02:18:52,008 DEBUG Discarded video: Peace Building | Mohamed Shakoor | TEDxMukram
-2018-12-09 02:18:52,008 DEBUG Discarded video: Liberate your life and your language with 'WORD-SMERCHING' | Jade Harrell | TEDxGatewayArch
-2018-12-09 02:18:52,008 DEBUG Discarded video: Global neural network cloud service for breast cancer detection: Brittany Wenger at TEDxAtlanta
-2018-12-09 02:18:52,009 DEBUG Discarded video: Triggered? How Labels Guide our Interactions | Susie Bannon | TEDxTexasStateUniversity
-2018-12-09 02:18:52,009 DEBUG Discarded video: De la smart city a la ciudad sensible | Begoña Villacís | TEDxUDeustoMadrid
-2018-12-09 02:18:52,009 DEBUG Discarded video: Probing the Limits of Learnability With Brain-Computer Interfaces | Steven Chase | TEDxCMU
-2018-12-09 02:18:52,009 DEBUG Discarded video: Community-based Solutions to HIV Cure's Ethical Challenges  | Allison Matthews | TEDxDurham
-2018-12-09 02:18:52,009 DEBUG Discarded video: How I am reviving living traditions of India | Abhijit Sadhale | TEDxPanaji
-2018-12-09 02:18:52,009 DEBUG Discarded video: Is Fashion in Need of Generosity? | Natasha Athanasiadou | TEDxRhodes
-2018-12-09 02:18:52,009 DEBUG Discarded video: Love the Life you Live, Live the Life you Love | Andreas Stark | TEDxWHU
-2018-12-09 02:18:52,009 DEBUG Discarded video: The future city as experiment: Tia Kansara at TEDxKlagenfurt
-2018-12-09 02:18:52,009 DEBUG Discarded video: Creative is shaping the future | Graham Fink | TEDxCEIBS
-2018-12-09 02:18:52,009 DEBUG Discarded video: To Whom It may concern. | Maysoon Muhi Eddine | TEDxWadMedani
-2018-12-09 02:18:52,009 DEBUG Discarded video: Hacking Happiness: How to control emotions with memory techniques | Etan Ginsberg | TEDxAkitaIntlU
-2018-12-09 02:18:52,010 DEBUG Discarded video: Doing it Yourself: Architect, Provocateur, and Inventor | Frank Barkow | TEDxLugano
-2018-12-09 02:18:52,010 DEBUG Discarded video: How Do You Want to Live Your Life? | At Adau | TEDxYouth@Kenyalang
-2018-12-09 02:18:52,010 DEBUG Discarded video: How Artificial Intelligence is slowly becoming less art-ificial | Amir Baradaran | TEDxBocaRaton
-2018-12-09 02:18:52,010 DEBUG Discarded video: 100 Percent Improvised | Black Box Improv Theater | TEDxDayton
-2018-12-09 02:18:52,010 DEBUG Discarded video: Our Addiction to Instant Gratification | Taesun Shim | TEDxChadwickSchool
-2018-12-09 02:18:52,010 DEBUG Discarded video: The Power of Enough | Paula Constant | TEDxPerth
-2018-12-09 02:18:52,010 DEBUG Discarded video: Real Food Diets for Lions, Zebras, People and Beyond | George Diggs | TEDxAustinCollege
-2018-12-09 02:18:52,010 DEBUG Discarded video: Raising a digital kid without having been one | Galit Breen | TEDxEdina
-2018-12-09 02:18:52,010 DEBUG Discarded video: Interview with Thomas Goetz | Dominique Crenn | TEDxSanFrancisco
-2018-12-09 02:18:52,010 DEBUG Discarded video: How to Save the Rhino | Nayana Rathmalgoda | TEDxYouth@DinosaurPark
-2018-12-09 02:18:52,010 DEBUG Discarded video: 6 steps to knowing how to know | Natalie Foley | TEDxCharlottesville
-2018-12-09 02:18:52,010 DEBUG Discarded video: The "Act" of Learning | Armaghan Khan | TEDxNYUAD
-2018-12-09 02:18:52,011 DEBUG Discarded video: Say Something | La'Ketta Caldwell | TEDxUWMilwaukee
-2018-12-09 02:18:52,011 DEBUG Discarded video: Augmented Reality to the rescue | Rotem Bashi | TEDxTelAviv
-2018-12-09 02:18:52,011 DEBUG Discarded video: The Cure is Not in the Pill Bottle | Divi Chandna | TEDxMontrealWomen
-2018-12-09 02:18:52,011 DEBUG Discarded video: An electronic nose that can sniff out disease | Simon Bootsma | TEDxJohannesburg
-2018-12-09 02:18:52,011 DEBUG Discarded video: The Beauty of the Crow | Celina C. | TEDxInstitutLeRosey
-2018-12-09 02:18:52,011 DEBUG Discarded video: Beauty | Henrry Huang | TEDxYouth@HuoShaYuZhen
-2018-12-09 02:18:52,011 DEBUG Discarded video count:49
-2018-12-09 02:18:52,012 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CJADEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:52,498 DEBUG Discarded video: Our Biography is Our Biology | Kay Corpus | TEDxEvansville
-2018-12-09 02:18:52,498 DEBUG Discarded video: Building Innovation | Duzan Doepel | TEDxRotterdam
-2018-12-09 02:18:52,498 DEBUG Discarded video: Love Should Not Kill | Narges Dorratoltaj | TEDxVirginiaTech
-2018-12-09 02:18:52,498 DEBUG Discarded video: Social Touch Technology | Gijs Huisman | TEDxSaxionUniversity
-2018-12-09 02:18:52,498 DEBUG Discarded video: Refugees are an opportunity to be welcomed | Philippe Legrain | TEDxMonteCarlo
-2018-12-09 02:18:52,498 DEBUG Discarded video: How Art meets Artificial Intelligence | YQP and Roman Lipski | TEDxMünster
-2018-12-09 02:18:52,498 DEBUG Discarded video: Birds, Biology, and Business | Joe Steensma | TEDxGatewayArch
-2018-12-09 02:18:52,498 DEBUG Discarded video: Human Machines & Mechanical Humans | Christian Howard | TEDxCharlottesville
-2018-12-09 02:18:52,498 DEBUG Discarded video: Imagine Ireland – an island of 10m people by 2050 | David Gavaghan | TEDxStormont
-2018-12-09 02:18:52,498 DEBUG Discarded video: Spotlight the Future Economic Situation of Korean Society | Seung Il Jeong | TEDxKoreaUniversity
-2018-12-09 02:18:52,499 DEBUG Discarded video: Traditsioon ja innovatsioon on teineteisest sõltuvad | Puuluup | TEDxToompea
-2018-12-09 02:18:52,499 DEBUG Discarded video: Creativity is not a gift | Dustin Timbrook | TEDxHuntsville
-2018-12-09 02:18:52,499 DEBUG Discarded video: Rising From Poverty | Crista Olan | TEDxYouth@MVHS
-2018-12-09 02:18:52,499 DEBUG Discarded video: How memory techniques can unleash children’s love of learning | Kevin Aires | TEDxWoking
-2018-12-09 02:18:52,499 DEBUG Discarded video: Smart Cities: A Paradigm Shift | Zack Huhn | TEDxXavierUniversity
-2018-12-09 02:18:52,499 DEBUG Discarded video: How Paris Hilton changed my life | Adam Kramer | TEDxUniversityofNevada
-2018-12-09 02:18:52,499 DEBUG Discarded video: Aerial Dancing | AirAligned | TEDxSacramento
-2018-12-09 02:18:52,499 DEBUG Discarded video: Evolution, equilibrium, and global extinction | Justin Werfel | TEDxBeaconStreet
-2018-12-09 02:18:52,499 DEBUG Discarded video: A Tool For The Mind | Marom Bikson | TEDxBushwick
-2018-12-09 02:18:52,499 DEBUG Discarded video: The Senate's Failed Experiment | William Dodd | TEDxReno
-2018-12-09 02:18:52,500 DEBUG Discarded video: Lessons Learned on the Trans-Siberian | Vijay Menon | TEDxDuke
-2018-12-09 02:18:52,500 DEBUG Discarded video: The Embrace of Failure TED EYTAN and REGINA HOLLIDAY TEDxAlvaPark 2012
-2018-12-09 02:18:52,500 DEBUG Discarded video: How the crisis response tool Ushahidi gives voice to the people | Angela Lungati | TEDxKamitiPrison
-2018-12-09 02:18:52,500 DEBUG Discarded video: How our mindless media use affects our health | Jan Van den Bulck | TEDxLeuvenSalon
-2018-12-09 02:18:52,500 DEBUG Discarded video: Design is beautiful | Jeremy Lindley | TEDxBedford
-2018-12-09 02:18:52,500 DEBUG Discarded video: Open House to Jackson’s Entrepreneurial Ecosystem | Ashlee Kelly | TEDxMillsapsCollege
-2018-12-09 02:18:52,500 DEBUG Discarded video: Sample Theory | Mateusz Mach | TEDxGdynia
-2018-12-09 02:18:52,500 DEBUG Discarded video: Synthetic biology and mass production: Yasaman Sheri at TEDxMontreal
-2018-12-09 02:18:52,501 DEBUG Discarded video: Making a hot jam: Jerome Sydenham at TEDxBricklane
-2018-12-09 02:18:52,501 DEBUG Discarded video: The Future of Food | Professor Christine Loscher | TEDxDCU
-2018-12-09 02:18:52,501 DEBUG Discarded video: The Rebirth of Fashion. Never Settle. | Shirin Hashem | TEDxACCD
-2018-12-09 02:18:52,501 DEBUG Discarded video: The Age of Plantoids | Barbara Mazzolai | TEDxMilano
-2018-12-09 02:18:52,502 DEBUG Discarded video: Connecting Culture, Clothes, and Community: Bara'h Odeh at TEDxMileHigh
-2018-12-09 02:18:52,502 DEBUG Discarded video: Take Charge and Improve Yourself | Alex Nguyen | TEDxYouth@Langley
-2018-12-09 02:18:52,502 DEBUG Discarded video: Trusted Improv! | Burbee's Seedy Theatrical Company | TEDxColumbus
-2018-12-09 02:18:52,502 DEBUG Discarded video: Playing with Paint | Emma Fay | TEDxWarwick
-2018-12-09 02:18:52,502 DEBUG Discarded video: Smart phones: What’s the real cost? | Klara Vackova | TEDxYouth@ISPrague
-2018-12-09 02:18:52,502 DEBUG Discarded video: Can theories be beautiful? | Angela Breitenbach | TEDxUAL
-2018-12-09 02:18:52,502 DEBUG Discarded video: The Birth of Emotional Intelligence in India | Sneh Vaswani | TEDxCRCE
-2018-12-09 02:18:52,502 DEBUG Discarded video: Ampliando la mirada | Mauricio Isaza Mesa | TEDxUniversidadSergioArboleda
-2018-12-09 02:18:52,502 DEBUG Discarded video: The Future of Dementia Diagnosis | Shelagh Robinson | TEDxStoke
-2018-12-09 02:18:52,502 DEBUG Discarded video: Waste is only waste if the loop is not closed  | Tyler McNaney | TEDxStowe
-2018-12-09 02:18:52,503 DEBUG Discarded video: Designing Systems to Avoid Failure: Tom Fisher at TEDxUMN
-2018-12-09 02:18:52,503 DEBUG Discarded video: Great Lakes Surfing: A Millenial's Vision for Regional Development | Nick Cianci | TEDxErie
-2018-12-09 02:18:52,503 DEBUG Discarded video: Why Failure Is Necessary for Success | Dejan Stojanovic | TEDxKlagenfurt
-2018-12-09 02:18:52,503 DEBUG Discarded video: Change the World; Create a Culture of Listeners | Tim Hast | TEDxUCO
-2018-12-09 02:18:52,504 DEBUG Discarded video: Why most start-up businesses fail: Sriram Bharatam at TEDxKaren
-2018-12-09 02:18:52,504 DEBUG Discarded video: Building Confidence | Tricia Baak | TEDxYouth@PalisadesCharterHighSchool
-2018-12-09 02:18:52,504 DEBUG Discarded video count:50
-2018-12-09 02:18:52,505 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CMIDEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:52,986 DEBUG Discarded video: Tot és un jeroglífic -- desxifrar la literatura (en) digital: Laura Borràs at TEDxLaValldUixo
-2018-12-09 02:18:52,986 DEBUG Discarded video: To Love and Protect | Janelle Chanona | TEDxBelmopan
-2018-12-09 02:18:52,986 DEBUG Discarded video: What bird food teaches us about pain | Dr. Thomas Taylor-Clark | TEDxCarrollwoodDaySchool
-2018-12-09 02:18:52,986 DEBUG Discarded video: All there is inside a pencil | Pedro Gómez | TEDxPeralada
-2018-12-09 02:18:52,986 DEBUG Discarded video: The creative interface: connecting art and computer science | Cole Wiley | TEDxLSU
-2018-12-09 02:18:52,986 DEBUG Discarded video: Transforming Institutions into Making Spaces  | Patty Mitchell | TEDxStroudsRun
-2018-12-09 02:18:52,986 DEBUG Discarded video: Can a digital movement end global poverty? | Michael Sheldrick | TEDxPerth
-2018-12-09 02:18:52,986 DEBUG Discarded video: From one to many | Tim Prestero | TEDxBoston
-2018-12-09 02:18:52,987 DEBUG Discarded video: What Fish Fights and the American Dream Have in Common | Sara Stienecker | TEDxBGSU
-2018-12-09 02:18:52,987 DEBUG Discarded video: What An Idea Needs To Survive. | Jeffrey Stamp | TEDxNormal
-2018-12-09 02:18:52,987 DEBUG Discarded video: Dehyping Robotics | Sabine Hauert | TEDxBerlin
-2018-12-09 02:18:52,987 DEBUG Discarded video: A escada cíclica. | Carlos Gaudi | TEDxYouth@ColégioMilitarSchool
-2018-12-09 02:18:52,987 DEBUG Discarded video: Small idea, big impact | Claire Reid | TEDxWesterfordHighSchool
-2018-12-09 02:18:52,987 DEBUG Discarded video: Rescatando nuestros pueblos | José Alfredo Martín Piñas | TEDxRivasVaciamadrid
-2018-12-09 02:18:52,987 DEBUG Discarded video: ROI: Return on Intentionality  | Sloane Trugman | TEDxCSUSM
-2018-12-09 02:18:52,987 DEBUG Discarded video: Recipe for a Right Mind | Autumn Raynor | TEDxTomballED
-2018-12-09 02:18:52,987 DEBUG Discarded video: The High School Marathon | Elena Dimova | TEDxYouth@AASSofia
-2018-12-09 02:18:52,987 DEBUG Discarded video: My ePass - Die digitale Identität | Stefan Genchev | TEDxYouth@Bonn
-2018-12-09 02:18:52,987 DEBUG Discarded video: Need to Change the Mindset: Solution to any Problem  | Krishan Gupta | TEDxJiwajiUniversity
-2018-12-09 02:18:52,988 DEBUG Discarded video: Animals, Prosthetics and Saving Lives | Derrick Campana | TEDxHobokenWomen
-2018-12-09 02:18:52,988 DEBUG Discarded video: Robotic Building | Henriette Bier | TEDxDelftSalon
-2018-12-09 02:18:52,988 DEBUG Discarded video: Fast thinking and the decision to have a child | Gabriela Pavlova | TEDxSofiaUniversity
-2018-12-09 02:18:52,988 DEBUG Discarded video: Persistence of vision | Chada El-Islam Benmahcene | TEDxAudinSquareWomen
-2018-12-09 02:18:52,988 DEBUG Discarded video: The Power of Owning your Emotions | Neena Madhok | TEDxCityUniversityLondon
-2018-12-09 02:18:52,988 DEBUG Discarded video: The second half of the chess board: Bill Malloy at TEDxLaJolla
-2018-12-09 02:18:52,989 DEBUG Discarded video: New Ability | Graham Spero | TEDxAlgonquinCollege
-2018-12-09 02:18:52,989 DEBUG Discarded video: “FIND WHAT YOU LIKE TO DO” | Rukmini Iyer | TEDxMountainViewHighSchool
-2018-12-09 02:18:52,989 DEBUG Discarded video: The Power of Peach, and Globalization | Kevin Coduto | TEDxWestFurongRoad
-2018-12-09 02:18:52,989 DEBUG Discarded video: Mourning online - are we faking it? | Anna Haverinen | TEDxTurku
-2018-12-09 02:18:52,989 DEBUG Discarded video: The FDA's new role overseeing a deadly product: tobacco | Kathy Crosby | TEDxMidAtlantic
-2018-12-09 02:18:52,990 DEBUG Discarded video: The influence of synthetic biology on our every day life | Kelly Hamers | TEDxDelftSalon
-2018-12-09 02:18:52,990 DEBUG Discarded video: Powerlessness and nuclear weapons | Daniele Santi | TEDxCrocetta
-2018-12-09 02:18:52,990 DEBUG Discarded video: How the **** does memory work? | Matthew Kelley | TEDxLakeForestCollege
-2018-12-09 02:18:52,990 DEBUG Discarded video: How synthetic biology is exploring biological complexity: Sean Ward at TEDxVilnius
-2018-12-09 02:18:52,990 DEBUG Discarded video: Saturday night science: Dr. Graeme Jones at TEDxHull
-2018-12-09 02:18:52,990 DEBUG Discarded video: Re-making a life: Molly Corbett at TEDxBaltimoreWomen
-2018-12-09 02:18:52,990 DEBUG Discarded video: The Next Step in AI: Multimodal Perception | Louis-Philippe Morency | TEDxCMU
-2018-12-09 02:18:52,990 DEBUG Discarded video: Stop thinking aloud so much and feel aloud instead | Claire Balfour | TEDxHeriotWattUniversity
-2018-12-09 02:18:52,990 DEBUG Discarded video: Smash the Monolith | Nura Maznavi | TEDxUChicago
-2018-12-09 02:18:52,991 DEBUG Discarded video: Space architect should be an optimist | Leszek Orzechowski | TEDxWSB
-2018-12-09 02:18:52,991 DEBUG Discarded video: The Opportunity to Fail | Chris Gragtmans | TEDxYouth@ColumbiaSC
-2018-12-09 02:18:52,991 DEBUG Discarded video: Virtual Gender Reality | Richard Vincent | TEDxGoodenoughCollege
-2018-12-09 02:18:52,991 DEBUG Discarded video: Warum die Vereinten Nationen mehr Jugendpartizipation brauchen | Johanna Schwarz | TEDxYouth@Bonn
-2018-12-09 02:18:52,991 DEBUG Discarded video: Three Sisters / Who's Gonna Be Your Man | Honey Whiskey Trio | TEDxTemecula
-2018-12-09 02:18:52,991 DEBUG Discarded video: A new fix for food safety: Don Stull at TEDxTexasTechUniversity
-2018-12-09 02:18:52,991 DEBUG Discarded video: Two things are important for maintaining a healthy mind and body | Andreu Prados | TEDxYouth@Amposta
-2018-12-09 02:18:52,991 DEBUG Discarded video: Moving from a “Thinker” to a “Doer” - Scientific Research | Edwina Liu | TEDxYouth@Edmonton
-2018-12-09 02:18:52,991 DEBUG Discarded video: Eine sich selbst organisierende Gesellschaft ist möglich | Mark Ballandies | TEDxBodensee
-2018-12-09 02:18:52,991 DEBUG Discarded video count:50
-2018-12-09 02:18:52,992 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CPQDEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:53,476 DEBUG Discarded video: The Power of Robotics for Youth | Angela Wei | TEDxISPP
-2018-12-09 02:18:53,476 DEBUG Discarded video: PUBLY, striving to create intellectual capital for our society. | Soryoung Park | TEDxHanyangU
-2018-12-09 02:18:53,476 DEBUG Discarded video: The "Mr. Science" experience | Bill Heybourne | TEDxSUU
-2018-12-09 02:18:53,477 DEBUG Discarded video: Proof that the Teenage Brain Actually Works | Jimin Han | TEDxYouth@AASSofia
-2018-12-09 02:18:53,477 DEBUG Discarded video: Rediscover connections | Pierre-Andre Kruger | TEDxEcoleHôtelièreLausanne
-2018-12-09 02:18:53,477 DEBUG Discarded video: Improv comedy performance | Jittery Citizens | TEDxJohannesburg
-2018-12-09 02:18:53,477 DEBUG Discarded video: Junk Food Citizenship | Jamie Dublanko | TEDxYouth@Edmonton
-2018-12-09 02:18:53,478 DEBUG Discarded video: Resetting your approach to any problem | Oghenerukeme Asagba | TEDxCWRUSalon
-2018-12-09 02:18:53,478 DEBUG Discarded video: How to see the world from the HIV neutral perspective | Michael Jettmar | TEDxTrencin
-2018-12-09 02:18:53,478 DEBUG Discarded video: Adam wasn't the first | AK Salling | TEDxYeongheungForest
-2018-12-09 02:18:53,480 DEBUG Discarded video: Building vibrant food systems | Marianne LeGreco | TEDxGreensboro
-2018-12-09 02:18:53,480 DEBUG Discarded video: Mental Health-Changing Mindsets | Rachna Singh | TEDxJDMC
-2018-12-09 02:18:53,480 DEBUG Discarded video: Human Well-Beieng | Hakeem Allison | TEDxYouth@BrookhouseSchool
-2018-12-09 02:18:53,481 DEBUG Discarded video: Success: How Do We Define It? | Edita Andiani | TEDxYouth@GMIS
-2018-12-09 02:18:53,481 DEBUG Discarded video: Why you probably don't need motivation | Youssef Fahmy | TEDxYouth@MNS
-2018-12-09 02:18:53,481 DEBUG Discarded video: Social Media: The Value Lies in the Data | Jillian Ney | TEDxUniversityofStrathclyde
-2018-12-09 02:18:53,481 DEBUG Discarded video: The Food You Eat | James Miner | TEDxBeaconStreet
-2018-12-09 02:18:53,482 DEBUG Discarded video: Let's talk robots | Nicoletta Iacobacci | TEDxCarthage
-2018-12-09 02:18:53,482 DEBUG Discarded video: Sonic identities of Folk, Electronic and Meditative music | Rijo Thomas | TEDxTheNorthcapUniversity
-2018-12-09 02:18:53,482 DEBUG Discarded video: Flying Robots: Sameer Parekh at TEDxSiliconAlley
-2018-12-09 02:18:53,484 DEBUG Discarded video: How We Learn: The Three Phases and Embracing Failure | Casey Dion | TEDxHolyokeCC
-2018-12-09 02:18:53,484 DEBUG Discarded video: Game your brain | Jake Stauch | TEDxCharleston
-2018-12-09 02:18:53,484 DEBUG Discarded video: Reforging Reality | Daniel Blair | TEDxWinnipeg
-2018-12-09 02:18:53,484 DEBUG Discarded video: Improv Performance | Greenhill Improv Troupe | TEDxGreenhillSchool
-2018-12-09 02:18:53,485 DEBUG Discarded video: The Non-Standard of Beauty | Catherine Kamaladevi | TEDxYouth@GMIS
-2018-12-09 02:18:53,485 DEBUG Discarded video: Music Performance | Iskwé | TEDxTokyoSalon
-2018-12-09 02:18:53,485 DEBUG Discarded video: Re-imaging failure | Smita Singh | TEDxManukau
-2018-12-09 02:18:53,485 DEBUG Discarded video: Rethinking of personal journey | Jason Hsu | TEDxAizuwakamatsu
-2018-12-09 02:18:53,485 DEBUG Discarded video: Engineering A Future For The Past | Falko Kuester | TEDxBermuda
-2018-12-09 02:18:53,485 DEBUG Discarded video: Do A Moonshot | Jack Hidary | TEDxBeaconStreet
-2018-12-09 02:18:53,486 DEBUG Discarded video: Revival of Colossus of Rhodes | George Barboutis | TEDxRhodes
-2018-12-09 02:18:53,486 DEBUG Discarded video: Transforming Nuclear Weapons and Handguns into Angels of Peace | Lin Evola | TEDxFultonStreetSalon
-2018-12-09 02:18:53,486 DEBUG Discarded video: Rethinking failure | Debora Spar | TEDxBarnardCollege
-2018-12-09 02:18:53,486 DEBUG Discarded video: What has happened to the ”Truth“? | Celeste Kew | TEDxYouth@IIL
-2018-12-09 02:18:53,486 DEBUG Discarded video: About a girl; Identity Matters | Sophia Papastavrou | TEDxNicosiaWomen
-2018-12-09 02:18:53,487 DEBUG Discarded video: YouMake ReMake by Renana Raz | elledanse | TEDxBratislava
-2018-12-09 02:18:53,487 DEBUG Discarded video: Photographing abandoned spaces at Chernobyl | Timm Suess | TEDxGundeldingen
-2018-12-09 02:18:53,487 DEBUG Discarded video: Inspiration and Motivation as New Therapeutic Tools  | Hitesh Arora | TEDxYouth@StGeorgesSchool
-2018-12-09 02:18:53,487 DEBUG Discarded video: Photography in the face of despair | Kim Sørenssen | TEDxTrondheim
-2018-12-09 02:18:53,487 DEBUG Discarded video: De Portugal para o espaço | Bruno Carvalho | TEDxPenafiel
-2018-12-09 02:18:53,487 DEBUG Discarded video: A Tour of the Technology Empowered Patient | Ries Robinson | TEDxABQSalon
-2018-12-09 02:18:53,488 DEBUG Discarded video: Humanity in 30 years time | | Oriana Santoro | TEDxCarouge
-2018-12-09 02:18:53,488 DEBUG Discarded video: Passion, Priorities and Perseverance | Mya-Rose Craig | TEDxUWE
-2018-12-09 02:18:53,488 DEBUG Discarded video: Business by design | Valentijn Destoop | TEDxEdinburghNapierUniversity
-2018-12-09 02:18:53,488 DEBUG Discarded video: Virtual accelerating reality | Andrew Nakas | TEDxBozeman
-2018-12-09 02:18:53,488 DEBUG Discarded video: Patient innovation | Pedro Oliveira | TEDxFCTUNL
-2018-12-09 02:18:53,488 DEBUG Discarded video: Your Instincts Are Terrible | Young Eun Huh | TEDxHongKong
-2018-12-09 02:18:53,489 DEBUG Discarded video: Remember What You Want | Jarrod Haning | TEDxHickory
-2018-12-09 02:18:53,489 DEBUG Discarded video count:50
-2018-12-09 02:18:53,490 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CKYEEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:53,855 DEBUG Discarded video: Adaptive cities of the future: The global enablers | Michael Carl | TEDxHHL
-2018-12-09 02:18:53,857 DEBUG Discarded video: How do we measure what we can’t see? | Steven Goldfarb | TEDxOPorto
-2018-12-09 02:18:53,857 DEBUG Discarded video count:3
-2018-12-09 02:18:53,859 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CNgEEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:54,323 DEBUG Discarded video count:0
-2018-12-09 02:18:54,325 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CIoFEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:54,666 DEBUG Discarded video count:0
-2018-12-09 02:18:54,669 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CLwFEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:55,063 DEBUG Discarded video count:0
-2018-12-09 02:18:55,064 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CO4FEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:55,410 DEBUG Discarded video count:0
-2018-12-09 02:18:55,413 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CKAGEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:55,802 DEBUG Discarded video count:0
-2018-12-09 02:18:55,804 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CNIGEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:56,247 DEBUG Discarded video count:0
-2018-12-09 02:18:56,249 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CIQHEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:56,617 DEBUG Discarded video count:0
-2018-12-09 02:18:56,620 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CLYHEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:57,097 DEBUG Discarded video count:0
-2018-12-09 02:18:57,097 INFO TRACE: youtube_search() finished
-2018-12-09 02:18:57,097 INFO TRACE: Calling get_youtube_data() with ('iq5SLf6xPFQ,0qVOUD76JOg,iuIisjRIcVI,EJDpbsvWdsg,XnQHVXMhzBo,-guxUgF_eTU,Zark1jrC7EU,36186S-RsKY,myl722kHxbU,D6_J7FfgWVc,NQ9uWbZ285Q,2B91UE0gHps,ab_yh2HoJ7o,62aI5Oy4S4g,3Xpj5Gj9pgo,sRVxPE1cguo,twHCsVPupXo,KCLdryjDl6E,g17OHKBm50I,k_BVvupSChc,CFHvNNcEIDo,WGPQM1J7Jcw,YTKgizpzmtQ,0NDL0AgRK0c,Z2TQQhTx6EQ,3DyrDKYhSi8,3uLp0C6G__w,NG2CsLrCCY8,HCjBM23nQ0s,OKQ-mpv0tWI,7b_7RXB3HnI,O54JCIDqWwM,IDixuVrDABY,6MxbegZtAII,mK6IdD4GXPo,m4w-FV6eERI,NG9NETZ0-G4,gnK7Lg56DjI,gPZc1fZcgL8,-NhZ4ioHb9E,LQEbC8QfbyU,5SDZA06wO44,ke4lI_1xCrU,U5DoJ_jCt7E,5U6Cc1hmdY0,JR_DmkV4Jlw,76pnQkP-xG4,iaemojsQDFw,LVM1KOl-kDw,w-QoDqBMe2k,1E-QkFUAt5A,NfpGHOu9TIY', <googleapiclient.discovery.Resource object at 0x000002209B9E1278>), {}
-2018-12-09 02:18:57,105 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=iq5SLf6xPFQ&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:57,175 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=0qVOUD76JOg&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:57,268 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=iuIisjRIcVI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:57,374 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=EJDpbsvWdsg&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:57,464 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=XnQHVXMhzBo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:57,554 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=-guxUgF_eTU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:57,649 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=Zark1jrC7EU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:57,748 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=36186S-RsKY&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:57,833 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=myl722kHxbU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:57,924 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=D6_J7FfgWVc&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:58,002 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NQ9uWbZ285Q&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:58,094 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=2B91UE0gHps&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:58,176 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=ab_yh2HoJ7o&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:58,271 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=62aI5Oy4S4g&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:58,370 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3Xpj5Gj9pgo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:58,461 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=sRVxPE1cguo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:58,543 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=twHCsVPupXo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:58,638 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=KCLdryjDl6E&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:58,715 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=g17OHKBm50I&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:58,809 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=k_BVvupSChc&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:58,885 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=CFHvNNcEIDo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:58,983 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=WGPQM1J7Jcw&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:59,077 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=YTKgizpzmtQ&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:59,179 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=0NDL0AgRK0c&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:59,266 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=Z2TQQhTx6EQ&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:59,364 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3DyrDKYhSi8&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:59,461 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3uLp0C6G__w&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:59,556 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NG2CsLrCCY8&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:59,642 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=HCjBM23nQ0s&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:59,735 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=OKQ-mpv0tWI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:59,815 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=7b_7RXB3HnI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:59,903 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=O54JCIDqWwM&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:18:59,998 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=IDixuVrDABY&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:00,083 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=6MxbegZtAII&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:00,178 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=mK6IdD4GXPo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:00,285 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=m4w-FV6eERI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:00,388 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NG9NETZ0-G4&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:00,509 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=gnK7Lg56DjI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:00,613 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=gPZc1fZcgL8&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:00,696 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=-NhZ4ioHb9E&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:00,794 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=LQEbC8QfbyU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:00,879 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=5SDZA06wO44&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:00,963 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=ke4lI_1xCrU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:01,043 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=U5DoJ_jCt7E&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:01,134 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=5U6Cc1hmdY0&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:01,231 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=JR_DmkV4Jlw&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:01,327 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=76pnQkP-xG4&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:01,407 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=iaemojsQDFw&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:01,491 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=LVM1KOl-kDw&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:01,592 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=w-QoDqBMe2k&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:01,681 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=1E-QkFUAt5A&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:01,784 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NfpGHOu9TIY&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
-2018-12-09 02:19:01,871 INFO TRACE: get_youtube_data() finished
-2018-12-09 02:19:01,871 INFO TRACE: Calling load_data() with ('C:\\Users\\Julian\\GitHub\\TEDx-YTT\\tedx-ytt-statistics.csv', ['Date', 'Metric']), {}
-2018-12-09 02:19:01,871 INFO Loading old data from C:\Users\Julian\GitHub\TEDx-YTT\tedx-ytt-statistics.csv
-2018-12-09 02:19:01,872 WARNING File C:\Users\Julian\GitHub\TEDx-YTT\tedx-ytt-statistics.csv does not exist! Continuing without loading old data.
-2018-12-09 02:19:01,872 INFO ...done!
-2018-12-09 02:19:01,872 INFO TRACE: load_data() finished
-2018-12-09 02:19:01,913 INFO TRACE: calc_stats() finished
-2018-12-09 02:19:01,914 INFO Saving data ...
-2018-12-09 02:19:01,917 INFO ...done!
-2018-12-09 02:19:01,918 INFO Saving config ...
-2018-12-09 02:19:01,919 INFO ...done!
-2018-12-09 02:19:01,919 INFO Done with everything!
+2018-12-09 16:51:56,352 INFO URL being requested: GET https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest
+2018-12-09 16:51:57,633 INFO TRACE: Calling load_data() with ('C:\\Users\\Julian\\GitHub\\TEDx-YTT\\tedx-ytt-output.csv', ['Date', 'ID']), {}
+2018-12-09 16:51:57,633 INFO Loading old data from C:\Users\Julian\GitHub\TEDx-YTT\tedx-ytt-output.csv
+2018-12-09 16:51:57,633 WARNING File C:\Users\Julian\GitHub\TEDx-YTT\tedx-ytt-output.csv does not exist! Continuing without loading old data.
+2018-12-09 16:51:57,634 INFO ...done!
+2018-12-09 16:51:57,634 INFO TRACE: load_data() finished
+2018-12-09 16:51:57,634 INFO TRACE: Calling youtube_search() with ('TEDxTUM', 400), {'client': <googleapiclient.discovery.Resource object at 0x00000148C6AD2278>}
+2018-12-09 16:51:57,635 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:51:58,213 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CDIQAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:51:58,685 DEBUG Found new video: Design beyond the shape | Benoit Jacob | TEDxTUM
+2018-12-09 16:51:58,685 DEBUG Found new video: Laugh, Think, Cry, Laugh Again | Jessamyn Fairfield | TEDxTUM
+2018-12-09 16:51:58,685 DEBUG Found new video: Using tiny magnets for computation | Markus Becherer | TEDxTUMSalon
+2018-12-09 16:51:58,685 DEBUG Discarded video: How to Read a Book a Day | Jordan Harry | TEDxBathUniversity
+2018-12-09 16:51:58,685 DEBUG Found new video: Medical Augmented Reality: coming soon to (operating) theaters near you | Nassir Navab | TEDxTUM
+2018-12-09 16:51:58,685 DEBUG Discarded video: How to Find Your Passion and Make it Your Job | Emma Rosen | TEDxYouth@Manchester
+2018-12-09 16:51:58,686 DEBUG Discarded video: Blind Man Travelling Solo | Tony Giles | TEDxVienna
+2018-12-09 16:51:58,686 DEBUG Discarded video: Reimagining compassion as power | Tim Dawes | TEDxSeattle
+2018-12-09 16:51:58,686 DEBUG Discarded video: How to manage your mental health | Leon Taylor | TEDxClapham
+2018-12-09 16:51:58,686 DEBUG Discarded video: How to draw to remember more | Graham Shaw | TEDxVienna
+2018-12-09 16:51:58,686 DEBUG Discarded video: The psychology of self-motivation | Scott Geller | TEDxVirginiaTech
+2018-12-09 16:51:58,687 DEBUG Discarded video: One simple idea to improve mental well-being worldwide | Ben Channon | TEDxCardiffUniversity
+2018-12-09 16:51:58,687 DEBUG Discarded video: Change Your Mindset and Achieve Anything | Colin O'Brady | TEDxPortland
+2018-12-09 16:51:58,687 DEBUG Discarded video: Just Give Up. It's for the Best. | Bri Hall | TEDxBethesda
+2018-12-09 16:51:58,687 DEBUG Discarded video: All the lonely people | Karen Dolva | TEDxArendal
+2018-12-09 16:51:58,687 DEBUG Discarded video: The People Currency: Practicing Emotional Intelligence | Jason Bridges | TEDxWabashCollege
+2018-12-09 16:51:58,687 DEBUG Discarded video: Want to learn better? Start mind mapping | Hazel Wagner | TEDxNaperville
+2018-12-09 16:51:58,687 DEBUG Discarded video: Cliteracy | Sophia Wallace | TEDxSalford
+2018-12-09 16:51:58,687 DEBUG Discarded video: Adult bullying: The epidemic no one talks about | Kevin Ward | TEDxSantaBarbara
+2018-12-09 16:51:58,687 DEBUG Discarded video: Reconsider the way you live. Get more time for what you love. | Nayana Mawilmada | TEDxKandy
+2018-12-09 16:51:58,687 DEBUG Discarded video: Supermassive black holes: most powerful objects in the universe | Martin Gaskell | TEDxMeritAcademy
+2018-12-09 16:51:58,687 DEBUG Discarded video: Self-Love, be Intentional | Caitlyn Roux | TEDxYouth@CapeTown
+2018-12-09 16:51:58,688 DEBUG Discarded video: Own Your Behaviours, Master Your Communication, Determine Your Success | Louise Evans | TEDxGenova
+2018-12-09 16:51:58,688 DEBUG Discarded video: Emotional laws are the answer for better relationships: Diana Wais at TEDxThessaloniki
+2018-12-09 16:51:58,688 DEBUG Discarded video: Great leadership comes down to only two rules | Peter Anderton | TEDxDerby
+2018-12-09 16:51:58,688 DEBUG Discarded video: The Power of Emotional Intelligence | Travis Bradberry | TEDxUCIrvine
+2018-12-09 16:51:58,688 DEBUG Discarded video: Historical myths | Dr. John van Wyhe | TEDxNUS
+2018-12-09 16:51:58,688 DEBUG Discarded video: Can we make quantum technology work? | Leo Kouwenhoven | TEDxAmsterdam
+2018-12-09 16:51:58,688 DEBUG Discarded video: Make Emotional Intelligence Great Again | Janice Gassam | TEDxHofstraUniversity
+2018-12-09 16:51:58,688 DEBUG Discarded video: Stop trying so hard. Achieve more by doing less. | Bethany Butzer | TEDxUNYP
+2018-12-09 16:51:58,688 DEBUG Discarded video: Become who you really are | Andrea Pennington | TEDxIUM
+2018-12-09 16:51:58,689 DEBUG Discarded video: Emotional Mastery: The Gifted Wisdom of Unpleasant Feelings | Dr Joan Rosenberg | TEDxSantaBarbara
+2018-12-09 16:51:58,689 DEBUG Discarded video: Clarity in the Future Through Self-Reflection | Victoria Herrera | TEDxLyceumPhilippinesUniversity
+2018-12-09 16:51:58,689 DEBUG Discarded video: Self-Transformation Through Mindfulness | Dr. David Vago | TEDxNashville
+2018-12-09 16:51:58,689 DEBUG Discarded video: Girl Up: The Secrets to an Extraordinary Life | Courtney Ferrell | TEDxRVA
+2018-12-09 16:51:58,689 DEBUG Discarded video: Alien worlds and extraterrestrial life – where are they?! | Brad Gibson | TEDxHull
+2018-12-09 16:51:58,689 DEBUG Discarded video: When art collides with data | Carrie Roy | TEDxMileHighWomen
+2018-12-09 16:51:58,689 DEBUG Discarded video: The Happiness Meter | Jesse Itzler | TEDxHickory
+2018-12-09 16:51:58,689 DEBUG Discarded video: The ideal business plan | George Koukis | TEDxChalkida
+2018-12-09 16:51:58,689 DEBUG Discarded video: Re-evolve Your Memory | Dr. Tharaka Gunarathne | TEDxUniversityOfAberdeen
+2018-12-09 16:51:58,689 DEBUG Discarded video: What facing 200 prison years taught me about happiness | Shaun Attwood | TEDxHSG
+2018-12-09 16:51:58,690 DEBUG Discarded video: How to become a memory master | Idriz Zogaj | TEDxGoteborg
+2018-12-09 16:51:58,690 DEBUG Discarded video: MIND MAPPING FOR EDUCATION | Mayumbula Michael Chikwililwa | TEDxUniversityofNamibia
+2018-12-09 16:51:58,690 DEBUG Discarded video: Ending the pursuit of perfection | Iskra Lawrence | TEDxUniversityofNevada
+2018-12-09 16:51:58,690 DEBUG Discarded video: Empathy + Gratitude = Success | David Meltzer | TEDxMissionViejo
+2018-12-09 16:51:58,690 DEBUG Discarded video: 7 things to do before you graduate college | Liz Wessel | TEDxRutgers
+2018-12-09 16:51:58,690 DEBUG Discarded video: FINDING AWE  IN LIFE | Hafid Ghori | TEDxYouth@TWSDubai
+2018-12-09 16:51:58,690 DEBUG Discarded video: Why you feel what you feel | Alan Watkins | TEDxOxford
+2018-12-09 16:51:58,690 DEBUG Discarded video: Doers, Dreamers, and the Differences Between Them | Joshua York | TEDxLivoniaCCLibrary
+2018-12-09 16:51:58,690 DEBUG Discarded video: The light and dark of emotional intelligence | Alison Bacon | TEDxPlymouthUniversity
+2018-12-09 16:51:58,690 DEBUG Discarded video count:46
+2018-12-09 16:51:58,691 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CGQQAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:51:59,077 DEBUG Discarded video: Words: Your Most Powerful Weapon | Evy Poumpouras | TEDxStLouisWomen
+2018-12-09 16:51:59,077 DEBUG Discarded video: Dealing with a Heartbreak - From Negative to Positive | Ravinder Singh | TEDxThaparUniversity
+2018-12-09 16:51:59,077 DEBUG Discarded video: The Rise of Artificial Intelligence through Deep Learning | Yoshua Bengio | TEDxMontreal
+2018-12-09 16:51:59,077 DEBUG Discarded video: Putting the 'Human' Back in H.I.V. | Arik Hartmann | TEDxVermilionStreet
+2018-12-09 16:51:59,077 DEBUG Discarded video: Ways to improve your Memory | Prateek Yadav | TEDxUPES
+2018-12-09 16:51:59,077 DEBUG Discarded video: A Memory Without Limits: Prof. Giuliana Mazzoni at TEDxHull
+2018-12-09 16:51:59,077 DEBUG Discarded video: A visual diary: On dementia and caregiving | Tony Luciani | TEDxCambridge
+2018-12-09 16:51:59,078 DEBUG Discarded video: Wie man aus Scheiße Bonbons macht | Fabian Wichmann | TEDxMünchen
+2018-12-09 16:51:59,078 DEBUG Discarded video: What Raising 12 Million Dollars Taught Me | Brooke Linville | TEDxBoise
+2018-12-09 16:51:59,081 DEBUG Discarded video: "How We've Been Misled by 'Emotional Intelligence'" | Kris Girrell | TEDxNatick
+2018-12-09 16:51:59,081 DEBUG Discarded video: I Like Myself, America and You Can't Stop Me. | Quinta Brunson | TEDxUCSD
+2018-12-09 16:51:59,081 DEBUG Discarded video: Telephone spam/scam problem? Bring in the robots. | Roger Anderson | TEDxNaperville
+2018-12-09 16:51:59,081 DEBUG Discarded video: The hidden power of not (always) fitting in. | Marianne Cantwell | TEDxNorwichED
+2018-12-09 16:51:59,081 DEBUG Discarded video: Ireland, tourism, language: Will Notini at TEDxGallatin
+2018-12-09 16:51:59,081 DEBUG Discarded video: Want to improve your memory-Do this everyday | Krishan Chahal | TEDxMMUSadopurAmbala
+2018-12-09 16:51:59,081 DEBUG Discarded video: Improvisation exercises (part 1): Vicky Saye Henderson at TEDxColumbiaSC
+2018-12-09 16:51:59,081 DEBUG Discarded video: Stop Waiting for Life to Happen | Peter Sage | TEDxKlagenfurt
+2018-12-09 16:51:59,081 DEBUG Discarded video: How do smart people make smart decisions? | Gerd Gigerenzer | TEDxNorrköping
+2018-12-09 16:51:59,082 DEBUG Discarded video: You’ve been warned! | The Warning | TEDxUniversityofNevada
+2018-12-09 16:51:59,082 DEBUG Discarded video: The Invisible Force - self-image – enables you to achieve great goals | Dan Lok | TEDxStanleyPark
+2018-12-09 16:51:59,082 DEBUG Discarded video: How I memorize piano music | Jocelyn Swigger | TEDxGettysburgCollege
+2018-12-09 16:51:59,083 DEBUG Discarded video: Everything is Connected -- Here's How: | Tom Chi | TEDxTaipei
+2018-12-09 16:51:59,083 DEBUG Discarded video: We find each other in the details | Olivia Gatwood | TEDxABQ
+2018-12-09 16:51:59,083 DEBUG Discarded video: What animals are thinking and feeling, and why it should matter | Carl Safina | TEDxMidAtlantic
+2018-12-09 16:51:59,083 DEBUG Discarded video: Your roots are there to help you | Rozmari De Meo | TEDxVitosha
+2018-12-09 16:51:59,083 DEBUG Discarded video: Feelings: Handle them before they handle you | Mandy Saligari | TEDxGuildford
+2018-12-09 16:51:59,083 DEBUG Discarded video: Natural Bodybuilding: Become the best version of yourself | Mischa Janiec | TEDxHSG
+2018-12-09 16:51:59,083 DEBUG Discarded video: The Deep End of Deep Learning | Hugo Larochelle | TEDxBoston
+2018-12-09 16:51:59,083 DEBUG Discarded video: Conquering Fear | Geoff Thompson | TEDxLeamingtonSpa
+2018-12-09 16:51:59,083 DEBUG Discarded video: Higgs Boson - What You Don't Know: Dan Hooper, Ph.D. at TEDxNaperville
+2018-12-09 16:51:59,083 DEBUG Discarded video: Memory -- Unlocked | Chester Lian | TEDxYouth@BeaconStreet
+2018-12-09 16:51:59,083 DEBUG Discarded video: What does the Quran really say about a Muslim woman's hijab? | Samina Ali | TEDxUniversityofNevada
+2018-12-09 16:51:59,084 DEBUG Discarded video: What if Schools Taught Us How to Learn | Jonathan Levi | TEDxWhiteCity
+2018-12-09 16:51:59,084 DEBUG Discarded video: How dogs love us | Dr. Gregory Berns | TEDxAtlanta
+2018-12-09 16:51:59,084 DEBUG Discarded video: Empowerment through confidence | Harnaam Kaur | TEDxWarwick
+2018-12-09 16:51:59,084 DEBUG Discarded video: I’m Mexican. Does that change your assumptions about me? | Vanessa Vancour | TEDxUniversityofNevada
+2018-12-09 16:51:59,084 DEBUG Discarded video: Synthetic biology - what should we be vibrating about?: Drew Endy at TEDxStanford
+2018-12-09 16:51:59,084 DEBUG Discarded video: How to stop your thoughts from controlling your life | Albert Hobohm | TEDxKTH
+2018-12-09 16:51:59,085 DEBUG Discarded video: Ich esse Fleisch! | Frank Kühne | TEDxFrankfurt
+2018-12-09 16:51:59,085 DEBUG Discarded video: Memory and the Elastic Brain | Hillary Schwarb | TEDxUIUC
+2018-12-09 16:51:59,085 DEBUG Discarded video: What can we learn from the world's "most humane" prison? | Ryan Cox | TEDxSanAntonio 2013
+2018-12-09 16:51:59,085 DEBUG Discarded video: The neuroscience of social intelligence: Bill von Hippel at TEDxUQ 2014
+2018-12-09 16:51:59,085 DEBUG Discarded video: The power of kindness | Orly Wahba | TEDxStPeterPort
+2018-12-09 16:51:59,086 DEBUG Discarded video: Why What We Feel Matters More Than What We Think. | Natasha Sharma | TEDxStMaryCSSchool
+2018-12-09 16:51:59,086 DEBUG Discarded video: Draw like a child; see like a master | Kate Hayward | TEDxSanAntonio
+2018-12-09 16:51:59,086 DEBUG Discarded video: What is Narcissism | Satinder Brar | TEDxMilton
+2018-12-09 16:51:59,086 DEBUG Discarded video: My way of improving students' memory skills | Serdar Arat | TEDxEdgemontSchool
+2018-12-09 16:51:59,086 DEBUG Discarded video count:50
+2018-12-09 16:51:59,087 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CJYBEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:51:59,553 DEBUG Discarded video: Willpower | Evelyne Binsack | TEDxZurich
+2018-12-09 16:51:59,554 DEBUG Discarded video: Believe in Yourself First | Mohammed AlMuftada | TEDxOMC
+2018-12-09 16:51:59,554 DEBUG Discarded video: Omnichannel: Retail (R)evolution | Kilian Wagner | TEDxHSG
+2018-12-09 16:51:59,554 DEBUG Discarded video: The internet of things | Jordan Duffy | TEDxSouthBank
+2018-12-09 16:51:59,554 DEBUG Discarded video: Opening Doors for Refugees in the IT Industry | Christian Hirsig | TEDxZurich
+2018-12-09 16:51:59,554 DEBUG Discarded video: Acting more rational - changing our automatic behavior | Ashley Zahabian | TEDxStanleyPark
+2018-12-09 16:51:59,554 DEBUG Discarded video: The Physics of Music | Nitin Sawhney & Nicki Wells | TEDxGateway
+2018-12-09 16:51:59,554 DEBUG Discarded video: HIV cure: what lies beneath? | Dr Virginie Gautier | TEDxUCD
+2018-12-09 16:51:59,554 DEBUG Discarded video: The world's smartest animals | Mathias Osvath | TEDxLundUniversity
+2018-12-09 16:51:59,554 DEBUG Discarded video: Grenzen im Kopf | Tina Weinmayer | TEDxStuttgart
+2018-12-09 16:51:59,554 DEBUG Discarded video: Emotions are Contagious: Spreading Emotional Intelligence | Joelle Hadley | TEDxArrowheadRanch
+2018-12-09 16:51:59,555 DEBUG Discarded video: Failure is knowledge, knowledge is success | Tim Gibson | TEDxGriffithUniversity
+2018-12-09 16:51:59,555 DEBUG Discarded video: Life's way too short not to live your Bucket List | Travis Bell | TEDxMelbourne
+2018-12-09 16:51:59,555 DEBUG Discarded video: Artificial Intelligence and the future | André LeBlanc | TEDxMoncton
+2018-12-09 16:51:59,555 DEBUG Discarded video: What we can learn from building on mars | Peter Zurbrügg | TEDxLausanne
+2018-12-09 16:51:59,555 DEBUG Discarded video: The truth about the food you are eating - or think you are | Mats-Eric Nilsson | TEDxStockholmSalon
+2018-12-09 16:51:59,555 DEBUG Discarded video: The Ties that Bind: One Health | Sharon Deem | TEDxGatewayArchSalon
+2018-12-09 16:51:59,555 DEBUG Discarded video: Neutron Stars: Beyond Ordinary Stellar Objects | Arnau Rios Huguet | TEDxSurreyUniversity
+2018-12-09 16:51:59,555 DEBUG Discarded video: What is after the 4th dimension? | Baher Shehata | TEDxQatarUniversity
+2018-12-09 16:51:59,555 DEBUG Discarded video: Distraction is literally killing us | Paul Atchley | TEDxYouth@KC
+2018-12-09 16:51:59,555 DEBUG Discarded video: Irish on purpose: Shaun Leonard at TEDxUNLV
+2018-12-09 16:51:59,555 DEBUG Discarded video: A guide to believing in yourself (but for real this time) | Catherine Reitman | TEDxToronto
+2018-12-09 16:51:59,556 DEBUG Discarded video: The art of improvisation: Steve Matuszak at TEDxVirginiaTech
+2018-12-09 16:51:59,556 DEBUG Discarded video: BUILDING SUSTAINABLE RELATIONSHIPS THAT BRING BRANDS AND PEOPLE CLOSER | Mark Morin | TEDxLaval
+2018-12-09 16:51:59,556 DEBUG Discarded video: Is Your Memory Just an Illusion? | A Tua Memória é Apenas Uma Ilusão? | Julia Shaw | TEDxPorto
+2018-12-09 16:51:59,556 DEBUG Discarded video: Not What but Why: Machine Learning for Understanding Genomics | Barbara Engelhardt | TEDxBoston
+2018-12-09 16:51:59,556 DEBUG Discarded video: Will care robots care? | Astrid Weiss | TEDxTUWien
+2018-12-09 16:51:59,556 DEBUG Discarded video: Live Life to the fullest | Nick Martin | TEDxFHKufstein
+2018-12-09 16:51:59,556 DEBUG Discarded video: PrEP for HIV Prevention:  The Best Worst Kept Secret | Raphael Landovitz | TEDxUCLA
+2018-12-09 16:51:59,557 DEBUG Discarded video: The Tor Project, protecting online anonimity: Jacob Appelbaum at TEDxFlanders
+2018-12-09 16:51:59,557 DEBUG Discarded video: Wer bin ich - und wenn ja, wo? | Leonie Müller | TEDxKoeln
+2018-12-09 16:51:59,557 DEBUG Discarded video: Vision = Victory:How Visualization can help you reach goals | LaToya Rene Robertson | TEDxNewBedford
+2018-12-09 16:51:59,557 DEBUG Discarded video: Medical Errors: The Silent Killer in Medicine | Carol Gunn | TEDxFargo
+2018-12-09 16:51:59,557 DEBUG Discarded video: Are Emotions Contagious in the Workplace? | Brandon Smith | TEDxEmory
+2018-12-09 16:51:59,557 DEBUG Discarded video: How to control emotion and influence behavior | Dawn Goldworm | TEDxEast
+2018-12-09 16:51:59,557 DEBUG Discarded video: Beyond mute | Shaela Niles | TEDxSnoIsleLibraries
+2018-12-09 16:51:59,557 DEBUG Discarded video: Life Inside an Eating Disorder | Alexa Petropoulos | TEDxGrossePointeSouthHS
+2018-12-09 16:51:59,557 DEBUG Discarded video: Advancing the treatment of HIV/AIDS until there is a cure: Jim Demarest at TEDxElonUniversity
+2018-12-09 16:51:59,558 DEBUG Discarded video: Techniques to Enhance Learning and Memory | Nancy D. Chiaravalloti | TEDxHerndon
+2018-12-09 16:51:59,558 DEBUG Discarded video: Music For Hang: Davide Swarup at TEDxSalford
+2018-12-09 16:51:59,558 DEBUG Discarded video: The mind and methods of a Memory Champion | Boris Nikolai Konrad | TEDxStrijp
+2018-12-09 16:51:59,558 DEBUG Discarded video: AI Is Eating Our World | Fabian Westerheide | TEDxHeidelberg
+2018-12-09 16:51:59,558 DEBUG Discarded video: Courage - The Missing Link in Emotional Intelligence: Dr. Paul Wieand at TEDxLehighRiver
+2018-12-09 16:51:59,558 DEBUG Discarded video: Learning from failure | David Damberger | TEDxYYC
+2018-12-09 16:51:59,558 DEBUG Discarded video: Instantly recalling understanding: Kevin Horsley at TEDxPretoria
+2018-12-09 16:51:59,558 DEBUG Discarded video: Master Your Stress | Gina Van Luven | TEDxAPUKL
+2018-12-09 16:51:59,558 DEBUG Discarded video: Augmented Reality, science fiction is now science fact | Ryan Groom | TEDxMoncton
+2018-12-09 16:51:59,558 DEBUG Discarded video: Adventure is now | Victor Morgan | TEDxHSG
+2018-12-09 16:51:59,558 DEBUG Discarded video: How People Crush Fears and Expand Comfort Zones | Corey Poirier | TEDxCanmore
+2018-12-09 16:51:59,558 DEBUG Discarded video count:50
+2018-12-09 16:51:59,559 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CMgBEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:00,053 DEBUG Discarded video: Engineered in Your Imagination | Danielle George | TEDxYouth@Manchester
+2018-12-09 16:52:00,053 DEBUG Discarded video: The Forgotten Virus (HIV-2) | Mohamed Mahdi | TEDxDebrecenUniversity
+2018-12-09 16:52:00,053 DEBUG Discarded video: Three Experiments of My Life | Saveen Hegde | TEDxMSRIT
+2018-12-09 16:52:00,053 DEBUG Discarded video: Too Much Confidence Is NOT Your Problem | Dre Baldwin | TEDxUNLV
+2018-12-09 16:52:00,053 DEBUG Found new video: Molecular machines of the future | Hendrik Dietz | TEDxTUMSalon
+2018-12-09 16:52:00,053 DEBUG Discarded video: Swipe left for sex: love & HIV in the age of Grindr | Scott Fried | TEDxPSU
+2018-12-09 16:52:00,054 DEBUG Discarded video: The light side of the dark side. | Iona Macgregor | TEDxMelbourne
+2018-12-09 16:52:00,054 DEBUG Discarded video: The Food Truck Of Tomorrow | Samay Bansal | TEDxUWCSEA
+2018-12-09 16:52:00,054 DEBUG Discarded video: How to live life like you're dying | Patrick Condon | TEDxURI
+2018-12-09 16:52:00,054 DEBUG Discarded video: Rethinking Smart Cities | Nigel Jacob | TEDxBermuda
+2018-12-09 16:52:00,054 DEBUG Discarded video: Are You Addicted to Learning? | Hélio Vogas | TEDxFSUJena
+2018-12-09 16:52:00,054 DEBUG Discarded video: The Science of Living | Dave Fuehrer | TEDxRochester
+2018-12-09 16:52:00,054 DEBUG Discarded video: I would rather have HIV than a broken leg: Edward O'Bryan at TEDxCharleston
+2018-12-09 16:52:00,054 DEBUG Discarded video: Overcoming FEAR & Taking Risks | Martha Namundjebo Tilahun | TEDxUniversityofNamibia
+2018-12-09 16:52:00,054 DEBUG Discarded video: New isn't easy: Henrik Fisker at TEDxChapmanU
+2018-12-09 16:52:00,054 DEBUG Discarded video: Curing a Disease Called Stigma | Mark Lacsamana | TEDxTaftAve
+2018-12-09 16:52:00,054 DEBUG Discarded video: National Service Can Make America Great Again | Joe Kearns Goodwin | TEDxBeaconStreet
+2018-12-09 16:52:00,055 DEBUG Discarded video: Does video gaming ruin people's lives? | Antonius van Rooij | TEDxGhent
+2018-12-09 16:52:00,055 DEBUG Discarded video: How to die happy | Madlena Komitova | TEDxVitosha
+2018-12-09 16:52:00,055 DEBUG Discarded video: Native Men Are Being Raped | Nico Juárez | TEDxOU
+2018-12-09 16:52:00,055 DEBUG Discarded video: How to make a neural network in your bedroom | Brittany Wenger |a TEDxCERN
+2018-12-09 16:52:00,055 DEBUG Discarded video: Embracing Failure: Kola Karim at TEDxLagos
+2018-12-09 16:52:00,055 DEBUG Discarded video: From AIDS to global health | Stefano Vella | TEDxMünchenSalon
+2018-12-09 16:52:00,055 DEBUG Discarded video: The Effects of 3D Printing and Open Source on Prosthetics | Lee Cleaveland | TEDxMSU
+2018-12-09 16:52:00,055 DEBUG Discarded video: The Art of Negotiation | Maria Ploumaki | TEDxYouth@Zurich
+2018-12-09 16:52:00,055 DEBUG Discarded video: Are All Plastics Created Evil? | Rannveig Magnúsdóttir | TEDxReykjavik
+2018-12-09 16:52:00,055 DEBUG Discarded video: Freedom and the Third Brain | Michael Sanders | TEDxSanJuanIsland
+2018-12-09 16:52:00,055 DEBUG Discarded video: Self-Awareness, Influence, and Partnerships | Anton Rabie | TEDxYouth@Toronto
+2018-12-09 16:52:00,056 DEBUG Discarded video: Animal Welfare and the Future of Zoos | Ron Kagan | TEDxOaklandUniversity
+2018-12-09 16:52:00,056 DEBUG Discarded video: Reweaving loss into memory: our responsibility as survivors | Amy Oestreicher | TEDxFSCJ
+2018-12-09 16:52:00,056 DEBUG Discarded video: Emotional Intelligence- The Skills Our Students Deserve | Ronen Habib | TEDxGunnHighSchool
+2018-12-09 16:52:00,056 DEBUG Discarded video: Improvisation exercises (part 2): Vicky Saye Henderson at TEDxColumbiaSC
+2018-12-09 16:52:00,056 DEBUG Discarded video: Do animals think and feel? | Sy Montgomery | TEDxAmoskeagMillyard
+2018-12-09 16:52:00,057 DEBUG Discarded video: How art & technology predict the future | Andrew McWilliams | TEDxVilnius
+2018-12-09 16:52:00,057 DEBUG Discarded video: Ocean Acidification in Washington State: Shallin Busch, PhD at TEDxTheEvergreenStateCollege
+2018-12-09 16:52:00,057 DEBUG Discarded video: Adaptability creates opportunities | Jasper Reid | TEDxFMS
+2018-12-09 16:52:00,057 DEBUG Discarded video: Why social-emotional intelligence matters in school | Kate Karafotas | TEDxYouth@ISPrague
+2018-12-09 16:52:00,058 DEBUG Discarded video: Millennials as Spiritual Free Agents | Steve Miller | TEDxUSD
+2018-12-09 16:52:00,058 DEBUG Discarded video: Using Brain Stimulation to Treat Symptoms of Parkinson’s Disease | Nga Chau | TEDxLancaster
+2018-12-09 16:52:00,058 DEBUG Discarded video: The art of memory: Daniel Kilov at TEDxMacquarieUniversity
+2018-12-09 16:52:00,058 DEBUG Discarded video: Lessons for life from an improvised musical  | The Showstoppers | TEDxWhitehall
+2018-12-09 16:52:00,058 DEBUG Discarded video: Venn Diagram Religions An Interfaith Approach to Coexist | Timur Saka | TEDxOnondagaCommunityCollege
+2018-12-09 16:52:00,058 DEBUG Discarded video: Let's Talk About Ugly Vegetables And Fruits | Mike Meinhardt | TEDxUniversityofNevada
+2018-12-09 16:52:00,058 DEBUG Discarded video: 8 Days A Week...Live By Design, Not By Default | Adam Cobb | TEDxSantaBarbara
+2018-12-09 16:52:00,059 DEBUG Discarded video: Improvisation exercises (part 3): Vicky Saye Henderson at TEDxColumbiaSC
+2018-12-09 16:52:00,059 DEBUG Discarded video: How can we change education now | Hashem Al-Ghaili | TEDxZagreb
+2018-12-09 16:52:00,059 DEBUG Discarded video: Digital freedom: Virtual reality, avatars, and multiple identities: Jim Blascovich at TEDxWinnipeg
+2018-12-09 16:52:00,059 DEBUG Discarded video: Germany: Low Crime, Clean Prisons, Lessons for America | Jeff Rosen | TEDxMountainViewHighSchool
+2018-12-09 16:52:00,059 DEBUG Discarded video: What if we could talk to animals? | Pea Horsley | TEDxLimassol
+2018-12-09 16:52:00,059 DEBUG Discarded video: Cultural intelligence: the competitive edge for leaders | Julia Middleton | TEDxEastEnd
+2018-12-09 16:52:00,059 DEBUG Discarded video count:49
+2018-12-09 16:52:00,060 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CPoBEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:00,601 DEBUG Discarded video: An open letter: Making hard choices | Sai Tamhankar | TEDxNMIMSHyderabad
+2018-12-09 16:52:00,601 DEBUG Discarded video: What if we helped refugees to help themselves? | Alexander Betts | TEDxVienna
+2018-12-09 16:52:00,601 DEBUG Discarded video: Wie Gründer geboren werden | Michael M. Gielnik | TEDxLeuphanaUniversityLüneburg
+2018-12-09 16:52:00,601 DEBUG Discarded video: Green technologies for the future: biomimetics in architecture | Barbara Widera | TEDxWSB
+2018-12-09 16:52:00,601 DEBUG Discarded video: From Syria to Germany in three stories | Kareem Kousa, Yusuf Zein & Ibrahim Andrun | TEDxStGeorg
+2018-12-09 16:52:00,601 DEBUG Discarded video: Beauty works -- objectivity, aesthetics & design | Mark Rigley | TEDxKanata
+2018-12-09 16:52:00,602 DEBUG Discarded video: Train your senses to learn faster | Martin Spang Olsen | TEDxCopenhagenSalon
+2018-12-09 16:52:00,602 DEBUG Discarded video: Real change through virtual reality | David Sackman | TEDxEastEnd
+2018-12-09 16:52:00,602 DEBUG Discarded video: Alzheimer and memory palaces: Kasper Bormans at TEDxLeuven
+2018-12-09 16:52:00,602 DEBUG Discarded video: Nature of the Graviton | Claudia de Rham | TEDxCLESalon
+2018-12-09 16:52:00,602 DEBUG Discarded video: Feeling Like an Outsider: Embracing the Hidden Gifts | Christine Upchurch | TEDxWilmingtonLive
+2018-12-09 16:52:00,602 DEBUG Discarded video: Changing the Human Story with CRISPR-Cas9 | Elaine Shults | TEDxCU
+2018-12-09 16:52:00,602 DEBUG Discarded video: Choosing to be a ‘Jack of All Trades’ | Dr. Jonathan Griffiths | TEDxNantwich
+2018-12-09 16:52:00,602 DEBUG Discarded video: Walking and Running: Bio-Inspired Robotics | Jonathan Hurst | TEDxOregonStateU
+2018-12-09 16:52:00,602 DEBUG Discarded video: Improv comedy will change the world | Jennifer Hunter | TEDxLSSU
+2018-12-09 16:52:00,602 DEBUG Discarded video: Increase your self-awareness with one simple fix | Tasha Eurich | TEDxMileHigh
+2018-12-09 16:52:00,602 DEBUG Discarded video: High-Tech High-Spirits | Mette Sillesen | TEDxOdense
+2018-12-09 16:52:00,603 DEBUG Discarded video: Why SMART goals are only HALF smart | Osamede Arhunmwunde | TEDxUniversityofWinnipeg
+2018-12-09 16:52:00,603 DEBUG Discarded video: Talking Is Easy | Hamad Al Amari | TEDxYouth@DPSMIS
+2018-12-09 16:52:00,603 DEBUG Discarded video: TEDxAdelaide - Michelle McDonnell - Transcranial Magnetic Stimulation
+2018-12-09 16:52:00,603 DEBUG Discarded video: Post-Truth Poetry | Dottie James | TEDxYouth@AICS
+2018-12-09 16:52:00,603 DEBUG Discarded video: I am HIV-positive. So what? | Avin Tan | TEDxNTU
+2018-12-09 16:52:00,603 DEBUG Discarded video: How we founded Lonely Planet | Tony Wheeler | TEDxSingapore
+2018-12-09 16:52:00,603 DEBUG Discarded video: Rethinking Memory & Retention of Learning: Tips for Parents: Tracy Dignum at TEDxWestVancouverED
+2018-12-09 16:52:00,603 DEBUG Discarded video: Dreams givers | Her Vang | TEDxYouth@Bonn
+2018-12-09 16:52:00,603 DEBUG Discarded video: Paying Attention & Mindfulness | Sam Chase | TEDxNYU
+2018-12-09 16:52:00,603 DEBUG Discarded video: Why the web is dead | Christian Heilmann | TEDxThessaloniki
+2018-12-09 16:52:00,603 DEBUG Discarded video: How to Enjoy & Remember Every Lecture | Eran Katz | TEDxWhiteCity
+2018-12-09 16:52:00,603 DEBUG Discarded video: New Technologies for the Treatment of Mental Health | Chip Fisher | TEDxBeaconStreet
+2018-12-09 16:52:00,604 DEBUG Discarded video: Half the Truth | Ami Vitale | TEDxShanghai
+2018-12-09 16:52:00,604 DEBUG Discarded video: Crafting Emotional Intelligence | Janelle Chase-Mayers | TEDxBridgetown
+2018-12-09 16:52:00,604 DEBUG Discarded video: Our Secret Stories | Ben Okri | TEDxInstitutLeRosey
+2018-12-09 16:52:00,604 DEBUG Discarded video: Robots, spaceships, and greeblies -- build your dream: Chris Lee at TEDxNashville
+2018-12-09 16:52:00,606 DEBUG Discarded video: Uncovering the secrets of immortal animals | Jules Howard | TEDxEastEnd
+2018-12-09 16:52:00,606 DEBUG Discarded video: How Can We Become More Self-Motivated? | Kyra G. | TEDxYouth@LCJSMS
+2018-12-09 16:52:00,606 DEBUG Discarded video: How Ambition Saved my Life | Kimberly Larsen | TEDxBergen
+2018-12-09 16:52:00,606 DEBUG Discarded video: The Inmate, The Student, And Tolstoy | Andrew Kaufman | TEDxCharlottesville
+2018-12-09 16:52:00,606 DEBUG Discarded video: How to talk to birds | Astacianna Hatcher | TEDxBrighton
+2018-12-09 16:52:00,606 DEBUG Discarded video: Synthetic muscle from nano and the rubber band | Richard Spontak | TEDxNCSU
+2018-12-09 16:52:00,606 DEBUG Discarded video: Follow the dreams that belong to you | Ayisha Narimanova | TEDxBHOS
+2018-12-09 16:52:00,606 DEBUG Discarded video: View from above | Ernesto Gainza | TEDxLjubljana
+2018-12-09 16:52:00,607 DEBUG Discarded video: Follow Through the Follow-Through | Jonathan Scales | TEDxAsheville
+2018-12-09 16:52:00,607 DEBUG Discarded video: Creating a Free HIV Vaccine | Naveen Jain | TEDxMoorgate
+2018-12-09 16:52:00,607 DEBUG Discarded video: The gardeners of the forest | Ian Redmond | TEDxSouthamptonUniversity
+2018-12-09 16:52:00,607 DEBUG Discarded video: Why Running for Office is Worth the Risk | Sofia Pereira | TEDxHumboldtBay
+2018-12-09 16:52:00,607 DEBUG Discarded video: The emergence of the end of HIV | Will Nutland | TEDxLSHTM
+2018-12-09 16:52:00,607 DEBUG Discarded video: La importancia de crecer | Alicia Coronil | TEDxUDeustoMadrid
+2018-12-09 16:52:00,607 DEBUG Discarded video: The secret of memory: Daniel Kilov at TEDxManly
+2018-12-09 16:52:00,607 DEBUG Discarded video: The language of feelings | Alex Willcock | TEDxGlasgow
+2018-12-09 16:52:00,607 DEBUG Discarded video: Lets Allow a Fair Trade in Kidneys | Frederike Ambagtsheer | TEDxAmsterdam
+2018-12-09 16:52:00,607 DEBUG Discarded video count:50
+2018-12-09 16:52:00,608 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CKwCEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:01,049 DEBUG Discarded video: Deepmind and the Future of the Finance Industry | Matthew Dixon | TEDxIIT
+2018-12-09 16:52:01,049 DEBUG Discarded video: How to be the best version of yourself | Raquel Caballero | TEDxKlagenfurt
+2018-12-09 16:52:01,049 DEBUG Discarded video: Where augmented reality meets healthcare | Nadine Hachach-Haram | TEDxCoventGardenWomen
+2018-12-09 16:52:01,049 DEBUG Discarded video: Understanding avalanche risk: A new paradigm | Dr. Jordy Hendrikx | TEDxBozeman
+2018-12-09 16:52:01,049 DEBUG Discarded video: The six golden rules of improvisation | Claudine Ullman | TEDxJohannesburg
+2018-12-09 16:52:01,049 DEBUG Discarded video: Virtual Reality: Jump Into the Story | Eric Darnell | TEDxCincinnati
+2018-12-09 16:52:01,049 DEBUG Discarded video: The American Dream in the Trump Nightmare | Omid Safi | TEDxDurham
+2018-12-09 16:52:01,049 DEBUG Discarded video: Imagine that being yourself could get you killed | Adam Kashmiry | TEDxGlasgow
+2018-12-09 16:52:01,049 DEBUG Discarded video: A story of purpose | Joey Reiman | TEDxEmory
+2018-12-09 16:52:01,049 DEBUG Discarded video: Why I do not fear Artificial Intelligence | Carl Henrik Ek | TEDxKTH
+2018-12-09 16:52:01,050 DEBUG Discarded video: Why We Must Embrace “Small Data” | Martin Lindstrom | TEDxHarvardCollegeSalon
+2018-12-09 16:52:01,050 DEBUG Discarded video: Artificial Intelligence will empower us, not exterminate us | Oren Etzioni | TEDxSeattle
+2018-12-09 16:52:01,050 DEBUG Discarded video: Why Your Doctor Should Daydream: The Importance of Creativity | David Hindin | TEDxWilmingtonSalon
+2018-12-09 16:52:01,050 DEBUG Discarded video: Robots helping people with dementia | Wendy Moyle | TEDxGriffithUniversity
+2018-12-09 16:52:01,050 DEBUG Discarded video: Three moments that changed the world | Roma Agrawal | TEDxRoyalHolloway
+2018-12-09 16:52:01,051 DEBUG Discarded video: Futuro sin presente | Alejandro Olivares | TEDxPaseoSantaLucía
+2018-12-09 16:52:01,051 DEBUG Discarded video: Participation ciudadana y democracia | Juan Francisco Trujillo | TEDxQuito
+2018-12-09 16:52:01,051 DEBUG Discarded video: Vital Signs… Balancing Real Life | Harry James | TEDxStouffville
+2018-12-09 16:52:01,051 DEBUG Discarded video: Deep brain stimulation: Xavier Vasques at TEDxMontpellier
+2018-12-09 16:52:01,051 DEBUG Discarded video: Ravens and the evolution of intelligence | Jorg Massen | TEDxArnhem
+2018-12-09 16:52:01,051 DEBUG Discarded video: Why we need a Fashion Revolution? | Orsola De Castro | TEDxUAL
+2018-12-09 16:52:01,051 DEBUG Discarded video: The Things We Make, Make Us. | Jay Pooley | TEDxUofT
+2018-12-09 16:52:01,051 DEBUG Discarded video: Suusad risti - kes otsustab? Kus on vandenõu? | Kersti Kaljulaid | TEDxToompea
+2018-12-09 16:52:01,052 DEBUG Discarded video: What will we do when the robots can feel? | Daniel Faggella | TEDxAmoskeagMillyard
+2018-12-09 16:52:01,052 DEBUG Discarded video: Social control, an Irish perspective | Eugene Griffin | TEDxYouth@TASOK
+2018-12-09 16:52:01,052 DEBUG Discarded video: Does your social circle determine how much you care? | David Hudson | TEDxBrum
+2018-12-09 16:52:01,052 DEBUG Discarded video: Crea. Com una obsessió es transforma en un ofici: Paula Bonet at TEDxLaValldUixo
+2018-12-09 16:52:01,052 DEBUG Discarded video: Emotional Intelligence - The Key to Success | Tazeen Ahmad | TEDxBergen
+2018-12-09 16:52:01,052 DEBUG Discarded video: Make Meaning Your Compass | Julie Wilkes | TEDxClevelandStateUniversity
+2018-12-09 16:52:01,052 DEBUG Discarded video: What AI Can Learn from Design | Molly Wright Steenson | TEDxCMU
+2018-12-09 16:52:01,053 DEBUG Discarded video: Ideas worth improvising | International Theater Stockholm | TEDxStockholm
+2018-12-09 16:52:01,053 DEBUG Discarded video: How to get your mojo back | Phil Anthony M | TEDxHSG
+2018-12-09 16:52:01,053 DEBUG Discarded video: The best college major you've never heard of | Anne Perkins | TEDxBozeman
+2018-12-09 16:52:01,053 DEBUG Discarded video: The origin story of an over-achiever | Patricia Walsh | TEDxLakeTravisHigh
+2018-12-09 16:52:01,053 DEBUG Discarded video: Building communities around sustainable food systems:  Stephen Sherwood at TEDxWageningen
+2018-12-09 16:52:01,053 DEBUG Discarded video: TEDxKnoxville - Austin Church - Learning to Love Failure
+2018-12-09 16:52:01,053 DEBUG Discarded video: Shakespeare, Marlowe, and their Jews: John Kleiner at TEDxWilliamsCollege
+2018-12-09 16:52:01,053 DEBUG Discarded video: Why Successful Organizations Fail: Danny DeLaRosa at TEDxReno
+2018-12-09 16:52:01,053 DEBUG Discarded video: Fenway-side chat - TEDx hears from Linda Henry | Linda Henry | TEDxBeaconStreetSalon
+2018-12-09 16:52:01,054 DEBUG Discarded video: Curing health care systems | Ellen van de Poel | TEDxErasmusUniversity
+2018-12-09 16:52:01,054 DEBUG Discarded video: Brain hacking: Can brain stimulation make you smarter? | Roi Cohen Kadosh | TEDxBrixton
+2018-12-09 16:52:01,054 DEBUG Discarded video: How to get rid of Kim K architecture | Trung Mai | TEDxHanoi
+2018-12-09 16:52:01,054 DEBUG Discarded video: Is Fast Fashion a Good Thing? | Trewin Restorick | TEDxYouth@Brum
+2018-12-09 16:52:01,054 DEBUG Discarded video: The brain is wired for unity: Zoran Josipovic at TEDxLowerEastSide
+2018-12-09 16:52:01,055 DEBUG Discarded video: Check with the Source | Baraa Derar | TEDxQatarUniversity
+2018-12-09 16:52:01,055 DEBUG Discarded video: The Mystic 'Bhulan' | Dr. Uzma Khan | TEDxLahore
+2018-12-09 16:52:01,055 DEBUG Discarded video: The Challenges & Opportunities of Augmented Reality | Edward Miller | TEDxSevenoaksSchool
+2018-12-09 16:52:01,055 DEBUG Discarded video: Bird Brain -- fact or fiction? | Debbie Kelly | TEDxUManitoba
+2018-12-09 16:52:01,055 DEBUG Discarded video count:50
+2018-12-09 16:52:01,056 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CN4CEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:01,492 DEBUG Discarded video: WHY I RETURNED TO A WAR ZONE TO START A WOMEN’S MOVEMENT FOR PEACE | Riya Yuyada | TEDxKakumaCamp
+2018-12-09 16:52:01,492 DEBUG Discarded video: How can you use virtual reality to reduce pain? | Marcin Czub | TEDxWroclaw
+2018-12-09 16:52:01,492 DEBUG Discarded video: The art of improvisation | Rapid Fire Theatre | TEDxEdmonton
+2018-12-09 16:52:01,492 DEBUG Found new video: Science, art and the Big Bang | Judith Egger | TEDxTUMSalon
+2018-12-09 16:52:01,493 DEBUG Discarded video: Using Emotional Intelligence to Help Women Feel their Best | Purva Gupta | TEDxLynbrookHighSchool
+2018-12-09 16:52:01,493 DEBUG Discarded video: Thoughts about the bottom billion on a smart device | Arjita Sethi | TEDxSanFrancisco
+2018-12-09 16:52:01,493 DEBUG Discarded video: Listening to data from the Large Hadron Collider | Lily Asquith |TEDxZurich
+2018-12-09 16:52:01,493 DEBUG Discarded video: Teaching for 21st Century | Karin Schmidlin | TEDxUW
+2018-12-09 16:52:01,494 DEBUG Discarded video: Eytan Millstone | TEDxCrescentSchool
+2018-12-09 16:52:01,494 DEBUG Discarded video: Beyond the Wheelchair | Dr. William Tan | TEDxSIM
+2018-12-09 16:52:01,494 DEBUG Discarded video: Global neural network cloud service for breast cancer detection: Brittany Wenger at TEDxAtlanta
+2018-12-09 16:52:01,494 DEBUG Discarded video: Synthetic Biology: Now and The Future | Geoffrey Baldwin | TEDxImperialCollege
+2018-12-09 16:52:01,494 DEBUG Discarded video: Failure Is Part of Success: Eduardo Zanatta at TEDxBYU
+2018-12-09 16:52:01,494 DEBUG Discarded video: Removing the Negative from HIV+: David Gere at TEDxGateway 2013
+2018-12-09 16:52:01,494 DEBUG Discarded video: Esperanto, the International Language | David Malone | TEDxChadwickSchool
+2018-12-09 16:52:01,494 DEBUG Discarded video: Triggered? How Labels Guide our Interactions | Susie Bannon | TEDxTexasStateUniversity
+2018-12-09 16:52:01,494 DEBUG Discarded video: Should we Worry About Artificial Intelligence? | Daniel Dippold | TEDxSuffolkUniversity
+2018-12-09 16:52:01,494 DEBUG Discarded video: How memory techniques can unleash children’s love of learning | Kevin Aires | TEDxWoking
+2018-12-09 16:52:01,494 DEBUG Discarded video: Is 3D printing the next industrial revolution? | Herbert Hermens | TEDxBendigo
+2018-12-09 16:52:01,494 DEBUG Discarded video: Refugees struggle with the same things we do | Dunya Habash | TEDxBirmingham
+2018-12-09 16:52:01,495 DEBUG Discarded video: All Equal All Different | Linda Bellos | TEDxSurreyUniversity
+2018-12-09 16:52:01,495 DEBUG Discarded video: Virtual Reality and Theater: Simulacra and Simulation | William Cusick | TEDxJerseyCity
+2018-12-09 16:52:01,495 DEBUG Discarded video: De la smart city a la ciudad sensible | Begoña Villacís | TEDxUDeustoMadrid
+2018-12-09 16:52:01,495 DEBUG Discarded video: Probing the Limits of Learnability With Brain-Computer Interfaces | Steven Chase | TEDxCMU
+2018-12-09 16:52:01,495 DEBUG Discarded video: Community-based Solutions to HIV Cure's Ethical Challenges  | Allison Matthews | TEDxDurham
+2018-12-09 16:52:01,495 DEBUG Discarded video: How I am reviving living traditions of India | Abhijit Sadhale | TEDxPanaji
+2018-12-09 16:52:01,495 DEBUG Discarded video: Is Fashion in Need of Generosity? | Natasha Athanasiadou | TEDxRhodes
+2018-12-09 16:52:01,495 DEBUG Discarded video: Love the Life you Live, Live the Life you Love | Andreas Stark | TEDxWHU
+2018-12-09 16:52:01,495 DEBUG Discarded video: How the crisis response tool Ushahidi gives voice to the people | Angela Lungati | TEDxKamitiPrison
+2018-12-09 16:52:01,495 DEBUG Discarded video: Creative is shaping the future | Graham Fink | TEDxCEIBS
+2018-12-09 16:52:01,496 DEBUG Discarded video: How Do You Want to Live Your Life? | At Adau | TEDxYouth@Kenyalang
+2018-12-09 16:52:01,496 DEBUG Discarded video: To Whom It may concern. | Maysoon Muhi Eddine | TEDxWadMedani
+2018-12-09 16:52:01,496 DEBUG Discarded video: How Artificial Intelligence is slowly becoming less art-ificial | Amir Baradaran | TEDxBocaRaton
+2018-12-09 16:52:01,496 DEBUG Discarded video: Hacking Happiness: How to control emotions with memory techniques | Etan Ginsberg | TEDxAkitaIntlU
+2018-12-09 16:52:01,496 DEBUG Discarded video: Doing it Yourself: Architect, Provocateur, and Inventor | Frank Barkow | TEDxLugano
+2018-12-09 16:52:01,496 DEBUG Discarded video: Liberate your life and your language with 'WORD-SMERCHING' | Jade Harrell | TEDxGatewayArch
+2018-12-09 16:52:01,496 DEBUG Discarded video: The Power of Enough | Paula Constant | TEDxPerth
+2018-12-09 16:52:01,496 DEBUG Discarded video: Our Addiction to Instant Gratification | Taesun Shim | TEDxChadwickSchool
+2018-12-09 16:52:01,497 DEBUG Discarded video: 100 Percent Improvised | Black Box Improv Theater | TEDxDayton
+2018-12-09 16:52:01,497 DEBUG Discarded video: Raising a digital kid without having been one | Galit Breen | TEDxEdina
+2018-12-09 16:52:01,497 DEBUG Discarded video: The Future of Food | Professor Christine Loscher | TEDxDCU
+2018-12-09 16:52:01,497 DEBUG Discarded video: How to Save the Rhino | Nayana Rathmalgoda | TEDxYouth@DinosaurPark
+2018-12-09 16:52:01,497 DEBUG Discarded video: Understanding the neural networks | Junaid Zafar | TEDxGCULahore
+2018-12-09 16:52:01,497 DEBUG Discarded video: The Beauty of the Crow | Celina C. | TEDxInstitutLeRosey
+2018-12-09 16:52:01,497 DEBUG Discarded video: 6 steps to knowing how to know | Natalie Foley | TEDxCharlottesville
+2018-12-09 16:52:01,497 DEBUG Discarded video: Birds, Biology, and Business | Joe Steensma | TEDxGatewayArch
+2018-12-09 16:52:01,498 DEBUG Discarded video: The "Act" of Learning | Armaghan Khan | TEDxNYUAD
+2018-12-09 16:52:01,498 DEBUG Discarded video: Say Something | La'Ketta Caldwell | TEDxUWMilwaukee
+2018-12-09 16:52:01,498 DEBUG Discarded video: Augmented Reality to the rescue | Rotem Bashi | TEDxTelAviv
+2018-12-09 16:52:01,498 DEBUG Discarded video count:49
+2018-12-09 16:52:01,499 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CJADEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:01,975 DEBUG Discarded video: The Cure is Not in the Pill Bottle | Divi Chandna | TEDxMontrealWomen
+2018-12-09 16:52:01,975 DEBUG Discarded video: An electronic nose that can sniff out disease | Simon Bootsma | TEDxJohannesburg
+2018-12-09 16:52:01,975 DEBUG Discarded video: Our Biography is Our Biology | Kay Corpus | TEDxEvansville
+2018-12-09 16:52:01,975 DEBUG Discarded video: The future city as experiment: Tia Kansara at TEDxKlagenfurt
+2018-12-09 16:52:01,975 DEBUG Discarded video: Interview with Thomas Goetz | Dominique Crenn | TEDxSanFrancisco
+2018-12-09 16:52:01,975 DEBUG Discarded video: Beauty | Henrry Huang | TEDxYouth@HuoShaYuZhen
+2018-12-09 16:52:01,975 DEBUG Discarded video: Building Innovation | Duzan Doepel | TEDxRotterdam
+2018-12-09 16:52:01,976 DEBUG Discarded video: Social Touch Technology | Gijs Huisman | TEDxSaxionUniversity
+2018-12-09 16:52:01,976 DEBUG Discarded video: Real Food Diets for Lions, Zebras, People and Beyond | George Diggs | TEDxAustinCollege
+2018-12-09 16:52:01,976 DEBUG Discarded video: Love Should Not Kill | Narges Dorratoltaj | TEDxVirginiaTech
+2018-12-09 16:52:01,976 DEBUG Discarded video: A Tool For The Mind | Marom Bikson | TEDxBushwick
+2018-12-09 16:52:01,976 DEBUG Discarded video: Imagine Ireland – an island of 10m people by 2050 | David Gavaghan | TEDxStormont
+2018-12-09 16:52:01,976 DEBUG Discarded video: How to not get eaten by a cannibal | Guillaume Dulude | TEDxMontreal
+2018-12-09 16:52:01,976 DEBUG Discarded video: How Art meets Artificial Intelligence | YQP and Roman Lipski | TEDxMünster
+2018-12-09 16:52:01,976 DEBUG Discarded video: Aerial Dancing | AirAligned | TEDxSacramento
+2018-12-09 16:52:01,976 DEBUG Discarded video: Traditsioon ja innovatsioon on teineteisest sõltuvad | Puuluup | TEDxToompea
+2018-12-09 16:52:01,976 DEBUG Discarded video: Creativity is not a gift | Dustin Timbrook | TEDxHuntsville
+2018-12-09 16:52:01,976 DEBUG Discarded video: Rising From Poverty | Crista Olan | TEDxYouth@MVHS
+2018-12-09 16:52:01,977 DEBUG Discarded video: How Paris Hilton changed my life | Adam Kramer | TEDxUniversityofNevada
+2018-12-09 16:52:01,977 DEBUG Discarded video: Spotlight the Future Economic Situation of Korean Society | Seung Il Jeong | TEDxKoreaUniversity
+2018-12-09 16:52:01,977 DEBUG Discarded video: Evolution, equilibrium, and global extinction | Justin Werfel | TEDxBeaconStreet
+2018-12-09 16:52:01,977 DEBUG Discarded video: Lessons Learned on the Trans-Siberian | Vijay Menon | TEDxDuke
+2018-12-09 16:52:01,977 DEBUG Discarded video: The Senate's Failed Experiment | William Dodd | TEDxReno
+2018-12-09 16:52:01,977 DEBUG Discarded video: Smart Cities: A Paradigm Shift | Zack Huhn | TEDxXavierUniversity
+2018-12-09 16:52:01,977 DEBUG Discarded video: The Embrace of Failure TED EYTAN and REGINA HOLLIDAY TEDxAlvaPark 2012
+2018-12-09 16:52:01,977 DEBUG Discarded video: How our mindless media use affects our health | Jan Van den Bulck | TEDxLeuvenSalon
+2018-12-09 16:52:01,977 DEBUG Discarded video: Design is beautiful | Jeremy Lindley | TEDxBedford
+2018-12-09 16:52:01,977 DEBUG Discarded video: Open House to Jackson’s Entrepreneurial Ecosystem | Ashlee Kelly | TEDxMillsapsCollege
+2018-12-09 16:52:01,977 DEBUG Discarded video: The Rebirth of Fashion. Never Settle. | Shirin Hashem | TEDxACCD
+2018-12-09 16:52:01,978 DEBUG Discarded video: The Age of Plantoids | Barbara Mazzolai | TEDxMilano
+2018-12-09 16:52:01,978 DEBUG Discarded video: Sample Theory | Mateusz Mach | TEDxGdynia
+2018-12-09 16:52:01,979 DEBUG Discarded video: Human Machines & Mechanical Humans | Christian Howard | TEDxCharlottesville
+2018-12-09 16:52:01,979 DEBUG Discarded video: Synthetic biology and mass production: Yasaman Sheri at TEDxMontreal
+2018-12-09 16:52:01,979 DEBUG Discarded video: Connecting Culture, Clothes, and Community: Bara'h Odeh at TEDxMileHigh
+2018-12-09 16:52:01,979 DEBUG Discarded video: Take Charge and Improve Yourself | Alex Nguyen | TEDxYouth@Langley
+2018-12-09 16:52:01,979 DEBUG Discarded video: Trusted Improv! | Burbee's Seedy Theatrical Company | TEDxColumbus
+2018-12-09 16:52:01,979 DEBUG Discarded video: To Love and Protect | Janelle Chanona | TEDxBelmopan
+2018-12-09 16:52:01,979 DEBUG Discarded video: Making a hot jam: Jerome Sydenham at TEDxBricklane
+2018-12-09 16:52:01,979 DEBUG Discarded video: Smart phones: What’s the real cost? | Klara Vackova | TEDxYouth@ISPrague
+2018-12-09 16:52:01,979 DEBUG Discarded video: The Birth of Emotional Intelligence in India | Sneh Vaswani | TEDxCRCE
+2018-12-09 16:52:01,979 DEBUG Discarded video: What bird food teaches us about pain | Dr. Thomas Taylor-Clark | TEDxCarrollwoodDaySchool
+2018-12-09 16:52:01,980 DEBUG Discarded video: Can theories be beautiful? | Angela Breitenbach | TEDxUAL
+2018-12-09 16:52:01,980 DEBUG Discarded video: Ampliando la mirada | Mauricio Isaza Mesa | TEDxUniversidadSergioArboleda
+2018-12-09 16:52:01,980 DEBUG Discarded video: Designing Systems to Avoid Failure: Tom Fisher at TEDxUMN
+2018-12-09 16:52:01,980 DEBUG Discarded video: The Future of Dementia Diagnosis | Shelagh Robinson | TEDxStoke
+2018-12-09 16:52:01,980 DEBUG Discarded video: Waste is only waste if the loop is not closed  | Tyler McNaney | TEDxStowe
+2018-12-09 16:52:01,980 DEBUG Discarded video: Turning plastic litter into paved roads | R Vasudevan | TEDxGIM
+2018-12-09 16:52:01,980 DEBUG Discarded video: Why Failure Is Necessary for Success | Dejan Stojanovic | TEDxKlagenfurt
+2018-12-09 16:52:01,980 DEBUG Discarded video: Machine learning, automation and the implications for everyone | ALESIS NOVIK | TEDxISM
+2018-12-09 16:52:01,980 DEBUG Discarded video count:50
+2018-12-09 16:52:01,981 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CMIDEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:02,882 DEBUG Discarded video: What Fish Fights and the American Dream Have in Common | Sara Stienecker | TEDxBGSU
+2018-12-09 16:52:02,882 DEBUG Discarded video: A escada cíclica. | Carlos Gaudi | TEDxYouth@ColégioMilitarSchool
+2018-12-09 16:52:02,882 DEBUG Discarded video: Small idea, big impact | Claire Reid | TEDxWesterfordHighSchool
+2018-12-09 16:52:02,882 DEBUG Discarded video: Reimagining compassion as power | Tim Dawes | TEDxSeattle
+2018-12-09 16:52:02,882 DEBUG Discarded video: Rescatando nuestros pueblos | José Alfredo Martín Piñas | TEDxRivasVaciamadrid
+2018-12-09 16:52:02,882 DEBUG Discarded video: Re-making a life: Molly Corbett at TEDxBaltimoreWomen
+2018-12-09 16:52:02,882 DEBUG Discarded video: My ePass - Die digitale Identität | Stefan Genchev | TEDxYouth@Bonn
+2018-12-09 16:52:02,882 DEBUG Discarded video: How to manage reindeers and people | Ulrika Andreasson | TEDxÖstersund
+2018-12-09 16:52:02,883 DEBUG Discarded video: ROI: Return on Intentionality  | Sloane Trugman | TEDxCSUSM
+2018-12-09 16:52:02,883 DEBUG Discarded video: What An Idea Needs To Survive. | Jeffrey Stamp | TEDxNormal
+2018-12-09 16:52:02,883 DEBUG Discarded video: Need to Change the Mindset: Solution to any Problem  | Krishan Gupta | TEDxJiwajiUniversity
+2018-12-09 16:52:02,883 DEBUG Discarded video: Animals, Prosthetics and Saving Lives | Derrick Campana | TEDxHobokenWomen
+2018-12-09 16:52:02,883 DEBUG Discarded video: How synthetic biology is exploring biological complexity: Sean Ward at TEDxVilnius
+2018-12-09 16:52:02,883 DEBUG Discarded video: The High School Marathon | Elena Dimova | TEDxYouth@AASSofia
+2018-12-09 16:52:02,883 DEBUG Discarded video: Persistence of vision | Chada El-Islam Benmahcene | TEDxAudinSquareWomen
+2018-12-09 16:52:02,883 DEBUG Discarded video: Fast thinking and the decision to have a child | Gabriela Pavlova | TEDxSofiaUniversity
+2018-12-09 16:52:02,883 DEBUG Discarded video: “FIND WHAT YOU LIKE TO DO” | Rukmini Iyer | TEDxMountainViewHighSchool
+2018-12-09 16:52:02,883 DEBUG Discarded video: The Power of Owning your Emotions | Neena Madhok | TEDxCityUniversityLondon
+2018-12-09 16:52:02,883 DEBUG Discarded video: The second half of the chess board: Bill Malloy at TEDxLaJolla
+2018-12-09 16:52:02,884 DEBUG Discarded video: Transforming Institutions into Making Spaces  | Patty Mitchell | TEDxStroudsRun
+2018-12-09 16:52:02,884 DEBUG Discarded video: New Ability | Graham Spero | TEDxAlgonquinCollege
+2018-12-09 16:52:02,884 DEBUG Discarded video: The Power of Peach, and Globalization | Kevin Coduto | TEDxWestFurongRoad
+2018-12-09 16:52:02,884 DEBUG Discarded video: The FDA's new role overseeing a deadly product: tobacco | Kathy Crosby | TEDxMidAtlantic
+2018-12-09 16:52:02,885 DEBUG Discarded video: Mourning online - are we faking it? | Anna Haverinen | TEDxTurku
+2018-12-09 16:52:02,885 DEBUG Discarded video: The influence of synthetic biology on our every day life | Kelly Hamers | TEDxDelftSalon
+2018-12-09 16:52:02,885 DEBUG Discarded video: How the **** does memory work? | Matthew Kelley | TEDxLakeForestCollege
+2018-12-09 16:52:02,885 DEBUG Discarded video: The "Mr. Science" experience | Bill Heybourne | TEDxSUU
+2018-12-09 16:52:02,885 DEBUG Discarded video: Stop thinking aloud so much and feel aloud instead | Claire Balfour | TEDxHeriotWattUniversity
+2018-12-09 16:52:02,885 DEBUG Discarded video: Powerlessness and nuclear weapons | Daniele Santi | TEDxCrocetta
+2018-12-09 16:52:02,886 DEBUG Discarded video: Space architect should be an optimist | Leszek Orzechowski | TEDxWSB
+2018-12-09 16:52:02,886 DEBUG Discarded video: Saturday night science: Dr. Graeme Jones at TEDxHull
+2018-12-09 16:52:02,886 DEBUG Discarded video: The Opportunity to Fail | Chris Gragtmans | TEDxYouth@ColumbiaSC
+2018-12-09 16:52:02,886 DEBUG Discarded video: Smash the Monolith | Nura Maznavi | TEDxUChicago
+2018-12-09 16:52:02,886 DEBUG Discarded video: The Next Step in AI: Multimodal Perception | Louis-Philippe Morency | TEDxCMU
+2018-12-09 16:52:02,886 DEBUG Discarded video: Three Sisters / Who's Gonna Be Your Man | Honey Whiskey Trio | TEDxTemecula
+2018-12-09 16:52:02,886 DEBUG Discarded video: Rediscover connections | Pierre-Andre Kruger | TEDxEcoleHôtelièreLausanne
+2018-12-09 16:52:02,887 DEBUG Discarded video: Moving from a “Thinker” to a “Doer” - Scientific Research | Edwina Liu | TEDxYouth@Edmonton
+2018-12-09 16:52:02,887 DEBUG Discarded video: Improv comedy performance | Jittery Citizens | TEDxJohannesburg
+2018-12-09 16:52:02,887 DEBUG Discarded video: PUBLY, striving to create intellectual capital for our society. | Soryoung Park | TEDxHanyangU
+2018-12-09 16:52:02,887 DEBUG Discarded video: Two things are important for maintaining a healthy mind and body | Andreu Prados | TEDxYouth@Amposta
+2018-12-09 16:52:02,887 DEBUG Discarded video: A new fix for food safety: Don Stull at TEDxTexasTechUniversity
+2018-12-09 16:52:02,887 DEBUG Discarded video: Social Media: The Value Lies in the Data | Jillian Ney | TEDxUniversityofStrathclyde
+2018-12-09 16:52:02,887 DEBUG Discarded video: The Power of Robotics for Youth | Angela Wei | TEDxISPP
+2018-12-09 16:52:02,887 DEBUG Discarded video: Resetting your approach to any problem | Oghenerukeme Asagba | TEDxCWRUSalon
+2018-12-09 16:52:02,887 DEBUG Discarded video: Eine sich selbst organisierende Gesellschaft ist möglich | Mark Ballandies | TEDxBodensee
+2018-12-09 16:52:02,887 DEBUG Discarded video: How to see the world from the HIV neutral perspective | Michael Jettmar | TEDxTrencin
+2018-12-09 16:52:02,888 DEBUG Discarded video: Mental Health-Changing Mindsets | Rachna Singh | TEDxJDMC
+2018-12-09 16:52:02,888 DEBUG Discarded video count:50
+2018-12-09 16:52:02,888 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CPQDEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:03,404 DEBUG Discarded video: Rediscover connections | Pierre-Andre Kruger | TEDxEcoleHôtelièreLausanne
+2018-12-09 16:52:03,404 DEBUG Discarded video: Warum die Vereinten Nationen mehr Jugendpartizipation brauchen | Johanna Schwarz | TEDxYouth@Bonn
+2018-12-09 16:52:03,404 DEBUG Discarded video: Moving from a “Thinker” to a “Doer” - Scientific Research | Edwina Liu | TEDxYouth@Edmonton
+2018-12-09 16:52:03,404 DEBUG Discarded video: Improv comedy performance | Jittery Citizens | TEDxJohannesburg
+2018-12-09 16:52:03,404 DEBUG Discarded video: Two things are important for maintaining a healthy mind and body | Andreu Prados | TEDxYouth@Amposta
+2018-12-09 16:52:03,404 DEBUG Discarded video: A new fix for food safety: Don Stull at TEDxTexasTechUniversity
+2018-12-09 16:52:03,405 DEBUG Discarded video: PUBLY, striving to create intellectual capital for our society. | Soryoung Park | TEDxHanyangU
+2018-12-09 16:52:03,405 DEBUG Discarded video: Social Media: The Value Lies in the Data | Jillian Ney | TEDxUniversityofStrathclyde
+2018-12-09 16:52:03,405 DEBUG Discarded video: The Power of Robotics for Youth | Angela Wei | TEDxISPP
+2018-12-09 16:52:03,405 DEBUG Discarded video: Resetting your approach to any problem | Oghenerukeme Asagba | TEDxCWRUSalon
+2018-12-09 16:52:03,405 DEBUG Discarded video: Eine sich selbst organisierende Gesellschaft ist möglich | Mark Ballandies | TEDxBodensee
+2018-12-09 16:52:03,405 DEBUG Discarded video: How to see the world from the HIV neutral perspective | Michael Jettmar | TEDxTrencin
+2018-12-09 16:52:03,406 DEBUG Discarded video: Mental Health-Changing Mindsets | Rachna Singh | TEDxJDMC
+2018-12-09 16:52:03,406 DEBUG Discarded video: Adam wasn't the first | AK Salling | TEDxYeongheungForest
+2018-12-09 16:52:03,406 DEBUG Discarded video: Building vibrant food systems | Marianne LeGreco | TEDxGreensboro
+2018-12-09 16:52:03,406 DEBUG Discarded video: Human Well-Beieng | Hakeem Allison | TEDxYouth@BrookhouseSchool
+2018-12-09 16:52:03,406 DEBUG Discarded video: Junk Food Citizenship | Jamie Dublanko | TEDxYouth@Edmonton
+2018-12-09 16:52:03,406 DEBUG Discarded video: Proof that the Teenage Brain Actually Works | Jimin Han | TEDxYouth@AASSofia
+2018-12-09 16:52:03,406 DEBUG Discarded video: Why you probably don't need motivation | Youssef Fahmy | TEDxYouth@MNS
+2018-12-09 16:52:03,406 DEBUG Discarded video: Success: How Do We Define It? | Edita Andiani | TEDxYouth@GMIS
+2018-12-09 16:52:03,406 DEBUG Discarded video: Let's talk robots | Nicoletta Iacobacci | TEDxCarthage
+2018-12-09 16:52:03,406 DEBUG Discarded video: Flying Robots: Sameer Parekh at TEDxSiliconAlley
+2018-12-09 16:52:03,407 DEBUG Discarded video: The Food You Eat | James Miner | TEDxBeaconStreet
+2018-12-09 16:52:03,407 DEBUG Discarded video: How We Learn: The Three Phases and Embracing Failure | Casey Dion | TEDxHolyokeCC
+2018-12-09 16:52:03,407 DEBUG Discarded video: Do A Moonshot | Jack Hidary | TEDxBeaconStreet
+2018-12-09 16:52:03,407 DEBUG Discarded video: Game your brain | Jake Stauch | TEDxCharleston
+2018-12-09 16:52:03,407 DEBUG Discarded video: Reforging Reality | Daniel Blair | TEDxWinnipeg
+2018-12-09 16:52:03,407 DEBUG Discarded video: The Non-Standard of Beauty | Catherine Kamaladevi | TEDxYouth@GMIS
+2018-12-09 16:52:03,407 DEBUG Discarded video: Re-imaging failure | Smita Singh | TEDxManukau
+2018-12-09 16:52:03,408 DEBUG Discarded video: Rethinking of personal journey | Jason Hsu | TEDxAizuwakamatsu
+2018-12-09 16:52:03,408 DEBUG Discarded video: Engineering A Future For The Past | Falko Kuester | TEDxBermuda
+2018-12-09 16:52:03,408 DEBUG Discarded video: Music Performance | Iskwé | TEDxTokyoSalon
+2018-12-09 16:52:03,408 DEBUG Discarded video: Revival of Colossus of Rhodes | George Barboutis | TEDxRhodes
+2018-12-09 16:52:03,408 DEBUG Discarded video: Transforming Nuclear Weapons and Handguns into Angels of Peace | Lin Evola | TEDxFultonStreetSalon
+2018-12-09 16:52:03,408 DEBUG Discarded video: Improv Performance | Greenhill Improv Troupe | TEDxGreenhillSchool
+2018-12-09 16:52:03,408 DEBUG Discarded video: Rethinking failure | Debora Spar | TEDxBarnardCollege
+2018-12-09 16:52:03,408 DEBUG Discarded video: What has happened to the ”Truth“? | Celeste Kew | TEDxYouth@IIL
+2018-12-09 16:52:03,408 DEBUG Discarded video: About a girl; Identity Matters | Sophia Papastavrou | TEDxNicosiaWomen
+2018-12-09 16:52:03,408 DEBUG Discarded video: YouMake ReMake by Renana Raz | elledanse | TEDxBratislava
+2018-12-09 16:52:03,408 DEBUG Discarded video: Photographing abandoned spaces at Chernobyl | Timm Suess | TEDxGundeldingen
+2018-12-09 16:52:03,409 DEBUG Discarded video: Inspiration and Motivation as New Therapeutic Tools  | Hitesh Arora | TEDxYouth@StGeorgesSchool
+2018-12-09 16:52:03,409 DEBUG Discarded video: Photography in the face of despair | Kim Sørenssen | TEDxTrondheim
+2018-12-09 16:52:03,409 DEBUG Discarded video: De Portugal para o espaço | Bruno Carvalho | TEDxPenafiel
+2018-12-09 16:52:03,409 DEBUG Discarded video: A Tour of the Technology Empowered Patient | Ries Robinson | TEDxABQSalon
+2018-12-09 16:52:03,409 DEBUG Discarded video: Humanity in 30 years time | | Oriana Santoro | TEDxCarouge
+2018-12-09 16:52:03,409 DEBUG Discarded video: Passion, Priorities and Perseverance | Mya-Rose Craig | TEDxUWE
+2018-12-09 16:52:03,409 DEBUG Discarded video: How to interact with virtual worlds without puking? | Martin Dechant | TEDxTUBerlin
+2018-12-09 16:52:03,409 DEBUG Discarded video: The Path to Equality | Caroline Codsi | TEDxMontrealWomen
+2018-12-09 16:52:03,409 DEBUG Discarded video count:50
+2018-12-09 16:52:03,410 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CKYEEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:03,856 DEBUG Discarded video: The Path to Equality | Caroline Codsi | TEDxMontrealWomen
+2018-12-09 16:52:03,856 DEBUG Discarded video: How do we measure what we can’t see? | Steven Goldfarb | TEDxOPorto
+2018-12-09 16:52:03,856 DEBUG Discarded video count:3
+2018-12-09 16:52:03,857 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CNgEEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:04,282 DEBUG Discarded video count:0
+2018-12-09 16:52:04,283 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CIoFEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:04,696 DEBUG Discarded video count:0
+2018-12-09 16:52:04,697 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CLwFEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:05,276 DEBUG Discarded video count:0
+2018-12-09 16:52:05,277 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CO4FEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:05,742 DEBUG Discarded video count:0
+2018-12-09 16:52:05,743 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CKAGEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:06,390 DEBUG Discarded video count:0
+2018-12-09 16:52:06,391 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CNIGEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:07,311 DEBUG Discarded video count:0
+2018-12-09 16:52:07,312 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CIQHEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:07,817 DEBUG Discarded video count:0
+2018-12-09 16:52:07,818 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CLYHEAA&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:08,354 DEBUG Discarded video count:0
+2018-12-09 16:52:08,354 INFO TRACE: youtube_search() finished
+2018-12-09 16:52:08,354 INFO TRACE: Calling get_youtube_data() with ('iq5SLf6xPFQ,iuIisjRIcVI,0qVOUD76JOg,EJDpbsvWdsg,XnQHVXMhzBo,-guxUgF_eTU,Zark1jrC7EU,36186S-RsKY,D6_J7FfgWVc,myl722kHxbU,3Xpj5Gj9pgo,NQ9uWbZ285Q,2B91UE0gHps,twHCsVPupXo,ab_yh2HoJ7o,62aI5Oy4S4g,KCLdryjDl6E,g17OHKBm50I,k_BVvupSChc,sRVxPE1cguo,WGPQM1J7Jcw,CFHvNNcEIDo,0NDL0AgRK0c,7b_7RXB3HnI,Z2TQQhTx6EQ,3uLp0C6G__w,YTKgizpzmtQ,OKQ-mpv0tWI,HCjBM23nQ0s,3DyrDKYhSi8,O54JCIDqWwM,NG2CsLrCCY8,6MxbegZtAII,mK6IdD4GXPo,NG9NETZ0-G4,m4w-FV6eERI,5SDZA06wO44,gnK7Lg56DjI,IDixuVrDABY,-NhZ4ioHb9E,gPZc1fZcgL8,LQEbC8QfbyU,ke4lI_1xCrU,U5DoJ_jCt7E,5U6Cc1hmdY0,76pnQkP-xG4,JR_DmkV4Jlw,iaemojsQDFw,LVM1KOl-kDw,w-QoDqBMe2k,1E-QkFUAt5A,NfpGHOu9TIY', <googleapiclient.discovery.Resource object at 0x00000148C6AD2278>), {}
+2018-12-09 16:52:08,361 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=iq5SLf6xPFQ&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:08,438 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=iuIisjRIcVI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:08,520 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=0qVOUD76JOg&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:08,606 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=EJDpbsvWdsg&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:08,681 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=XnQHVXMhzBo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:08,768 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=-guxUgF_eTU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:08,860 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=Zark1jrC7EU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:08,949 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=36186S-RsKY&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:09,052 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=D6_J7FfgWVc&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:09,132 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=myl722kHxbU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:09,226 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3Xpj5Gj9pgo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:09,326 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NQ9uWbZ285Q&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:09,419 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=2B91UE0gHps&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:09,503 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=twHCsVPupXo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:09,590 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=ab_yh2HoJ7o&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:09,678 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=62aI5Oy4S4g&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:09,773 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=KCLdryjDl6E&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:09,866 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=g17OHKBm50I&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:09,980 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=k_BVvupSChc&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:10,074 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=sRVxPE1cguo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:10,230 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=WGPQM1J7Jcw&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:10,314 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=CFHvNNcEIDo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:10,405 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=0NDL0AgRK0c&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:10,499 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=7b_7RXB3HnI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:10,602 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=Z2TQQhTx6EQ&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:10,726 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3uLp0C6G__w&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:10,812 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=YTKgizpzmtQ&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:10,893 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=OKQ-mpv0tWI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:10,996 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=HCjBM23nQ0s&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:11,101 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3DyrDKYhSi8&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:11,191 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=O54JCIDqWwM&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:11,287 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NG2CsLrCCY8&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:11,381 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=6MxbegZtAII&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:11,465 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=mK6IdD4GXPo&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:11,563 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NG9NETZ0-G4&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:11,659 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=m4w-FV6eERI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:11,770 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=5SDZA06wO44&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:11,865 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=gnK7Lg56DjI&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:11,960 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=IDixuVrDABY&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:12,062 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=-NhZ4ioHb9E&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:12,153 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=gPZc1fZcgL8&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:12,305 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=LQEbC8QfbyU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:12,406 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=ke4lI_1xCrU&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:12,511 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=U5DoJ_jCt7E&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:12,606 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=5U6Cc1hmdY0&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:12,712 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=76pnQkP-xG4&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:12,785 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=JR_DmkV4Jlw&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:12,885 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=iaemojsQDFw&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:12,974 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=LVM1KOl-kDw&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:13,060 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=w-QoDqBMe2k&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:13,156 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=1E-QkFUAt5A&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:13,247 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NfpGHOu9TIY&key=AIzaSyCtwTLEto38mYTNtGciRwyKizhFaQv-Jcs&alt=json
+2018-12-09 16:52:13,331 INFO TRACE: get_youtube_data() finished
+2018-12-09 16:52:13,331 INFO TRACE: Calling load_data() with ('C:\\Users\\Julian\\GitHub\\TEDx-YTT\\tedx-ytt-statistics.csv', ['Date', 'Metric']), {}
+2018-12-09 16:52:13,331 INFO Loading old data from C:\Users\Julian\GitHub\TEDx-YTT\tedx-ytt-statistics.csv
+2018-12-09 16:52:13,332 WARNING File C:\Users\Julian\GitHub\TEDx-YTT\tedx-ytt-statistics.csv does not exist! Continuing without loading old data.
+2018-12-09 16:52:13,332 INFO ...done!
+2018-12-09 16:52:13,332 INFO TRACE: load_data() finished
+2018-12-09 16:52:13,373 INFO TRACE: calc_stats() finished
+2018-12-09 16:52:13,373 INFO Saving data ...
+2018-12-09 16:52:13,378 INFO ...done!
+2018-12-09 16:52:13,378 INFO Saving config ...
+2018-12-09 16:52:13,379 INFO ...done!
+2018-12-09 16:52:13,380 INFO Checking date and renaming file
+2018-12-09 16:52:13,384 INFO Done with everything!

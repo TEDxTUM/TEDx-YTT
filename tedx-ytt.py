@@ -391,4 +391,18 @@ if __name__ == '__main__':
 
     logging.info(f'...done!')
 
+    logging.info('Checking date and renaming file')
+
+    if datetime.datetime.now().isoweekday() == 7:
+        year = datetime.datetime.now().year
+        month = datetime.datetime.now().month
+        week = datetime.datetime.now().isocalendar()[1]
+        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), os.path.join(save_dir, f'{BASE_FILENAME}-output-{year}_KW{week}.csv'))
+
+    if datetime.datetime.now().day == 9:
+        year = datetime.datetime.now().year
+        month = datetime.datetime.now().month
+        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'),
+                  os.path.join(save_dir, f'{BASE_FILENAME}-statistics-{year}_{month}.csv'))
+
     logging.info('Done with everything!')
