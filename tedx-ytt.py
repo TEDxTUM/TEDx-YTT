@@ -5,6 +5,7 @@ import logging
 import sys
 import argparse
 import configparser
+import datetime
 from argparse import RawTextHelpFormatter
 
 import os
@@ -261,6 +262,8 @@ if __name__ == '__main__':
     DIRECTORY = config.get('Standard', 'DIRECTORY')
     CONSOLE_LOG = config.getboolean('Advanced', 'CONSOLE_LOG')
     LOG_RETURNS = config.getboolean('Advanced', 'LOG_RETURNS')
+    NEWOUTPUT_WEEKDAY = config.get('Advanced', 'NEWOUTPUT_WEEKDAY')
+    NEWSTATS_DAY = config.getint('Advanced', 'NEWSTATS_DAY')
 
     # Parse args
     parser = argparse.ArgumentParser(description='Search for a TEDx on youtube and '
@@ -273,6 +276,7 @@ if __name__ == '__main__':
                                                  f'BASE_FILENAME = {BASE_FILENAME}\n'
                                                  f'CONSOLE_LOG = \t{CONSOLE_LOG}\n'
                                                  f'DIRECTORY = \t{DIRECTORY}\n',
+
                                      formatter_class=RawTextHelpFormatter)
     parser.add_argument('-q', '--search_term', help='Term to search for - your TEDx\'s name', type=str)
     parser.add_argument('-s', '--search', help='Switch searching for new videos on/off', type=bool)
@@ -282,6 +286,8 @@ if __name__ == '__main__':
     parser.add_argument('-l', '--console_log', help='Switch logging output to python console on/off', type=bool)
     parser.add_argument('-r', '--log_return', help='Switch output of functions in console on/off', type=bool)
     parser.add_argument('-d', '--directory', help='Directory where the output should be saved to', type=str)
+    parser.add_argument('-no', '--newoutput_weekday', help='weekday at which -output file is renamed', type=str)
+    parser.add_argument('-ns', '--newstats_day', help='Day of the month at which -statistics file is renamed', type=int)
     args = parser.parse_args()
 
     if args.search_term:
@@ -300,6 +306,10 @@ if __name__ == '__main__':
         LOG_RETURNS = args.log_return
     if args.directory:
         DIRECTORY = args.directory
+    if args.newoutput_weekday:
+        NEWOUTPUT_WEEKDAY = args.newoutput_weekday
+    if args.newstats_day:
+        NEWSTATS_DAY = args.newstats_day
 
     # Logging
     logging.basicConfig(level=logging.DEBUG,
@@ -381,8 +391,17 @@ if __name__ == '__main__':
 
     final_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), sep=';', encoding='utf-8')
     final_stats_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), sep=';', encoding='utf-8')
-    logging.info(f'...done!')
 
+    #rename date in regular intervals to avoid extreme file sizes
+
+    today = datetime.datetime.today()
+    weekdays = {"monday":1, "tuesday": 2, "wednesday": 3, "thursday": 4, "friday": 5, "saturday": 6, "sunday": 7}
+    if today.isoweekday() == weekdays[NEWOUTPUT_WEEKDAY.lower()]:
+        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), os.path.join(save_dir, f'{BASE_FILENAME}-output_KW{today.isocalendar()[1]}.csv'))
+    if today.day == NEWSTATS_DAY:
+        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), os.path.join(save_dir, f'{BASE_FILENAME}-statistics_{today.month}.csv'))
+
+    logging.info(f'...done!')
     # write config
     logging.info('Saving config ...')
     cfgfile = open('config.ini', 'w')
