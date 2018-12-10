@@ -354,9 +354,29 @@ if __name__ == '__main__':
         try:
             yt_ids = ','.join(old_df.index.levels[1])
         except:
-            logging.warning('There is no old data available. Please run script again with SEARCH = True.')
-            yt_ids = None
-            exit(1)
+            try:
+                logging.info('Getting youtube IDs from yt_ids.csv...')
+                yt_ids = pd.read_csv(os.path.join(save_dir, 'yt_ids.csv'), encoding='utf-8').to_string(index=False).replace('\n', ',')
+                logging.info('...done')
+
+            except:
+                logging.warning('There is no old data available. Please run script again with SEARCH = True.')
+                yt_ids = None
+                exit(1)
+    try:
+        logging.info('Loading yt_ids from external file...')
+        saved_ids = pd.read_csv(os.path.join(save_dir, 'yt_ids.csv'), encoding='utf-8').to_string(index=False).replace('\n', ',')
+        yt_ids_list = yt_ids.split(',')
+        saved_ids_list = saved_ids.split(',')
+        for item in saved_ids_list:
+            if item not in yt_ids_list:
+                yt_ids_list.append(item)
+        logging.info('...done')
+
+        yt_ids = ','.join(yt_ids_list)
+
+    except:
+        logging.info('No yt_id list available. Continuing with results from search / results from old data.')
 
     if UPDATE and yt_ids is not None:
         new_df = get_youtube_data(yt_ids.replace('\n', ','), youtube)
@@ -383,8 +403,12 @@ if __name__ == '__main__':
 
     elif old_stats_df is not None:
         final_stats_df = old_stats_df
-    else:
+
+    elif UPDATE:
         final_stats_df = calc_stats(new_df)
+    else:
+        logging.warning('Can not calculate stats without data. Run the script at least once with UPDATE = True!')
+        exit(1)
 
     # save data
     logging.info('Saving data ...')
@@ -392,7 +416,11 @@ if __name__ == '__main__':
     final_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), sep=';', encoding='utf-8')
     final_stats_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), sep=';', encoding='utf-8')
 
-    #rename date in regular intervals to avoid extreme file sizes
+    final_df.reset_index(inplace=True)
+    final_df.ID.to_csv('yt_ids.csv', encoding='utf-8', index=False)
+
+
+    #rename file in regular intervals to avoid extreme file sizes
 
     today = datetime.datetime.today()
     weekdays = {"monday":1, "tuesday": 2, "wednesday": 3, "thursday": 4, "friday": 5, "saturday": 6, "sunday": 7}
