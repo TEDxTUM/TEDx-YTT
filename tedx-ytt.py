@@ -410,6 +410,8 @@ if __name__ == '__main__':
         logging.warning('Can not calculate stats without data. Run the script at least once with UPDATE = True!')
         exit(1)
 
+
+
     # save data
     logging.info('Saving data ...')
 
