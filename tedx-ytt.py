@@ -69,9 +69,9 @@ def youtube_search(search_term, max_results, client):
             for search_result in search_response.get('items', []):
                 if SEARCH_TERM.upper() in search_result['snippet']['title'].upper():
                     videos.append(search_result['id']['videoId'])
-                    logging.debug('Found new video: ' + search_result['snippet']['title'])
+                    logging.info('Found new video: ' + search_result['snippet']['title'])
                 else:
-                    logging.debug('Discarded video: ' + search_result['snippet']['title'])
+                    logging.info('Discarded video: ' + search_result['snippet']['title'])
                     discard_counter += 1
 
             logging.debug(f'Discarded video count:{discard_counter}')
@@ -172,8 +172,8 @@ def get_youtube_data(ids_str, client):
                 title = from_title[0]
                 speaker = from_title[1]
                 #tedx = from_title[2]
-                print(f'title {title}')
-                print(f'speaker {speaker}')
+                logging.info(f'title {title}')
+                logging.info(f'speaker {speaker}')
 
                 titles.append(title)
                 speakers.append(speaker)
@@ -252,8 +252,10 @@ def calc_stats(df):
 
 if __name__ == '__main__':
     #silence google api warnings
-
     logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.ERROR)
+
+    #silence logging exceptions
+    logging.raiseExceptions = False
 
     # Parse config
     config = configparser.ConfigParser()
