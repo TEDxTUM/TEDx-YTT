@@ -426,7 +426,7 @@ if __name__ == '__main__':
     final_stats_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), sep=';', encoding='utf-8')
 
     final_df.reset_index(inplace=True)
-    final_df.ID.to_csv('yt_ids.csv', encoding='utf-8', index=False)
+    final_df.ID.to_csv(os.path.join(save_dir,'yt_ids.csv'), encoding='utf-8', index=False)
 
 
     #rename file in regular intervals to avoid extreme file sizes
