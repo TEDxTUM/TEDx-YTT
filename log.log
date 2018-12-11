@@ -1,153 +1,62 @@
-2018-12-10 17:28:32,070 INFO Save directory: H:\Private\TEDx-YTT
-2018-12-10 17:28:32,091 WARNING file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
-Traceback (most recent call last):
-  File "C:\Users\ga27jaf\AppData\Local\Continuum\Anaconda3\lib\site-packages\googleapiclient\discovery_cache\__init__.py", line 36, in autodetect
-    from google.appengine.api import memcache
-ModuleNotFoundError: No module named 'google.appengine'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\ga27jaf\AppData\Local\Continuum\Anaconda3\lib\site-packages\googleapiclient\discovery_cache\file_cache.py", line 33, in <module>
-    from oauth2client.contrib.locked_file import LockedFile
-ModuleNotFoundError: No module named 'oauth2client'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\ga27jaf\AppData\Local\Continuum\Anaconda3\lib\site-packages\googleapiclient\discovery_cache\file_cache.py", line 37, in <module>
-    from oauth2client.locked_file import LockedFile
-ModuleNotFoundError: No module named 'oauth2client'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\ga27jaf\AppData\Local\Continuum\Anaconda3\lib\site-packages\googleapiclient\discovery_cache\__init__.py", line 41, in autodetect
-    from . import file_cache
-  File "C:\Users\ga27jaf\AppData\Local\Continuum\Anaconda3\lib\site-packages\googleapiclient\discovery_cache\file_cache.py", line 41, in <module>
-    'file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth')
-ImportError: file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
-2018-12-10 17:28:32,093 INFO URL being requested: GET https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest
-2018-12-10 17:28:33,276 INFO TRACE: Calling load_data() with ('H:\\Private\\TEDx-YTT\\tedx-ytt-output.csv', ['Date', 'ID']), {}
-2018-12-10 17:28:33,278 INFO Loading old data from H:\Private\TEDx-YTT\tedx-ytt-output.csv
-2018-12-10 17:28:33,281 WARNING File H:\Private\TEDx-YTT\tedx-ytt-output.csv does not exist! Continuing without loading old data.
-2018-12-10 17:28:33,282 INFO ...done!
-2018-12-10 17:28:33,284 INFO TRACE: load_data() finished
-2018-12-10 17:28:33,285 INFO Getting youtube IDs from yt_ids.csv...
-2018-12-10 17:28:33,297 INFO ...done
-2018-12-10 17:28:33,298 INFO Loading yt_ids from external file...
-2018-12-10 17:28:33,307 INFO ...done
-2018-12-10 17:28:33,308 INFO TRACE: Calling get_youtube_data() with ('iq5SLf6xPFQ,iuIisjRIcVI,0qVOUD76JOg,EJDpbsvWdsg,XnQHVXMhzBo,-guxUgF_eTU,36186S-RsKY,Zark1jrC7EU,2B91UE0gHps,D6_J7FfgWVc,myl722kHxbU,ab_yh2HoJ7o,NQ9uWbZ285Q,twHCsVPupXo,62aI5Oy4S4g,3Xpj5Gj9pgo,g17OHKBm50I,KCLdryjDl6E,sRVxPE1cguo,k_BVvupSChc,CFHvNNcEIDo,NG2CsLrCCY8,3DyrDKYhSi8,WGPQM1J7Jcw,YTKgizpzmtQ,0NDL0AgRK0c,HCjBM23nQ0s,Z2TQQhTx6EQ,3uLp0C6G__w,7b_7RXB3HnI,OKQ-mpv0tWI,O54JCIDqWwM,6MxbegZtAII,LQEbC8QfbyU,mK6IdD4GXPo,NG9NETZ0-G4,m4w-FV6eERI,gPZc1fZcgL8,gnK7Lg56DjI,-NhZ4ioHb9E,IDixuVrDABY,5SDZA06wO44,ke4lI_1xCrU,76pnQkP-xG4,5U6Cc1hmdY0,JR_DmkV4Jlw,U5DoJ_jCt7E,iaemojsQDFw,LVM1KOl-kDw,w-QoDqBMe2k,1E-QkFUAt5A,NfpGHOu9TIY,iq5SLf6xPFQ,iuIisjRIcVI,0qVOUD76JOg,EJDpbsvWdsg,XnQHVXMhzBo,-guxUgF_eTU,36186S-RsKY,Zark1jrC7EU,2B91UE0gHps,D6_J7FfgWVc,myl722kHxbU,ab_yh2HoJ7o,NQ9uWbZ285Q,twHCsVPupXo,62aI5Oy4S4g,3Xpj5Gj9pgo,g17OHKBm50I,KCLdryjDl6E,sRVxPE1cguo,k_BVvupSChc,CFHvNNcEIDo,NG2CsLrCCY8,3DyrDKYhSi8,WGPQM1J7Jcw,YTKgizpzmtQ,0NDL0AgRK0c,HCjBM23nQ0s,Z2TQQhTx6EQ,3uLp0C6G__w,7b_7RXB3HnI,OKQ-mpv0tWI,O54JCIDqWwM,6MxbegZtAII,LQEbC8QfbyU,mK6IdD4GXPo,NG9NETZ0-G4,m4w-FV6eERI,gPZc1fZcgL8,gnK7Lg56DjI,-NhZ4ioHb9E,IDixuVrDABY,5SDZA06wO44,ke4lI_1xCrU,76pnQkP-xG4,5U6Cc1hmdY0,JR_DmkV4Jlw,U5DoJ_jCt7E,iaemojsQDFw,LVM1KOl-kDw,w-QoDqBMe2k,1E-QkFUAt5A,NfpGHOu9TIY,HBYLSecmmuo', <googleapiclient.discovery.Resource object at 0x00000000083234A8>), {}
-2018-12-10 17:28:33,317 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=iq5SLf6xPFQ&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:33,433 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=iuIisjRIcVI&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:33,503 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=0qVOUD76JOg&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:33,555 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=EJDpbsvWdsg&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:33,614 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=XnQHVXMhzBo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:33,674 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=-guxUgF_eTU&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:33,754 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=36186S-RsKY&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:33,812 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=Zark1jrC7EU&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:34,379 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=2B91UE0gHps&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:34,540 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=D6_J7FfgWVc&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:34,601 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=myl722kHxbU&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:34,682 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=ab_yh2HoJ7o&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:34,749 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NQ9uWbZ285Q&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:34,809 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=twHCsVPupXo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:34,875 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=62aI5Oy4S4g&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:34,941 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3Xpj5Gj9pgo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:35,009 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=g17OHKBm50I&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:35,070 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=KCLdryjDl6E&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:35,129 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=sRVxPE1cguo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:35,194 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=k_BVvupSChc&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:35,255 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=CFHvNNcEIDo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:35,310 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NG2CsLrCCY8&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:35,383 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3DyrDKYhSi8&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:35,437 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=WGPQM1J7Jcw&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:35,497 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=YTKgizpzmtQ&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:35,554 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=0NDL0AgRK0c&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:35,626 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=HCjBM23nQ0s&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:35,682 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=Z2TQQhTx6EQ&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:35,743 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3uLp0C6G__w&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:35,801 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=7b_7RXB3HnI&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:35,861 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=OKQ-mpv0tWI&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:35,913 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=O54JCIDqWwM&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:35,982 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=6MxbegZtAII&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:36,050 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=LQEbC8QfbyU&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:36,139 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=mK6IdD4GXPo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:36,206 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NG9NETZ0-G4&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:36,268 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=m4w-FV6eERI&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:36,331 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=gPZc1fZcgL8&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:36,392 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=gnK7Lg56DjI&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:36,459 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=-NhZ4ioHb9E&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:36,517 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=IDixuVrDABY&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:36,590 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=5SDZA06wO44&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:36,650 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=ke4lI_1xCrU&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:36,711 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=76pnQkP-xG4&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:36,774 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=5U6Cc1hmdY0&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:36,837 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=JR_DmkV4Jlw&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:36,891 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=U5DoJ_jCt7E&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:36,952 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=iaemojsQDFw&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:37,010 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=LVM1KOl-kDw&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:37,067 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=w-QoDqBMe2k&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:37,124 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=1E-QkFUAt5A&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:37,182 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NfpGHOu9TIY&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:37,245 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=iq5SLf6xPFQ&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:37,302 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=iuIisjRIcVI&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:37,354 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=0qVOUD76JOg&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:37,421 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=EJDpbsvWdsg&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:37,480 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=XnQHVXMhzBo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:37,542 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=-guxUgF_eTU&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:37,604 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=36186S-RsKY&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:37,669 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=Zark1jrC7EU&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:37,725 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=2B91UE0gHps&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:37,788 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=D6_J7FfgWVc&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:37,851 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=myl722kHxbU&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:37,911 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=ab_yh2HoJ7o&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:37,967 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NQ9uWbZ285Q&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:38,027 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=twHCsVPupXo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:38,085 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=62aI5Oy4S4g&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:38,142 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3Xpj5Gj9pgo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:38,203 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=g17OHKBm50I&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:38,265 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=KCLdryjDl6E&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:38,327 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=sRVxPE1cguo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:38,386 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=k_BVvupSChc&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:38,448 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=CFHvNNcEIDo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:38,499 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NG2CsLrCCY8&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:38,556 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3DyrDKYhSi8&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:38,618 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=WGPQM1J7Jcw&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:38,675 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=YTKgizpzmtQ&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:38,744 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=0NDL0AgRK0c&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:38,803 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=HCjBM23nQ0s&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:38,857 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=Z2TQQhTx6EQ&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:38,919 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=3uLp0C6G__w&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:38,974 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=7b_7RXB3HnI&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:39,035 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=OKQ-mpv0tWI&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:39,087 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=O54JCIDqWwM&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:39,150 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=6MxbegZtAII&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:39,210 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=LQEbC8QfbyU&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:39,267 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=mK6IdD4GXPo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:39,336 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NG9NETZ0-G4&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:39,398 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=m4w-FV6eERI&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:39,460 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=gPZc1fZcgL8&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:39,512 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=gnK7Lg56DjI&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:39,570 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=-NhZ4ioHb9E&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:39,624 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=IDixuVrDABY&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:39,692 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=5SDZA06wO44&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:39,752 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=ke4lI_1xCrU&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:39,828 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=76pnQkP-xG4&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:39,888 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=5U6Cc1hmdY0&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:39,945 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=JR_DmkV4Jlw&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:40,014 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=U5DoJ_jCt7E&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:40,071 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=iaemojsQDFw&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:40,130 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=LVM1KOl-kDw&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:40,196 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=w-QoDqBMe2k&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:40,252 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=1E-QkFUAt5A&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:40,308 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=NfpGHOu9TIY&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:40,365 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2C+statistics&id=HBYLSecmmuo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
-2018-12-10 17:28:40,423 INFO TRACE: get_youtube_data() finished
-2018-12-10 17:28:40,425 INFO TRACE: Calling load_data() with ('H:\\Private\\TEDx-YTT\\tedx-ytt-statistics.csv', ['Date', 'Metric']), {}
-2018-12-10 17:28:40,426 INFO Loading old data from H:\Private\TEDx-YTT\tedx-ytt-statistics.csv
-2018-12-10 17:28:40,428 WARNING File H:\Private\TEDx-YTT\tedx-ytt-statistics.csv does not exist! Continuing without loading old data.
-2018-12-10 17:28:40,430 INFO ...done!
-2018-12-10 17:28:40,431 INFO TRACE: load_data() finished
-2018-12-10 17:28:40,500 INFO TRACE: calc_stats() finished
-2018-12-10 17:28:40,502 INFO Saving data ...
+2018-12-11 13:44:49,851 INFO Save directory: H:\Private\TEDx-YTT
+2018-12-11 13:44:49,858 INFO URL being requested: GET https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest
+2018-12-11 13:44:51,021 INFO TRACE: Calling load_data() with ('H:\\Private\\TEDx-YTT\\tedx-ytt-output.csv', ['Date', 'ID']), {}
+2018-12-11 13:44:51,023 INFO Loading old data from H:\Private\TEDx-YTT\tedx-ytt-output.csv
+2018-12-11 13:44:51,025 WARNING File H:\Private\TEDx-YTT\tedx-ytt-output.csv does not exist! Continuing without loading old data.
+2018-12-11 13:44:51,026 INFO ...done!
+2018-12-11 13:44:51,027 INFO TRACE: load_data() finished
+2018-12-11 13:44:51,029 INFO TRACE: Calling youtube_search() with ('TEDxTUM', 400), {'client': <googleapiclient.discovery.Resource object at 0x000000000875C630>}
+2018-12-11 13:44:51,032 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2018-12-11 13:44:51,489 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CDIQAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2018-12-11 13:44:51,996 DEBUG Found new video: Design beyond the shape | Benoit Jacob | TEDxTUM
+2018-12-11 13:44:51,997 DEBUG Found new video: Using tiny magnets for computation | Markus Becherer | TEDxTUMSalon
+2018-12-11 13:44:51,999 DEBUG Found new video: Laugh, Think, Cry, Laugh Again | Jessamyn Fairfield | TEDxTUM
+2018-12-11 13:44:52,001 DEBUG Discarded video: How to Find Your Passion and Make it Your Job | Emma Rosen | TEDxYouth@Manchester
+2018-12-11 13:44:52,002 DEBUG Found new video: Medical Augmented Reality: coming soon to (operating) theaters near you | Nassir Navab | TEDxTUM
+2018-12-11 13:44:52,004 DEBUG Discarded video: How to Deal with Difficult People | Jay Johnson | TEDxLivoniaCCLibrary
+2018-12-11 13:44:52,005 DEBUG Discarded video: How to draw to remember more | Graham Shaw | TEDxVienna
+2018-12-11 13:44:52,006 DEBUG Discarded video: The psychology of self-motivation | Scott Geller | TEDxVirginiaTech
+2018-12-11 13:44:52,007 DEBUG Discarded video: Just Give Up. It's for the Best. | Bri Hall | TEDxBethesda
+2018-12-11 13:44:52,009 DEBUG Discarded video: Reconsider the way you live. Get more time for what you love. | Nayana Mawilmada | TEDxKandy
+2018-12-11 13:44:52,010 DEBUG Discarded video: Change Your Mindset and Achieve Anything | Colin O'Brady | TEDxPortland
+2018-12-11 13:44:52,011 DEBUG Discarded video: Cliteracy | Sophia Wallace | TEDxSalford
+2018-12-11 13:44:52,013 DEBUG Discarded video: Supermassive black holes: most powerful objects in the universe | Martin Gaskell | TEDxMeritAcademy
+2018-12-11 13:44:52,014 DEBUG Discarded video: Self-Love, be Intentional | Caitlyn Roux | TEDxYouth@CapeTown
+2018-12-11 13:44:52,015 DEBUG Discarded video: The People Currency: Practicing Emotional Intelligence | Jason Bridges | TEDxWabashCollege
+2018-12-11 13:44:52,017 DEBUG Discarded video: All the lonely people | Karen Dolva | TEDxArendal
+2018-12-11 13:44:52,018 DEBUG Discarded video: Want to learn better? Start mind mapping | Hazel Wagner | TEDxNaperville
+2018-12-11 13:44:52,020 DEBUG Discarded video: Reimagining compassion as power | Tim Dawes | TEDxSeattle
+2018-12-11 13:44:52,021 DEBUG Discarded video: Adult bullying: The epidemic no one talks about | Kevin Ward | TEDxSantaBarbara
+2018-12-11 13:44:52,023 DEBUG Discarded video: What makes an entrepreneur? | Sahar Hashemi | TEDxYouth@Bath
+2018-12-11 13:44:52,024 DEBUG Discarded video: Emotional laws are the answer for better relationships: Diana Wais at TEDxThessaloniki
+2018-12-11 13:44:52,025 DEBUG Discarded video: The Power of Emotional Intelligence | Travis Bradberry | TEDxUCIrvine
+2018-12-11 13:44:52,027 DEBUG Discarded video: Empathy + Gratitude = Success | David Meltzer | TEDxMissionViejo
+2018-12-11 13:44:52,028 DEBUG Discarded video: Own Your Behaviours, Master Your Communication, Determine Your Success | Louise Evans | TEDxGenova
+2018-12-11 13:44:52,029 DEBUG Discarded video: Become who you really are | Andrea Pennington | TEDxIUM
+2018-12-11 13:44:52,031 DEBUG Discarded video: The ideal business plan | George Koukis | TEDxChalkida
+2018-12-11 13:44:52,032 DEBUG Discarded video: Historical myths | Dr. John van Wyhe | TEDxNUS
+2018-12-11 13:44:52,033 DEBUG Discarded video: Make Emotional Intelligence Great Again | Janice Gassam | TEDxHofstraUniversity
+2018-12-11 13:44:52,035 DEBUG Discarded video: When art collides with data | Carrie Roy | TEDxMileHighWomen
+2018-12-11 13:44:52,036 DEBUG Discarded video: Great leadership comes down to only two rules | Peter Anderton | TEDxDerby
+2018-12-11 13:44:52,038 DEBUG Discarded video: Can we make quantum technology work? | Leo Kouwenhoven | TEDxAmsterdam
+2018-12-11 13:44:52,039 DEBUG Discarded video: Emotional Mastery: The Gifted Wisdom of Unpleasant Feelings | Dr Joan Rosenberg | TEDxSantaBarbara
+2018-12-11 13:44:52,040 DEBUG Discarded video: Girl Up: The Secrets to an Extraordinary Life | Courtney Ferrell | TEDxRVA
+2018-12-11 13:44:52,041 DEBUG Discarded video: MIND MAPPING FOR EDUCATION | Mayumbula Michael Chikwililwa | TEDxUniversityofNamibia
+2018-12-11 13:44:52,042 DEBUG Discarded video: Stop trying so hard. Achieve more by doing less. | Bethany Butzer | TEDxUNYP
+2018-12-11 13:44:52,044 DEBUG Discarded video: The Happiness Meter | Jesse Itzler | TEDxHickory
+2018-12-11 13:44:52,045 DEBUG Discarded video: One simple idea to improve mental well-being worldwide | Ben Channon | TEDxCardiffUniversity
+2018-12-11 13:44:52,046 DEBUG Discarded video: Re-evolve Your Memory | Dr. Tharaka Gunarathne | TEDxUniversityOfAberdeen
+2018-12-11 13:44:52,048 DEBUG Discarded video: Alien worlds and extraterrestrial life – where are they?! | Brad Gibson | TEDxHull
+2018-12-11 13:44:52,049 DEBUG Discarded video: How to become a memory master | Idriz Zogaj | TEDxGoteborg
+2018-12-11 13:44:52,050 DEBUG Discarded video: Self-Transformation Through Mindfulness | Dr. David Vago | TEDxNashville
+2018-12-11 13:44:52,052 DEBUG Discarded video: Dealing with a Heartbreak - From Negative to Positive | Ravinder Singh | TEDxThaparUniversity
+2018-12-11 13:44:52,053 DEBUG Discarded video: A visual diary: On dementia and caregiving | Tony Luciani | TEDxCambridge
+2018-12-11 13:44:52,054 DEBUG Discarded video: FINDING AWE  IN LIFE | Hafid Ghori | TEDxYouth@TWSDubai
+2018-12-11 13:44:52,057 DEBUG Discarded video: Words: Your Most Powerful Weapon | Evy Poumpouras | TEDxStLouisWomen
+2018-12-11 13:44:52,058 DEBUG Discarded video: Doers, Dreamers, and the Differences Between Them | Joshua York | TEDxLivoniaCCLibrary
+2018-12-11 13:44:52,060 DEBUG Discarded video: What facing 200 prison years taught me about happiness | Shaun Attwood | TEDxHSG
+2018-12-11 13:44:52,061 DEBUG Discarded video: The light and dark of emotional intelligence | Alison Bacon | TEDxPlymouthUniversity
+2018-12-11 13:44:52,062 DEBUG Discarded video: The Rise of Artificial Intelligence through Deep Learning | Yoshua Bengio | TEDxMontreal
+2018-12-11 13:44:52,064 DEBUG Discarded video: A Memory Without Limits: Prof. Giuliana Mazzoni at TEDxHull
+2018-12-11 13:44:52,065 DEBUG Discarded video count:46
+2018-12-11 13:44:52,069 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM%2A&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CGQQAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json

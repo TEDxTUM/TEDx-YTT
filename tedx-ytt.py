@@ -8,6 +8,8 @@ import configparser
 import datetime
 from argparse import RawTextHelpFormatter
 
+
+
 import os
 
 
@@ -249,6 +251,9 @@ def calc_stats(df):
 
 
 if __name__ == '__main__':
+    #silence google api warnings
+
+    logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.ERROR)
 
     # Parse config
     config = configparser.ConfigParser()
