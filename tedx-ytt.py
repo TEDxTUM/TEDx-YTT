@@ -1,27 +1,23 @@
 from googleapiclient.discovery import build
 import pandas as pd
-import datetime
 import logging
 import sys
 import argparse
 import configparser
 import datetime
 from argparse import RawTextHelpFormatter
-
-
-
 import os
 
 
 def trace(funct):
     def wrapper(*args, **kwargs):
         if CONSOLE_LOG:
-        	logging.info(f'TRACE: Calling {funct.__name__}() '
-                	     f'with {args}, {kwargs}')
-       	result = funct(*args, **kwargs)
+            logging.info(f"TRACE: Calling {funct.__name__}() "
+                         f"with {args}, {kwargs}")
+        result = funct(*args, **kwargs)
         if LOG_RETURNS:
             logging.info(f'TRACE: {funct.__name__}() '
-                  f'returned {result!r}')
+                         f'returned {result!r}')
         else:
             logging.info(f'TRACE: {funct.__name__}() finished')
         return result
@@ -62,7 +58,7 @@ def youtube_search(search_term, max_results, client):
                 maxResults=50,
                 part='id,snippet',
                 type='video',
-                channelId = 'UCsT0YIqwnpJCM-mx7-gSA4Q',
+                channelId='UCsT0YIqwnpJCM-mx7-gSA4Q',
                 pageToken=token
             ).execute()
             discard_counter = 0
@@ -93,7 +89,6 @@ def youtube_search(search_term, max_results, client):
             if 'TEDXTUM' in search_result['snippet']['title'].upper():
                 videos.append(search_result['id']['videoId'])
 
-
     return '\n'.join(videos)
 
 
@@ -109,7 +104,7 @@ def get_youtube_data(ids_str, client):
     ids = []
     titles = []
     speakers = []
-    tedxs = []
+    # tedxs = []
 
     thumbnail_urls = []
     tags = []
@@ -128,7 +123,7 @@ def get_youtube_data(ids_str, client):
         'ID',
         'Title',
         'Speaker Name',
-        #'Tedx Name'
+        # 'Tedx Name',
         'Thumbnail',
         'Tags',
         'Views',
@@ -142,7 +137,7 @@ def get_youtube_data(ids_str, client):
     values = [ids,
               titles,
               speakers,
-              #tedx,
+              # tedx,
               thumbnail_urls,
               tags,
               views,
@@ -165,13 +160,13 @@ def get_youtube_data(ids_str, client):
         date = datetime.datetime.now().date()
 
         for result in response.get('items', []):
-            title =result['snippet']['title']
+            title = result['snippet']['title']
             if '|' in title:
                 from_title = [x.strip() for x in title.split('|')]
 
                 title = from_title[0]
                 speaker = from_title[1]
-                #tedx = from_title[2]
+                # tedx = from_title[2]
                 logging.info(f'title {title}')
                 logging.info(f'speaker {speaker}')
 
@@ -196,8 +191,6 @@ def get_youtube_data(ids_str, client):
     d = dict(zip(keys, values))
     df = pd.DataFrame(d)
     df.set_index(['Date', 'ID'], inplace=True)
-
-
 
     return df
 
@@ -251,15 +244,15 @@ def calc_stats(df):
 
 
 if __name__ == '__main__':
-    #silence google api warnings
+    # silence google api warnings
     logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.ERROR)
 
-    #silence logging exceptions
+    # silence logging exceptions
     logging.raiseExceptions = False
 
     # Parse config
     config = configparser.ConfigParser()
-    config.read(os.path.join(sys.path[0],'config.ini'))
+    config.read(os.path.join(sys.path[0], 'config.ini'))
 
     SEARCH_TERM = config.get('Standard', 'SEARCH_TERM')
     SEARCH = config.getboolean('Standard', 'SEARCH')
@@ -344,7 +337,7 @@ if __name__ == '__main__':
     logging.info(f'Save directory: {save_dir}')
 
     # The magic starts here
-    with open(os.path.join(sys.path[0],'yapi.txt')) as file:
+    with open(os.path.join(sys.path[0], 'yapi.txt')) as file:
         DEVELOPER_KEY = file.read()
 
     YOUTUBE_API_SERVICE_NAME = 'youtube'
@@ -363,7 +356,8 @@ if __name__ == '__main__':
         except:
             try:
                 logging.info('Getting youtube IDs from yt_ids.csv...')
-                yt_ids = pd.read_csv(os.path.join(save_dir, 'yt_ids.csv'), encoding='utf-8').to_string(index=False).replace('\n', ',')
+                yt_ids = pd.read_csv(os.path.join(save_dir, 'yt_ids.csv'),
+                                     encoding='utf-8').to_string(index=False).replace('\n', ',')
                 logging.info('...done')
 
             except:
@@ -372,9 +366,13 @@ if __name__ == '__main__':
                 exit(1)
     try:
         logging.info('Loading yt_ids from external file...')
-        saved_ids = pd.read_csv(os.path.join(save_dir, 'yt_ids.csv'), encoding='utf-8').to_string(index=False).replace('\n', ',')
-        yt_ids_list = yt_ids.split(',')
+        saved_ids = pd.read_csv(os.path.join(save_dir, 'yt_ids.csv'),
+                                encoding='utf-8').to_string(index=False).replace('\n', ',')
+        yt_ids_list = yt_ids.split('\n')
         saved_ids_list = saved_ids.split(',')
+        logging.info(f'IDs from search: {yt_ids_list}')
+        logging.info(f'IDs from file:   {saved_ids_list}')
+
         for item in saved_ids_list:
             if item not in yt_ids_list:
                 yt_ids_list.append(item)
@@ -417,8 +415,6 @@ if __name__ == '__main__':
         logging.warning('Can not calculate stats without data. Run the script at least once with UPDATE = True!')
         exit(1)
 
-
-
     # save data
     logging.info('Saving data ...')
 
@@ -426,17 +422,15 @@ if __name__ == '__main__':
     final_stats_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), sep=';', encoding='utf-8')
 
     final_df.reset_index(inplace=True)
-    final_df.ID.to_csv(os.path.join(save_dir,'yt_ids.csv'), encoding='utf-8', index=False)
+    final_df.ID.to_csv(os.path.join(save_dir, 'yt_ids.csv'), encoding='utf-8', index=False)
 
-
-    #rename file in regular intervals to avoid extreme file sizes
-
+    # rename file in regular intervals to avoid extreme file sizes
     today = datetime.datetime.today()
-    weekdays = {"monday":1, "tuesday": 2, "wednesday": 3, "thursday": 4, "friday": 5, "saturday": 6, "sunday": 7}
+    weekdays = {"monday": 1, "tuesday": 2, "wednesday": 3, "thursday": 4, "friday": 5, "saturday": 6, "sunday": 7}
     if today.isoweekday() == weekdays[NEWOUTPUT_WEEKDAY.lower()]:
         os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), os.path.join(save_dir, f'{BASE_FILENAME}-output_KW{today.isocalendar()[1]}.csv'))
     if today.day == NEWSTATS_DAY:
-        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), os.path.join(save_dir, f'{BASE_FILENAME}-statistics_{today.month}.csv'))
+        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), os.path.join(save_dir,f'{BASE_FILENAME}-statistics_{today.month}.csv'))
 
     logging.info(f'...done!')
     # write config
