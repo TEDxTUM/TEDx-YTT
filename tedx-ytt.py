@@ -400,7 +400,7 @@ if __name__ == '__main__':
     if old_stats_df is not None and UPDATE:
         new_stats_df = calc_stats(new_df)
         final_stats_df = pd.concat([old_stats_df, new_stats_df], axis=0, join='inner')
-        final_stats_df.drop_duplicates(inplace=True)
+
 
     elif UPDATE:
         new_stats_df = calc_stats(new_df)
