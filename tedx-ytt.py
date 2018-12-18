@@ -1,24 +1,23 @@
 from googleapiclient.discovery import build
 import pandas as pd
-import datetime
 import logging
 import sys
 import argparse
 import configparser
+import datetime
 from argparse import RawTextHelpFormatter
-
 import os
 
 
 def trace(funct):
     def wrapper(*args, **kwargs):
         if CONSOLE_LOG:
-        	logging.info(f'TRACE: Calling {funct.__name__}() '
-                	     f'with {args}, {kwargs}')
-       	result = funct(*args, **kwargs)
+            logging.info(f"TRACE: Calling {funct.__name__}() "
+                         f"with {args}, {kwargs}")
+        result = funct(*args, **kwargs)
         if LOG_RETURNS:
             logging.info(f'TRACE: {funct.__name__}() '
-                  f'returned {result!r}')
+                         f'returned {result!r}')
         else:
             logging.info(f'TRACE: {funct.__name__}() finished')
         return result
@@ -59,16 +58,16 @@ def youtube_search(search_term, max_results, client):
                 maxResults=50,
                 part='id,snippet',
                 type='video',
-                channelId = 'UCsT0YIqwnpJCM-mx7-gSA4Q',
+                channelId='UCsT0YIqwnpJCM-mx7-gSA4Q',
                 pageToken=token
             ).execute()
             discard_counter = 0
             for search_result in search_response.get('items', []):
                 if SEARCH_TERM.upper() in search_result['snippet']['title'].upper():
                     videos.append(search_result['id']['videoId'])
-                    logging.debug('Found new video: ' + search_result['snippet']['title'])
+                    logging.info('Found new video: ' + search_result['snippet']['title'])
                 else:
-                    logging.debug('Discarded video: ' + search_result['snippet']['title'])
+                    logging.info('Discarded video: ' + search_result['snippet']['title'])
                     discard_counter += 1
 
             logging.debug(f'Discarded video count:{discard_counter}')
@@ -90,7 +89,6 @@ def youtube_search(search_term, max_results, client):
             if 'TEDXTUM' in search_result['snippet']['title'].upper():
                 videos.append(search_result['id']['videoId'])
 
-
     return '\n'.join(videos)
 
 
@@ -106,7 +104,7 @@ def get_youtube_data(ids_str, client):
     ids = []
     titles = []
     speakers = []
-    tedxs = []
+    # tedxs = []
 
     thumbnail_urls = []
     tags = []
@@ -125,7 +123,7 @@ def get_youtube_data(ids_str, client):
         'ID',
         'Title',
         'Speaker Name',
-        #'Tedx Name'
+        # 'Tedx Name',
         'Thumbnail',
         'Tags',
         'Views',
@@ -139,7 +137,7 @@ def get_youtube_data(ids_str, client):
     values = [ids,
               titles,
               speakers,
-              #tedx,
+              # tedx,
               thumbnail_urls,
               tags,
               views,
@@ -162,15 +160,15 @@ def get_youtube_data(ids_str, client):
         date = datetime.datetime.now().date()
 
         for result in response.get('items', []):
-            title =result['snippet']['title']
+            title = result['snippet']['title']
             if '|' in title:
                 from_title = [x.strip() for x in title.split('|')]
 
                 title = from_title[0]
                 speaker = from_title[1]
-                #tedx = from_title[2]
-                print(f'title {title}')
-                print(f'speaker {speaker}')
+                # tedx = from_title[2]
+                logging.info(f'title {title}')
+                logging.info(f'speaker {speaker}')
 
                 titles.append(title)
                 speakers.append(speaker)
@@ -193,8 +191,6 @@ def get_youtube_data(ids_str, client):
     d = dict(zip(keys, values))
     df = pd.DataFrame(d)
     df.set_index(['Date', 'ID'], inplace=True)
-
-
 
     return df
 
@@ -248,10 +244,15 @@ def calc_stats(df):
 
 
 if __name__ == '__main__':
+    # silence google api warnings
+    logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.ERROR)
+
+    # silence logging exceptions
+    logging.raiseExceptions = False
 
     # Parse config
     config = configparser.ConfigParser()
-    config.read(os.path.join(sys.path[0],'config.ini'))
+    config.read(os.path.join(sys.path[0], 'config.ini'))
 
     SEARCH_TERM = config.get('Standard', 'SEARCH_TERM')
     SEARCH = config.getboolean('Standard', 'SEARCH')
@@ -261,6 +262,8 @@ if __name__ == '__main__':
     DIRECTORY = config.get('Standard', 'DIRECTORY')
     CONSOLE_LOG = config.getboolean('Advanced', 'CONSOLE_LOG')
     LOG_RETURNS = config.getboolean('Advanced', 'LOG_RETURNS')
+    NEWOUTPUT_WEEKDAY = config.get('Advanced', 'NEWOUTPUT_WEEKDAY')
+    NEWSTATS_DAY = config.getint('Advanced', 'NEWSTATS_DAY')
 
     # Parse args
     parser = argparse.ArgumentParser(description='Search for a TEDx on youtube and '
@@ -273,6 +276,7 @@ if __name__ == '__main__':
                                                  f'BASE_FILENAME = {BASE_FILENAME}\n'
                                                  f'CONSOLE_LOG = \t{CONSOLE_LOG}\n'
                                                  f'DIRECTORY = \t{DIRECTORY}\n',
+
                                      formatter_class=RawTextHelpFormatter)
     parser.add_argument('-q', '--search_term', help='Term to search for - your TEDx\'s name', type=str)
     parser.add_argument('-s', '--search', help='Switch searching for new videos on/off', type=bool)
@@ -282,6 +286,8 @@ if __name__ == '__main__':
     parser.add_argument('-l', '--console_log', help='Switch logging output to python console on/off', type=bool)
     parser.add_argument('-r', '--log_return', help='Switch output of functions in console on/off', type=bool)
     parser.add_argument('-d', '--directory', help='Directory where the output should be saved to', type=str)
+    parser.add_argument('-no', '--newoutput_weekday', help='weekday at which -output file is renamed', type=str)
+    parser.add_argument('-ns', '--newstats_day', help='Day of the month at which -statistics file is renamed', type=int)
     args = parser.parse_args()
 
     if args.search_term:
@@ -300,6 +306,10 @@ if __name__ == '__main__':
         LOG_RETURNS = args.log_return
     if args.directory:
         DIRECTORY = args.directory
+    if args.newoutput_weekday:
+        NEWOUTPUT_WEEKDAY = args.newoutput_weekday
+    if args.newstats_day:
+        NEWSTATS_DAY = args.newstats_day
 
     # Logging
     logging.basicConfig(level=logging.DEBUG,
@@ -327,7 +337,7 @@ if __name__ == '__main__':
     logging.info(f'Save directory: {save_dir}')
 
     # The magic starts here
-    with open(os.path.join(sys.path[0],'yapi.txt')) as file:
+    with open(os.path.join(sys.path[0], 'yapi.txt')) as file:
         DEVELOPER_KEY = file.read()
 
     YOUTUBE_API_SERVICE_NAME = 'youtube'
@@ -344,9 +354,34 @@ if __name__ == '__main__':
         try:
             yt_ids = ','.join(old_df.index.levels[1])
         except:
-            logging.warning('There is no old data available. Please run script again with SEARCH = True.')
-            yt_ids = None
-            exit(1)
+            try:
+                logging.info('Getting youtube IDs from yt_ids.csv...')
+                yt_ids = pd.read_csv(os.path.join(save_dir, 'yt_ids.csv'),
+                                     encoding='utf-8').to_string(index=False).replace('\n', ',')
+                logging.info('...done')
+
+            except:
+                logging.warning('There is no old data available. Please run script again with SEARCH = True.')
+                yt_ids = None
+                exit(1)
+    try:
+        logging.info('Loading yt_ids from external file...')
+        saved_ids = pd.read_csv(os.path.join(save_dir, 'yt_ids.csv'),
+                                encoding='utf-8').to_string(index=False).replace('\n', ',')
+        yt_ids_list = yt_ids.split('\n')
+        saved_ids_list = saved_ids.split(',')
+        logging.info(f'IDs from search: {yt_ids_list}')
+        logging.info(f'IDs from file:   {saved_ids_list}')
+
+        for item in saved_ids_list:
+            if item not in yt_ids_list:
+                yt_ids_list.append(item)
+        logging.info('...done')
+
+        yt_ids = ','.join(yt_ids_list)
+
+    except:
+        logging.info('No yt_id list available. Continuing with results from search / results from old data.')
 
     if UPDATE and yt_ids is not None:
         new_df = get_youtube_data(yt_ids.replace('\n', ','), youtube)
@@ -373,16 +408,31 @@ if __name__ == '__main__':
 
     elif old_stats_df is not None:
         final_stats_df = old_stats_df
-    else:
+
+    elif UPDATE:
         final_stats_df = calc_stats(new_df)
+    else:
+        logging.warning('Can not calculate stats without data. Run the script at least once with UPDATE = True!')
+        exit(1)
 
     # save data
     logging.info('Saving data ...')
 
     final_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), sep=';', encoding='utf-8')
     final_stats_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), sep=';', encoding='utf-8')
-    logging.info(f'...done!')
 
+    final_df.reset_index(inplace=True)
+    final_df.ID.to_csv(os.path.join(save_dir, 'yt_ids.csv'), encoding='utf-8', index=False)
+
+    # rename file in regular intervals to avoid extreme file sizes
+    today = datetime.datetime.today()
+    weekdays = {"monday": 1, "tuesday": 2, "wednesday": 3, "thursday": 4, "friday": 5, "saturday": 6, "sunday": 7}
+    if today.isoweekday() == weekdays[NEWOUTPUT_WEEKDAY.lower()]:
+        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), os.path.join(save_dir, f'{BASE_FILENAME}-output_KW{today.isocalendar()[1]}.csv'))
+    if today.day == NEWSTATS_DAY:
+        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), os.path.join(save_dir,f'{BASE_FILENAME}-statistics_{today.month}.csv'))
+
+    logging.info(f'...done!')
     # write config
     logging.info('Saving config ...')
     cfgfile = open('config.ini', 'w')
