@@ -216,6 +216,32 @@ def load_data(filename, indices):
 
 
 @trace
+def load_ids(directory, searched_ids):
+    """
+    Loads youtube IDs from 'yt_ids.csv' in directory and concats it with searched_ids (result from yt search)
+    :param directory: directory where yt_ids is located
+    :param searched_ids: result from yt search: \n seperated string of yt ids
+    :return: \n separeted string of yt IDs that are either in the file or in the list from yt search
+    """
+    logging.info('Loading yt_ids from external file...')
+    saved_ids = pd.read_csv(os.path.join(directory, 'yt_ids.csv'),
+                            encoding='utf-8').to_string(index=False)
+
+    searched_ids_list = searched_ids.split('\n')
+    saved_ids_list = saved_ids.split('\n')
+
+    logging.info(f'IDs in search but not file:\t\t\t{list(set(searched_ids_list) - set(saved_ids_list))}')
+    logging.info(f'IDs in yt_ids file but not search:\t{list(set(saved_ids_list) - set(searched_ids_list))}')
+
+    for item in saved_ids_list:
+        if item not in searched_ids_list:
+            searched_ids_list.append(item)
+    logging.info('...done')
+
+    return '\n'.join(searched_ids_list)
+
+
+@trace
 def calc_stats(df):
     """
     Calculates statistics (pd.describe()) on all numeric columns
@@ -374,22 +400,8 @@ if __name__ == '__main__':
                 yt_ids = None
                 exit(1)
     try:
-        logging.info('Loading yt_ids from external file...')
-        saved_ids = pd.read_csv(os.path.join(save_dir, 'yt_ids.csv'),
-                                encoding='utf-8').to_string(index=False)
-
-        yt_ids_list = yt_ids.split('\n')
-        saved_ids_list = saved_ids.split('\n')
-
-        logging.info(f'IDs in search but not file:\t\t\t{list(set(yt_ids_list) - set(saved_ids_list))}')
-        logging.info(f'IDs in yt_ids file but not search:\t{list(set(saved_ids_list) - set(yt_ids_list))}')
-
-        for item in saved_ids_list:
-            if item not in yt_ids_list:
-                yt_ids_list.append(item)
-        logging.info('...done')
-
-        yt_ids = '\n'.join(yt_ids_list)
+    #todo: load/save yt_ids from script or data directory?
+        yt_ids = load_ids(save_dir, yt_ids)
 
     except:
         logging.info('No yt_id list available. Continuing with results from search / results from old data.')
