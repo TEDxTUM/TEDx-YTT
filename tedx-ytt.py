@@ -453,7 +453,7 @@ if __name__ == '__main__':
     today = datetime.datetime.today()
     weekdays = {"monday": 1, "tuesday": 2, "wednesday": 3, "thursday": 4, "friday": 5, "saturday": 6, "sunday": 7}
     if today.isoweekday() == weekdays[NEWOUTPUT_WEEKDAY.lower()]:
-        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), os.path.join(save_dir, f'{BASE_FILENAME}-output_KW{today.isocalendar()[1]}.csv'))
+        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), os.path.join(save_dir, f'{BASE_FILENAME}-output_CW{today.isocalendar()[1]}.csv'))
     if today.day == NEWSTATS_DAY:
         os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), os.path.join(save_dir,f'{BASE_FILENAME}-statistics_{today.month}.csv'))
 
