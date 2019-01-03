@@ -270,9 +270,9 @@ def calc_stats(df):
 
 
 if __name__ == '__main__':
-   ################
-   # Preparations #
-   ################
+    ################
+    # Preparations #
+    ################
 
     # silence logging exceptions
     logging.raiseExceptions = False
@@ -363,6 +363,8 @@ if __name__ == '__main__':
 
     logging.info(f'Save directory: {save_dir}')
 
+    # todo: catch arguments that are not set!
+
     # Youtube API
 
     # silence google api warnings
@@ -376,11 +378,7 @@ if __name__ == '__main__':
 
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
                     developerKey=DEVELOPER_KEY)
-
-
     ####################################################################################################################
-
-
     old_df = load_data(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), ['Date', 'ID'])
 
     if SEARCH:
@@ -400,7 +398,7 @@ if __name__ == '__main__':
                 yt_ids = None
                 exit(1)
     try:
-    #todo: load/save yt_ids from script or data directory?
+        # todo: load/save yt_ids from script or data directory?
         yt_ids = load_ids(save_dir, yt_ids)
 
     except:
@@ -424,7 +422,6 @@ if __name__ == '__main__':
         new_stats_df = calc_stats(new_df)
         final_stats_df = pd.concat([old_stats_df, new_stats_df], axis=0, join='inner')
 
-
     elif UPDATE:
         new_stats_df = calc_stats(new_df)
         final_stats_df = new_stats_df
@@ -436,6 +433,7 @@ if __name__ == '__main__':
         final_stats_df = calc_stats(new_df)
     else:
         logging.warning('Can not calculate stats without data. Run the script at least once with UPDATE = True!')
+        final_stats_df = None
         exit(1)
 
     # save data
@@ -453,9 +451,11 @@ if __name__ == '__main__':
     today = datetime.datetime.today()
     weekdays = {"monday": 1, "tuesday": 2, "wednesday": 3, "thursday": 4, "friday": 5, "saturday": 6, "sunday": 7}
     if today.isoweekday() == weekdays[NEWOUTPUT_WEEKDAY.lower()]:
-        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), os.path.join(save_dir, f'{BASE_FILENAME}-output_CW{today.isocalendar()[1]}.csv'))
+        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'),
+                  os.path.join(save_dir, f'{BASE_FILENAME}-output_CW{today.isocalendar()[1]}.csv'))
     if today.day == NEWSTATS_DAY:
-        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), os.path.join(save_dir,f'{BASE_FILENAME}-statistics_{today.month}.csv'))
+        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'),
+                  os.path.join(save_dir, f'{BASE_FILENAME}-statistics_{today.month}.csv'))
 
     logging.info(f'...done!')
     # write config
