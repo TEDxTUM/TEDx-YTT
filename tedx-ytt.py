@@ -28,11 +28,11 @@ def trace(funct):
 @trace
 def youtube_search(search_term, max_results, client):
     """
-    Returns the IDs of videos (as csv) that fit a certain search term
+    Returns the IDs of videos (as \n separeted string) that fit a certain search term
     :param search_term: The term to search for
-    :param max_results: Maximum number of search results to consider. Each search returns 50 results per iteration.
+    :param max_results: Maximum number of search results to consider.
     :param client: youtube API client
-    :return: Comma separated list of youtube IDs
+    :return: \n separated list of youtube IDs
     """
 
     if max_results > 50:
@@ -244,8 +244,9 @@ def calc_stats(df):
 
 
 if __name__ == '__main__':
-    # silence google api warnings
-    logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.ERROR)
+   ################
+   # Preparations #
+   ################
 
     # silence logging exceptions
     logging.raiseExceptions = False
@@ -336,7 +337,11 @@ if __name__ == '__main__':
 
     logging.info(f'Save directory: {save_dir}')
 
-    # The magic starts here
+    # Youtube API
+
+    # silence google api warnings
+    logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.ERROR)
+
     with open(os.path.join(sys.path[0], 'yapi.txt')) as file:
         DEVELOPER_KEY = file.read()
 
@@ -346,18 +351,22 @@ if __name__ == '__main__':
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
                     developerKey=DEVELOPER_KEY)
 
+
+    ####################################################################################################################
+
+
     old_df = load_data(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), ['Date', 'ID'])
 
     if SEARCH:
         yt_ids = youtube_search(SEARCH_TERM, MAX_RESULTS, client=youtube)
     else:
         try:
-            yt_ids = ','.join(old_df.index.levels[1])
+            yt_ids = '\n'.join(old_df.index.levels[1])
         except:
             try:
                 logging.info('Getting youtube IDs from yt_ids.csv...')
                 yt_ids = pd.read_csv(os.path.join(save_dir, 'yt_ids.csv'),
-                                     encoding='utf-8').to_string(index=False).replace('\n', ',')
+                                     encoding='utf-8').to_string(index=False)
                 logging.info('...done')
 
             except:
@@ -367,18 +376,20 @@ if __name__ == '__main__':
     try:
         logging.info('Loading yt_ids from external file...')
         saved_ids = pd.read_csv(os.path.join(save_dir, 'yt_ids.csv'),
-                                encoding='utf-8').to_string(index=False).replace('\n', ',')
+                                encoding='utf-8').to_string(index=False)
+
         yt_ids_list = yt_ids.split('\n')
-        saved_ids_list = saved_ids.split(',')
-        logging.info(f'IDs from search: {yt_ids_list}')
-        logging.info(f'IDs from file:   {saved_ids_list}')
+        saved_ids_list = saved_ids.split('\n')
+
+        logging.info(f'IDs in search but not file:\t\t\t{list(set(yt_ids_list) - set(saved_ids_list))}')
+        logging.info(f'IDs in yt_ids file but not search:\t{list(set(saved_ids_list) - set(yt_ids_list))}')
 
         for item in saved_ids_list:
             if item not in yt_ids_list:
                 yt_ids_list.append(item)
         logging.info('...done')
 
-        yt_ids = ','.join(yt_ids_list)
+        yt_ids = '\n'.join(yt_ids_list)
 
     except:
         logging.info('No yt_id list available. Continuing with results from search / results from old data.')
