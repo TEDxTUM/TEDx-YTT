@@ -18,8 +18,8 @@ on all numerical data is output to `[BASE_FILENAME]-statistics.csv`.
 
 To make sure little to no data is lost if files get corrupted due to unforseen interrupts of the script (e.g. caused by server reboot if run on a server) files data is saved according to the following scheme:
 - Current data always has the filename `[BASE_FILENAME]-output.csv` / `[BASE_FILENAME]-statistics.csv`
-- Every week, the -output-File is renamed into `[BASE_FILENAME]-output_[year]_week[calendar_week].csv` and therefore effectifely 'stored' in a seperate file.
-- Every month, the -statistics-File is renamed into `[BASE_FILENAME]-statistics_[year]_[month].csv` (where `[month]` is an integer) and therefore effectifely 'stored' in a seperate file.
+- Every week, the -output-File is renamed into `[BASE_FILENAME]-output_[year]_week[calendar_week].csv` and therefore effectifely 'stored' in a separate file.
+- Every month, the -statistics-File is renamed into `[BASE_FILENAME]-statistics_[year]_[month].csv` (where `[month]` is an integer) and therefore effectifely 'stored' in a separate file.
 
 
 # Getting Started
