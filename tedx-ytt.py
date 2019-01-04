@@ -37,7 +37,7 @@ def youtube_search(search_term, max_results, client):
 
     if max_results > 50:
         search_response = client.search().list(
-            q=f'{search_term}*',
+            q=search_term,
             maxResults=50,
             part='id,snippet',
             type='video',
@@ -54,7 +54,7 @@ def youtube_search(search_term, max_results, client):
 
         while token is not None and remaining_results > 50:
             search_response = client.search().list(
-                q=f'{search_term}*',
+                q=search_term,
                 maxResults=50,
                 part='id,snippet',
                 type='video',
@@ -153,13 +153,15 @@ def get_youtube_data(ids_str, client):
         response = client.videos().list(
             part='id,'
                  'snippet,'
-                 ' statistics',
+                 'statistics',
             id=id,
         ).execute()
-
+        if not response.get("pageInfo", [])["totalResults"]:
+            logging.warning(f'Incorrect youtube ID: {id}    !')
         date = datetime.datetime.now().date()
 
         for result in response.get('items', []):
+
             title = result['snippet']['title']
             if '|' in title:
                 from_title = [x.strip() for x in title.split('|')]
@@ -203,7 +205,7 @@ def load_data(filename, indices):
     :param indices: array of indices
     :return: pandas dataframe containing the data with  multi-index ['Date', 'ID']
     """
-    logging.info(f'Loading old data from {filename}')
+    logging.info(f'Loading data from {filename}')
     try:
         df = pd.read_csv(filename, sep=';', encoding='utf-8', parse_dates=['Date'])
         df.set_index(indices, inplace=True)
@@ -298,13 +300,17 @@ if __name__ == '__main__':
                                                  'Current arguments are:\n'
                                                  f'SEARCH_TERM = \t{SEARCH_TERM}\n'
                                                  f'SEARCH = \t{SEARCH}\n'
-                                                 f'MAX_RESULTS = \t{SEARCH}\n'
+                                                 f'MAX_RESULTS = \t{MAX_RESULTS}\n'
                                                  f'UPDATE = \t{UPDATE}\n'
                                                  f'BASE_FILENAME = {BASE_FILENAME}\n'
+                                                 f'DIRECTORY = \t{DIRECTORY}\n'
                                                  f'CONSOLE_LOG = \t{CONSOLE_LOG}\n'
-                                                 f'DIRECTORY = \t{DIRECTORY}\n',
+                                                 f'LOG_RETURNS = \t{LOG_RETURNS}\n'
+                                                 f'NEWSTATS_DAY = \t{NEWSTATS_DAY}\n'
+                                                 f'NEWOUTPUT_WEEKDAY = \t{NEWOUTPUT_WEEKDAY}\n',
 
-                                     formatter_class=RawTextHelpFormatter)
+
+    formatter_class=RawTextHelpFormatter)
     parser.add_argument('-q', '--search_term', help='Term to search for - your TEDx\'s name', type=str)
     parser.add_argument('-s', '--search', help='Switch searching for new videos on/off', type=bool)
     parser.add_argument('-m', '--max_results', help='Number of search results used from search request.', type=int)
@@ -363,7 +369,21 @@ if __name__ == '__main__':
 
     logging.info(f'Save directory: {save_dir}')
 
-    # todo: catch arguments that are not set!
+
+   PARAMETERS = [SEARCH_TERM,
+    SEARCH,
+    MAX_RESULTS,
+    UPDATE ,
+    BASE_FILENAME,
+    DIRECTORY,
+    CONSOLE_LOG,
+    LOG_RETURNS,
+    NEWOUTPUT_WEEKDAY,
+    NEWSTATS_DAY,
+     ]
+   for parameter in PARAMETERS:
+       if parameter is "" or None:
+           logging.warning(f"Parameter {parmeter} not set!")
 
     # Youtube API
 
@@ -398,7 +418,7 @@ if __name__ == '__main__':
                 yt_ids = None
                 exit(1)
     try:
-        # todo: load/save yt_ids from script or data directory?
+
         yt_ids = load_ids(save_dir, yt_ids)
 
     except:
@@ -452,10 +472,10 @@ if __name__ == '__main__':
     weekdays = {"monday": 1, "tuesday": 2, "wednesday": 3, "thursday": 4, "friday": 5, "saturday": 6, "sunday": 7}
     if today.isoweekday() == weekdays[NEWOUTPUT_WEEKDAY.lower()]:
         os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'),
-                  os.path.join(save_dir, f'{BASE_FILENAME}-output_CW{today.isocalendar()[1]}.csv'))
+                  os.path.join(save_dir, f'{BASE_FILENAME}-output__{today.isocalendar()[1]}_week{today.isocalendar()[1]}.csv'))
     if today.day == NEWSTATS_DAY:
         os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'),
-                  os.path.join(save_dir, f'{BASE_FILENAME}-statistics_{today.month}.csv'))
+                  os.path.join(save_dir, f'{BASE_FILENAME}-statistics_{today.isocalendar()[1]}_{today.month}.csv'))
 
     logging.info(f'...done!')
     # write config
