@@ -16,7 +16,7 @@ The script searches the youtube channel ["TEDxTalks"](https://www.youtube.com/us
 Data is then added with a time stamp in each row to the output file `[BASE_FILENAME]-output.csv` and statistics 
 on all numerical data is output to `[BASE_FILENAME]-statistics.csv`. 
 
-To make sure little to no data is lost if files get corrupted due to unforseen interrupts of the script (e.g. caused by server reboot if run on a server) files data is saved according to the following scheme:
+To make sure little to no data is lost if files get corrupted due to unforseen interrupts of the script (e.g. caused by server reboot if run on a server) data is saved according to the following scheme:
 - Current data always has the filename `[BASE_FILENAME]-output.csv` / `[BASE_FILENAME]-statistics.csv`
 - Every week, the -output-File is renamed into `[BASE_FILENAME]-output_[year]_week[calendar_week].csv` and therefore effectifely 'stored' in a separate file.
 - Every month, the -statistics-File is renamed into `[BASE_FILENAME]-statistics_[year]_[month].csv` (where `[month]` is an integer) and therefore effectifely 'stored' in a separate file.
