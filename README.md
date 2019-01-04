@@ -16,6 +16,11 @@ The script searches the youtube channel ["TEDxTalks"](https://www.youtube.com/us
 Data is then added with a time stamp in each row to the output file `[BASE_FILENAME]-output.csv` and statistics 
 on all numerical data is output to `[BASE_FILENAME]-statistics.csv`. 
 
+To make sure little to no data is lost if files get corrupted due to unforseen interrupts of the script (e.g. caused by server reboot if run on a server) files data is saved according to the following scheme:
+- Current data always has the filename `[BASE_FILENAME]-output.csv` / `[BASE_FILENAME]-statistics.csv`
+- Every week, the -output-File is renamed into `[BASE_FILENAME]-output_[year]_week[calendar_week].csv` and therefore effectifely 'stored' in a seperate file.
+- Every month, the -statistics-File is renamed into `[BASE_FILENAME]-statistics_[year]_[month].csv` (where `[month]` is an integer) and therefore effectifely 'stored' in a seperate file.
+
 
 # Getting Started
 
@@ -94,8 +99,8 @@ The script has several parameters that influence its behaviour. The following se
 | `DIRECTORY`      | string   | Directory (relative to root) where `[BASE_FILENAME]-output` and `[BASE_FILENAME]-stastics` are saved. Denote sub-directories by ´/´ (Forward slash). Use keyword `current` to set it the same directory the script is running in.
 | `CONSOLE_LOG` (advanced)   | bool   | Turns logging in console on and off. If you are not sure what this does, keep it `False`.
 | `LOG_RETURN` (advanced)     | bool   | Turns logging of results of function calls in console on and off. If you are not sure what this does, keep it `False`.
-| `NEWOUTPUT_WEEKDAY` (advanced) | string | Day of the week at which the current output file is renamed into `[BASE_FILENAME]-output_CW[calendarweek]`.
-| `NEWSTATS_DAY` (advanced)| integer | Day of the month at which the current statistics file is renamed into  `[BASE_FILENAME]-stastics_[current month]`.
+| `NEWOUTPUT_WEEKDAY` (advanced) | string | Day of the week at which the current output file is renamed into `[BASE_FILENAME]-output_week[calendarweek]`.
+| `NEWSTATS_DAY` (advanced)| integer | Day of the month at which the current statistics file is renamed into  `[BASE_FILENAME]-stastics_[current month]`, where [current month] is an integer (e.g. 1 for January).
 
 The advanced parameters are for debugging purposes and should be `False` in normal usage.
 
