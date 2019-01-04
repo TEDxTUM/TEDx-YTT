@@ -89,7 +89,7 @@ The script has several parameters that influence its behaviour. The following se
 | `SEARCH_TERM`              | string | The search term that is matched in youtube search and video title.
 | `SEARCH`                   | bool   | Turns searching for new videos on and off. To save API points set this `False` if you know there are not any new videos.
 | `MAX_RESULTS`              | integer   | Maximum results analyzed from youtube search with `SEARCH_TERM`. Every API call returns 50 results, i.e. multiples of 50 make sense.
-| `UPDATE`                   | bool   | Defines whether `[BASE_FILENAME]-output` and `[BASE_FILENAME]-stastics` are updated with new data from youtube.
+| `UPDATE`                   | bool   | Defines whether `[BASE_FILENAME]-output` and `[BASE_FILENAME]-stastics` are updated with new data from youtube. Set to `False` if you only want to run statistics on an old file without updating it with new data.
 | `BASE_FILENAME`            | string | Defines how `[BASE_FILENAME]-output` and `[BASE_FILENAME]-stastics` are named.
 | `DIRECTORY`      | string   | Directory (relative to root) where `[BASE_FILENAME]-output` and `[BASE_FILENAME]-stastics` are saved. Denote sub-directories by ´/´ (Forward slash). Use keyword `current` to set it the same directory the script is running in.
 | `CONSOLE_LOG` (advanced)   | bool   | Turns logging in console on and off. If you are not sure what this does, keep it `False`.
