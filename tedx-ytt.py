@@ -370,18 +370,18 @@ if __name__ == '__main__':
     logging.info(f'Save directory: {save_dir}')
 
 
-   PARAMETERS = [SEARCH_TERM,
-    SEARCH,
-    MAX_RESULTS,
-    UPDATE ,
-    BASE_FILENAME,
-    DIRECTORY,
-    CONSOLE_LOG,
-    LOG_RETURNS,
-    NEWOUTPUT_WEEKDAY,
-    NEWSTATS_DAY,
-     ]
-   for parameter in PARAMETERS:
+    PARAMETERS = [SEARCH_TERM,
+        SEARCH,
+        MAX_RESULTS,
+        UPDATE ,
+        BASE_FILENAME,
+        DIRECTORY,
+        CONSOLE_LOG,
+        LOG_RETURNS,
+        NEWOUTPUT_WEEKDAY,
+        NEWSTATS_DAY,
+         ]
+    for parameter in PARAMETERS:
        if parameter is "" or None:
            logging.warning(f"Parameter {parmeter} not set!")
 
