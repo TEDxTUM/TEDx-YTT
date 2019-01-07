@@ -456,7 +456,7 @@ if __name__ == '__main__':
         final_stats_df = None
         exit(1)
 
-    # save data
+        # save data
     logging.info('Saving data ...')
 
     final_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), sep=';', encoding='utf-8')
@@ -472,7 +472,7 @@ if __name__ == '__main__':
     weekdays = {"monday": 1, "tuesday": 2, "wednesday": 3, "thursday": 4, "friday": 5, "saturday": 6, "sunday": 7}
     if today.isoweekday() == weekdays[NEWOUTPUT_WEEKDAY.lower()]:
         os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'),
-                  os.path.join(save_dir, f'{BASE_FILENAME}-output__{today.isocalendar()[1]}_week{today.isocalendar()[1]}.csv'))
+                  os.path.join(save_dir, f'{BASE_FILENAME}-output_{today.isocalendar()[0]}_week{today.isocalendar()[1]}.csv'))
     if today.day == NEWSTATS_DAY:
         os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'),
                   os.path.join(save_dir, f'{BASE_FILENAME}-statistics_{today.isocalendar()[1]}_{today.month}.csv'))
