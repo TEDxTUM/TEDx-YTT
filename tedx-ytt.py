@@ -435,8 +435,10 @@ if __name__ == '__main__':
     else:
         final_df = old_df
         new_df = old_df
-
-    old_stats_df = load_data(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), ['Date', 'Metric'])
+    try:
+        old_stats_df = load_data(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), ['Date', 'Metric'])
+    except:
+        logging.WARNING("old -statsistics file can't be opened!")
 
     if old_stats_df is not None and UPDATE:
         new_stats_df = calc_stats(new_df)
