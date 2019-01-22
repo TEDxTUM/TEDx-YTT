@@ -308,4 +308,4 @@ see the [LICENSE.md](https://github.com/JuMaD/TEDx-YTT/blob/master/LICENSE) file
 
 ## Acknowledgments
 
-* TEDxWilmington for the idea to built a tracker based on the Youtube Data API[Listen to the Hacking the Red Circle Episode](https://www.stitcher.com/podcast/hacking-the-red-circle/e/56498580)
+* TEDxWilmington for the idea to built a tracker based on the Youtube Data API: [Listen to the Hacking the Red Circle Episode](https://www.stitcher.com/podcast/hacking-the-red-circle/e/56498580)
