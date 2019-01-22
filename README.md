@@ -75,7 +75,7 @@ tests, whether the package is installed and:
  
  ## Installing the Youtube API key
 The script calls the youtube API. In order to be able to do that you need a personal API key.
-CAREFUL: To many API calls can result in costs! Deploying the script is at your own risk. 
+CAREFUL: Too many API calls can result in costs! Deploying the script is at your own risk. 
 Check your API calls from time to time on the [API dashboard](http://console.cloud.google.com).
  
 In the same folder where 'TEDx-ytt.py' is located, add an empty file named 'yapi.txt' to your 
@@ -282,7 +282,7 @@ So all you have to do to return e.g. a time-row of mean values of the statistics
 ```python
 import pandas as pd
 
-df = pd.read_csv(YOURFILE, sep=';', encoding='latin-1')
+df = pd.read_csv(YOURFILE, sep=';', encoding='utf-8')
 df.set_index(['Date', 'Metric'], inplace=True)
 df.Views.xs(key='mean', level='Metric', drop_level=True).to_csv(SAVEFILE, sep=';')
 
