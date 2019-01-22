@@ -28,7 +28,7 @@ def trace(funct):
 @trace
 def youtube_search(search_term, max_results, client):
     """
-    Returns the IDs of videos (as \n separeted string) that fit a certain search term
+    Returns the IDs of videos (as \n separated string) that fit a certain search term
     :param search_term: The term to search for
     :param max_results: Maximum number of search results to consider.
     :param client: youtube API client
@@ -149,12 +149,12 @@ def get_youtube_data(ids_str, client):
               published
               ]
 
-    for id in ids_str.split(','):
+    for yt_id in ids_str.split(','):
         response = client.videos().list(
             part='id,'
                  'snippet,'
                  'statistics',
-            id=id,
+            id=yt_id,
         ).execute()
         if not response.get("pageInfo", [])["totalResults"]:
             logging.warning(f'Incorrect youtube ID: {id}    !')
@@ -222,8 +222,8 @@ def load_ids(directory, searched_ids):
     """
     Loads youtube IDs from 'yt_ids.csv' in directory and concats it with searched_ids (result from yt search)
     :param directory: directory where yt_ids is located
-    :param searched_ids: result from yt search: \n seperated string of yt ids
-    :return: \n separeted string of yt IDs that are either in the file or in the list from yt search
+    :param searched_ids: result from yt search: \n separated string of yt ids
+    :return: \n separated string of yt IDs that are either in the file or in the list from yt search
     """
     logging.info('Loading yt_ids from external file...')
     saved_ids = pd.read_csv(os.path.join(directory, 'yt_ids.csv'),
@@ -308,9 +308,7 @@ if __name__ == '__main__':
                                                  f'LOG_RETURNS = \t{LOG_RETURNS}\n'
                                                  f'NEWSTATS_DAY = \t{NEWSTATS_DAY}\n'
                                                  f'NEWOUTPUT_WEEKDAY = \t{NEWOUTPUT_WEEKDAY}\n',
-
-
-    formatter_class=RawTextHelpFormatter)
+                                     formatter_class=RawTextHelpFormatter)
     parser.add_argument('-q', '--search_term', help='Term to search for - your TEDx\'s name', type=str)
     parser.add_argument('-s', '--search', help='Switch searching for new videos on/off', type=bool)
     parser.add_argument('-m', '--max_results', help='Number of search results used from search request.', type=int)
@@ -369,21 +367,20 @@ if __name__ == '__main__':
 
     logging.info(f'Save directory: {save_dir}')
 
-
     PARAMETERS = [SEARCH_TERM,
-        SEARCH,
-        MAX_RESULTS,
-        UPDATE ,
-        BASE_FILENAME,
-        DIRECTORY,
-        CONSOLE_LOG,
-        LOG_RETURNS,
-        NEWOUTPUT_WEEKDAY,
-        NEWSTATS_DAY,
-         ]
+                  SEARCH,
+                  MAX_RESULTS,
+                  UPDATE,
+                  BASE_FILENAME,
+                  DIRECTORY,
+                  CONSOLE_LOG,
+                  LOG_RETURNS,
+                  NEWOUTPUT_WEEKDAY,
+                  NEWSTATS_DAY,
+                  ]
     for parameter in PARAMETERS:
-       if parameter is "" or None:
-           logging.warning(f"Parameter {parmeter} not set!")
+        if parameter is "" or None:
+            logging.warning(f"Parameter {parameter} not set!")
 
     # Youtube API
 
@@ -438,7 +435,8 @@ if __name__ == '__main__':
     try:
         old_stats_df = load_data(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), ['Date', 'Metric'])
     except:
-        logging.WARNING("old -statsistics file can't be opened!")
+        logging.WARNING("old -statistics file can't be opened!")
+        old_stats_df = None
 
     if old_stats_df is not None and UPDATE:
         new_stats_df = calc_stats(new_df)
@@ -474,7 +472,8 @@ if __name__ == '__main__':
     weekdays = {"monday": 1, "tuesday": 2, "wednesday": 3, "thursday": 4, "friday": 5, "saturday": 6, "sunday": 7}
     if today.isoweekday() == weekdays[NEWOUTPUT_WEEKDAY.lower()]:
         os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'),
-                  os.path.join(save_dir, f'{BASE_FILENAME}-output_{today.isocalendar()[0]}_week{today.isocalendar()[1]}.csv'))
+                  os.path.join(save_dir,
+                               f'{BASE_FILENAME}-output_{today.isocalendar()[0]}_week{today.isocalendar()[1]}.csv'))
     if today.day == NEWSTATS_DAY:
         os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'),
                   os.path.join(save_dir, f'{BASE_FILENAME}-statistics_{today.isocalendar()[1]}_{today.month}.csv'))
