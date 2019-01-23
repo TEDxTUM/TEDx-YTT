@@ -17,9 +17,10 @@ We actively welcome your pull requests
 - Proposing new features
 
 For all your pull requests, please not that:
-- We aim to be as PEP-8 consistent as possible. Please check your code before submitting.
+- For the python code base we aim to be as PEP-8 consistent as possible. Please check your code before submitting.
 - We use docstrings to document functions and objects. If you add parameters or returns adjust existing docstrings.
 - Update the README.md, if necessary.
+- For additional scripts to analyze/graph data please use a new folder within the main repo.
 
 ## Report bugs using Github's [issues](https://github.com/briandk/transcriptase-atom/issues)
 We use GitHub issues to track public bugs. Report a bug by [opening a new issue](); 
