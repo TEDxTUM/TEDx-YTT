@@ -47,11 +47,7 @@ Please use a pull request to suggest new features even if you have not implement
 
 
 ## Any contributions you make will be under the MIT Software License
-In short, when you submit code changes, your submissions are understood to be under the same [MIT License](http://choosealicense.com/licenses/mit/) that covers the project. If you pull request is merged, you will be added to the list of authors.
-
-
-## License
-By contributing, you agree that your contributions will be licensed under its MIT License.
+In short, when you submit code changes, your submissions are understood to be under the same [MIT License](http://choosealicense.com/licenses/mit/) that covers the project. When your pull request is merged, you will be added to the list of authors.
 
 ## References
 This document was adapted from the open-source contribution guidelines for [Facebook's Draft](https://github.com/facebook/draft-js/blob/a9316a723f9e918afde44dea68b5f9f39b7d9b00/CONTRIBUTING.md)
