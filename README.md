@@ -10,15 +10,15 @@ This README consists of the following parts:
   * [Installing the Youtube API key](#installing-the-youtube-api-key)
   * [Usage](#usage)
   * [Example](#example)
-- [Advanced Usage](#advanced-usage)
+  - [Advanced Usage](#advanced-usage)
   * [Adding videos manually](#adding-videos-manually)
   * [Running the script automatically](#running-the-script-automatically)
   * [Using CRON](#using-cron)
   * [Using Python](#using-python)
   * [Using R-Script](#using-r-script)
-  * [Authors](#authors)
-  * [License](#license)
-  * [Acknowledgments](#acknowledgments)
+ - [Authors](#authors)
+ - [License](#license)
+ - [Acknowledgments](#acknowledgments)
   
 ## General Information
 The script searches the youtube channel ["TEDxTalks"](https://www.youtube.com/user/TEDxTalks/) for a specific
@@ -317,7 +317,7 @@ df.Views.xs(key='mean', level='Metric', drop_level=True).to_csv(SAVEFILE, sep=';
 
 to be filled
 
-## Authors
+# Authors
 
 * **[Julian M. Dlugosch](https://github.com/JuMaD)** - *Initial work* 
 * **[Dora Dzvonyar](http://dzvonyar.com/)**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 
@@ -326,11 +326,11 @@ to be filled
 See also the list of [contributors](https://github.com/JuMaD/TEDx-YTT/graphs/contributors) 
 who participated in this project.
 
-## License
+# License
 
 This project is licensed under the MIT License - 
 see the [LICENSE.md](https://github.com/JuMaD/TEDx-YTT/blob/master/LICENSE) file for details
 
-## Acknowledgments
+# Acknowledgments
 
 * TEDxWilmington for the idea to built a tracker based on the Youtube Data API: [Listen to the Hacking the Red Circle Episode](https://www.stitcher.com/podcast/hacking-the-red-circle/e/56498580)
