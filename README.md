@@ -21,6 +21,9 @@ To make sure little to no data is lost if files get corrupted due to unforseen i
 - Every week, the -output-File is renamed into `[BASE_FILENAME]-output_[year]_week[calendar_week].csv` and therefore effectifely 'stored' in a separate file.
 - Every month, the -statistics-File is renamed into `[BASE_FILENAME]-statistics_[year]_[month].csv` (where `[month]` is an integer) and therefore effectifely 'stored' in a separate file.
 
+# Contributing
+If you want to contribute to the improvement of TEDx-YTT, please have a look [here](CONTRIBUTING.md)
+
 
 # Getting Started
 
