@@ -1,6 +1,26 @@
 # TEDx-YTT
 A youtube tracker (YTT) for TEDx videos that tracks data of a specific TEDx using the google API.
 
+This README consists of the following parts:
+- [General Information](#general-information)
+- [Contributing](#contributing)
+- [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installing packages](#installing-packages)
+  * [Installing the Youtube API key](#installing-the-youtube-api-key)
+  * [Usage](#usage)
+  * [Example](#example)
+- [Advanced Usage](#advanced-usage)
+  * [Adding videos manually](#adding-videos-manually)
+  * [Running the script automatically](#running-the-script-automatically)
+  * [Using CRON](#using-cron)
+  * [Using Python](#using-python)
+  * [Using R-Script](#using-r-script)
+  * [Authors](#authors)
+  * [License](#license)
+  * [Acknowledgments](#acknowledgments)
+  
+## General Information
 The script searches the youtube channel ["TEDxTalks"](https://www.youtube.com/user/TEDxTalks/) for a specific
  `SEARCH_TERM` (e.g. the TEDx name) and returns all videos with `SEARCH_TERM` in their title as well as their:
 - Title
@@ -21,23 +41,7 @@ To make sure little to no data is lost if files get corrupted due to unforseen i
 - Every week, the -output-File is renamed into `[BASE_FILENAME]-output_[year]_week[calendar_week].csv` and therefore effectifely 'stored' in a separate file.
 - Every month, the -statistics-File is renamed into `[BASE_FILENAME]-statistics_[year]_[month].csv` (where `[month]` is an integer) and therefore effectifely 'stored' in a separate file.
 
-This README consists of the following parts:
-- [Contributing](#contributing)
-- [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installing packages](#installing-packages)
-  * [Installing the Youtube API key](#installing-the-youtube-api-key)
-  * [Usage](#usage)
-  * [Example](#example)
-- [Advanced Usage](#advanced-usage)
-  * [Adding videos manually](#adding-videos-manually)
-  * [Running the script automatically](#running-the-script-automatically)
-  * [Using CRON](#using-cron)
-  * [Using Python](#using-python)
-  * [Using R-Script](#using-r-script)
-  * [Authors](#authors)
-  * [License](#license)
-  * [Acknowledgments](#acknowledgments)
+
 
 # Contributing
 If you want to contribute to the improvement of TEDx-YTT, please have a look [here](CONTRIBUTING.md)
