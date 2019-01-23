@@ -1,3 +1,22 @@
+- [TEDx-YTT](#tedx-ytt)
+- [Contributing](#contributing)
+- [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installing packages](#installing-packages)
+  * [Installing the Youtube API key](#installing-the-youtube-api-key)
+  * [Usage](#usage)
+  * [Example](#example)
+- [Advanced Usage](#advanced-usage)
+  * [Adding videos manually](#adding-videos-manually)
+  * [Running the script automatically](#running-the-script-automatically)
+  * [Using CRON](#using-cron)
+  * [Using Python](#using-python)
+  * [Using R-Script](#using-r-script)
+  * [Authors](#authors)
+  * [License](#license)
+  * [Acknowledgments](#acknowledgments)
+
+
 # TEDx-YTT
 A youtube tracker (YTT) for TEDx videos that tracks data of a specific TEDx using the google API.
 
@@ -291,7 +310,7 @@ df.Views.xs(key='mean', level='Metric', drop_level=True).to_csv(SAVEFILE, sep=';
 
 ```
 
-## Using Tableau
+## Using R-Script
 
 to be filled
 
