@@ -1,10 +1,10 @@
 # Contributing to TEDx-YTT
 We love your input! We want to make contributing to this project as easy and transparent as possible, whether it is:
 
-- [Reporting a bug](#report-bug-using-githubs-issues)
-- Discussing the current state of the code
-- Submitting a fix
-- Proposing new features
+- Reporting a [bug](#report-bugs-using-githubs-issues)
+- Discussing the [current state of the code](Discussing-the-current-state-of-the-code)
+- Submitting a [fix](#Submitting-a-fix)
+- Proposing [new features](#proposing-new-features)
 
 ## Our development process
 We use GitHub to sync code, to track issues and feature requests, as well as accept pull requests.
@@ -36,11 +36,14 @@ We use GitHub issues to track public bugs. Report a bug by [opening a new issue]
 - Notes (possibly including why you think this might be happening, or stuff you tried that didn't work).
 - log.log file and date & time of the occurence of the issue (if you turned logging on).
 
+## Discussing the current state of the code
+Please use a pull request to discuss the current state of the code.
+
+## Fixing issues
+Please make sure that the code runs smoothly with all combinations of paramteres (especially combinations of -u True/False and -s True/False). We have not (yet) implemented automatic testing so be very careful your fix doesn't introduce new issues and is indeed an improvement!
 
 ## Proposing new features
-
-Please use a pull request to suggest new features even if you have not implemented them yet or need help completing the new feature!
-
+Please use a pull request to suggest new features even if you have not implemented them yet or need help completing the new feature.
 
 
 ## Any contributions you make will be under the MIT Software License
