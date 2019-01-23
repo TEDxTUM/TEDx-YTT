@@ -1,7 +1,7 @@
 # Contributing to TEDx-YTT
 We love your input! We want to make contributing to this project as easy and transparent as possible, whether it is:
 
-- Reporting a bug
+- [Reporting a bug](#Report-bus-using-Github's-issues)
 - Discussing the current state of the code
 - Submitting a fix
 - Proposing new features
