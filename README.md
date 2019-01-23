@@ -1,22 +1,3 @@
-- [TEDx-YTT](#tedx-ytt)
-- [Contributing](#contributing)
-- [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installing packages](#installing-packages)
-  * [Installing the Youtube API key](#installing-the-youtube-api-key)
-  * [Usage](#usage)
-  * [Example](#example)
-- [Advanced Usage](#advanced-usage)
-  * [Adding videos manually](#adding-videos-manually)
-  * [Running the script automatically](#running-the-script-automatically)
-  * [Using CRON](#using-cron)
-  * [Using Python](#using-python)
-  * [Using R-Script](#using-r-script)
-  * [Authors](#authors)
-  * [License](#license)
-  * [Acknowledgments](#acknowledgments)
-
-
 # TEDx-YTT
 A youtube tracker (YTT) for TEDx videos that tracks data of a specific TEDx using the google API.
 
@@ -39,6 +20,24 @@ To make sure little to no data is lost if files get corrupted due to unforseen i
 - Current data always has the filename `[BASE_FILENAME]-output.csv` / `[BASE_FILENAME]-statistics.csv`
 - Every week, the -output-File is renamed into `[BASE_FILENAME]-output_[year]_week[calendar_week].csv` and therefore effectifely 'stored' in a separate file.
 - Every month, the -statistics-File is renamed into `[BASE_FILENAME]-statistics_[year]_[month].csv` (where `[month]` is an integer) and therefore effectifely 'stored' in a separate file.
+
+This README consists of the following parts:
+- [Contributing](#contributing)
+- [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installing packages](#installing-packages)
+  * [Installing the Youtube API key](#installing-the-youtube-api-key)
+  * [Usage](#usage)
+  * [Example](#example)
+- [Advanced Usage](#advanced-usage)
+  * [Adding videos manually](#adding-videos-manually)
+  * [Running the script automatically](#running-the-script-automatically)
+  * [Using CRON](#using-cron)
+  * [Using Python](#using-python)
+  * [Using R-Script](#using-r-script)
+  * [Authors](#authors)
+  * [License](#license)
+  * [Acknowledgments](#acknowledgments)
 
 # Contributing
 If you want to contribute to the improvement of TEDx-YTT, please have a look [here](CONTRIBUTING.md)
