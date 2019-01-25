@@ -268,7 +268,8 @@ PATH=my_env_path
 # └───────────────────────── min (0 - 59 
 ```
 After typing / copying everything to the file, a simple ":wq" writes and closes the file. 
-##Analyzing data
+
+# Analyzing data
 
 ## Using Python
 If you want to *slice* the results (i.e. view only certain row-column combinations) this could be done 
@@ -287,7 +288,7 @@ you choose `Date` and `Metric`. For the statistics file:
 ```python
 df.set_index(['Date', 'Metric'], inplace=True)
 ```
-You can then slice the dataframe by addressing the column by its name though `df.name`. 
+You can then slice the dataframe by addressing the column by its name through `df.name`. 
 If, for instance, you want to slice the `Views` 
 column, this would be:
 ```python
