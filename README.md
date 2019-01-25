@@ -14,6 +14,7 @@ This README consists of the following parts:
   * [Adding videos manually](#adding-videos-manually)
   * [Running the script automatically](#running-the-script-automatically)
   * [Using CRON](#using-cron)
+ - [Analyzing Data](#analyzing-data)
   * [Using Python](#using-python)
   * [Using R-Script](#using-r-script)
  - [Authors](#authors)
