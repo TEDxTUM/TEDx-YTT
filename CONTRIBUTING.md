@@ -16,9 +16,9 @@ We actively welcome your pull requests
 - Fixing issues
 - Proposing new features
 
-For all your pull requests, please not that:
+For all your pull requests, please note that:
 - For the python code base we aim to be as PEP-8 consistent as possible. Please check your code before submitting.
-- We use docstrings to document functions and objects. If you add parameters or returns adjust existing docstrings.
+- We use docstrings to document functions and objects. If you add parameters or returns, adjust existing docstrings.
 - Update the README.md, if necessary.
 - For additional scripts to analyze/graph data please use a new folder within the main repo.
 
@@ -37,10 +37,10 @@ We use GitHub issues to track public bugs. Report a bug by [opening a new issue]
 - log.log file and date & time of the occurence of the issue (if you turned logging on).
 
 ## Discussing the current state of the code
-Please use a pull request to discuss the current state of the code.
+Please use a pull request to discuss the current state of the code and if you have suggestions to improve it.
 
 ## Fixing issues
-Please make sure that the code runs smoothly with all combinations of paramteres (especially combinations of -u True/False and -s True/False). We have not (yet) implemented automatic testing so be very careful your fix doesn't introduce new issues and is indeed an improvement!
+Please make sure that the code runs smoothly with all combinations of paramteres (especially combinations of -u True/False and -s True/False). We have not (yet) implemented automatic testing so be very careful your fix does not introduce new issues!
 
 ## Proposing new features
 Please use a pull request to suggest new features even if you have not implemented them yet or need help completing the new feature.
