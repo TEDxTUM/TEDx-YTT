@@ -10,16 +10,16 @@ This README consists of the following parts:
   * [Installing the Youtube API key](#installing-the-youtube-api-key)
   * [Usage](#usage)
   * [Example](#example)
- - [Advanced Usage](#advanced-usage)
+- [Advanced Usage](#advanced-usage)
   * [Adding videos manually](#adding-videos-manually)
   * [Running the script automatically](#running-the-script-automatically)
   * [Using CRON](#using-cron)
   - [Analyzing Data](#analyzing-data)
   * [Using Python](#using-python)
   * [Using R-Script](#using-r-script)
- - [Authors](#authors)
- - [License](#license)
- - [Acknowledgments](#acknowledgments)
+- [Authors](#authors)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
   
 ## General Information
 The script searches the youtube channel ["TEDxTalks"](https://www.youtube.com/user/TEDxTalks/) for a specific
