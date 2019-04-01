@@ -396,6 +396,18 @@ if __name__ == '__main__':
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
                     developerKey=DEVELOPER_KEY)
     ####################################################################################################################
+    # rename file in regular intervals to avoid extreme file sizes
+    today = datetime.datetime.today()
+    weekdays = {"monday": 1, "tuesday": 2, "wednesday": 3, "thursday": 4, "friday": 5, "saturday": 6, "sunday": 7}
+    if today.isoweekday() == weekdays[NEWOUTPUT_WEEKDAY.lower()]:
+        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'),
+                  os.path.join(save_dir,
+                               f'{BASE_FILENAME}-output_{today.isocalendar()[0]}_week{today.isocalendar()[1]}.csv'))
+    if today.day == NEWSTATS_DAY:
+        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'),
+                  os.path.join(save_dir, f'{BASE_FILENAME}-statistics_{today.isocalendar()[1]}_{today.month}.csv'))
+
+    #start here
     old_df = load_data(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), ['Date', 'ID'])
 
     if SEARCH:
@@ -467,16 +479,7 @@ if __name__ == '__main__':
         final_df.ID.drop_duplicates(inplace=True)
         final_df.ID.to_csv(file, encoding='utf-8', index=False)
 
-    # rename file in regular intervals to avoid extreme file sizes
-    today = datetime.datetime.today()
-    weekdays = {"monday": 1, "tuesday": 2, "wednesday": 3, "thursday": 4, "friday": 5, "saturday": 6, "sunday": 7}
-    if today.isoweekday() == weekdays[NEWOUTPUT_WEEKDAY.lower()]:
-        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'),
-                  os.path.join(save_dir,
-                               f'{BASE_FILENAME}-output_{today.isocalendar()[0]}_week{today.isocalendar()[1]}.csv'))
-    if today.day == NEWSTATS_DAY:
-        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'),
-                  os.path.join(save_dir, f'{BASE_FILENAME}-statistics_{today.isocalendar()[1]}_{today.month}.csv'))
+
 
     logging.info(f'...done!')
     # write config
