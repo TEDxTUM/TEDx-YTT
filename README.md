@@ -1,6 +1,27 @@
 # TEDx-YTT
 A youtube tracker (YTT) for TEDx videos that tracks data of a specific TEDx using the google API.
 
+This README consists of the following parts:
+- [General Information](#general-information)
+- [Contributing](#contributing)
+- [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installing packages](#installing-packages)
+  * [Installing the Youtube API key](#installing-the-youtube-api-key)
+  * [Usage](#usage)
+  * [Example](#example)
+- [Advanced Usage](#advanced-usage)
+  * [Adding videos manually](#adding-videos-manually)
+  * [Running the script automatically](#running-the-script-automatically)
+  * [Using CRON](#using-cron)
+  - [Analyzing Data](#analyzing-data)
+  * [Using Python](#using-python)
+  * [Using R-Script](#using-r-script)
+- [Authors](#authors)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+  
+## General Information
 The script searches the youtube channel ["TEDxTalks"](https://www.youtube.com/user/TEDxTalks/) for a specific
  `SEARCH_TERM` (e.g. the TEDx name) and returns all videos with `SEARCH_TERM` in their title as well as their:
 - Title
@@ -20,6 +41,11 @@ To make sure little to no data is lost if files get corrupted due to unforseen i
 - Current data always has the filename `[BASE_FILENAME]-output.csv` / `[BASE_FILENAME]-statistics.csv`
 - Every week, the -output-File is renamed into `[BASE_FILENAME]-output_[year]_week[calendar_week].csv` and therefore effectifely 'stored' in a separate file.
 - Every month, the -statistics-File is renamed into `[BASE_FILENAME]-statistics_[year]_[month].csv` (where `[month]` is an integer) and therefore effectifely 'stored' in a separate file.
+
+
+
+# Contributing
+If you want to contribute to the improvement of TEDx-YTT, please have a look [here](CONTRIBUTING.md)
 
 
 # Getting Started
@@ -243,7 +269,8 @@ PATH=my_env_path
 # └───────────────────────── min (0 - 59 
 ```
 After typing / copying everything to the file, a simple ":wq" writes and closes the file. 
-##Analyzing data
+
+# Analyzing data
 
 ## Using Python
 If you want to *slice* the results (i.e. view only certain row-column combinations) this could be done 
@@ -262,7 +289,7 @@ you choose `Date` and `Metric`. For the statistics file:
 ```python
 df.set_index(['Date', 'Metric'], inplace=True)
 ```
-You can then slice the dataframe by addressing the column by its name though `df.name`. 
+You can then slice the dataframe by addressing the column by its name through `df.name`. 
 If, for instance, you want to slice the `Views` 
 column, this would be:
 ```python
@@ -288,11 +315,11 @@ df.Views.xs(key='mean', level='Metric', drop_level=True).to_csv(SAVEFILE, sep=';
 
 ```
 
-## Using Tableau
+## Using R-Script
 
 to be filled
 
-## Authors
+# Authors
 
 * **[Julian M. Dlugosch](https://github.com/JuMaD)** - *Initial work* 
 * **[Dora Dzvonyar](http://dzvonyar.com/)**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 
@@ -301,11 +328,11 @@ to be filled
 See also the list of [contributors](https://github.com/JuMaD/TEDx-YTT/graphs/contributors) 
 who participated in this project.
 
-## License
+# License
 
 This project is licensed under the MIT License - 
 see the [LICENSE.md](https://github.com/JuMaD/TEDx-YTT/blob/master/LICENSE) file for details
 
-## Acknowledgments
+# Acknowledgments
 
-* TEDxWilmington for the idea to built a tracker based on the Youtube Data API[Listen to the Hacking the Red Circle Episode](https://www.stitcher.com/podcast/hacking-the-red-circle/e/56498580)
+* TEDxWilmington for the idea to built a tracker based on the Youtube Data API: [Listen to the Hacking the Red Circle Episode](https://www.stitcher.com/podcast/hacking-the-red-circle/e/56498580)
