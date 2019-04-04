@@ -407,7 +407,7 @@ if __name__ == '__main__':
         os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'),
                   os.path.join(save_dir, f'{BASE_FILENAME}-statistics_{today.isocalendar()[1]}_{today.month}.csv'))
 
-    #start here
+    # start here
     old_df = load_data(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), ['Date', 'ID'])
 
     if SEARCH:
@@ -478,8 +478,6 @@ if __name__ == '__main__':
     with open(os.path.join(save_dir, 'yt_ids.csv'), 'w', encoding='utf-8') as file:
         final_df.ID.drop_duplicates(inplace=True)
         final_df.ID.to_csv(file, encoding='utf-8', index=False)
-
-
 
     logging.info(f'...done!')
     # write config
