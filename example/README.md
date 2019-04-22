@@ -9,5 +9,5 @@ This is an example of how input/output could look like.
 - week17.csv: This is the outputfile resulting from running the script daily and creating a file every week. You can see all parameters queried by the googleAPI on a daily basis for _all_ our videos.  
 - -statisstics.csv: This is the statsfile resulting from running the script daily and creating a new file every month. You find statistics on all videos of TEDxTUM (total views, likes, and so on) on a daily basis.
 - log.log: Console log of what happend the last time the script was executed. In this case "search" was enabled and new videos were compared to old ones (as well as double checked whether the return from youtube search really conatins "TEDxTUM"). You can see that quite a lot of videos from search have to be rejected. It is therefor advisable to choose a quite high number of search_results.
-- TedxTUM_views.png: Possible output when using R to visualize the output from running the script several months.
+- TEDxTUM_views_.png: Possible output when using R to visualize the output from running the script several months.
 
