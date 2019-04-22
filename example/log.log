@@ -1,0 +1,902 @@
+2019-04-22 07:00:33,932 INFO Save directory: /home/tedxtum/html/stats
+2019-04-22 07:00:34,047 INFO URL being requested: GET https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest
+2019-04-22 07:00:34,300 INFO Loading data from /home/tedxtum/html/stats/tedxtum-videoviews-output.csv
+2019-04-22 07:00:34,709 WARNING File /home/tedxtum/html/stats/tedxtum-videoviews-output.csv does not exist! Continuing without loading old data.
+2019-04-22 07:00:34,709 INFO ...done!
+2019-04-22 07:00:34,709 INFO TRACE: load_data() returned None
+2019-04-22 07:00:34,712 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:35,029 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CDIQAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:35,314 INFO Found new video: The Glue That Holds Society Together | Jürgen Gradl | TEDxTUM
+2019-04-22 07:00:35,314 INFO Found new video: Contemporary &amp; Jazz Dance | Alina Groder &amp; Sungsit Saiynart | TEDxTUM
+2019-04-22 07:00:35,314 INFO Found new video: The Perfect Fit - Individualized, Fashionable, 3D-printed Prosthetics | Manuel Opitz | TEDxTUM
+2019-04-22 07:00:35,314 INFO Found new video: The Robotic Future of Elderly Care | Thomas Bock | TEDxTUM
+2019-04-22 07:00:35,315 INFO Found new video: Refugees - a homemade challenge | Melusine Reimers | TEDxTUM
+2019-04-22 07:00:35,315 INFO Found new video: Cultural Fashion: Transform the Fashion Industry From Villain to Hero | Monica Boța-Moisin | TEDxTUM
+2019-04-22 07:00:35,315 INFO Found new video: Are we victims of our senses? | Ilona Grunwald Kadow | TEDxTUM
+2019-04-22 07:00:35,315 INFO Found new video: Laugh, Think, Cry, Laugh Again | Jessamyn Fairfield | TEDxTUM
+2019-04-22 07:00:35,315 INFO Found new video: A question of survival: Why we hunted the Higgs | Steven Goldfarb | TEDxTUM
+2019-04-22 07:00:35,315 INFO Found new video: How to Change the World With Courage, Intuition and Action | Kai Stuht | TEDxTUM
+2019-04-22 07:00:35,315 INFO Found new video: There can be no human 2.0 without a humanity 2.0 | Philipp Reisinger | TEDxTUM
+2019-04-22 07:00:35,315 INFO Found new video: Medical Augmented Reality: coming soon to (operating) theaters near you | Nassir Navab | TEDxTUM
+2019-04-22 07:00:35,315 INFO Discarded video: The Power Of Question | Dr. James Kelley | TEDxNUSciTech
+2019-04-22 07:00:35,315 INFO Discarded video: Paying Attention &amp; Mindfulness | Sam Chase | TEDxNYU
+2019-04-22 07:00:35,315 INFO Discarded video: Increase your self-awareness with one simple fix | Tasha Eurich | TEDxMileHigh
+2019-04-22 07:00:35,315 INFO Discarded video: How to use memory techniques to improve education | Boris Nikolai Konrad | TEDxDenHelder
+2019-04-22 07:00:35,316 INFO Discarded video: The Other Side of Ego | Jonathan Gravenor | TEDxOcala
+2019-04-22 07:00:35,316 INFO Discarded video: Supermassive black holes: most powerful objects in the universe | Martin Gaskell | TEDxMeritAcademy
+2019-04-22 07:00:35,316 INFO Discarded video: How to Deal with Difficult People | Jay Johnson | TEDxLivoniaCCLibrary
+2019-04-22 07:00:35,316 INFO Discarded video: How to Achieve Your Most Ambitious Goals | Stephen Duneier | TEDxTucson
+2019-04-22 07:00:35,316 INFO Discarded video: 10 things I learned after losing a lot of money | Dorothée Loorbach | TEDxMünster
+2019-04-22 07:00:35,316 INFO Discarded video: MIND MAPPING FOR EDUCATION | Mayumbula Michael Chikwililwa | TEDxUniversityofNamibia
+2019-04-22 07:00:35,316 INFO Discarded video: Ireland - A Democracy or Corpocracy? | Seamus Maye | TEDxLongford
+2019-04-22 07:00:35,316 INFO Discarded video: Cultivating Wisdom: The Power Of Mood | Lisa Feldman Barrett | TEDxCambridge
+2019-04-22 07:00:35,316 INFO Discarded video: Germany: Low Crime, Clean Prisons, Lessons for America | Jeff Rosen | TEDxMountainViewHighSchool
+2019-04-22 07:00:35,316 INFO Discarded video: SOMEDAY is Not a Day in the Week: Clarify What Matters, Do It Now | Sam Horn | TEDxSouthLakeTahoe
+2019-04-22 07:00:35,316 INFO Discarded video: Historical myths | Dr. John van Wyhe | TEDxNUS
+2019-04-22 07:00:35,316 INFO Discarded video: How to triple your memory by using this trick | Ricardo Lieuw On | TEDxHaarlem
+2019-04-22 07:00:35,316 INFO Discarded video: The light and dark of emotional intelligence | Alison Bacon | TEDxPlymouthUniversity
+2019-04-22 07:00:35,316 INFO Discarded video: The Power Of Visualization | Ashanti Johnson | TEDxWillowCreek
+2019-04-22 07:00:35,317 INFO Discarded video: Can we make quantum technology work? | Leo Kouwenhoven | TEDxAmsterdam
+2019-04-22 07:00:35,317 INFO Discarded video: The Power of Emotional Intelligence | Travis Bradberry | TEDxUCIrvine
+2019-04-22 07:00:35,317 INFO Discarded video: Words: Your Most Powerful Weapon | Evy Poumpouras | TEDxStLouisWomen
+2019-04-22 07:00:35,317 INFO Discarded video: How to Read a Book a Day | Jordan Harry | TEDxBathUniversity
+2019-04-22 07:00:35,317 INFO Discarded video: Great leadership comes down to only two rules | Peter Anderton | TEDxDerby
+2019-04-22 07:00:35,317 INFO Discarded video: How to manage your mental health | Leon Taylor | TEDxClapham
+2019-04-22 07:00:35,317 INFO Discarded video: You Were Born to Love, You Evolved to Fit in  | Mark Groves | TEDxSFU
+2019-04-22 07:00:35,317 INFO Discarded video: Wie man aus Scheiße Bonbons macht | Fabian Wichmann | TEDxMünchen
+2019-04-22 07:00:35,317 INFO Discarded video: Reimagining compassion as power | Tim Dawes | TEDxSeattle
+2019-04-22 07:00:35,317 INFO Discarded video: Emotions are Contagious: Spreading Emotional Intelligence | Joelle Hadley | TEDxArrowheadRanch
+2019-04-22 07:00:35,317 INFO Discarded video: Stop trying so hard. Achieve more by doing less. | Bethany Butzer | TEDxUNYP
+2019-04-22 07:00:35,318 INFO Discarded video: Self-Love, be Intentional | Caitlyn Roux | TEDxYouth@CapeTown
+2019-04-22 07:00:35,318 INFO Discarded video: Everyday Serendipity | Paul Hannam | TEDxUniversityofBrighton
+2019-04-22 07:00:35,318 INFO Discarded video: Own Your Behaviours, Master Your Communication, Determine Your Success | Louise Evans | TEDxGenova
+2019-04-22 07:00:35,318 INFO Discarded video: The People Currency: Practicing Emotional Intelligence | Jason Bridges | TEDxWabashCollege
+2019-04-22 07:00:35,318 INFO Discarded video: Fall in love with fear  | Sandra Joseph | TEDxSouthLakeTahoe
+2019-04-22 07:00:35,318 INFO Discarded video: Make Emotional Intelligence Great Again | Janice Gassam | TEDxHofstraUniversity
+2019-04-22 07:00:35,318 INFO Discarded video: Alien worlds and extraterrestrial life – where are they?! | Brad Gibson | TEDxHull
+2019-04-22 07:00:35,318 INFO Discarded video: Ending the pursuit of perfection | Iskra Lawrence | TEDxUniversityofNevada
+2019-04-22 07:00:35,318 INFO Discarded video: Putting the &#39;Human&#39; Back in H.I.V. | Arik Hartmann | TEDxVermilionStreet
+2019-04-22 07:00:35,318 DEBUG Discarded video count:38
+2019-04-22 07:00:35,319 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CGQQAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:35,761 INFO Discarded video: The Antidote to Regret | Kimberly Rich | TEDxCoeurd&#39;Alene
+2019-04-22 07:00:35,761 INFO Discarded video: Why you feel what you feel | Alan Watkins | TEDxOxford
+2019-04-22 07:00:35,761 INFO Discarded video: Decision Making Deconstructed - Understanding the Role of Bias | Stephen Carter | TEDxCalgary
+2019-04-22 07:00:35,761 INFO Discarded video: Cliteracy | Sophia Wallace | TEDxSalford
+2019-04-22 07:00:35,761 INFO Discarded video: What facing 200 prison years taught me about happiness | Shaun Attwood | TEDxHSG
+2019-04-22 07:00:35,761 INFO Discarded video: Become who you really are | Andrea Pennington | TEDxIUM
+2019-04-22 07:00:35,761 INFO Discarded video: Grief: A Pathway to Forgiveness | Joan Rosenberg | TEDxRoseburg
+2019-04-22 07:00:35,761 INFO Discarded video: Girl Up: The Secrets to an Extraordinary Life | Courtney Ferrell | TEDxRVA
+2019-04-22 07:00:35,761 INFO Discarded video: The Deep End of Deep Learning | Hugo Larochelle | TEDxBoston
+2019-04-22 07:00:35,761 INFO Discarded video: How to draw to remember more | Graham Shaw | TEDxVienna
+2019-04-22 07:00:35,762 INFO Discarded video: How to Find Your Passion and Make it Your Job | Emma Rosen | TEDxYouth@Manchester
+2019-04-22 07:00:35,762 INFO Discarded video: The Invisible Force - self-image – enables you to achieve great goals | Dan Lok | TEDxStanleyPark
+2019-04-22 07:00:35,762 INFO Discarded video: Augmented Creativity | Bob Sumner | TEDxZurich
+2019-04-22 07:00:35,762 INFO Discarded video: How I memorize piano music | Jocelyn Swigger | TEDxGettysburgCollege
+2019-04-22 07:00:35,762 INFO Discarded video: Stop Waiting for Life to Happen | Peter Sage | TEDxKlagenfurt
+2019-04-22 07:00:35,762 INFO Discarded video: Emotional laws are the answer for better relationships: Diana Wais at TEDxThessaloniki
+2019-04-22 07:00:35,762 INFO Discarded video: The truth about the food you are eating - or think you are | Mats-Eric Nilsson | TEDxStockholmSalon
+2019-04-22 07:00:35,762 INFO Discarded video: Re-evolve Your Memory | Dr. Tharaka Gunarathne | TEDxUniversityOfAberdeen
+2019-04-22 07:00:35,762 INFO Discarded video: Acting more rational - changing our automatic behavior | Ashley Zahabian | TEDxStanleyPark
+2019-04-22 07:00:35,762 INFO Discarded video: Frientimacy: The 3 Requirements of All Healthy Friendships | Shasta Nelson | TEDxLaSierraUniversity
+2019-04-22 07:00:35,762 INFO Discarded video: Natural Bodybuilding: Become the best version of yourself | Mischa Janiec | TEDxHSG
+2019-04-22 07:00:35,762 INFO Discarded video: Ways to improve your Memory | Prateek Yadav | TEDxUPES
+2019-04-22 07:00:35,762 INFO Discarded video: Ireland, tourism, language: Will Notini at TEDxGallatin
+2019-04-22 07:00:35,762 INFO Discarded video: What I learnt from 78,000 GP consultations with university students | Dominique Thompson | TEDxBath
+2019-04-22 07:00:35,763 INFO Discarded video: The Rise of Artificial Intelligence through Deep Learning | Yoshua Bengio | TEDxMontreal
+2019-04-22 07:00:35,763 INFO Discarded video: Beyond mute | Shaela Niles | TEDxSnoIsleLibraries
+2019-04-22 07:00:35,763 INFO Discarded video: Universal Computers and Quantum AI | Nell Watson | TEDxAntwerp
+2019-04-22 07:00:35,763 INFO Discarded video: What animals are thinking and feeling, and why it should matter | Carl Safina | TEDxMidAtlantic
+2019-04-22 07:00:35,763 INFO Discarded video: Want to learn better? Start mind mapping | Hazel Wagner | TEDxNaperville
+2019-04-22 07:00:35,763 INFO Discarded video: Emotional Mastery: The Gifted Wisdom of Unpleasant Feelings | Dr Joan Rosenberg | TEDxSantaBarbara
+2019-04-22 07:00:35,763 INFO Discarded video: The internet of things | Jordan Duffy | TEDxSouthBank
+2019-04-22 07:00:35,763 INFO Discarded video: Conquering Fear | Geoff Thompson | TEDxLeamingtonSpa
+2019-04-22 07:00:35,763 INFO Discarded video: Empathy + Gratitude = Success | David Meltzer | TEDxMissionViejo
+2019-04-22 07:00:35,763 INFO Discarded video: You’ve been warned! | The Warning | TEDxUniversityofNevada
+2019-04-22 07:00:35,763 INFO Discarded video: The discovery of the God Particle -- Big Bang to Big Data | Kyle Cranmer | TEDxBinghamtonUniversity
+2019-04-22 07:00:35,764 INFO Discarded video: What if Schools Taught Us How to Learn | Jonathan Levi | TEDxWhiteCity
+2019-04-22 07:00:35,764 INFO Discarded video: Depression in Animals | Gernot Wieland | TEDxGhent
+2019-04-22 07:00:35,764 INFO Discarded video: Want to improve your memory-Do this everyday | Krishan Chahal | TEDxMMUSadopurAmbala
+2019-04-22 07:00:35,764 INFO Discarded video: The Irish Language and Beauty | Dónall Ó Héalaí | TEDxBerkeley
+2019-04-22 07:00:35,764 INFO Discarded video: Feelings: Handle them before they handle you | Mandy Saligari | TEDxGuildford
+2019-04-22 07:00:35,764 INFO Discarded video: Learning from a grand master of memory | Mattias Ribbing | TEDxLundUniversity
+2019-04-22 07:00:35,764 INFO Discarded video: How 40 Seconds of Compassion Could Save a Life | Stephen Trzeciak | TEDxPenn
+2019-04-22 07:00:35,764 INFO Discarded video: When art collides with data | Carrie Roy | TEDxMileHighWomen
+2019-04-22 07:00:35,765 INFO Discarded video: Eyegaze Technology: Tell Your Story with Your Eyes | Nancy Cleveland | TEDxDonauinsel
+2019-04-22 07:00:35,765 INFO Discarded video: &quot;How We&#39;ve Been Misled by &#39;Emotional Intelligence&#39;&quot; | Kris Girrell | TEDxNatick
+2019-04-22 07:00:35,765 INFO Discarded video: Як перебороти найкращу відмазку у світі – лінь? | Дмитро Щебетюк | TEDxKyiv
+2019-04-22 07:00:35,765 INFO Discarded video: Movement is Medicine | William Pullen | TEDxRNCM
+2019-04-22 07:00:35,765 INFO Discarded video: The Next Hundred Years of Your Life | Pedro Domingos | TEDxLA
+2019-04-22 07:00:35,765 INFO Discarded video: Why we need to disrupt middle age | Anne Philippi | TEDxBerlin
+2019-04-22 07:00:35,765 INFO Discarded video: Your roots are there to help you | Rozmari De Meo | TEDxVitosha
+2019-04-22 07:00:35,765 DEBUG Discarded video count:50
+2019-04-22 07:00:35,767 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CJYBEAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:36,120 INFO Discarded video: The Next Hundred Years of Your Life | Pedro Domingos | TEDxLA
+2019-04-22 07:00:36,120 INFO Discarded video: Why we need to disrupt middle age | Anne Philippi | TEDxBerlin
+2019-04-22 07:00:36,120 INFO Discarded video: Your roots are there to help you | Rozmari De Meo | TEDxVitosha
+2019-04-22 07:00:36,121 INFO Discarded video: Live Life to the fullest | Nick Martin | TEDxFHKufstein
+2019-04-22 07:00:36,122 INFO Discarded video: What&#39;s next after the Higgs&#39; blockbuster? | Clara Nellist | TEDxAUBG
+2019-04-22 07:00:36,122 INFO Discarded video: The mind and methods of a Memory Champion | Boris Nikolai Konrad | TEDxStrijp
+2019-04-22 07:00:36,123 INFO Discarded video: What we can learn from building on mars | Peter Zurbrügg | TEDxLausanne
+2019-04-22 07:00:36,123 INFO Discarded video: How intelligent is AI? | Devashish Sharma | TEDxSIULavale | Devashish Sharma | TEDxSIULavale
+2019-04-22 07:00:36,123 INFO Discarded video: Why What We Feel Matters More Than What We Think. | Natasha Sharma | TEDxStMaryCSSchool
+2019-04-22 07:00:36,123 INFO Discarded video: How to become a memory master | Idriz Zogaj | TEDxGoteborg
+2019-04-22 07:00:36,123 INFO Discarded video: Changing the Human Story with CRISPR-Cas9 | Elaine Shults | TEDxCU
+2019-04-22 07:00:36,123 INFO Discarded video: A drop in a plastic ocean: how one person can make a difference. | Emily De Sousa | TEDxKanata
+2019-04-22 07:00:36,123 INFO Discarded video: Higgs Boson - What You Don&#39;t Know: Dan Hooper, Ph.D. at TEDxNaperville
+2019-04-22 07:00:36,124 INFO Discarded video: Zen and art of Mountaineering. | Sameer Kelkar | TEDxJNEC
+2019-04-22 07:00:36,124 INFO Discarded video: Improvisation exercises (part 2): Vicky Saye Henderson at TEDxColumbiaSC
+2019-04-22 07:00:36,124 INFO Discarded video: How dogs love us | Dr. Gregory Berns | TEDxAtlanta
+2019-04-22 07:00:36,124 INFO Discarded video: HIV cure: what lies beneath? | Dr Virginie Gautier | TEDxUCD
+2019-04-22 07:00:36,124 INFO Discarded video: I would rather have HIV than a broken leg: Edward O&#39;Bryan at TEDxCharleston
+2019-04-22 07:00:36,124 INFO Discarded video: Soap in my eyes | Sabah Khodir | TEDxYouth@ABIS
+2019-04-22 07:00:36,124 INFO Discarded video: A Memory Without Limits: Prof. Giuliana Mazzoni at TEDxHull
+2019-04-22 07:00:36,124 INFO Discarded video: A visual diary: On dementia and caregiving | Tony Luciani | TEDxCambridge
+2019-04-22 07:00:36,125 INFO Discarded video: Youth Athletes in America- Does Practice  Really Make Perfect? | Neha Raukar | TEDxProvidence
+2019-04-22 07:00:36,125 INFO Discarded video: Self-Awareness, Influence, and Partnerships | Anton Rabie | TEDxYouth@Toronto
+2019-04-22 07:00:36,125 INFO Discarded video: Analyzing and modeling complex and big data | Professor Maria Fasli | TEDxUniversityofEssex
+2019-04-22 07:00:36,125 INFO Discarded video: It&#39;s Easy To Draw! Why Is It Hard To Draw? | Michael Rastovich | TEDxRichland
+2019-04-22 07:00:36,125 INFO Discarded video: Improvisation exercises (part 1): Vicky Saye Henderson at TEDxColumbiaSC
+2019-04-22 07:00:36,125 INFO Discarded video: The art of live looping | Edd Keene | TEDxReading
+2019-04-22 07:00:36,126 INFO Discarded video: Advancing the treatment of HIV/AIDS until there is a cure: Jim Demarest at TEDxElonUniversity
+2019-04-22 07:00:36,126 INFO Discarded video: AI Is Eating Our World | Fabian Westerheide | TEDxHeidelberg
+2019-04-22 07:00:36,126 INFO Discarded video: Distraction is literally killing us | Paul Atchley | TEDxYouth@KC
+2019-04-22 07:00:36,126 INFO Discarded video: White Collar Robots: The Virtual Workforce | David Moss | TEDxUCL
+2019-04-22 07:00:36,126 INFO Discarded video: Change Your Perspective and Change Your Story | Toya Webb | TEDxDelthorneWomen
+2019-04-22 07:00:36,126 INFO Discarded video: How to Build a Biological Starship | Angelo VERMEULEN | TEDxBrussels
+2019-04-22 07:00:36,127 INFO Discarded video: The Omega Principle | Paul Greenberg | TEDxMarcianise
+2019-04-22 07:00:36,127 INFO Discarded video: Synthetic muscle from nano and the rubber band | Richard Spontak | TEDxNCSU
+2019-04-22 07:00:36,127 INFO Discarded video: Speaking Up is Showing Up | Keri Potts | TEDxCentennialParkWomen
+2019-04-22 07:00:36,127 INFO Discarded video: Emotional Intelligence From a Teenage Perspective | Maximilian Park | TEDxYouth@PVPHS
+2019-04-22 07:00:36,127 INFO Discarded video: Lessons for life from an improvised musical  | The Showstoppers | TEDxWhitehall
+2019-04-22 07:00:36,127 INFO Discarded video: When Machines Have Ideas | Ben Vigoda | TEDxBoston
+2019-04-22 07:00:36,127 INFO Discarded video: Our Secret Stories | Ben Okri | TEDxInstitutLeRosey
+2019-04-22 07:00:36,128 INFO Discarded video: TEDxAdelaide - Michelle McDonnell - Transcranial Magnetic Stimulation
+2019-04-22 07:00:36,128 INFO Discarded video: The art of memory: Daniel Kilov at TEDxMacquarieUniversity
+2019-04-22 07:00:36,128 INFO Discarded video: What can we learn from the world&#39;s &quot;most humane&quot; prison? | Ryan Cox | TEDxSanAntonio 2013
+2019-04-22 07:00:36,128 INFO Discarded video: PrEP for HIV Prevention:  The Best Worst Kept Secret | Raphael Landovitz | TEDxUCLA
+2019-04-22 07:00:36,128 INFO Discarded video: The Power of a Pet | Rustin Moore | TEDxOhioStateUniversity
+2019-04-22 07:00:36,128 INFO Discarded video: Life&#39;s way too short not to live your Bucket List | Travis Bell | TEDxMelbourne
+2019-04-22 07:00:36,128 INFO Discarded video: Omnichannel: Retail (R)evolution | Kilian Wagner | TEDxHSG
+2019-04-22 07:00:36,129 INFO Discarded video: Memory -- Unlocked | Chester Lian | TEDxYouth@BeaconStreet
+2019-04-22 07:00:36,129 INFO Discarded video: The neuroscience of social intelligence: Bill von Hippel at TEDxUQ 2014
+2019-04-22 07:00:36,129 INFO Discarded video: Draw like a child; see like a master | Kate Hayward | TEDxSanAntonio
+2019-04-22 07:00:36,129 DEBUG Discarded video count:50
+2019-04-22 07:00:36,131 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CMgBEAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:36,511 INFO Discarded video: Green technologies for the future: biomimetics in architecture | Barbara Widera | TEDxWSB
+2019-04-22 07:00:36,511 INFO Discarded video: Vision = Victory:How Visualization can help you reach goals | LaToya Rene Robertson | TEDxNewBedford
+2019-04-22 07:00:36,511 INFO Discarded video: The Truths About Being A Pioneer | Tiffany Yu | TEDxGeorgetown
+2019-04-22 07:00:36,512 INFO Discarded video: Creating a Free HIV Vaccine | Naveen Jain | TEDxMoorgate
+2019-04-22 07:00:36,512 INFO Discarded video: The power of kindness | Orly Wahba | TEDxStPeterPort
+2019-04-22 07:00:36,512 INFO Discarded video: The Overlooked Secret Behind Driverless Cars | Priscilla Nagashima Boyd | TEDxOxford
+2019-04-22 07:00:36,512 INFO Discarded video: Rethinking Memory &amp; Retention of Learning: Tips for Parents: Tracy Dignum at TEDxWestVancouverED
+2019-04-22 07:00:36,513 INFO Discarded video: Wisdom of the herd | Ruud Knaapen | TEDxApeldoorn
+2019-04-22 07:00:36,513 INFO Discarded video: TEDx Salem-Dr.T S Subbaraman-Science in Classical Tamil -அறிவியல் தமிழ்
+2019-04-22 07:00:36,513 INFO Discarded video: Improving your diversity IQ | Doug Melville | TEDxSyracuseUniversity
+2019-04-22 07:00:36,514 INFO Found new video: Science, art and the Big Bang | Judith Egger | TEDxTUMSalon
+2019-04-22 07:00:36,514 INFO Discarded video: 8 Days A Week...Live By Design, Not By Default | Adam Cobb | TEDxSantaBarbara
+2019-04-22 07:00:36,514 INFO Discarded video: Why you should jump off a cliff tomorrow. Finding your own way in life | David Hwan | TEDxYouth@Uden
+2019-04-22 07:00:36,514 INFO Discarded video: Educating a neurodiverse world | Brian Kinghorn | TEDxTeachersCollege
+2019-04-22 07:00:36,514 INFO Discarded video: My way of improving students&#39; memory skills | Serdar Arat | TEDxEdgemontSchool
+2019-04-22 07:00:36,514 INFO Discarded video: Improvisation exercises (part 3): Vicky Saye Henderson at TEDxColumbiaSC
+2019-04-22 07:00:36,514 INFO Discarded video: The Secret Lives of Wild Animals: Nick Whitney at TEDxSarasota
+2019-04-22 07:00:36,514 INFO Discarded video: Neutron Stars: Beyond Ordinary Stellar Objects | Arnau Rios Huguet | TEDxSurreyUniversity
+2019-04-22 07:00:36,515 INFO Discarded video: When you laugh, something happens: Dale Williams at TEDxWesterfordHighSchool
+2019-04-22 07:00:36,515 INFO Discarded video: The Effects of 3D Printing and Open Source on Prosthetics | Lee Cleaveland | TEDxMSU
+2019-04-22 07:00:36,515 INFO Discarded video: What universities missed in their fight for diversity | Josh Dunn | TEDxMileHigh
+2019-04-22 07:00:36,516 INFO Discarded video: Synthetic biology - what should we be vibrating about?: Drew Endy at TEDxStanford
+2019-04-22 07:00:36,517 INFO Found new video: Molecular machines of the future | Hendrik Dietz | TEDxTUMSalon
+2019-04-22 07:00:36,517 INFO Discarded video: I’m Mexican. Does that change your assumptions about me? | Vanessa Vancour | TEDxUniversityofNevada
+2019-04-22 07:00:36,517 INFO Discarded video: The secret of memory: Daniel Kilov at TEDxManly
+2019-04-22 07:00:36,517 INFO Discarded video: A Fighting Chance | Joosje Lupa | TEDxGeorgetown
+2019-04-22 07:00:36,517 INFO Discarded video: The Power of Transportation to Transform Communities | Allison Billings | TEDxCharlotte
+2019-04-22 07:00:36,517 INFO Discarded video: Using Brain Stimulation to Treat Symptoms of Parkinson’s Disease | Nga Chau | TEDxLancaster
+2019-04-22 07:00:36,517 INFO Discarded video: Telephone spam/scam problem? Bring in the robots. | Roger Anderson | TEDxNaperville
+2019-04-22 07:00:36,519 INFO Discarded video: Hyperloop | Maaike Hakker | TEDxErasmusUniversityRotterdam
+2019-04-22 07:00:36,519 INFO Discarded video: Walking and Running: Bio-Inspired Robotics | Jonathan Hurst | TEDxOregonStateU
+2019-04-22 07:00:36,519 INFO Discarded video: Instagram Filters for Robots &amp; Optical Neural Networks  | Julie Chang | TEDxBeaconStreet
+2019-04-22 07:00:36,519 INFO Discarded video: The Forgotten Virus (HIV-2) | Mohamed Mahdi | TEDxDebrecenUniversity
+2019-04-22 07:00:36,519 INFO Discarded video: Believe in Yourself First | Mohammed AlMuftada | TEDxOMC
+2019-04-22 07:00:36,519 INFO Discarded video: From AIDS to global health | Stefano Vella | TEDxMünchenSalon
+2019-04-22 07:00:36,519 INFO Discarded video: Your Forensic Mirror: Applying Emotional Intelligence To Achieve Success | Paula Clarke | TEDxGalway
+2019-04-22 07:00:36,519 INFO Discarded video: The art of improvisation: Steve Matuszak at TEDxVirginiaTech
+2019-04-22 07:00:36,520 INFO Discarded video: A guide to believing in yourself (but for real this time) | Catherine Reitman | TEDxToronto
+2019-04-22 07:00:36,520 INFO Discarded video: How Augmented Reality Will Change Education Completely | Florian Radke | TEDxGateway
+2019-04-22 07:00:36,520 INFO Discarded video: The Food Truck Of Tomorrow | Samay Bansal | TEDxUWCSEA
+2019-04-22 07:00:36,520 INFO Discarded video: Adventure is now | Victor Morgan | TEDxHSG
+2019-04-22 07:00:36,521 INFO Discarded video: Crafting Emotional Intelligence | Janelle Chase-Mayers | TEDxBridgetown
+2019-04-22 07:00:36,521 INFO Discarded video: How to talk to birds | Astacianna Hatcher | TEDxBrighton
+2019-04-22 07:00:36,521 INFO Discarded video: Ich esse Fleisch! | Frank Kühne | TEDxFrankfurt
+2019-04-22 07:00:36,521 INFO Discarded video: Courage - The Missing Link in Emotional Intelligence: Dr. Paul Wieand at TEDxLehighRiver
+2019-04-22 07:00:36,521 INFO Discarded video: The hidden power of not (always) fitting in. | Marianne Cantwell | TEDxNorwichED
+2019-04-22 07:00:36,521 INFO Discarded video: Wie Gründer geboren werden | Michael M. Gielnik | TEDxLeuphanaUniversityLüneburg
+2019-04-22 07:00:36,521 INFO Discarded video: What if we helped refugees to help themselves? | Alexander Betts | TEDxVienna
+2019-04-22 07:00:36,521 INFO Discarded video: Life Inside an Eating Disorder | Alexa Petropoulos | TEDxGrossePointeSouthHS
+2019-04-22 07:00:36,522 INFO Discarded video: Too Much Confidence Is NOT Your Problem | Dre Baldwin | TEDxUNLV
+2019-04-22 07:00:36,522 DEBUG Discarded video count:48
+2019-04-22 07:00:36,523 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CPoBEAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:36,858 INFO Discarded video: The Inmate, The Student, And Tolstoy | Andrew Kaufman | TEDxCharlottesville
+2019-04-22 07:00:36,858 INFO Discarded video: Achieving the Impossible | Yasmin Nazer | TEDxYouth@DAA
+2019-04-22 07:00:36,859 INFO Discarded video: The Tor Project, protecting online anonimity: Jacob Appelbaum at TEDxFlanders
+2019-04-22 07:00:36,859 INFO Discarded video: Do animals think and feel? | Sy Montgomery | TEDxAmoskeagMillyard
+2019-04-22 07:00:36,859 INFO Discarded video: Instantly recalling understanding: Kevin Horsley at TEDxPretoria
+2019-04-22 07:00:36,859 INFO Discarded video: How PeoplePods puts workers at the center of the organization   | Anacelle Bautista | TEDxDenHelder
+2019-04-22 07:00:36,859 INFO Discarded video: Digital freedom: Virtual reality, avatars, and multiple identities: Jim Blascovich at TEDxWinnipeg
+2019-04-22 07:00:36,859 INFO Discarded video: Irish on purpose: Shaun Leonard at TEDxUNLV
+2019-04-22 07:00:36,859 INFO Discarded video: Rethinking Smart Cities | Nigel Jacob | TEDxBermuda
+2019-04-22 07:00:36,859 INFO Discarded video: Dreams givers | Her Vang | TEDxYouth@Bonn
+2019-04-22 07:00:36,859 INFO Discarded video: Sustainable Food: Let&#39;s Start a Revolution! | Gerardo Urbina | TEDxNagoyaU
+2019-04-22 07:00:36,860 INFO Discarded video: Opening Doors for Refugees in the IT Industry | Christian Hirsig | TEDxZurich
+2019-04-22 07:00:36,860 INFO Discarded video: New isn&#39;t easy: Henrik Fisker at TEDxChapmanU
+2019-04-22 07:00:36,860 INFO Discarded video: Emotional Intelligence- The Skills Our Students Deserve | Ronen Habib | TEDxGunnHighSchool
+2019-04-22 07:00:36,860 INFO Discarded video: Why we can&#39;t let nature take its course | Allison Frederick | TEDxVernonAreaLibrary
+2019-04-22 07:00:36,860 INFO Discarded video: Justice, Dialogue and Relationship Building | Caroline Wawzonek | TEDxYellowknifeWomen
+2019-04-22 07:00:36,860 INFO Discarded video: Ideas worth improvising | International Theater Stockholm | TEDxStockholm
+2019-04-22 07:00:36,860 INFO Discarded video: I am HIV-positive. So what? | Avin Tan | TEDxNTU
+2019-04-22 07:00:36,860 INFO Discarded video: Failure is knowledge, knowledge is success | Tim Gibson | TEDxGriffithUniversity
+2019-04-22 07:00:36,861 INFO Discarded video: Proven steps to a better classroom | Tatiana Lingos-Webb | TEDxYouth@BeaconStreet
+2019-04-22 07:00:36,861 INFO Discarded video: Exploring the Higgs-Boson Particle | Dave Barney | TEDxYouth@Zurich
+2019-04-22 07:00:36,861 INFO Discarded video: Brain hacking: Can brain stimulation make you smarter? | Roi Cohen Kadosh | TEDxBrixton
+2019-04-22 07:00:36,861 INFO Discarded video: Animal Welfare and the Future of Zoos | Ron Kagan | TEDxOaklandUniversity
+2019-04-22 07:00:36,861 INFO Discarded video: What is after the 4th dimension? | Baher Shehata | TEDxQatarUniversity
+2019-04-22 07:00:36,861 INFO Discarded video: Deepmind and the Future of the Finance Industry | Matthew Dixon | TEDxIIT
+2019-04-22 07:00:36,861 INFO Discarded video: Why I do not fear Artificial Intelligence | Carl Henrik Ek | TEDxKTH
+2019-04-22 07:00:36,861 INFO Discarded video: Vision and Purpose | Nathaniel Peterkin | TEDxSandhillsCommunityCollege
+2019-04-22 07:00:36,862 INFO Discarded video: How to live life like you&#39;re dying | Patrick Condon | TEDxURI
+2019-04-22 07:00:36,862 INFO Discarded video: Real change through virtual reality | David Sackman | TEDxEastEnd
+2019-04-22 07:00:36,862 INFO Discarded video: Data-driven Education | Khurram Virani | TEDxWestVancouverED
+2019-04-22 07:00:36,862 INFO Discarded video: Cultural intelligence: the competitive edge for leaders | Julia Middleton | TEDxEastEnd
+2019-04-22 07:00:36,862 INFO Discarded video: Beauty works -- objectivity, aesthetics &amp; design | Mark Rigley | TEDxKanata
+2019-04-22 07:00:36,862 INFO Discarded video: Memory Athletics: Daniel Kilov at TEDxCanberra
+2019-04-22 07:00:36,862 INFO Discarded video: Dare to Embrace Failure | Aaron Perri | TEDxUND
+2019-04-22 07:00:36,862 INFO Discarded video: Space Art Dream Remix | Forest Stearns | TEDxSonomaCounty
+2019-04-22 07:00:36,862 INFO Discarded video: The Purpose Driven Athlete | Tim Hiller | TEDxKalamazoo
+2019-04-22 07:00:36,862 INFO Discarded video: Three moments that changed the world | Roma Agrawal | TEDxRoyalHolloway
+2019-04-22 07:00:36,862 INFO Discarded video: Will care robots care? | Astrid Weiss | TEDxTUWien
+2019-04-22 07:00:36,862 INFO Discarded video: Ocean Acidification in Washington State: Shallin Busch, PhD at TEDxTheEvergreenStateCollege
+2019-04-22 07:00:36,863 INFO Discarded video: Does video gaming ruin people&#39;s lives? | Antonius van Rooij | TEDxGhent
+2019-04-22 07:00:36,863 INFO Discarded video: Half the Truth | Ami Vitale | TEDxShanghai
+2019-04-22 07:00:36,863 INFO Discarded video: The &#39;E&#39; in STEM Should Stand for Empathy | Rachel Walker, PH.D, RN | TEDxEasthamptonWomen
+2019-04-22 07:00:36,863 INFO Discarded video: Face Fear, Do What You Love, and Live the Life You Want to Live | Lolita Taub | TEDxSDSU
+2019-04-22 07:00:36,863 INFO Discarded video: Curing health care systems | Ellen van de Poel | TEDxErasmusUniversity
+2019-04-22 07:00:36,863 INFO Discarded video: Overcoming FEAR &amp; Taking Risks | Martha Namundjebo Tilahun | TEDxUniversityofNamibia
+2019-04-22 07:00:36,863 INFO Discarded video: Where augmented reality meets healthcare | Nadine Hachach-Haram | TEDxCoventGardenWomen
+2019-04-22 07:00:36,863 INFO Discarded video: Millennials as Spiritual Free Agents | Steve Miller | TEDxUSD
+2019-04-22 07:00:36,863 INFO Discarded video: A reason to be unreasonable | Allen Nelson | TEDxYouth@SISmumbai
+2019-04-22 07:00:36,863 INFO Discarded video: The Art of Negotiation | Maria Ploumaki | TEDxYouth@Zurich
+2019-04-22 07:00:36,863 INFO Discarded video: Three Experiments of My Life | Saveen Hegde | TEDxMSRIT
+2019-04-22 07:00:36,863 DEBUG Discarded video count:50
+2019-04-22 07:00:36,864 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CKwCEAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:37,301 INFO Discarded video: The origin story of an over-achiever | Patricia Walsh | TEDxLakeTravisHigh
+2019-04-22 07:00:37,301 INFO Discarded video: The Power of EQ &amp; IQ | Mac McElhaney | TEDxValparaisoUniversity
+2019-04-22 07:00:37,301 INFO Discarded video: Post-Truth Poetry | Dottie James | TEDxYouth@AICS
+2019-04-22 07:00:37,301 INFO Discarded video: Social and emotional learning: Trish Shaffer at TEDxUniversityofNevada
+2019-04-22 07:00:37,302 INFO Discarded video: Learning from mistakes | Will Eaton | TEDxPenticton
+2019-04-22 07:00:37,302 INFO Discarded video: National Service Can Make America Great Again | Joe Kearns Goodwin | TEDxBeaconStreet
+2019-04-22 07:00:37,302 INFO Discarded video: The six golden rules of improvisation | Claudine Ullman | TEDxJohannesburg
+2019-04-22 07:00:37,302 INFO Discarded video: Aerial Dancing | AirAligned | TEDxSacramento
+2019-04-22 07:00:37,302 INFO Discarded video: The Science of Living | Dave Fuehrer | TEDxRochester
+2019-04-22 07:00:37,302 INFO Discarded video: Engineered in Your Imagination | Danielle George | TEDxYouth@Manchester
+2019-04-22 07:00:37,302 INFO Discarded video: Teaching for 21st Century | Karin Schmidlin | TEDxUW
+2019-04-22 07:00:37,302 INFO Discarded video: Robots, spaceships, and greeblies -- build your dream: Chris Lee at TEDxNashville
+2019-04-22 07:00:37,302 INFO Discarded video: Building Memories in the Brain | Chris Baldassano | TEDxCarnegieLake
+2019-04-22 07:00:37,302 INFO Discarded video: The Challenges &amp; Opportunities of Augmented Reality | Edward Miller | TEDxSevenoaksSchool
+2019-04-22 07:00:37,302 INFO Discarded video: New Technologies for the Treatment of Mental Health | Chip Fisher | TEDxBeaconStreet
+2019-04-22 07:00:37,302 INFO Discarded video: Black currants -- the forbidden fruit | Greg Quinn | TEDxHudson
+2019-04-22 07:00:37,303 INFO Discarded video: Virtual Reality and Theater: Simulacra and Simulation | William Cusick | TEDxJerseyCity
+2019-04-22 07:00:37,303 INFO Discarded video: Music For Hang: Davide Swarup at TEDxSalford
+2019-04-22 07:00:37,303 INFO Discarded video: Shakespeare, Marlowe, and their Jews: John Kleiner at TEDxWilliamsCollege
+2019-04-22 07:00:37,303 INFO Discarded video: Artificial Intelligence and the future | André LeBlanc | TEDxMoncton
+2019-04-22 07:00:37,303 INFO Discarded video: How memory techniques can unleash children’s love of learning | Kevin Aires | TEDxWoking
+2019-04-22 07:00:37,303 INFO Discarded video: Why social-emotional intelligence matters in school | Kate Karafotas | TEDxYouth@ISPrague
+2019-04-22 07:00:37,303 INFO Discarded video: Intelligence: A Social Construct Used to Divide and Destroy | Anarghya Vardhana | TEDxYouth@SanDiego
+2019-04-22 07:00:37,303 INFO Discarded video: TEDxSydney - Josh Cook - The Bird Whisperer
+2019-04-22 07:00:37,303 INFO Discarded video: The American Dream in the Trump Nightmare | Omid Safi | TEDxDurham
+2019-04-22 07:00:37,303 INFO Discarded video: The Things We Make, Make Us. | Jay Pooley | TEDxUofT
+2019-04-22 07:00:37,303 INFO Discarded video: Talking Is Easy | Hamad Al Amari | TEDxYouth@DPSMIS
+2019-04-22 07:00:37,303 INFO Discarded video: Improv comedy will change the world | Jennifer Hunter | TEDxLSSU
+2019-04-22 07:00:37,304 INFO Discarded video: How to make a neural network in your bedroom | Brittany Wenger |a TEDxCERN
+2019-04-22 07:00:37,304 INFO Discarded video: Uncovering the secrets of immortal animals | Jules Howard | TEDxEastEnd
+2019-04-22 07:00:37,304 INFO Discarded video: Why food policy is worth fighting for: Chellie Pingree at TEDxManhattan
+2019-04-22 07:00:37,304 INFO Discarded video: The gardeners of the forest | Ian Redmond | TEDxSouthamptonUniversity
+2019-04-22 07:00:37,304 INFO Discarded video: “Cultivating Intrinsic Motivation and Creativity in the Classroom” | Beth Hennessey | TEDxSausalito
+2019-04-22 07:00:37,304 INFO Discarded video: The Secret to Bird Feeding | Markus Giesler | TEDxYorkU
+2019-04-22 07:00:37,304 INFO Discarded video: Adaptability creates opportunities | Jasper Reid | TEDxFMS
+2019-04-22 07:00:37,304 INFO Discarded video: Ravens and the evolution of intelligence | Jorg Massen | TEDxArnhem
+2019-04-22 07:00:37,304 INFO Discarded video: Follow Through the Follow-Through | Jonathan Scales | TEDxAsheville
+2019-04-22 07:00:37,304 INFO Discarded video: How to get your mojo back | Phil Anthony M | TEDxHSG
+2019-04-22 07:00:37,304 INFO Discarded video: How to Put Your Heart in The Work | Freddy Anzures | TEDxCMU
+2019-04-22 07:00:37,304 INFO Discarded video: Security of your digital home | Berry Gerrits | TEDxTwenteU
+2019-04-22 07:00:37,304 INFO Discarded video: The transforming power of engaging with our true self  | Nipa Asharam | TEDxGodaPark
+2019-04-22 07:00:37,304 INFO Discarded video: Artificial Intelligence will empower us, not exterminate us | Oren Etzioni | TEDxSeattle
+2019-04-22 07:00:37,305 INFO Discarded video: Why We Must Embrace “Small Data” | Martin Lindstrom | TEDxHarvardCollegeSalon
+2019-04-22 07:00:37,305 INFO Discarded video: Why Failure Is Necessary for Success | Dejan Stojanovic | TEDxKlagenfurt
+2019-04-22 07:00:37,305 INFO Discarded video: The philosophy behind fashion | Andrea Mason | TEDxURI
+2019-04-22 07:00:37,305 INFO Discarded video: Why the web is dead | Christian Heilmann | TEDxThessaloniki
+2019-04-22 07:00:37,305 INFO Discarded video: Why I Stopped Trying to Predict the Future | Allyson Kristofik | TEDxSaintMichaelsCollege
+2019-04-22 07:00:37,305 INFO Discarded video: Reflections on the self and the UN | Kishore Mandhyan | TEDxKCCEMSR
+2019-04-22 07:00:37,305 INFO Discarded video: The power of mistakes and failure | Suzi LeVine | TEDxBern
+2019-04-22 07:00:37,305 INFO Discarded video: Virtual Reality: Jump Into the Story | Eric Darnell | TEDxCincinnati
+2019-04-22 07:00:37,305 DEBUG Discarded video count:50
+2019-04-22 07:00:37,306 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CN4CEAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:37,661 INFO Discarded video: The light side of the dark side. | Iona Macgregor | TEDxMelbourne
+2019-04-22 07:00:37,661 INFO Discarded video: Transforming Institutions into Making Spaces  | Patty Mitchell | TEDxStroudsRun
+2019-04-22 07:00:37,661 INFO Discarded video: Imagine Ireland – an island of 10m people by 2050 | David Gavaghan | TEDxStormont
+2019-04-22 07:00:37,662 INFO Discarded video: An electronic nose that can sniff out disease | Simon Bootsma | TEDxJohannesburg
+2019-04-22 07:00:37,662 INFO Discarded video: Neural Computation: Markus Meister at TEDxCaltech
+2019-04-22 07:00:37,662 INFO Discarded video: Quantifying design aesthetics | Jose E. Lugo | TEDxUND
+2019-04-22 07:00:37,662 INFO Discarded video: Emotional Intelligence - The Key to Success | Tazeen Ahmad | TEDxBergen
+2019-04-22 07:00:37,662 INFO Discarded video: How the crisis response tool Ushahidi gives voice to the people | Angela Lungati | TEDxKamitiPrison
+2019-04-22 07:00:37,662 INFO Discarded video: The Evolution of Beauty: Richard Prum at TEDxYale
+2019-04-22 07:00:37,662 INFO Discarded video: TEDxKnoxville - Austin Church - Learning to Love Failure
+2019-04-22 07:00:37,662 INFO Discarded video: Interview with Thomas Goetz | Dominique Crenn | TEDxSanFrancisco
+2019-04-22 07:00:37,662 INFO Discarded video: How to Enjoy &amp; Remember Every Lecture | Eran Katz | TEDxWhiteCity
+2019-04-22 07:00:37,662 INFO Discarded video: The gift of tough times | Tara Igoe | TEDxLaJolla
+2019-04-22 07:00:37,662 INFO Discarded video: From Syria to Germany in three stories | Kareem Kousa, Yusuf Zein &amp; Ibrahim Andrun | TEDxStGeorg
+2019-04-22 07:00:37,662 INFO Discarded video: Fossil free Ireland | Dr Cara Augustenborg | TEDxUCD
+2019-04-22 07:00:37,663 INFO Discarded video: The Creative City: past present and future | Charles Landry | TEDxPadova
+2019-04-22 07:00:37,663 INFO Discarded video: Emotional resillience | Dr Laura Biggart | TEDxUniversityofEastAnglia
+2019-04-22 07:00:37,663 INFO Discarded video: Why Your Doctor Should Daydream: The Importance of Creativity | David Hindin | TEDxWilmingtonSalon
+2019-04-22 07:00:37,663 INFO Discarded video: Ubiquitous Computer Vision | David Moloney | TEDxDCU
+2019-04-22 07:00:37,664 INFO Discarded video: Failure Is Part of Success: Eduardo Zanatta at TEDxBYU
+2019-04-22 07:00:37,664 INFO Discarded video: Silence full of sounds: Why I decided to learn sign language | Lilia Semionova | TEDxMGIMOUniversity
+2019-04-22 07:00:37,664 INFO Discarded video: Responsive Cities: Kent Larson at TEDxBoston
+2019-04-22 07:00:37,664 INFO Discarded video: How Strokes Affect Children | Yasmin Nazer | TEDxYouth@DAA
+2019-04-22 07:00:37,664 INFO Discarded video: Probing the Limits of Learnability With Brain-Computer Interfaces | Steven Chase | TEDxCMU
+2019-04-22 07:00:37,664 INFO Discarded video: How synthetic biology is exploring biological complexity: Sean Ward at TEDxVilnius
+2019-04-22 07:00:37,664 INFO Discarded video: Esperanto, the International Language | David Malone | TEDxChadwickSchool
+2019-04-22 07:00:37,664 INFO Discarded video: Beyond the Wheelchair | Dr. William Tan | TEDxSIM
+2019-04-22 07:00:37,664 INFO Discarded video: A Musical Place for Children who are Displaced | Ailbhe Kenny | TEDxFulbrightDublin
+2019-04-22 07:00:37,664 INFO Discarded video: The Power of Enough | Paula Constant | TEDxPerth
+2019-04-22 07:00:37,664 INFO Discarded video: Refugees struggle with the same things we do | Dunya Habash | TEDxBirmingham
+2019-04-22 07:00:37,664 INFO Discarded video: TEDxGoldenGateED - Marc Brackett
+2019-04-22 07:00:37,665 INFO Discarded video: The brain is wired for unity: Zoran Josipovic at TEDxLowerEastSide
+2019-04-22 07:00:37,665 INFO Discarded video: Will Power at TEDxSMU
+2019-04-22 07:00:37,665 INFO Discarded video: Communication in the Dark | Kate Davis | TEDxUMontana
+2019-04-22 07:00:37,665 INFO Discarded video: Doing it Yourself: Architect, Provocateur, and Inventor | Frank Barkow | TEDxLugano
+2019-04-22 07:00:37,665 INFO Discarded video: Removing the Negative from HIV+: David Gere at TEDxGateway 2013
+2019-04-22 07:00:37,665 INFO Discarded video: A little girl who loved pets | Muneera Alfadala | TEDxQatarUniversity
+2019-04-22 07:00:37,665 INFO Discarded video: Self-Love isn&#39;t Selfish | Layan Salem | TEDxYouth@SAIS
+2019-04-22 07:00:37,665 INFO Discarded video: Nature Needs Half | James Brundige| TEDxVail
+2019-04-22 07:00:37,665 INFO Discarded video: Sample Theory | Mateusz Mach | TEDxGdynia
+2019-04-22 07:00:37,665 INFO Discarded video: How Art meets Artificial Intelligence | YQP and Roman Lipski | TEDxMünster
+2019-04-22 07:00:37,665 INFO Discarded video: Parrots of the Caribbean - leading in the age of genome exploration | Taras Oleskyk | TEDxUPR
+2019-04-22 07:00:37,665 INFO Discarded video: Self Motivation | Brendan Clark | TEDxYouth@BarnstableHS
+2019-04-22 07:00:37,665 INFO Discarded video: Community-based Solutions to HIV Cure&#39;s Ethical Challenges  | Allison Matthews | TEDxDurham
+2019-04-22 07:00:37,666 INFO Discarded video: How to be the best version of yourself | Raquel Caballero | TEDxKlagenfurt
+2019-04-22 07:00:37,666 INFO Discarded video: Cork: The food capital of Ireland. Are we brilliant or what?: Regina Sexton at TEDxUCC TEDxCity2.0
+2019-04-22 07:00:37,666 INFO Discarded video: Robots helping people with dementia | Wendy Moyle | TEDxGriffithUniversity
+2019-04-22 07:00:37,666 INFO Discarded video: What will we do when the robots can feel? | Daniel Faggella | TEDxAmoskeagMillyard
+2019-04-22 07:00:37,666 INFO Discarded video: How we founded Lonely Planet | Tony Wheeler | TEDxSingapore
+2019-04-22 07:00:37,666 INFO Discarded video: Macht Euch die Maschinen untertan | Andrian Kreye | TEDxMünchen
+2019-04-22 07:00:37,666 DEBUG Discarded video count:50
+2019-04-22 07:00:37,667 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CJADEAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:38,002 INFO Discarded video: How we founded Lonely Planet | Tony Wheeler | TEDxSingapore
+2019-04-22 07:00:38,002 INFO Discarded video: Macht Euch die Maschinen untertan | Andrian Kreye | TEDxMünchen
+2019-04-22 07:00:38,002 INFO Discarded video: Open innovation for fashion and a new relationship with clothes | Renan Serrano | TEDxBlumenauSalon
+2019-04-22 07:00:38,002 INFO Discarded video: Smart Cities: A Paradigm Shift | Zack Huhn | TEDxXavierUniversity
+2019-04-22 07:00:38,003 INFO Discarded video: Бізнес, що творить спільноти | Юрко Филюк | TEDxKyiv
+2019-04-22 07:00:38,003 INFO Discarded video: Augmented Reality to the rescue | Rotem Bashi | TEDxTelAviv
+2019-04-22 07:00:38,003 INFO Discarded video: What happens when no one is watching... and how to break the cycle | Andreia Fernandes | TEDxZurich
+2019-04-22 07:00:38,003 INFO Discarded video: Flying through (virtual) reality | Patrik Künzler | TEDxZurich
+2019-04-22 07:00:38,003 INFO Discarded video: Make Meaning Your Compass | Julie Wilkes | TEDxClevelandStateUniversity
+2019-04-22 07:00:38,003 INFO Discarded video: How Paris Hilton changed my life | Adam Kramer | TEDxUniversityofNevada
+2019-04-22 07:00:38,003 INFO Discarded video: Your brain is built for politics | Dr Darren Schreiber | TEDxLondonSalon
+2019-04-22 07:00:38,003 INFO Discarded video: Building Innovation | Duzan Doepel | TEDxRotterdam
+2019-04-22 07:00:38,003 INFO Discarded video: Using Emotional Intelligence to Help Women Feel their Best | Purva Gupta | TEDxLynbrookHighSchool
+2019-04-22 07:00:38,003 INFO Discarded video: The Virtue of Enough | Ashi Kunzang Choden | TEDxThimphu
+2019-04-22 07:00:38,003 INFO Discarded video: How can you use virtual reality to reduce pain? | Marcin Czub | TEDxWroclaw
+2019-04-22 07:00:38,003 INFO Discarded video: Synthetic Biology: Now and The Future | Geoffrey Baldwin | TEDxImperialCollege
+2019-04-22 07:00:38,003 INFO Discarded video: The Convergence of Art, Design, &amp; Technology | David Houle | TEDxNewCollegeofFlorida
+2019-04-22 07:00:38,004 INFO Discarded video: Happy Healthy Children Free of Brain Cancer | Moira Clay | TEDxFremantle
+2019-04-22 07:00:38,004 INFO Discarded video: The Senate&#39;s Failed Experiment | William Dodd | TEDxReno
+2019-04-22 07:00:38,004 INFO Discarded video: Error de complejidad | Josep Esteve | TEDxPeralada
+2019-04-22 07:00:38,004 INFO Discarded video: Emotional communication | Douglas Pate | TEDxAndorraLaVella
+2019-04-22 07:00:38,004 INFO Discarded video: Deep brain stimulation: Xavier Vasques at TEDxMontpellier
+2019-04-22 07:00:38,004 INFO Discarded video: Failure as the key to success: Joe Boyd at TEDxCincinnati
+2019-04-22 07:00:38,004 INFO Discarded video: View from above | Ernesto Gainza | TEDxLjubljana
+2019-04-22 07:00:38,004 INFO Discarded video: The language of feelings | Alex Willcock | TEDxGlasgow
+2019-04-22 07:00:38,004 INFO Discarded video: Un museo dell&#39;Automobile  | Mariella Mengozzi | TEDxModenaWomen
+2019-04-22 07:00:38,004 INFO Discarded video: Love Should Not Kill | Narges Dorratoltaj | TEDxVirginiaTech
+2019-04-22 07:00:38,004 INFO Discarded video: The Next Step in AI: Multimodal Perception | Louis-Philippe Morency | TEDxCMU
+2019-04-22 07:00:38,004 INFO Discarded video: 100 Percent Improvised | Black Box Improv Theater | TEDxDayton
+2019-04-22 07:00:38,004 INFO Discarded video: Designing Systems to Avoid Failure: Tom Fisher at TEDxUMN
+2019-04-22 07:00:38,004 INFO Discarded video: Filling the void: a discovery on nanoscale | Sara Frykstrand | TEDxUppsalaUniversity
+2019-04-22 07:00:38,005 INFO Discarded video: Building communities around sustainable food systems:  Stephen Sherwood at TEDxWageningen
+2019-04-22 07:00:38,005 INFO Discarded video: Powerlessness and nuclear weapons | Daniele Santi | TEDxCrocetta
+2019-04-22 07:00:38,005 INFO Discarded video: From Zero to Infinity | Lina Kraftsoff | TEDxIntlSchoolDüsseldorf
+2019-04-22 07:00:38,005 INFO Discarded video: Why Successful Organizations Fail: Danny DeLaRosa at TEDxReno
+2019-04-22 07:00:38,005 INFO Discarded video: How the **** does memory work? | Matthew Kelley | TEDxLakeForestCollege
+2019-04-22 07:00:38,005 INFO Discarded video: Shifting Gender Paradigms: Speak Up, Stand Up, Rise Up | Lauri Robbins-Ericson | TEDxWilmingtonWomen
+2019-04-22 07:00:38,005 INFO Discarded video: Social Touch Technology | Gijs Huisman | TEDxSaxionUniversity
+2019-04-22 07:00:38,005 INFO Discarded video: Crea. Com una obsessió es transforma en un ofici: Paula Bonet at TEDxLaValldUixo
+2019-04-22 07:00:38,005 INFO Discarded video: Open House to Jackson’s Entrepreneurial Ecosystem | Ashlee Kelly | TEDxMillsapsCollege
+2019-04-22 07:00:38,005 INFO Discarded video: The art of improvisation | Rapid Fire Theatre | TEDxEdmonton
+2019-04-22 07:00:38,005 INFO Discarded video: La importancia de crecer | Alicia Coronil | TEDxUDeustoMadrid
+2019-04-22 07:00:38,005 INFO Discarded video: A Tool For The Mind | Marom Bikson | TEDxBushwick
+2019-04-22 07:00:38,005 INFO Discarded video: This Generation is Unable to Think  | Emas Gricius | TEDxYouth@KJG
+2019-04-22 07:00:38,006 INFO Discarded video: Recirculating farms: building a healthy, sustainable food culture: Marianne Cufone at TEDxManhattan
+2019-04-22 07:00:38,006 INFO Discarded video: Global neural network cloud service for breast cancer detection: Brittany Wenger at TEDxAtlanta
+2019-04-22 07:00:38,006 INFO Discarded video: De la smart city a la ciudad sensible | Begoña Villacís | TEDxUDeustoMadrid
+2019-04-22 07:00:38,006 INFO Discarded video: Synthetic biology and mass production: Yasaman Sheri at TEDxMontreal
+2019-04-22 07:00:38,006 INFO Discarded video: Playing with Paint | Emma Fay | TEDxWarwick
+2019-04-22 07:00:38,006 INFO Discarded video: Does your social circle determine how much you care? | David Hudson | TEDxBrum
+2019-04-22 07:00:38,006 DEBUG Discarded video count:50
+2019-04-22 07:00:38,007 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CMIDEAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:38,479 INFO Discarded video: Real Food Diets for Lions, Zebras, People and Beyond | George Diggs | TEDxAustinCollege
+2019-04-22 07:00:38,479 INFO Discarded video: Do What Makes You Love Yourself | Dan Antonelli | TEDxUNCAsheville
+2019-04-22 07:00:38,479 INFO Discarded video: Liberate your life and your language with &#39;WORD-SMERCHING&#39; | Jade Harrell | TEDxGatewayArch
+2019-04-22 07:00:38,479 INFO Discarded video: Community-based Solutions to HIV Cure&#39;s Ethical Challenges  | Allison Matthews | TEDxDurham
+2019-04-22 07:00:38,479 INFO Discarded video: Emotion Is Everything | Navdeep Pasricha | TEDxGlasshouseChristianCollege
+2019-04-22 07:00:38,480 INFO Discarded video: Sample Theory | Mateusz Mach | TEDxGdynia
+2019-04-22 07:00:38,480 INFO Discarded video: Playing with Paint | Emma Fay | TEDxWarwick
+2019-04-22 07:00:38,480 INFO Discarded video: TEDxAmsterdamWomen 2011 - Corina Vermeulen - My Life with HIV
+2019-04-22 07:00:38,480 INFO Discarded video: What a flock of birds can teach you about sustainability | Katharina Brinck | TEDxFS
+2019-04-22 07:00:38,480 INFO Discarded video: Design is beautiful | Jeremy Lindley | TEDxBedford
+2019-04-22 07:00:38,480 INFO Discarded video: Need to Change the Mindset: Solution to any Problem  | Krishan Gupta | TEDxJiwajiUniversity
+2019-04-22 07:00:38,480 INFO Discarded video: Open House to Jackson’s Entrepreneurial Ecosystem | Ashlee Kelly | TEDxMillsapsCollege
+2019-04-22 07:00:38,481 INFO Discarded video: The Food You Eat | James Miner | TEDxBeaconStreet
+2019-04-22 07:00:38,481 INFO Discarded video: What An Idea Needs To Survive. | Jeffrey Stamp | TEDxNormal
+2019-04-22 07:00:38,481 INFO Discarded video: Powerlessness and nuclear weapons | Daniele Santi | TEDxCrocetta
+2019-04-22 07:00:38,481 INFO Discarded video: Mut zur Lüge: Klaus-Jürgen Grün at TEDxRheinMain
+2019-04-22 07:00:38,481 INFO Discarded video: Moving Forward While Looking Back | Kristen Minsky | TEDxProvidence
+2019-04-22 07:00:38,481 INFO Discarded video: The secret of success (really it is!) | Carl Senior | TEDxAstonUniversity
+2019-04-22 07:00:38,481 INFO Discarded video: Happy Healthy Children Free of Brain Cancer | Moira Clay | TEDxFremantle
+2019-04-22 07:00:38,482 INFO Discarded video: The Power of Owning your Emotions | Neena Madhok | TEDxCityUniversityLondon
+2019-04-22 07:00:38,482 INFO Discarded video: Change to an elder culture | Rich Grehalva | TEDxBirminghamSalon
+2019-04-22 07:00:38,482 INFO Discarded video: How Paris Hilton changed my life | Adam Kramer | TEDxUniversityofNevada
+2019-04-22 07:00:38,482 INFO Discarded video: Beauty | Henrry Huang | TEDxYouth@HuoShaYuZhen
+2019-04-22 07:00:38,482 INFO Discarded video: This Generation is Unable to Think  | Emas Gricius | TEDxYouth@KJG
+2019-04-22 07:00:38,482 INFO Discarded video: The &quot;Mr. Science&quot; experience | Bill Heybourne | TEDxSUU
+2019-04-22 07:00:38,482 INFO Discarded video: Filling the void: a discovery on nanoscale | Sara Frykstrand | TEDxUppsalaUniversity
+2019-04-22 07:00:38,482 INFO Discarded video: TEDxKyiv - Grisha Zotov - Modelling Crowds
+2019-04-22 07:00:38,483 INFO Discarded video: Music Performance | Iskwé | TEDxTokyoSalon
+2019-04-22 07:00:38,483 INFO Discarded video: To Love and Protect | Janelle Chanona | TEDxBelmopan
+2019-04-22 07:00:38,483 INFO Discarded video: Social Touch Technology | Gijs Huisman | TEDxSaxionUniversity
+2019-04-22 07:00:38,483 INFO Discarded video: Passion for failure | Eric de Waal | TEDxRegina
+2019-04-22 07:00:38,483 INFO Discarded video: All there is inside a pencil | Pedro Gómez | TEDxPeralada
+2019-04-22 07:00:38,483 INFO Discarded video: Designing Systems to Avoid Failure: Tom Fisher at TEDxUMN
+2019-04-22 07:00:38,483 INFO Discarded video: The Power of Robotics for Youth | Angela Wei | TEDxISPP
+2019-04-22 07:00:38,484 INFO Discarded video: How do you protect a bird from extinction?: Bayu Wirayudha at TEDxUbud
+2019-04-22 07:00:38,484 INFO Discarded video: Beatboxing to Success | Simon Stanley | TEDxBolton
+2019-04-22 07:00:38,484 INFO Discarded video: Can theories be beautiful? | Angela Breitenbach | TEDxUAL
+2019-04-22 07:00:38,484 INFO Discarded video: Why most start-up businesses fail: Sriram Bharatam at TEDxKaren
+2019-04-22 07:00:38,484 INFO Discarded video: 11 lessons learned through mistakes: Miles Burke at TEDxPerth
+2019-04-22 07:00:38,484 INFO Discarded video: Birds, Biology, and Business | Joe Steensma | TEDxGatewayArch
+2019-04-22 07:00:38,484 INFO Discarded video: Waste is only waste if the loop is not closed  | Tyler McNaney | TEDxStowe
+2019-04-22 07:00:38,484 INFO Discarded video: How the **** does memory work? | Matthew Kelley | TEDxLakeForestCollege
+2019-04-22 07:00:38,485 INFO Discarded video: What has happened to the ”Truth“? | Celeste Kew | TEDxYouth@IIL
+2019-04-22 07:00:38,485 INFO Discarded video: Connecting Culture, Clothes, and Community: Bara&#39;h Odeh at TEDxMileHigh
+2019-04-22 07:00:38,485 INFO Discarded video: Improv comedy performance | Jittery Citizens | TEDxJohannesburg
+2019-04-22 07:00:38,485 INFO Discarded video: The second half of the chess board: Bill Malloy at TEDxLaJolla
+2019-04-22 07:00:38,485 INFO Discarded video: Rediscover connections | Pierre-Andre Kruger | TEDxEcoleHôtelièreLausanne
+2019-04-22 07:00:38,485 INFO Discarded video: Can a digital movement end global poverty? | Michael Sheldrick | TEDxPerth
+2019-04-22 07:00:38,486 INFO Discarded video: Traditsioon ja innovatsioon on teineteisest sõltuvad | Puuluup | TEDxToompea
+2019-04-22 07:00:38,486 INFO Discarded video: TEDxMartigny Teaser 2014
+2019-04-22 07:00:38,486 DEBUG Discarded video count:50
+2019-04-22 07:00:38,487 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CPQDEAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:38,865 INFO Discarded video: Building Confidence | Tricia Baak | TEDxYouth@PalisadesCharterHighSchool
+2019-04-22 07:00:38,865 INFO Discarded video: Taking a Stand Against Judging Others | Emily Johnson | TEDxPascoCountySchools
+2019-04-22 07:00:38,866 INFO Discarded video: The role of the university in a changing world | Ágnes Tóth | TEDxBudapestMetropolitanUniversity
+2019-04-22 07:00:38,866 INFO Discarded video: Photographing abandoned spaces at Chernobyl | Timm Suess | TEDxGundeldingen
+2019-04-22 07:00:38,866 INFO Discarded video: Passion for failure | Eric de Waal | TEDxRegina
+2019-04-22 07:00:38,866 INFO Discarded video: What a flock of birds can teach you about sustainability | Katharina Brinck | TEDxFS
+2019-04-22 07:00:38,866 INFO Discarded video: Ideal Me | Ahmed El hag | TEDxERU
+2019-04-22 07:00:38,866 INFO Discarded video: My ePass - Die digitale Identität | Stefan Genchev | TEDxYouth@Bonn
+2019-04-22 07:00:38,866 INFO Discarded video: Improv Performance | Greenhill Improv Troupe | TEDxGreenhillSchool
+2019-04-22 07:00:38,866 INFO Discarded video: Resetting your approach to any problem | Oghenerukeme Asagba | TEDxCWRUSalon
+2019-04-22 07:00:38,867 INFO Discarded video: Finding Truth in the Age of Information | Elise Crull | TEDxCUNY
+2019-04-22 07:00:38,867 INFO Discarded video: What has happened to the ”Truth“? | Celeste Kew | TEDxYouth@IIL
+2019-04-22 07:00:38,867 INFO Discarded video: YouMake ReMake by Renana Raz | elledanse | TEDxBratislava
+2019-04-22 07:00:38,867 INFO Discarded video: The Embrace of Failure TED EYTAN and REGINA HOLLIDAY TEDxAlvaPark 2012
+2019-04-22 07:00:38,867 INFO Discarded video: Why most start-up businesses fail: Sriram Bharatam at TEDxKaren
+2019-04-22 07:00:38,867 INFO Discarded video: Can a digital movement end global poverty? | Michael Sheldrick | TEDxPerth
+2019-04-22 07:00:38,867 INFO Discarded video: How to see the world from the HIV neutral perspective | Michael Jettmar | TEDxTrencin
+2019-04-22 07:00:38,867 INFO Discarded video: All there is inside a pencil | Pedro Gómez | TEDxPeralada
+2019-04-22 07:00:38,868 INFO Discarded video: It’s Okay to be Okay | Avni Vats | TEDxKids@NMS
+2019-04-22 07:00:38,868 INFO Discarded video: Ako by technológia mala fungovať pre všetkých | Tomáš Staník | TEDxBrno
+2019-04-22 07:00:38,868 INFO Discarded video: Social Media: The Value Lies in the Data | Jillian Ney | TEDxUniversityofStrathclyde
+2019-04-22 07:00:38,868 INFO Discarded video: Transforming Nuclear Weapons and Handguns into Angels of Peace | Lin Evola | TEDxFultonStreetSalon
+2019-04-22 07:00:38,868 INFO Discarded video: Find the Wildlife | Alex Goetz | TEDxToledo
+2019-04-22 07:00:38,868 INFO Discarded video: TEDxMartigny Teaser 2014
+2019-04-22 07:00:38,868 INFO Discarded video: Acquiring Immunity | Rebecca Greenblatt, PhD | TEDxYouth@ClintonSquare
+2019-04-22 07:00:38,868 INFO Discarded video: Flying Robots: Sameer Parekh at TEDxSiliconAlley
+2019-04-22 07:00:38,869 INFO Discarded video: Teaching the Cloud to see the Earth | Steven Brumby | TEDxABQ
+2019-04-22 07:00:38,869 INFO Discarded video: 11 lessons learned through mistakes: Miles Burke at TEDxPerth
+2019-04-22 07:00:38,869 INFO Discarded video: La sostenibile leggerezza dell&#39;essere | Lucia Menetti | TEDxModenaWomen
+2019-04-22 07:00:38,869 INFO Discarded video: The Procrastination Pandemic | Jawad Shahid Mahmoud | TEDxPristinePrivateSchool
+2019-04-22 07:00:38,869 INFO Discarded video: The Power of Play | Stefania Druga | TEDxBinnenhof
+2019-04-22 07:00:38,869 INFO Discarded video: How babies can inspire us to build intelligent robot | Alex Pitti | TEDxArts&amp;EtMétiersParisTechLille
+2019-04-22 07:00:38,869 INFO Discarded video: To Whom It may concern. | Maysoon Muhi Eddine | TEDxWadMedani
+2019-04-22 07:00:38,869 INFO Discarded video: Humanity in 30 years time | | Oriana Santoro | TEDxCarouge
+2019-04-22 07:00:38,869 INFO Discarded video: Beauty | Henrry Huang | TEDxYouth@HuoShaYuZhen
+2019-04-22 07:00:38,870 INFO Discarded video: Photography in the face of despair | Kim Sørenssen | TEDxTrondheim
+2019-04-22 07:00:38,870 INFO Discarded video: You Only Live Once, You Will Die Alone | Wan Kim | TEDxYonseiUniversity
+2019-04-22 07:00:38,870 INFO Discarded video: Virtual Reality | Jason Ganz | TEDxAmericanUniversity
+2019-04-22 07:00:38,870 INFO Discarded video: That&#39;s Weird | Abagael Speights | TEDxYouth@FortWorth
+2019-04-22 07:00:38,870 INFO Discarded video: Love is Love is Love | Glow Lyric Theatre | TEDxGreenville
+2019-04-22 07:00:38,870 INFO Discarded video: The Non-Standard of Beauty | Catherine Kamaladevi | TEDxYouth@GMIS
+2019-04-22 07:00:38,870 INFO Discarded video: Body Language, Presentation and Proverb | Doç. Dr. Adil Oran | TEDxYouth@AnkaraKoleji
+2019-04-22 07:00:38,870 INFO Discarded video: Misunderstanding Mental Illnesses in Society and on Social Media | Gabriel Garlycia | TEDxYouth@GMIS
+2019-04-22 07:00:38,871 INFO Discarded video: Define Your Passion | Zainab Garashi | TEDxAlShuwaikh
+2019-04-22 07:00:38,871 INFO Discarded video: Unchained | Kareen Hallak | TEDxYouth@SAIS
+2019-04-22 07:00:38,871 INFO Discarded video: Fließende Gedanken zu flüssigen Grenzen | Nicola Münz | TEDxBodensee
+2019-04-22 07:00:38,871 INFO Discarded video: Evolution, equilibrium, and global extinction | Justin Werfel | TEDxBeaconStreet
+2019-04-22 07:00:38,871 INFO Discarded video: Virtual accelerating reality | Andrew Nakas | TEDxBozeman
+2019-04-22 07:00:38,871 DEBUG Discarded video count:48
+2019-04-22 07:00:38,873 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CKYEEAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:39,204 INFO Discarded video: Evolution, equilibrium, and global extinction | Justin Werfel | TEDxBeaconStreet
+2019-04-22 07:00:39,204 INFO Discarded video: Virtual accelerating reality | Andrew Nakas | TEDxBozeman
+2019-04-22 07:00:39,205 DEBUG Discarded video count:2
+2019-04-22 07:00:39,206 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CNgEEAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:39,622 DEBUG Discarded video count:0
+2019-04-22 07:00:39,623 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CIoFEAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:40,000 DEBUG Discarded video count:0
+2019-04-22 07:00:40,002 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CLwFEAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:40,375 DEBUG Discarded video count:0
+2019-04-22 07:00:40,376 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CO4FEAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:40,871 DEBUG Discarded video count:0
+2019-04-22 07:00:40,872 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CKAGEAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:41,210 DEBUG Discarded video count:0
+2019-04-22 07:00:41,211 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CNIGEAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:41,525 DEBUG Discarded video count:0
+2019-04-22 07:00:41,526 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CIQHEAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:41,821 DEBUG Discarded video count:0
+2019-04-22 07:00:41,822 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/search?q=TEDxTUM&maxResults=50&part=id%2Csnippet&type=video&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&pageToken=CLYHEAA&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:42,201 DEBUG Discarded video count:0
+2019-04-22 07:00:42,202 INFO TRACE: youtube_search() returned 'ZqlTSCvP-Z0\niq5SLf6xPFQ\niuIisjRIcVI\nEJDpbsvWdsg\n69OAhVh6POY\nKCLdryjDl6E\nVgluoTngkQE\nNQ9uWbZ285Q\nD6_J7FfgWVc\nsRVxPE1cguo\n0qVOUD76JOg\nJR_DmkV4Jlw\n7b_7RXB3HnI\nd4yD0kz34jg\n2B91UE0gHps\nm4w-FV6eERI\n6MxbegZtAII\n3uLp0C6G__w\nLxhxeGZzRqM\nAuYWdpyeND8\n5SDZA06wO44\nS-S5_oVNvZQ\n3DyrDKYhSi8\n0NDL0AgRK0c\nO54JCIDqWwM\nk_BVvupSChc\nWGPQM1J7Jcw\nfJc7RYLuhUo\n3Xpj5Gj9pgo\nZark1jrC7EU\n36186S-RsKY\n-guxUgF_eTU\nUhg75v5_Xu8\nab_yh2HoJ7o\nLQEbC8QfbyU\nmK6IdD4GXPo\n76pnQkP-xG4\nZ2TQQhTx6EQ\n-NhZ4ioHb9E\nXnQHVXMhzBo\ncCke5m76UFo\nIDixuVrDABY\nke4lI_1xCrU\ng17OHKBm50I\nNG2CsLrCCY8\nmyl722kHxbU\ngnK7Lg56DjI\nHCjBM23nQ0s\nLVM1KOl-kDw\n62aI5Oy4S4g\nCFHvNNcEIDo\nOKQ-mpv0tWI\nU5DoJ_jCt7E\ngPZc1fZcgL8\ntwHCsVPupXo\nGC8V3-pvLZ4\niaemojsQDFw\n5U6Cc1hmdY0\nNG9NETZ0-G4\nYTKgizpzmtQ\nw-QoDqBMe2k\nNfpGHOu9TIY\n1E-QkFUAt5A'
+2019-04-22 07:00:42,202 INFO Loading yt_ids from external file...
+2019-04-22 07:00:42,275 INFO IDs in search but not file:			[]
+2019-04-22 07:00:42,276 INFO IDs in yt_ids file but not search:	['14cZX-dN03s', '2HJG_Nsx62U', 'EQbLO3PJ1SQ', 'IYNTDZhovrc']
+2019-04-22 07:00:42,276 INFO ...done
+2019-04-22 07:00:42,276 INFO TRACE: load_ids() returned 'ZqlTSCvP-Z0\niq5SLf6xPFQ\niuIisjRIcVI\nEJDpbsvWdsg\n69OAhVh6POY\nKCLdryjDl6E\nVgluoTngkQE\nNQ9uWbZ285Q\nD6_J7FfgWVc\nsRVxPE1cguo\n0qVOUD76JOg\nJR_DmkV4Jlw\n7b_7RXB3HnI\nd4yD0kz34jg\n2B91UE0gHps\nm4w-FV6eERI\n6MxbegZtAII\n3uLp0C6G__w\nLxhxeGZzRqM\nAuYWdpyeND8\n5SDZA06wO44\nS-S5_oVNvZQ\n3DyrDKYhSi8\n0NDL0AgRK0c\nO54JCIDqWwM\nk_BVvupSChc\nWGPQM1J7Jcw\nfJc7RYLuhUo\n3Xpj5Gj9pgo\nZark1jrC7EU\n36186S-RsKY\n-guxUgF_eTU\nUhg75v5_Xu8\nab_yh2HoJ7o\nLQEbC8QfbyU\nmK6IdD4GXPo\n76pnQkP-xG4\nZ2TQQhTx6EQ\n-NhZ4ioHb9E\nXnQHVXMhzBo\ncCke5m76UFo\nIDixuVrDABY\nke4lI_1xCrU\ng17OHKBm50I\nNG2CsLrCCY8\nmyl722kHxbU\ngnK7Lg56DjI\nHCjBM23nQ0s\nLVM1KOl-kDw\n62aI5Oy4S4g\nCFHvNNcEIDo\nOKQ-mpv0tWI\nU5DoJ_jCt7E\ngPZc1fZcgL8\ntwHCsVPupXo\nGC8V3-pvLZ4\niaemojsQDFw\n5U6Cc1hmdY0\nNG9NETZ0-G4\nYTKgizpzmtQ\nw-QoDqBMe2k\nNfpGHOu9TIY\n1E-QkFUAt5A\nIYNTDZhovrc\n14cZX-dN03s\nEQbLO3PJ1SQ\n2HJG_Nsx62U'
+2019-04-22 07:00:42,283 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=ZqlTSCvP-Z0&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:42,335 INFO title How drawing helps you think
+2019-04-22 07:00:42,335 INFO speaker Ralph Ammer
+2019-04-22 07:00:42,339 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=iq5SLf6xPFQ&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:42,389 INFO title Are you living the life you want to live?
+2019-04-22 07:00:42,389 INFO speaker Taz Alam
+2019-04-22 07:00:42,392 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=iuIisjRIcVI&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:42,448 INFO title Motivate yourself with visions, goals and willpower
+2019-04-22 07:00:42,448 INFO speaker Hugo Kehr
+2019-04-22 07:00:42,451 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=EJDpbsvWdsg&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:42,505 INFO title Born in Ireland, made in Germany
+2019-04-22 07:00:42,505 INFO speaker Mel Kelly
+2019-04-22 07:00:42,507 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=69OAhVh6POY&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:42,556 INFO title Let’s build machines as complex as nature
+2019-04-22 07:00:42,556 INFO speaker Lin Kayser
+2019-04-22 07:00:42,559 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=KCLdryjDl6E&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:42,610 INFO title Memory techniques - Your secret weapon in the information age
+2019-04-22 07:00:42,610 INFO speaker Simon Reinhard
+2019-04-22 07:00:42,612 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=VgluoTngkQE&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:42,674 INFO title Globalization: a view from space
+2019-04-22 07:00:42,674 INFO speaker Xiaoxiang Zhu
+2019-04-22 07:00:42,678 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=NQ9uWbZ285Q&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:42,731 INFO title How to create passioneers
+2019-04-22 07:00:42,731 INFO speaker Steffie Limère
+2019-04-22 07:00:42,736 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=D6_J7FfgWVc&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:42,788 INFO title 6 Steps to Improve Your Emotional Intelligence
+2019-04-22 07:00:42,788 INFO speaker Ramona Hacker
+2019-04-22 07:00:42,792 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=sRVxPE1cguo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:42,852 INFO title Stick Up: The layers of tape art
+2019-04-22 07:00:42,852 INFO speaker Max Zorn and Audrey Sykes
+2019-04-22 07:00:42,857 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=0qVOUD76JOg&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:42,905 INFO title The art of neural networks
+2019-04-22 07:00:42,905 INFO speaker Mike Tyka
+2019-04-22 07:00:42,909 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=JR_DmkV4Jlw&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:42,971 INFO title Design beyond the shape
+2019-04-22 07:00:42,971 INFO speaker Benoit Jacob
+2019-04-22 07:00:42,975 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=7b_7RXB3HnI&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:43,036 INFO title Stir, Blend, Disrupt: How Architects Think & What Managers Can Learn
+2019-04-22 07:00:43,036 INFO speaker Christos Chantzaras
+2019-04-22 07:00:43,041 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=d4yD0kz34jg&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:43,097 INFO title Why shit matters
+2019-04-22 07:00:43,097 INFO speaker Christoph Lüthi
+2019-04-22 07:00:43,102 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=2B91UE0gHps&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:43,153 INFO title Acoustic Performance
+2019-04-22 07:00:43,153 INFO speaker Peak to Peak
+2019-04-22 07:00:43,157 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=m4w-FV6eERI&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:43,207 INFO title The potential of brain stimulation
+2019-04-22 07:00:43,208 INFO speaker Sandro Krieg
+2019-04-22 07:00:43,211 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=6MxbegZtAII&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:43,261 INFO title Create a universe out of a single line
+2019-04-22 07:00:43,261 INFO speaker Simon James
+2019-04-22 07:00:43,264 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=3uLp0C6G__w&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:43,339 INFO title The fascinating intelligence of birds
+2019-04-22 07:00:43,340 INFO speaker Auguste von Bayern
+2019-04-22 07:00:43,342 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=LxhxeGZzRqM&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:43,411 INFO title Car jumping: the future of transportation
+2019-04-22 07:00:43,411 INFO speaker Tommaso Gecchelin
+2019-04-22 07:00:43,414 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=AuYWdpyeND8&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:43,471 INFO title A violin meets a loop station
+2019-04-22 07:00:43,471 INFO speaker Gustavo Strauß
+2019-04-22 07:00:43,474 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=5SDZA06wO44&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:43,526 INFO title Contemporary Ballet
+2019-04-22 07:00:43,526 INFO speaker Munich International Ballet School
+2019-04-22 07:00:43,529 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=S-S5_oVNvZQ&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:43,577 INFO title How compassion goes further than pity
+2019-04-22 07:00:43,578 INFO speaker Steffen Linßen & Daniel Kühbacher
+2019-04-22 07:00:43,580 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=3DyrDKYhSi8&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:43,638 INFO title The natural way of managing leaders
+2019-04-22 07:00:43,638 INFO speaker Erik Ringertz
+2019-04-22 07:00:43,641 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=0NDL0AgRK0c&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:43,694 INFO title Deep Learning Beyond Cats and Dogs
+2019-04-22 07:00:43,695 INFO speaker Nils Thuerey
+2019-04-22 07:00:43,698 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=O54JCIDqWwM&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:43,764 INFO title Beyond the first step: the unexpected, unanticipatible, enthralling!
+2019-04-22 07:00:43,764 INFO speaker Terry Swartzberg
+2019-04-22 07:00:43,768 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=k_BVvupSChc&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:43,831 INFO title HIV - Curing the Incurable
+2019-04-22 07:00:43,831 INFO speaker Daniel Aaron Donahue
+2019-04-22 07:00:43,834 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=WGPQM1J7Jcw&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:43,886 INFO title What Is Inside a Neutron Star?
+2019-04-22 07:00:43,887 INFO speaker Laura Fabbietti
+2019-04-22 07:00:43,890 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=fJc7RYLuhUo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:43,944 INFO title Tap dance
+2019-04-22 07:00:43,944 INFO speaker Sema Karakurt & Urs Jandl
+2019-04-22 07:00:43,947 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=3Xpj5Gj9pgo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:44,002 INFO title What virtual reality can tell us about human nature
+2019-04-22 07:00:44,002 INFO speaker Cade McCall
+2019-04-22 07:00:44,004 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=Zark1jrC7EU&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:44,056 INFO title Personalized health -- harnessing the power of diversity
+2019-04-22 07:00:44,057 INFO speaker Burkhard Rost
+2019-04-22 07:00:44,059 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=36186S-RsKY&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:44,106 INFO title Why data should be over-the-counter
+2019-04-22 07:00:44,106 INFO speaker Jenny Rankin
+2019-04-22 07:00:44,110 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=-guxUgF_eTU&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:44,164 INFO title Live Improv Theater
+2019-04-22 07:00:44,164 INFO speaker Bake This
+2019-04-22 07:00:44,168 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=Uhg75v5_Xu8&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:44,218 INFO title What fruit flies can teach us about muscle disease
+2019-04-22 07:00:44,218 INFO speaker Maria Spletter
+2019-04-22 07:00:44,220 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=ab_yh2HoJ7o&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:44,273 INFO title Building our future with synthetic biology
+2019-04-22 07:00:44,273 INFO speaker Jérôme Lutz
+2019-04-22 07:00:44,277 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=LQEbC8QfbyU&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:44,324 INFO title Robots with muscles: inspired by nature
+2019-04-22 07:00:44,324 INFO speaker Rafael Hostettler
+2019-04-22 07:00:44,327 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=mK6IdD4GXPo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:44,394 INFO title The time is now for a sustainable food revolution
+2019-04-22 07:00:44,394 INFO speaker Marc Buckley
+2019-04-22 07:00:44,399 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=76pnQkP-xG4&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:44,446 INFO title A vision of the responsive city of the future
+2019-04-22 07:00:44,446 INFO speaker Gerhard Schmitt
+2019-04-22 07:00:44,450 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=Z2TQQhTx6EQ&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:44,504 INFO title What I do to live the life I want
+2019-04-22 07:00:44,504 INFO speaker Petra Dorfner
+2019-04-22 07:00:44,507 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=-NhZ4ioHb9E&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:44,563 INFO title Loss of a Species – A Giant, Extinct
+2019-04-22 07:00:44,563 INFO speaker Thomas Hildebrandt
+2019-04-22 07:00:44,566 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=XnQHVXMhzBo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:44,621 INFO title Opus Epicus
+2019-04-22 07:00:44,621 INFO speaker Mandara
+2019-04-22 07:00:44,626 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=cCke5m76UFo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:44,672 INFO title Why we need a human-scale energy system
+2019-04-22 07:00:44,672 INFO speaker Justus Schütze
+2019-04-22 07:00:44,675 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=IDixuVrDABY&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:44,725 INFO title How do we learn from failure?
+2019-04-22 07:00:44,725 INFO speaker Dean Shepherd
+2019-04-22 07:00:44,728 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=ke4lI_1xCrU&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:44,781 INFO title Mega events and the developing world
+2019-04-22 07:00:44,781 INFO speaker James Mister
+2019-04-22 07:00:44,785 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=g17OHKBm50I&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:44,840 INFO title Less queuing, more safety - the power of crowd simulations
+2019-04-22 07:00:44,841 INFO speaker Angelika Kneidl
+2019-04-22 07:00:44,845 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=NG2CsLrCCY8&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:44,899 INFO title A health system that works for everybody
+2019-04-22 07:00:44,899 INFO speaker Sabine Kobayter
+2019-04-22 07:00:44,906 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=myl722kHxbU&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:44,959 INFO title Feeling welcomed and empowered
+2019-04-22 07:00:44,960 INFO speaker Essraa Nawar
+2019-04-22 07:00:44,964 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=gnK7Lg56DjI&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:45,013 INFO title How patient innovation improves lives
+2019-04-22 07:00:45,013 INFO speaker Pedro Oliveira
+2019-04-22 07:00:45,016 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=HCjBM23nQ0s&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:45,069 INFO title Robots that learn from us
+2019-04-22 07:00:45,069 INFO speaker Dongheui Lee
+2019-04-22 07:00:45,075 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=LVM1KOl-kDw&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:45,129 INFO title Using tiny magnets for computation
+2019-04-22 07:00:45,129 INFO speaker Markus Becherer
+2019-04-22 07:00:45,132 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=62aI5Oy4S4g&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:45,186 INFO title The Glue That Holds Society Together
+2019-04-22 07:00:45,186 INFO speaker Jürgen Gradl
+2019-04-22 07:00:45,189 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=CFHvNNcEIDo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:45,237 INFO title Contemporary & Jazz Dance
+2019-04-22 07:00:45,237 INFO speaker Alina Groder & Sungsit Saiynart
+2019-04-22 07:00:45,241 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=OKQ-mpv0tWI&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:45,301 INFO title The Perfect Fit - Individualized, Fashionable, 3D-printed Prosthetics
+2019-04-22 07:00:45,302 INFO speaker Manuel Opitz
+2019-04-22 07:00:45,305 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=U5DoJ_jCt7E&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:45,355 INFO title The Robotic Future of Elderly Care
+2019-04-22 07:00:45,355 INFO speaker Thomas Bock
+2019-04-22 07:00:45,359 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=gPZc1fZcgL8&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:45,413 INFO title Refugees - a homemade challenge
+2019-04-22 07:00:45,413 INFO speaker Melusine Reimers
+2019-04-22 07:00:45,417 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=twHCsVPupXo&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:45,468 INFO title Cultural Fashion: Transform the Fashion Industry From Villain to Hero
+2019-04-22 07:00:45,468 INFO speaker Monica Boța-Moisin
+2019-04-22 07:00:45,474 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=GC8V3-pvLZ4&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:45,528 INFO title Are we victims of our senses?
+2019-04-22 07:00:45,528 INFO speaker Ilona Grunwald Kadow
+2019-04-22 07:00:45,531 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=iaemojsQDFw&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:45,583 INFO title Laugh, Think, Cry, Laugh Again
+2019-04-22 07:00:45,583 INFO speaker Jessamyn Fairfield
+2019-04-22 07:00:45,586 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=5U6Cc1hmdY0&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:45,639 INFO title A question of survival: Why we hunted the Higgs
+2019-04-22 07:00:45,639 INFO speaker Steven Goldfarb
+2019-04-22 07:00:45,643 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=NG9NETZ0-G4&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:45,691 INFO title How to Change the World With Courage, Intuition and Action
+2019-04-22 07:00:45,691 INFO speaker Kai Stuht
+2019-04-22 07:00:45,693 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=YTKgizpzmtQ&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:45,753 INFO title There can be no human 2.0 without a humanity 2.0
+2019-04-22 07:00:45,754 INFO speaker Philipp Reisinger
+2019-04-22 07:00:45,759 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=w-QoDqBMe2k&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:45,811 INFO title Medical Augmented Reality: coming soon to (operating) theaters near you
+2019-04-22 07:00:45,811 INFO speaker Nassir Navab
+2019-04-22 07:00:45,815 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=NfpGHOu9TIY&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:45,874 INFO title Science, art and the Big Bang
+2019-04-22 07:00:45,874 INFO speaker Judith Egger
+2019-04-22 07:00:45,877 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=1E-QkFUAt5A&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:45,934 INFO title Molecular machines of the future
+2019-04-22 07:00:45,934 INFO speaker Hendrik Dietz
+2019-04-22 07:00:45,940 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=IYNTDZhovrc&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:45,987 INFO title Disappearable Computing and what it means to us
+2019-04-22 07:00:45,987 INFO speaker Nikolaj Hviid
+2019-04-22 07:00:45,995 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=14cZX-dN03s&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:46,051 INFO title How to predict everything - even who dies next in Game of Thrones
+2019-04-22 07:00:46,051 INFO speaker Guy Yachdav
+2019-04-22 07:00:46,055 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=EQbLO3PJ1SQ&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:46,118 INFO title Relax, leading is about trusting your team
+2019-04-22 07:00:46,118 INFO speaker Sarah Fleischer
+2019-04-22 07:00:46,121 INFO URL being requested: GET https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet%2Cstatistics&id=2HJG_Nsx62U&key=AIzaSyA8M80IYU423HAPtbr9W0ErBCELrEv26pg&alt=json
+2019-04-22 07:00:46,229 INFO title Water Systems in Cities of the Future
+2019-04-22 07:00:46,236 INFO speaker Jörg Drewes
+2019-04-22 07:00:46,477 INFO TRACE: get_youtube_data() returned                                                                     Title            ...                         Published on
+Date       ID                                                                        ...                                     
+2019-04-22 ZqlTSCvP-Z0                        How drawing helps you think            ...             2019-01-17T17:56:07.000Z
+           iq5SLf6xPFQ          Are you living the life you want to live?            ...             2018-02-21T21:46:59.000Z
+           iuIisjRIcVI  Motivate yourself with visions, goals and will...            ...             2017-02-09T19:43:41.000Z
+           EJDpbsvWdsg                   Born in Ireland, made in Germany            ...             2017-02-14T15:28:53.000Z
+           69OAhVh6POY          Let’s build machines as complex as nature            ...             2019-01-17T17:56:07.000Z
+           KCLdryjDl6E  Memory techniques - Your secret weapon in the ...            ...             2017-02-10T17:11:16.000Z
+           VgluoTngkQE                   Globalization: a view from space            ...             2019-01-17T17:56:07.000Z
+           NQ9uWbZ285Q                          How to create passioneers            ...             2017-02-09T19:43:40.000Z
+           D6_J7FfgWVc     6 Steps to Improve Your Emotional Intelligence            ...             2018-02-21T21:50:47.000Z
+           sRVxPE1cguo                   Stick Up: The layers of tape art            ...             2016-02-02T21:04:07.000Z
+           0qVOUD76JOg                         The art of neural networks            ...             2015-12-07T19:46:38.000Z
+           JR_DmkV4Jlw                            Design beyond the shape            ...             2014-07-25T22:15:03.000Z
+           7b_7RXB3HnI  Stir, Blend, Disrupt: How Architects Think & W...            ...             2018-02-21T21:49:45.000Z
+           d4yD0kz34jg                                   Why shit matters            ...             2019-01-17T17:56:06.000Z
+           2B91UE0gHps                               Acoustic Performance            ...             2017-02-14T15:28:51.000Z
+           m4w-FV6eERI                 The potential of brain stimulation            ...             2017-02-17T17:48:43.000Z
+           6MxbegZtAII             Create a universe out of a single line            ...             2017-02-10T17:11:18.000Z
+           3uLp0C6G__w              The fascinating intelligence of birds            ...             2017-02-10T17:11:15.000Z
+           LxhxeGZzRqM          Car jumping: the future of transportation            ...             2019-01-17T17:56:06.000Z
+           AuYWdpyeND8                      A violin meets a loop station            ...             2019-01-17T17:56:06.000Z
+           5SDZA06wO44                                Contemporary Ballet            ...             2016-01-25T19:41:49.000Z
+           S-S5_oVNvZQ              How compassion goes further than pity            ...             2019-01-17T17:56:06.000Z
+           3DyrDKYhSi8                The natural way of managing leaders            ...             2015-12-14T18:43:42.000Z
+           0NDL0AgRK0c                 Deep Learning Beyond Cats and Dogs            ...             2018-02-21T21:53:50.000Z
+           O54JCIDqWwM  Beyond the first step: the unexpected, unantic...            ...             2017-02-10T17:11:19.000Z
+           k_BVvupSChc                         HIV - Curing the Incurable            ...             2018-02-21T21:54:28.000Z
+           WGPQM1J7Jcw                     What Is Inside a Neutron Star?            ...             2018-02-21T21:55:30.000Z
+           fJc7RYLuhUo                                          Tap dance            ...             2019-01-17T17:56:06.000Z
+           3Xpj5Gj9pgo  What virtual reality can tell us about human n...            ...             2016-01-18T18:34:08.000Z
+           Zark1jrC7EU  Personalized health -- harnessing the power of...            ...             2014-07-23T18:55:49.000Z
+...                                                                   ...            ...                                  ...
+           Z2TQQhTx6EQ                  What I do to live the life I want            ...             2016-01-12T20:04:05.000Z
+           -NhZ4ioHb9E               Loss of a Species – A Giant, Extinct            ...             2018-02-21T21:53:10.000Z
+           XnQHVXMhzBo                                        Opus Epicus            ...             2016-01-05T16:34:27.000Z
+           cCke5m76UFo            Why we need a human-scale energy system            ...             2019-01-17T17:56:06.000Z
+           IDixuVrDABY                      How do we learn from failure?            ...             2014-07-23T18:55:18.000Z
+           ke4lI_1xCrU               Mega events and the developing world            ...             2014-07-25T22:15:03.000Z
+           g17OHKBm50I  Less queuing, more safety - the power of crowd...            ...             2018-02-21T21:48:18.000Z
+           NG2CsLrCCY8           A health system that works for everybody            ...             2017-02-10T17:11:17.000Z
+           myl722kHxbU                     Feeling welcomed and empowered            ...             2015-12-26T20:36:51.000Z
+           gnK7Lg56DjI              How patient innovation improves lives            ...             2016-01-03T06:04:47.000Z
+           HCjBM23nQ0s                          Robots that learn from us            ...             2016-01-08T21:08:32.000Z
+           LVM1KOl-kDw                 Using tiny magnets for computation            ...             2018-09-08T15:30:01.000Z
+           62aI5Oy4S4g               The Glue That Holds Society Together            ...             2018-02-21T21:48:51.000Z
+           CFHvNNcEIDo                          Contemporary & Jazz Dance            ...             2017-02-14T15:28:52.000Z
+           OKQ-mpv0tWI  The Perfect Fit - Individualized, Fashionable,...            ...             2018-02-21T21:45:45.000Z
+           U5DoJ_jCt7E                 The Robotic Future of Elderly Care            ...             2018-02-21T21:46:38.000Z
+           gPZc1fZcgL8                    Refugees - a homemade challenge            ...             2015-12-09T22:29:50.000Z
+           twHCsVPupXo  Cultural Fashion: Transform the Fashion Indust...            ...             2018-02-21T21:55:05.000Z
+           GC8V3-pvLZ4                      Are we victims of our senses?            ...             2019-01-17T17:56:06.000Z
+           iaemojsQDFw                     Laugh, Think, Cry, Laugh Again            ...             2018-02-21T21:54:07.000Z
+           5U6Cc1hmdY0    A question of survival: Why we hunted the Higgs            ...             2015-12-18T15:51:53.000Z
+           NG9NETZ0-G4  How to Change the World With Courage, Intuitio...            ...             2018-02-21T21:44:13.000Z
+           YTKgizpzmtQ   There can be no human 2.0 without a humanity 2.0            ...             2014-07-23T18:55:49.000Z
+           w-QoDqBMe2k  Medical Augmented Reality: coming soon to (ope...            ...             2017-02-10T19:55:43.000Z
+           NfpGHOu9TIY                      Science, art and the Big Bang            ...             2018-09-08T15:30:00.000Z
+           1E-QkFUAt5A                   Molecular machines of the future            ...             2018-09-08T15:30:00.000Z
+           IYNTDZhovrc    Disappearable Computing and what it means to us            ...             2016-09-06T15:23:57.000Z
+           14cZX-dN03s  How to predict everything - even who dies next...            ...             2016-09-08T17:20:37.000Z
+           EQbLO3PJ1SQ         Relax, leading is about trusting your team            ...             2016-09-06T15:23:57.000Z
+           2HJG_Nsx62U              Water Systems in Cities of the Future            ...             2016-09-06T21:03:47.000Z
+
+[67 rows x 10 columns]
+2019-04-22 07:00:46,477 INFO Loading data from /home/tedxtum/html/stats/tedxtum-videoviews-statistics.csv
+2019-04-22 07:00:46,484 INFO ...done!
+2019-04-22 07:00:46,532 INFO TRACE: load_data() returned                       Views      ...        Comment Count
+Date       Metric                ...                     
+2019-04-02 count       67.0      ...                 67.0
+           mean     33539.0      ...                 27.0
+           std      91752.0      ...                 96.0
+           min        325.0      ...                  0.0
+           25%       1000.0      ...                  1.0
+           50%       2519.0      ...                  2.0
+           75%       7925.0      ...                  4.0
+           max     445566.0      ...                721.0
+2019-04-03 count       72.0      ...                 72.0
+           mean     31796.0      ...                 25.0
+           std      88842.0      ...                 93.0
+           min        325.0      ...                  0.0
+           25%       1071.0      ...                  1.0
+           50%       2532.0      ...                  2.0
+           75%       8064.0      ...                  4.0
+           max     446836.0      ...                721.0
+2019-04-04 count       67.0      ...                 67.0
+           mean     33617.0      ...                 27.0
+           std      92013.0      ...                 97.0
+           min        325.0      ...                  0.0
+           25%       1004.0      ...                  1.0
+           50%       2525.0      ...                  2.0
+           75%       7960.0      ...                  4.0
+           max     448262.0      ...                721.0
+2019-04-05 count       67.0      ...                 67.0
+           mean     33656.0      ...                 27.0
+           std      92143.0      ...                 97.0
+           min        325.0      ...                  0.0
+           25%       1008.0      ...                  1.0
+           50%       2526.0      ...                  2.0
+...                     ...      ...                  ...
+2019-04-18 std      93612.0      ...                 97.0
+           min        326.0      ...                  0.0
+           25%       1038.0      ...                  1.0
+           50%       2533.0      ...                  2.0
+           75%       8188.0      ...                  4.0
+           max     462609.0      ...                722.0
+2019-04-19 count       68.0      ...                 68.0
+           mean     33674.0      ...                 27.0
+           std      93100.0      ...                 96.0
+           min        326.0      ...                  0.0
+           25%       1035.0      ...                  1.0
+           50%       2458.0      ...                  2.0
+           75%       8133.0      ...                  4.0
+           max     463578.0      ...                722.0
+2019-04-20 count       67.0      ...                 67.0
+           mean     34197.0      ...                 27.0
+           std      93819.0      ...                 97.0
+           min        326.0      ...                  0.0
+           25%       1050.0      ...                  1.0
+           50%       2534.0      ...                  2.0
+           75%       8204.0      ...                  4.0
+           max     464497.0      ...                722.0
+2019-04-21 count       67.0      ...                 67.0
+           mean     34228.0      ...                 27.0
+           std      93917.0      ...                 97.0
+           min        326.0      ...                  0.0
+           25%       1054.0      ...                  1.0
+           50%       2534.0      ...                  2.0
+           75%       8208.0      ...                  4.0
+           max     465352.0      ...                723.0
+
+[160 rows x 5 columns]
+2019-04-22 07:00:46,593 INFO TRACE: calc_stats() returned                       Views      ...        Comment Count
+Date       Metric                ...                     
+2019-04-22 count       67.0      ...                 67.0
+           mean     34259.0      ...                 28.0
+           std      94017.0      ...                 99.0
+           min        326.0      ...                  0.0
+           25%       1061.0      ...                  1.0
+           50%       2534.0      ...                  2.0
+           75%       8212.0      ...                  4.0
+           max     466275.0      ...                722.0
+
+[8 rows x 5 columns]
+2019-04-22 07:00:46,597 INFO Saving data ...
+2019-04-22 07:00:46,677 INFO ...done!
+2019-04-22 07:00:46,677 INFO Saving config ...
+2019-04-22 07:00:46,692 INFO ...done!
+2019-04-22 07:00:46,692 INFO Checking date and renaming file
+2019-04-22 07:00:46,692 INFO Done with everything!
