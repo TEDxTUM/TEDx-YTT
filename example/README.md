@@ -7,6 +7,6 @@ This is an example of how input/output could look like.
 
 # Output
 - week17.csv: This is the outputfile resulting from running the script daily and creating a file every week. You can see all parameters queried by the googleAPI on a daily basis for _all_ our videos.  
-- stats.csv: This is the statsfile resulting from running the script daily and creating a new file every month. You find statistics on all videos of TEDxTUM (total views, likes, and so on) on a daily basis.
+- -statisstics.csv: This is the statsfile resulting from running the script daily and creating a new file every month. You find statistics on all videos of TEDxTUM (total views, likes, and so on) on a daily basis.
 
 
