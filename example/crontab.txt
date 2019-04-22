@@ -1,0 +1,15 @@
+path= *PATH TO OUR PYTHON INSTALLATION*
+
+# * * * * * command to execute
+# ┬ ┬ ┬ ┬ ┬
+# │ │ │ │ │
+# │ │ │ │ │
+# │ │ │ │ └───── day of week (0 - 7) (0 to 6 are Sunday to Saturday, or use names; 7 is Sunday, the same as 0)
+# │ │ │ └────────── month (1 - 12)
+# │ │ └─────────────── day of month (1 - 31)
+# │ └──────────────────── hour (0 - 23)
+# └───────────────────────── min (0 - 59
+
+0 6 * * * yes | cp -a  /var/www/virtual/tedxtum/html/stats/tedxtum-videoviews-output.csv /var/www/virtual/tedxtum/html/stats/backup/tedxtum-videoviews-output.csv
+0 5 1 * * yes | cp -a /var/www/virtual/tedxtum/html/stats/tedxtum-videoviews-statistics.csv /var/www/virtual/tedxtum/html/stats/backup/tedxtum-videoviews-statistics.csv
+0 7 * * * /home/tedxtum/anaconda3/bin/python /home/tedxtum/tedx-ytt/tedx-ytt.py -s False -u True
