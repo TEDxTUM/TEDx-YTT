@@ -1,4 +1,4 @@
-# TEDx-YTT
+r# TEDx-YTT
 A youtube tracker (YTT) for TEDx videos that tracks data of a specific TEDx using the google API.
 
 This README consists of the following parts:
@@ -315,9 +315,22 @@ df.Views.xs(key='mean', level='Metric', drop_level=True).to_csv(SAVEFILE, sep=';
 
 ```
 
-## Using R-Script
+## Using TEDx-YTT Plot Scripts
 
-to be filled
+In this archive there are two Python scripts to nicely plot results accumulated after running TEDx-YTT for an 
+extended period of time (for instance using one of the above mentioned methods):
+
+* `PlotOverallMean.py` - plots mean views, daily view changes in %, comments & likes averaged over all videos
+* `PlotEachVideosStats.py` - plots mean views, daily view changes in %, comments & likes of all videos seperately
+
+In order for those scripts to work, you need to store the  `[BASE_FILENAME]-output.csv` files in a folder 'output' 
+and the  `[BASE_FILENAME]-statistics.csv` files in a folder named 'stats' within the same folder as 
+`PlotEachVideosStats.py` or `PlotOverallMean.py` respectively (or change the path in line 8 of both scripts).
+Running the scripts then produces output like this:\
+OverallMean
+![Overall Stats](plotted-stats.png)
+EachVideoStats
+![Each Video Stats](SingleVideoStats.png)
 
 # Authors
 
