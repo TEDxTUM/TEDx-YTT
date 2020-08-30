@@ -2,6 +2,7 @@ import pandas as pd
 import glob
 import matplotlib.pyplot as plt
 import matplotlib.dates as dates
+import os
 
 
 # path to output csv files
@@ -56,5 +57,7 @@ for name in names:
             print("No legend to remove")
 
     plt.suptitle(f'{name} - YouTube Statistics')
-    plt.savefig(f'{name}_stats.png')
+    if not os.path.exists('graphs'):
+        os.makedirs('graphs')
+    plt.savefig(f'graphs/{name}_stats.png')
     plt.close()
