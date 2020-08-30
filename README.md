@@ -1,4 +1,4 @@
-r# TEDx-YTT
+# TEDx-YTT
 A youtube tracker (YTT) for TEDx videos that tracks data of a specific TEDx using the google API.
 
 This README consists of the following parts:
