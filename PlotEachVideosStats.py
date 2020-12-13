@@ -27,7 +27,10 @@ names = data["Speaker Name"].unique()
 all_speakers = []
 
 for name in names:
-    speaker = data[data["Speaker Name"].str.contains(name)]
+    print(name)
+    print(data.loc[data["Speaker Name"] == name])
+    #speaker = data[data["Speaker Name"].str.contains(name)]
+    speaker = data.loc[data["Speaker Name"] == name]
     all_speakers.append(speaker)
     fig, axes = plt.subplots(2, 2, sharex='all', figsize=(20, 10))
 

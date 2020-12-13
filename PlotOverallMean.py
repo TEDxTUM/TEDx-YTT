@@ -2,6 +2,7 @@ import pandas as pd
 import glob
 import matplotlib.pyplot as plt
 import matplotlib.dates as dates
+import seaborn as sns
 
 
 # set relative path to stats csv here
@@ -22,10 +23,13 @@ means = data[data["Metric"].str.contains("mean")]
 means.sort_values(by="Date")
 means.set_index("Date", inplace=True)
 
-print(means.head())
+errors = data[data["Metric"].str.contains("std")]
+errors.sort_values(by="Date")
+errors.set_index("Date", inplace=True)
 
 fig, axes = plt.subplots(2, 2, sharex='all', figsize=(20, 10))
-means.plot(use_index=True, y="Views", ax=axes[0, 0])
+#means.plot(use_index=True, y="Views", ax=axes[0, 0])
+sns.lineplot(data=data, x="Date", y="Views", hue="Metric")
 means.plot(use_index=True, y="Likes", ax=axes[0, 1])
 views_change = means["Views"].pct_change()
 

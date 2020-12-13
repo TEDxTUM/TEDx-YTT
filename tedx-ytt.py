@@ -34,7 +34,7 @@ def youtube_search(search_term, max_results, client):
     :param client: youtube API client
     :return: \n separated list of youtube IDs
     """
-
+    search_term = f"{search_term}|{search_term}Salon|{search_term}Youth|{search_term}"
     if max_results > 50:
         search_response = client.search().list(
             q=search_term,
@@ -51,9 +51,11 @@ def youtube_search(search_term, max_results, client):
 
         token = search_response.get('nextPageToken', None)
         remaining_results = max_results - 50
+        resultsPerPage = search_response.get('pageInfo')['resultsPerPage']
 
-        while token is not None and remaining_results > 50:
-            search_response = client.search().list(
+
+        while token is not None and remaining_results > 50 and resultsPerPage>0:
+           search_response = client.search().list(
                 q=search_term,
                 maxResults=50,
                 part='id,snippet',
@@ -74,6 +76,8 @@ def youtube_search(search_term, max_results, client):
 
             token = search_response.get('nextPageToken', None)
             remaining_results = max_results - 50
+            resultsPerPage = search_response.get('pageInfo')['resultsPerPage']
+            logging.info(f'ResultsPerPage:{resultsPerPage}')
 
     else:
         search_response = client.search().list(
