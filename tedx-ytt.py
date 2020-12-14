@@ -63,8 +63,8 @@ def youtube_search(search_term, max_results, client):
                 channelId='UCsT0YIqwnpJCM-mx7-gSA4Q',
                 pageToken=token
             ).execute()
-            discard_counter = 0
-            for search_result in search_response.get('items', []):
+           discard_counter = 0
+           for search_result in search_response.get('items', []):
                 if SEARCH_TERM.upper() in search_result['snippet']['title'].upper():
                     videos.append(search_result['id']['videoId'])
                     logging.info('Found new video: ' + search_result['snippet']['title'])
@@ -72,12 +72,12 @@ def youtube_search(search_term, max_results, client):
                     logging.info('Discarded video: ' + search_result['snippet']['title'])
                     discard_counter += 1
 
-            logging.debug(f'Discarded video count:{discard_counter}')
+           logging.debug(f'Discarded video count:{discard_counter}')
 
-            token = search_response.get('nextPageToken', None)
-            remaining_results = max_results - 50
-            resultsPerPage = search_response.get('pageInfo')['resultsPerPage']
-            logging.info(f'ResultsPerPage:{resultsPerPage}')
+           token = search_response.get('nextPageToken', None)
+           remaining_results = max_results - 50
+           resultsPerPage = search_response.get('pageInfo')['resultsPerPage']
+           logging.info(f'ResultsPerPage:{resultsPerPage}')
 
     else:
         search_response = client.search().list(
