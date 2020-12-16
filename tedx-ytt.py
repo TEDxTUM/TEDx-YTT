@@ -383,7 +383,7 @@ if __name__ == '__main__':
                   NEWSTATS_DAY,
                   ]
     for parameter in PARAMETERS:
-        if parameter is "" or None:
+        if parameter == "" or None:
             logging.warning(f"Parameter {parameter} not set!")
 
     # Youtube API
