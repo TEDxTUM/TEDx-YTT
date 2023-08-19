@@ -21,9 +21,14 @@ import re
 
 
 df = pd.read_csv('all_data.csv', sep=';')
+# some pre-processing of the data
+# generate unique string (needed for speakers with multiple talks)
 df['title_speaker'] = df['Title'].astype(str) + ' - ' + df['Speaker Name'].astype(str)
+# convert all date columns to datetime, do it explicitly for Published on, since it uses a format no automatically detected
 df['Date'] = pd.to_datetime(df['Date'])
 df['Published on'] = pd.to_datetime(df['Published on'], format='ISO8601', errors='coerce')
+# catch null values and replace them with placeholder string
+df['Speaker Name'].fillna('n/a', inplace=True)
 
 most_recent_df = df.sort_values('Date').drop_duplicates('title_speaker', keep='last')
 filtered_df = most_recent_df
@@ -33,8 +38,6 @@ app = Dash(__name__)
 all_options = [{'label': 'Title and Speaker Name', 'value': 'title_speaker'},
                {'label': 'Title', 'value': 'Title'},
                {'label': 'Speaker Name', 'value': 'Speaker Name'}]
-
-
 
 app.layout = html.Div([
     html.H1('TEDx Video Dashboard'),
@@ -91,6 +94,8 @@ def update_graph(selected_checkboxes, selected_option):
 
     for checkbox_value in selected_checkboxes:
         dff = df[df[selected_option] == checkbox_value]
+        dff = dff.sort_values('Date')  # Sort data by Date
+
         views_data.append(
             go.Scatter(
                 x=dff['Date'],
