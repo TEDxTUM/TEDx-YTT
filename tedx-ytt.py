@@ -7,7 +7,9 @@ import configparser
 import datetime
 from argparse import RawTextHelpFormatter
 import os
-from google.cloud import storage
+from google.cloud import storage, secretmanager
+
+
 
 def trace(funct):
     def wrapper(*args, **kwargs):
@@ -274,6 +276,92 @@ def calc_stats(df):
 
     return described.round()
 
+@trace
+def get_dir():
+    """
+    Function that gets the intended safe directory if everything is run locally
+    :return: directory where data should be saved to
+    """
+    if DIRECTORY == 'current':
+        save_dir = os.getcwd()
+    else:
+        save_dir = os.path.abspath(os.sep)
+        rel_dir = DIRECTORY.split('/')
+        for string in rel_dir:
+            if string != '':
+                save_dir = os.path.join(save_dir, string)
+
+    logging.info(f'Save directory: {save_dir}')
+    return save_dir
+
+@trace
+def rename_local_files(save_dir, BASE_FILENAME, NEWOUTPUT_WEEKDAY, NEWSTATS_DAY):
+    """
+    Function to rename local files to avoid exponentially increasing file sizes
+    :param save_dir: directory the files are located at
+    :param BASE_FILENAME: from config.ini
+    :param NEWOUTPUT_WEEKDAY:  from config.ini, weekday at which output files get renamed
+    :param NEWSTATS_DAY:  from config.ini, day of the month at which stats files get renamed
+    :return: None
+    """
+    today = datetime.datetime.today()
+    weekdays = {
+        "monday": 1, "tuesday": 2, "wednesday": 3, "thursday": 4,
+        "friday": 5, "saturday": 6, "sunday": 7
+    }
+
+    if today.isoweekday() == weekdays[NEWOUTPUT_WEEKDAY.lower()]:
+        new_output_filename = f'{BASE_FILENAME}-output_{today.isocalendar()[0]}_week{today.isocalendar()[1]}.csv'
+        os.rename(
+            os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'),
+            os.path.join(save_dir, new_output_filename)
+        )
+
+    if today.day == NEWSTATS_DAY:
+        new_stats_filename = f'{BASE_FILENAME}-statistics_{today.isocalendar()[1]}_{today.month}.csv'
+        os.rename(
+            os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'),
+            os.path.join(save_dir, new_stats_filename)
+        )
+
+@trace
+def rename_cloud_storage_blobs(bucket_name, BASE_FILENAME, NEWOUTPUT_WEEKDAY, NEWSTATS_DAY):
+    """
+    Function to rename the files on gcp to avoid exponentially increasing file sizes
+    :param bucket_name: Name of the bucket in the same project
+    :param BASE_FILENAME: from config.ini
+    :param NEWOUTPUT_WEEKDAY:
+    :param NEWSTATS_DAY:
+    :return: None
+    """
+    today = datetime.datetime.today()
+    weekdays = {
+        "monday": 1, "tuesday": 2, "wednesday": 3, "thursday": 4,
+        "friday": 5, "saturday": 6, "sunday": 7
+    }
+
+    storage_client = storage.Client()
+    bucket = storage_client.bucket(bucket_name)
+
+    if today.isoweekday() == weekdays[NEWOUTPUT_WEEKDAY.lower()]:
+        new_output_blob_name = f'output/{BASE_FILENAME}-output_{today.isocalendar()[0]}_week{today.isocalendar()[1]}.csv'
+        old_output_blob = bucket.blob(f'output/{BASE_FILENAME}-output.csv')
+        new_output_blob = bucket.rename_blob(old_output_blob, new_output_blob_name)
+        print(f"Renamed blob {old_output_blob.name} to {new_output_blob.name}")
+
+    if today.day == NEWSTATS_DAY:
+        new_stats_blob_name = f'stats/{BASE_FILENAME}-statistics_{today.isocalendar()[1]}_{today.month}.csv'
+        old_stats_blob = bucket.blob(f'stats/{BASE_FILENAME}-statistics.csv')
+        new_stats_blob = bucket.rename_blob(old_stats_blob, new_stats_blob_name)
+        print(f"Renamed blob {old_stats_blob.name} to {new_stats_blob.name}")
+
+
+def load_data_from_bucket(bucket, blob_name):
+    blob = bucket.blob(blob_name)
+    data = blob.download_as_text()
+    df = pd.read_csv(data)  # You might need to adjust the parameters according to your CSV format
+    return df
+
 
 if __name__ == '__main__':
     ################
@@ -283,7 +371,6 @@ if __name__ == '__main__':
     # silence logging exceptions
     logging.raiseExceptions = False
 
-    #
     # Parse config
     config = configparser.ConfigParser()
     try: # check if local file is available at same location as script
@@ -314,6 +401,7 @@ if __name__ == '__main__':
     NEWOUTPUT_WEEKDAY = config.get('Advanced', 'NEWOUTPUT_WEEKDAY')
     CLOUD_SERVICE = config.get('Advanced', 'CLOUD_SERVICE')
     BUCKET_NAME = config.get('Advanced', 'BUCKET_NAME')
+    SECRET_NAME = cofig.get('Advanced', 'SECRET_NAME')
 
 
 
@@ -378,17 +466,7 @@ if __name__ == '__main__':
         ch.setFormatter(formatter)
         root.addHandler(ch)
 
-    # get directory where the data is saved
-    if DIRECTORY == 'current':
-        save_dir = os.getcwd()
-    else:
-        save_dir = os.path.abspath(os.sep)
-        rel_dir = DIRECTORY.split('/')
-        for string in rel_dir:
-            if string != '':
-                save_dir = os.path.join(save_dir, string)
 
-    logging.info(f'Save directory: {save_dir}')
 
     PARAMETERS = [SEARCH_TERM,
                   SEARCH,
@@ -410,8 +488,15 @@ if __name__ == '__main__':
     # silence google api warnings
     logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.ERROR)
 
-    with open(os.path.join(sys.path[0], 'yapi.txt')) as file:
-        DEVELOPER_KEY = file.read()
+    try: # check if local file is available
+        with open(os.path.join(sys.path[0], 'yapi.txt')) as file:
+            DEVELOPER_KEY = file.read()
+    except FileNotFoundError: # use gcp secret manager to get it (save api key as a secret and copy path to config.ini
+        client = secretmanager.SecretManagerServiceClient()
+        secret_version = client.access_secret_version(name=SECRET_NAME)
+        DEVELOPER_KEY = secret_version.payload.data.decode("UTF-8")
+
+
 
     YOUTUBE_API_SERVICE_NAME = 'youtube'
     YOUTUBE_API_VERSION = 'v3'
@@ -420,18 +505,23 @@ if __name__ == '__main__':
                     developerKey=DEVELOPER_KEY)
     ####################################################################################################################
     # rename file in regular intervals to avoid extreme file sizes
-    today = datetime.datetime.today()
-    weekdays = {"monday": 1, "tuesday": 2, "wednesday": 3, "thursday": 4, "friday": 5, "saturday": 6, "sunday": 7}
-    if today.isoweekday() == weekdays[NEWOUTPUT_WEEKDAY.lower()]:
-        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'),
-                  os.path.join(save_dir,
-                               f'{BASE_FILENAME}-output_{today.isocalendar()[0]}_week{today.isocalendar()[1]}.csv'))
-    if today.day == NEWSTATS_DAY:
-        os.rename(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'),
-                  os.path.join(save_dir, f'{BASE_FILENAME}-statistics_{today.isocalendar()[1]}_{today.month}.csv'))
+    # todo: adjust this so it works on gcp
+    if bucket_name:
+        rename_cloud_storage_blobs(bucket_name, BASE_FILENAME, NEWOUTPUT_WEEKDAY, NEWSTATS_DAY)
+        old_df = load_data_from_bucket(bucket, f'output/{BASE_FILENAME}-output.csv')
+
+    else:
+        # get directory where the data is saved
+        save_dir = get_dir()
+        # rename files
+        rename_local_files(save_dir, BASE_FILENAME, NEWOUTPUT_WEEKDAY, NEWSTATS_DAY)
+        old_df = load_data(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), ['Date', 'ID'])
+
+
+
 
     # start here
-    old_df = load_data(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), ['Date', 'ID'])
+
 
     if SEARCH:
         yt_ids = youtube_search(SEARCH_TERM, MAX_RESULTS, client=youtube)
@@ -494,7 +584,7 @@ if __name__ == '__main__':
         # save data
     logging.info('Saving data ...')
 
-# Safe Data
+# Save Data
     if cloud_service == "none":
         # Save locally
         final_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), sep=';', encoding='utf-8') # all data
@@ -503,6 +593,19 @@ if __name__ == '__main__':
         with open(os.path.join(save_dir, 'yt_ids.csv'), 'w', encoding='utf-8') as file: #save unique youtube IDs
             final_df.ID.drop_duplicates(inplace=True)
             final_df.ID.to_csv(file, encoding='utf-8', index=False)
+
+        logging.info(f'...done!')
+        # write config
+        logging.info('Saving config ...')
+        cfgfile = open('config.ini', 'w')
+        config.write(cfgfile)
+        cfgfile.close()
+
+        logging.info(f'...done!')
+
+        logging.info('Checking date and renaming file')
+
+        logging.info('Done with everything!')
     elif cloud_service == "gcp":
 
         storage_client = storage.Client()
@@ -523,16 +626,3 @@ if __name__ == '__main__':
 
 
 
-
-    logging.info(f'...done!')
-    # write config
-    logging.info('Saving config ...')
-    cfgfile = open('config.ini', 'w')
-    config.write(cfgfile)
-    cfgfile.close()
-
-    logging.info(f'...done!')
-
-    logging.info('Checking date and renaming file')
-
-    logging.info('Done with everything!')
