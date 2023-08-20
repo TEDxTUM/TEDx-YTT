@@ -7,7 +7,7 @@ import configparser
 import datetime
 from argparse import RawTextHelpFormatter
 import os
-
+from google.cloud import storage
 
 def trace(funct):
     def wrapper(*args, **kwargs):
@@ -41,7 +41,7 @@ def youtube_search(search_term, max_results, client):
             maxResults=50,
             part='id,snippet',
             type='video',
-            channelId='UCsT0YIqwnpJCM-mx7-gSA4Q'
+            channelId='UCsT0YIqwnpJCM-mx7-gSA4Q' #tedx youtube channel
         ).execute()
 
         videos = []
@@ -283,9 +283,24 @@ if __name__ == '__main__':
     # silence logging exceptions
     logging.raiseExceptions = False
 
+    #
     # Parse config
     config = configparser.ConfigParser()
-    config.read(os.path.join(sys.path[0], 'config.ini'))
+    try: # check if local file is available at same location as script
+        config.read(os.path.join(sys.path[0], 'config.ini'))
+    except FileNotFoundError: # if not: assume we are on gcp and the bucket wehre we can find config.ini is in the environment variables as "GCS_BUCKET_NAME"
+        bucket_name = os.environ.get("GCS_BUCKET_NAME", None)
+        if bucket_name is None:
+            print("Bucket name not found in clocal config.ini or environment variable")
+
+    if bucket_name:
+        storage_client = storage.Client()
+        bucket = storage_client.bucket(bucket_name)
+        blob = bucket.blob("config.ini")
+        config_content = blob.download_as_text()
+
+        config.read_string(config_content)
+
 
     SEARCH_TERM = config.get('Standard', 'SEARCH_TERM')
     SEARCH = config.getboolean('Standard', 'SEARCH')
@@ -295,8 +310,12 @@ if __name__ == '__main__':
     DIRECTORY = config.get('Standard', 'DIRECTORY')
     CONSOLE_LOG = config.getboolean('Advanced', 'CONSOLE_LOG')
     LOG_RETURNS = config.getboolean('Advanced', 'LOG_RETURNS')
-    NEWOUTPUT_WEEKDAY = config.get('Advanced', 'NEWOUTPUT_WEEKDAY')
     NEWSTATS_DAY = config.getint('Advanced', 'NEWSTATS_DAY')
+    NEWOUTPUT_WEEKDAY = config.get('Advanced', 'NEWOUTPUT_WEEKDAY')
+    CLOUD_SERVICE = config.get('Advanced', 'CLOUD_SERVICE')
+    BUCKET_NAME = config.get('Advanced', 'BUCKET_NAME')
+
+
 
     # Parse args
     parser = argparse.ArgumentParser(description='Search for a TEDx on youtube and '
@@ -475,13 +494,35 @@ if __name__ == '__main__':
         # save data
     logging.info('Saving data ...')
 
-    final_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), sep=';', encoding='utf-8')
-    final_stats_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), sep=';', encoding='utf-8')
+# Safe Data
+    if cloud_service == "none":
+        # Save locally
+        final_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), sep=';', encoding='utf-8') # all data
+        final_stats_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), sep=';', encoding='utf-8')# statistics
+        final_df.reset_index(inplace=True)
+        with open(os.path.join(save_dir, 'yt_ids.csv'), 'w', encoding='utf-8') as file: #save unique youtube IDs
+            final_df.ID.drop_duplicates(inplace=True)
+            final_df.ID.to_csv(file, encoding='utf-8', index=False)
+    elif cloud_service == "gcp":
 
-    final_df.reset_index(inplace=True)
-    with open(os.path.join(save_dir, 'yt_ids.csv'), 'w', encoding='utf-8') as file:
-        final_df.ID.drop_duplicates(inplace=True)
-        final_df.ID.to_csv(file, encoding='utf-8', index=False)
+        storage_client = storage.Client()
+        # Save to GCP bucket
+        blob_name-output = f'output/{BASE_FILENAME}-output.csv'  # Name of the CSV file in the bucket
+        blob_name-stats = f'stats/{BASE_FILENAME}-statistics.csv'  # Name of the CSV file in the bucket
+
+        with storage_client.bucket(BUCKET_NAME).blob(blob_name-output).open("w") as file:
+            final_df.to_csv(file, sep=';', encoding='utf-8', index=False)
+        with storage_client.bucket(BUCKET_NAME).blob(blob_name-stats).open("w") as file:
+            final_stats_df.to_csv(file, sep=';', encoding='utf-8', index=False)
+
+    else:
+        print("Invalid cloud_service value. Choose 'none' or 'gcp'.")
+
+
+
+
+
+
 
     logging.info(f'...done!')
     # write config
