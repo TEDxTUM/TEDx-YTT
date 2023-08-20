@@ -1,6 +1,8 @@
 import pandas as pd
 import glob
 
+
+# todo: encapsulate this and run the function at the end of tedx-ytt to always get an all_data.csv that works :)
 def run_locally():
     # Path to output csv files
     path = r'output'
@@ -43,7 +45,7 @@ def run_on_gcp():
     data["Date"] = pd.to_datetime(data["Date"])
     data.sort_values(by="Date", inplace=True)
     data.set_index("Date", inplace=True)
-    data.to_csv('all_data.csv', sep=";")
+    data.to_csv('all_data.csv', sep=";") # save this to gcp bucket!!!
 
 if "GOOGLE_CLOUD_PROJECT" in os.environ:
     run_on_gcp()
