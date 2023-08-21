@@ -6,7 +6,7 @@ import glob
 def run_locally():
     # Path to output csv files
     path = r'output'
-    all_files = glob.glob(path + "/*.csv")
+    all_files = glob.glob(f"{path}/*.csv")
     li = []
 
     for f in all_files:

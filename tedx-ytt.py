@@ -37,6 +37,7 @@ def youtube_search(search_term, max_results, client):
     :return: \n separated list of youtube IDs
     """
     search_term = f"{search_term}|{search_term}Salon|{search_term}Youth|{search_term}"
+    videos = []
     if max_results > 50:
         search_response = client.search().list(
             q=search_term,
@@ -46,10 +47,11 @@ def youtube_search(search_term, max_results, client):
             channelId='UCsT0YIqwnpJCM-mx7-gSA4Q' #tedx youtube channel
         ).execute()
 
-        videos = []
-        for search_result in search_response.get('items', []):
-            if SEARCH_TERM.upper() in search_result['snippet']['title'].upper():
-                videos.append(search_result['id']['videoId'])
+        videos.extend(
+            search_result['id']['videoId']
+            for search_result in search_response.get('items', [])
+            if SEARCH_TERM.upper() in search_result['snippet']['title'].upper()
+        )
 
         token = search_response.get('nextPageToken', None)
         remaining_results = max_results - 50
@@ -89,12 +91,11 @@ def youtube_search(search_term, max_results, client):
             type='video',
             channelId='UCsT0YIqwnpJCM-mx7-gSA4Q'
         ).execute()
-        videos = []
-
-        for search_result in search_response.get('items', []):
-            if 'TEDXTUM' in search_result['snippet']['title'].upper():
-                videos.append(search_result['id']['videoId'])
-
+        videos = [
+            search_result['id']['videoId']
+            for search_result in search_response.get('items', [])
+            if 'TEDXTUM' in search_result['snippet']['title'].upper()
+        ]
     return '\n'.join(videos)
 
 
@@ -219,7 +220,7 @@ def load_data(filename, indices):
         logging.warning(f'File {filename} does not exist! Continuing without loading old data.')
         df = None
 
-    logging.info(f'...done!')
+    logging.info('...done!')
     return df
 
 
@@ -260,13 +261,10 @@ def calc_stats(df):
     df_copy = df.copy()
     df_copy.drop(labels=['Published on', 'Tags', 'Thumbnail', 'Title', 'Speaker Name'], axis=1, inplace=True)
 
-    dates = []
     date = datetime.datetime.now().date()
     described = df_copy.astype('float64').describe(include='all')
 
-    for row in range(0, described.shape[0]):
-        dates.append(date)
-
+    dates = [date for _ in range(described.shape[0])]
     described['Date'] = dates
     described.reset_index(inplace=True)
 
@@ -359,8 +357,7 @@ def rename_cloud_storage_blobs(bucket_name, BASE_FILENAME, NEWOUTPUT_WEEKDAY, NE
 def load_data_from_bucket(bucket, blob_name):
     blob = bucket.blob(blob_name)
     data = blob.download_as_text()
-    df = pd.read_csv(data)  # You might need to adjust the parameters according to your CSV format
-    return df
+    return pd.read_csv(data)
 
 
 if __name__ == '__main__':
