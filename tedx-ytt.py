@@ -370,6 +370,8 @@ if __name__ == '__main__':
 
     # Parse config
     config = configparser.ConfigParser()
+    # set bucket to None, so it's not undefined
+    bucket_name = None
     try: # check if local file is available at same location as script
         config.read(os.path.join(sys.path[0], 'config.ini'))
     except FileNotFoundError: # if not: assume we are on gcp and the bucket wehre we can find config.ini is in the environment variables as "GCS_BUCKET_NAME"
@@ -396,9 +398,8 @@ if __name__ == '__main__':
     LOG_RETURNS = config.getboolean('Advanced', 'LOG_RETURNS')
     NEWSTATS_DAY = config.getint('Advanced', 'NEWSTATS_DAY')
     NEWOUTPUT_WEEKDAY = config.get('Advanced', 'NEWOUTPUT_WEEKDAY')
-    CLOUD_SERVICE = config.get('Advanced', 'CLOUD_SERVICE')
     BUCKET_NAME = config.get('Advanced', 'BUCKET_NAME')
-    SECRET_NAME = cofig.get('Advanced', 'SECRET_NAME')
+    SECRET_NAME = config.get('Advanced', 'GCP_SECRET')
 
 
 
@@ -582,7 +583,7 @@ if __name__ == '__main__':
     logging.info('Saving data ...')
 
 # Save Data
-    if cloud_service == "none":
+    if not bucket_name:
         # Save locally
         final_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), sep=';', encoding='utf-8') # all data
         final_stats_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), sep=';', encoding='utf-8')# statistics
@@ -603,20 +604,18 @@ if __name__ == '__main__':
         logging.info('Checking date and renaming file')
 
         logging.info('Done with everything!')
-    elif cloud_service == "gcp":
+    else:
 
         storage_client = storage.Client()
         # Save to GCP bucket
-        blob_name-output = f'output/{BASE_FILENAME}-output.csv'  # Name of the CSV file in the bucket
-        blob_name-stats = f'stats/{BASE_FILENAME}-statistics.csv'  # Name of the CSV file in the bucket
+        blob_name_output = f'output/{BASE_FILENAME}-output.csv'  # Name of the CSV file in the bucket
+        blob_name_stats = f'stats/{BASE_FILENAME}-statistics.csv'  # Name of the CSV file in the bucket
 
-        with storage_client.bucket(BUCKET_NAME).blob(blob_name-output).open("w") as file:
+        with storage_client.bucket(BUCKET_NAME).blob(blob_name_output).open("w") as file:
             final_df.to_csv(file, sep=';', encoding='utf-8', index=False)
-        with storage_client.bucket(BUCKET_NAME).blob(blob_name-stats).open("w") as file:
+        with storage_client.bucket(BUCKET_NAME).blob(blob_name_stats).open("w") as file:
             final_stats_df.to_csv(file, sep=';', encoding='utf-8', index=False)
 
-    else:
-        print("Invalid cloud_service value. Choose 'none' or 'gcp'.")
 
 
 
