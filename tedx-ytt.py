@@ -163,6 +163,7 @@ def get_youtube_data(ids_str, client):
                  'statistics',
             id=yt_id,
         ).execute()
+
         if not response.get("pageInfo", [])["totalResults"]:
             logging.warning(f'Incorrect youtube ID: {id}    !')
         date = datetime.datetime.now().date()
@@ -345,13 +346,12 @@ def rename_cloud_storage_blobs(bucket_name, BASE_FILENAME, NEWOUTPUT_WEEKDAY, NE
         new_output_blob_name = f'output/{BASE_FILENAME}-output_{today.isocalendar()[0]}_week{today.isocalendar()[1]}.csv'
         old_output_blob = bucket.blob(f'output/{BASE_FILENAME}-output.csv')
         new_output_blob = bucket.rename_blob(old_output_blob, new_output_blob_name)
-        print(f"Renamed blob {old_output_blob.name} to {new_output_blob.name}")
 
     if today.day == NEWSTATS_DAY:
         new_stats_blob_name = f'stats/{BASE_FILENAME}-statistics_{today.isocalendar()[1]}_{today.month}.csv'
         old_stats_blob = bucket.blob(f'stats/{BASE_FILENAME}-statistics.csv')
         new_stats_blob = bucket.rename_blob(old_stats_blob, new_stats_blob_name)
-        print(f"Renamed blob {old_stats_blob.name} to {new_stats_blob.name}")
+
 
 
 def load_data_from_bucket(bucket, blob_name):
@@ -360,6 +360,7 @@ def load_data_from_bucket(bucket, blob_name):
     return pd.read_csv(data)
 
 
+import pathlib
 if __name__ == '__main__':
     ################
     # Preparations #
@@ -377,7 +378,7 @@ if __name__ == '__main__':
     except FileNotFoundError: # if not: assume we are on gcp and the bucket wehre we can find config.ini is in the environment variables as "GCS_BUCKET_NAME"
         bucket_name = os.environ.get("GCS_BUCKET_NAME", None)
         if bucket_name is None:
-            print("Bucket name not found in clocal config.ini or environment variable")
+
 
     if bucket_name:
         storage_client = storage.Client()
@@ -478,7 +479,7 @@ if __name__ == '__main__':
                   NEWSTATS_DAY,
                   ]
     for parameter in PARAMETERS:
-        if parameter == "" or None:
+        if parameter == "":
             logging.warning(f"Parameter {parameter} not set!")
 
     # Youtube API
@@ -487,8 +488,7 @@ if __name__ == '__main__':
     logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.ERROR)
 
     try: # check if local file is available
-        with open(os.path.join(sys.path[0], 'yapi.txt')) as file:
-            DEVELOPER_KEY = file.read()
+        DEVELOPER_KEY = pathlib.Path(os.path.join(sys.path[0], 'yapi.txt')).read_text()
     except FileNotFoundError: # use gcp secret manager to get it (save api key as a secret and copy path to config.ini
         client = secretmanager.SecretManagerServiceClient()
         secret_version = client.access_secret_version(name=SECRET_NAME)
@@ -526,22 +526,21 @@ if __name__ == '__main__':
     else:
         try:
             yt_ids = '\n'.join(old_df.index.levels[1])
-        except:
+        except Exception:
             try:
                 logging.info('Getting youtube IDs from yt_ids.csv...')
                 yt_ids = pd.read_csv(os.path.join(save_dir, 'yt_ids.csv'),
                                      encoding='utf-8').to_string(index=False)
                 logging.info('...done')
 
-            except:
+            except Exception:
                 logging.warning('There is no old data available. Please run script again with SEARCH = True.')
                 yt_ids = None
                 exit(1)
     try:
-
         yt_ids = load_ids(save_dir, yt_ids)
 
-    except:
+    except Exception:
         logging.info('No yt_id list available. Continuing with results from search / results from old data.')
 
     if UPDATE and yt_ids is not None:
@@ -557,7 +556,7 @@ if __name__ == '__main__':
         new_df = old_df
     try:
         old_stats_df = load_data(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), ['Date', 'Metric'])
-    except:
+    except Exception:
         logging.WARNING("old -statistics file can't be opened!")
         old_stats_df = None
 
@@ -572,8 +571,6 @@ if __name__ == '__main__':
     elif old_stats_df is not None:
         final_stats_df = old_stats_df
 
-    elif UPDATE:
-        final_stats_df = calc_stats(new_df)
     else:
         logging.warning('Can not calculate stats without data. Run the script at least once with UPDATE = True!')
         final_stats_df = None
@@ -592,14 +589,12 @@ if __name__ == '__main__':
             final_df.ID.drop_duplicates(inplace=True)
             final_df.ID.to_csv(file, encoding='utf-8', index=False)
 
-        logging.info(f'...done!')
+        logging.info('...done!')
         # write config
         logging.info('Saving config ...')
-        cfgfile = open('config.ini', 'w')
-        config.write(cfgfile)
-        cfgfile.close()
-
-        logging.info(f'...done!')
+        with open('config.ini', 'w') as cfgfile:
+            config.write(cfgfile)
+        logging.info('...done!')
 
         logging.info('Checking date and renaming file')
 
