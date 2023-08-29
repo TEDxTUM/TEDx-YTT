@@ -377,7 +377,7 @@ if __name__ == '__main__':
         config.read(os.path.join(sys.path[0], 'config.ini'))
     except FileNotFoundError: # if not: assume we are on gcp and the bucket wehre we can find config.ini is in the environment variables as "GCS_BUCKET_NAME"
         bucket_name = os.environ.get("GCS_BUCKET_NAME", None)
-        if bucket_name is None:
+
 
 
     if bucket_name:
