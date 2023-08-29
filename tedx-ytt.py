@@ -528,6 +528,7 @@ if __name__ == '__main__':
             yt_ids = '\n'.join(old_df.index.levels[1])
         except Exception:
             try:
+                #todo: change this so it also works on gcp
                 logging.info('Getting youtube IDs from yt_ids.csv...')
                 yt_ids = pd.read_csv(os.path.join(save_dir, 'yt_ids.csv'),
                                      encoding='utf-8').to_string(index=False)
