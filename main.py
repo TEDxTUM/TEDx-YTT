@@ -365,7 +365,7 @@ if __name__ == '__main__':
     ################
     # Preparations #
     ################
-
+    # todo: refactor this into main() function for gcp
     # silence logging exceptions
     logging.raiseExceptions = False
 

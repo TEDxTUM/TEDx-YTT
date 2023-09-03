@@ -1,0 +1,8 @@
+pandas>=2.0.3
+argparse>=1.4.0
+plotly>=5.15.0
+dash>=2.7.0
+matplotlib>=3.5.2
+google-cloud-storage >=2.10
+google-cloud-secret-manager >= 2.16.3
+google-api-python-client >= 2.97.0
