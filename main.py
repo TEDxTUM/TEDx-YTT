@@ -1,5 +1,4 @@
-#todolist: remove all argparse stuff, move all settings into environment variables, move
-
+#todo: test locally using functions-framework - see chatgpt for guidance
 from googleapiclient.discovery import build
 import pandas as pd
 import logging
@@ -11,7 +10,6 @@ from google.cloud import storage, secretmanager
 
 import base64
 import functions_framework
-import pathlib
 
 
 def trace(funct):
@@ -209,35 +207,16 @@ def get_youtube_data(ids_str, client):
 
 
 @trace
-def load_data(filename, indices):
-    """
-    Loads a csv into a dataframe with multi-index ['Date', 'ID']
-    :param filename: Name of the csv file
-    :param indices: array of indices
-    :return: pandas dataframe containing the data with  multi-index ['Date', 'ID']
-    """
-    logging.info(f'Loading data from {filename}')
-    try:
-        df = pd.read_csv(filename, sep=';', encoding='utf-8', parse_dates=['Date'])
-        df.set_index(indices, inplace=True)
-    except FileNotFoundError:
-        logging.warning(f'File {filename} does not exist! Continuing without loading old data.')
-        df = None
-
-    logging.info('...done!')
-    return df
-
-
-@trace
-def load_ids(directory, searched_ids):
+def load_ids(bucket, blob_name, searched_ids):
     """
     Loads youtube IDs from 'yt_ids.csv' in directory and concats it with searched_ids (result from yt search)
     :param directory: directory where yt_ids is located
     :param searched_ids: result from yt search: \n separated string of yt ids
     :return: \n separated string of yt IDs that are either in the file or in the list from yt search
     """
-    logging.info('Loading yt_ids from external file...')
-    saved_ids = pd.read_csv(os.path.join(directory, 'yt_ids.csv'),
+    logging.info('Loading yt_ids from file...')
+    blob = bucket.blob(blob_name)
+    saved_ids = pd.read_csv(blob.download_as_text(),
                             encoding='utf-8').to_string(index=False)
 
     searched_ids_list = searched_ids.split('\n')
@@ -326,15 +305,16 @@ def trigger_pubsub(cloud_event):
     ################
     # Preparations #
     ################
-    # todo: refactor this into main() function for gcp
+
+
+    # get bucket name from environment variables
+    bucket_name = os.environ.get("GCP_BUCKET_NAME", None)
+    #set up storage client
+    storage_client = storage.Client()
 
     # Parse config
     config = configparser.ConfigParser()
-    # set bucket to None, so it's not undefined
-    bucket_name = os.environ.get("GCP_BUCKET_NAME", None)
 
-
-    storage_client = storage.Client()
     bucket = storage_client.bucket(bucket_name)
     blob = bucket.blob("config.ini")
     config_content = blob.download_as_text()
@@ -412,8 +392,9 @@ def trigger_pubsub(cloud_event):
             try:
                 # todo: change this so it also works on gcp - i.e. load from blob
                 logging.info('Getting youtube IDs from yt_ids.csv...')
-                yt_ids = pd.read_csv(os.path.join(save_dir, 'yt_ids.csv'),
-                                     encoding='utf-8').to_string(index=False)
+                blob = bucket.blob('yt_ids.csv')
+                yt_ids = pd.read_csv(blob.download_as_text(),
+                                        encoding='utf-8').to_string(index=False)
                 logging.info('...done')
 
             except Exception:
@@ -421,7 +402,7 @@ def trigger_pubsub(cloud_event):
                 yt_ids = None
                 exit(1)
     try:
-        yt_ids = load_ids(save_dir, yt_ids)
+        yt_ids = load_ids(bucket_name, 'yt_ids.csv', yt_ids)
 
     except Exception:
         logging.info('No yt_id list available. Continuing with results from search / results from old data.')
@@ -436,8 +417,6 @@ def trigger_pubsub(cloud_event):
         final_df = old_df
         new_df = old_df
     try:
-        #todo: change for use on gcp
-        old_stats_df = load_data(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), ['Date', 'Metric'])
         old_stats_df = load_data_from_bucket(bucket, f'output/{BASE_FILENAME}-statistics.csv', ['Date', 'Metric'])
 
     except Exception:
