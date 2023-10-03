@@ -1,14 +1,17 @@
+#todolist: remove all argparse stuff, move all settings into environment variables, move
+
 from googleapiclient.discovery import build
 import pandas as pd
 import logging
 import sys
-import argparse
 import configparser
 import datetime
-from argparse import RawTextHelpFormatter
 import os
 from google.cloud import storage, secretmanager
 
+import base64
+import functions_framework
+import pathlib
 
 
 def trace(funct):
@@ -275,53 +278,6 @@ def calc_stats(df):
 
     return described.round()
 
-@trace
-def get_dir():
-    """
-    Function that gets the intended safe directory if everything is run locally
-    :return: directory where data should be saved to
-    """
-    if DIRECTORY == 'current':
-        save_dir = os.getcwd()
-    else:
-        save_dir = os.path.abspath(os.sep)
-        rel_dir = DIRECTORY.split('/')
-        for string in rel_dir:
-            if string != '':
-                save_dir = os.path.join(save_dir, string)
-
-    logging.info(f'Save directory: {save_dir}')
-    return save_dir
-
-@trace
-def rename_local_files(save_dir, BASE_FILENAME, NEWOUTPUT_WEEKDAY, NEWSTATS_DAY):
-    """
-    Function to rename local files to avoid exponentially increasing file sizes
-    :param save_dir: directory the files are located at
-    :param BASE_FILENAME: from config.ini
-    :param NEWOUTPUT_WEEKDAY:  from config.ini, weekday at which output files get renamed
-    :param NEWSTATS_DAY:  from config.ini, day of the month at which stats files get renamed
-    :return: None
-    """
-    today = datetime.datetime.today()
-    weekdays = {
-        "monday": 1, "tuesday": 2, "wednesday": 3, "thursday": 4,
-        "friday": 5, "saturday": 6, "sunday": 7
-    }
-
-    if today.isoweekday() == weekdays[NEWOUTPUT_WEEKDAY.lower()]:
-        new_output_filename = f'{BASE_FILENAME}-output_{today.isocalendar()[0]}_week{today.isocalendar()[1]}.csv'
-        os.rename(
-            os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'),
-            os.path.join(save_dir, new_output_filename)
-        )
-
-    if today.day == NEWSTATS_DAY:
-        new_stats_filename = f'{BASE_FILENAME}-statistics_{today.isocalendar()[1]}_{today.month}.csv'
-        os.rename(
-            os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'),
-            os.path.join(save_dir, new_stats_filename)
-        )
 
 @trace
 def rename_cloud_storage_blobs(bucket_name, BASE_FILENAME, NEWOUTPUT_WEEKDAY, NEWSTATS_DAY):
@@ -353,41 +309,36 @@ def rename_cloud_storage_blobs(bucket_name, BASE_FILENAME, NEWOUTPUT_WEEKDAY, NE
         new_stats_blob = bucket.rename_blob(old_stats_blob, new_stats_blob_name)
 
 
-
-def load_data_from_bucket(bucket, blob_name):
+@trace
+def load_data_from_bucket(bucket, blob_name, indices):
     blob = bucket.blob(blob_name)
     data = blob.download_as_text()
-    return pd.read_csv(data)
+    df = pd.read_csv(data, sep=';', encoding='utf-8', parse_dates=['Date'])
+    df.set_index(indices, inplace=True)
+    return df
 
 
-import pathlib
-if __name__ == '__main__':
+#this is the entry point
+@functions_framework.cloud_event
+def trigger_pubsub(cloud_event):
+    # Print out the data from Pub/Sub, to prove that it worked
+    print(base64.b64decode(cloud_event.data["message"]["data"]))
     ################
     # Preparations #
     ################
     # todo: refactor this into main() function for gcp
-    # silence logging exceptions
-    logging.raiseExceptions = False
 
     # Parse config
     config = configparser.ConfigParser()
     # set bucket to None, so it's not undefined
-    bucket_name = None
-    try: # check if local file is available at same location as script
-        config.read(os.path.join(sys.path[0], 'config.ini'))
-    except FileNotFoundError: # if not: assume we are on gcp and the bucket wehre we can find config.ini is in the environment variables as "GCS_BUCKET_NAME"
-        bucket_name = os.environ.get("GCS_BUCKET_NAME", None)
+    bucket_name = os.environ.get("GCP_BUCKET_NAME", None)
 
 
-
-    if bucket_name:
-        storage_client = storage.Client()
-        bucket = storage_client.bucket(bucket_name)
-        blob = bucket.blob("config.ini")
-        config_content = blob.download_as_text()
-
-        config.read_string(config_content)
-
+    storage_client = storage.Client()
+    bucket = storage_client.bucket(bucket_name)
+    blob = bucket.blob("config.ini")
+    config_content = blob.download_as_text()
+    config.read_string(config_content)
 
     SEARCH_TERM = config.get('Standard', 'SEARCH_TERM')
     SEARCH = config.getboolean('Standard', 'SEARCH')
@@ -399,58 +350,7 @@ if __name__ == '__main__':
     LOG_RETURNS = config.getboolean('Advanced', 'LOG_RETURNS')
     NEWSTATS_DAY = config.getint('Advanced', 'NEWSTATS_DAY')
     NEWOUTPUT_WEEKDAY = config.get('Advanced', 'NEWOUTPUT_WEEKDAY')
-    BUCKET_NAME = config.get('Advanced', 'BUCKET_NAME')
     SECRET_NAME = config.get('Advanced', 'GCP_SECRET')
-
-
-
-    # Parse args
-    parser = argparse.ArgumentParser(description='Search for a TEDx on youtube and '
-                                                 'return stats to all videos with that TEDx in title.\n'
-                                                 'Current arguments are:\n'
-                                                 f'SEARCH_TERM = \t{SEARCH_TERM}\n'
-                                                 f'SEARCH = \t{SEARCH}\n'
-                                                 f'MAX_RESULTS = \t{MAX_RESULTS}\n'
-                                                 f'UPDATE = \t{UPDATE}\n'
-                                                 f'BASE_FILENAME = {BASE_FILENAME}\n'
-                                                 f'DIRECTORY = \t{DIRECTORY}\n'
-                                                 f'CONSOLE_LOG = \t{CONSOLE_LOG}\n'
-                                                 f'LOG_RETURNS = \t{LOG_RETURNS}\n'
-                                                 f'NEWSTATS_DAY = \t{NEWSTATS_DAY}\n'
-                                                 f'NEWOUTPUT_WEEKDAY = \t{NEWOUTPUT_WEEKDAY}\n',
-                                     formatter_class=RawTextHelpFormatter)
-    parser.add_argument('-q', '--search_term', help='Term to search for - your TEDx\'s name', type=str)
-    parser.add_argument('-s', '--search', help='Switch searching for new videos on/off', type=bool)
-    parser.add_argument('-m', '--max_results', help='Number of search results used from search request.', type=int)
-    parser.add_argument('-u', '--update', help='Switch updating statistics on/off', type=bool)
-    parser.add_argument('-f', '--base_filename', help='Base filename for output files', type=str)
-    parser.add_argument('-l', '--console_log', help='Switch logging output to python console on/off', type=bool)
-    parser.add_argument('-r', '--log_return', help='Switch output of functions in console on/off', type=bool)
-    parser.add_argument('-d', '--directory', help='Directory where the output should be saved to', type=str)
-    parser.add_argument('-no', '--newoutput_weekday', help='weekday at which -output file is renamed', type=str)
-    parser.add_argument('-ns', '--newstats_day', help='Day of the month at which -statistics file is renamed', type=int)
-    args = parser.parse_args()
-
-    if args.search_term:
-        SEARCH_TERM = args.search_term
-    if args.search:
-        SEARCH = args.search
-    if args.max_results:
-        MAX_RESULTS = args.max_results
-    if args.update:
-        UPDATE = args.update
-    if args.base_filename:
-        BASE_FILENAME = args.search_term
-    if args.console_log:
-        CONSOLE_LOG = args.search_term
-    if args.log_return:
-        LOG_RETURNS = args.log_return
-    if args.directory:
-        DIRECTORY = args.directory
-    if args.newoutput_weekday:
-        NEWOUTPUT_WEEKDAY = args.newoutput_weekday
-    if args.newstats_day:
-        NEWSTATS_DAY = args.newstats_day
 
     # Logging
     logging.basicConfig(level=logging.DEBUG,
@@ -464,8 +364,6 @@ if __name__ == '__main__':
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         ch.setFormatter(formatter)
         root.addHandler(ch)
-
-
 
     PARAMETERS = [SEARCH_TERM,
                   SEARCH,
@@ -487,40 +385,24 @@ if __name__ == '__main__':
     # silence google api warnings
     logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.ERROR)
 
-    try: # check if local file is available
-        DEVELOPER_KEY = pathlib.Path(os.path.join(sys.path[0], 'yapi.txt')).read_text()
-    except FileNotFoundError: # use gcp secret manager to get it (save api key as a secret and copy path to config.ini
-        client = secretmanager.SecretManagerServiceClient()
-        secret_version = client.access_secret_version(name=SECRET_NAME)
-        DEVELOPER_KEY = secret_version.payload.data.decode("UTF-8")
-
-
-
+    # use gcp secret manager to get the youtube api key (save api key as a secret and copy path to config.ini
+    client = secretmanager.SecretManagerServiceClient()
+    secret_version = client.access_secret_version(name=SECRET_NAME)
+    # collect parameters for API call
+    DEVELOPER_KEY = secret_version.payload.data.decode("UTF-8")
     YOUTUBE_API_SERVICE_NAME = 'youtube'
     YOUTUBE_API_VERSION = 'v3'
-
+    #API call
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
                     developerKey=DEVELOPER_KEY)
     ####################################################################################################################
     # rename file in regular intervals to avoid extreme file sizes
-    # todo: adjust this so it works on gcp
+    # todo: refactor this to safe it into a database
     if bucket_name:
         rename_cloud_storage_blobs(bucket_name, BASE_FILENAME, NEWOUTPUT_WEEKDAY, NEWSTATS_DAY)
         old_df = load_data_from_bucket(bucket, f'output/{BASE_FILENAME}-output.csv')
 
-    else:
-        # get directory where the data is saved
-        save_dir = get_dir()
-        # rename files
-        rename_local_files(save_dir, BASE_FILENAME, NEWOUTPUT_WEEKDAY, NEWSTATS_DAY)
-        old_df = load_data(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), ['Date', 'ID'])
-
-
-
-
     # start here
-
-
     if SEARCH:
         yt_ids = youtube_search(SEARCH_TERM, MAX_RESULTS, client=youtube)
     else:
@@ -528,7 +410,7 @@ if __name__ == '__main__':
             yt_ids = '\n'.join(old_df.index.levels[1])
         except Exception:
             try:
-                #todo: change this so it also works on gcp
+                # todo: change this so it also works on gcp - i.e. load from blob
                 logging.info('Getting youtube IDs from yt_ids.csv...')
                 yt_ids = pd.read_csv(os.path.join(save_dir, 'yt_ids.csv'),
                                      encoding='utf-8').to_string(index=False)
@@ -548,15 +430,16 @@ if __name__ == '__main__':
         new_df = get_youtube_data(yt_ids.replace('\n', ','), youtube)
         if old_df is not None:
             final_df = pd.concat([old_df, new_df], axis=0, join='inner')
-            final_df.drop_duplicates(inplace=True)
-
-        else:
+            final_df.drop_duplicates(inplace=True)        else:
             final_df = new_df
     else:
         final_df = old_df
         new_df = old_df
     try:
+        #todo: change for use on gcp
         old_stats_df = load_data(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), ['Date', 'Metric'])
+        old_stats_df = load_data_from_bucket(bucket, f'output/{BASE_FILENAME}-statistics.csv', ['Date', 'Metric'])
+
     except Exception:
         logging.WARNING("old -statistics file can't be opened!")
         old_stats_df = None
@@ -580,41 +463,11 @@ if __name__ == '__main__':
         # save data
     logging.info('Saving data ...')
 
-# Save Data
-    if not bucket_name:
-        # Save locally
-        final_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-output.csv'), sep=';', encoding='utf-8') # all data
-        final_stats_df.to_csv(os.path.join(save_dir, f'{BASE_FILENAME}-statistics.csv'), sep=';', encoding='utf-8')# statistics
-        final_df.reset_index(inplace=True)
-        with open(os.path.join(save_dir, 'yt_ids.csv'), 'w', encoding='utf-8') as file: #save unique youtube IDs
-            final_df.ID.drop_duplicates(inplace=True)
-            final_df.ID.to_csv(file, encoding='utf-8', index=False)
+    # Save Data to GCP bucket
+    blob_name_output = f'output/{BASE_FILENAME}-output.csv'  # Name of the CSV file in the bucket
+    blob_name_stats = f'stats/{BASE_FILENAME}-statistics.csv'  # Name of the CSV file in the bucket
 
-        logging.info('...done!')
-        # write config
-        logging.info('Saving config ...')
-        with open('config.ini', 'w') as cfgfile:
-            config.write(cfgfile)
-        logging.info('...done!')
-
-        logging.info('Checking date and renaming file')
-
-        logging.info('Done with everything!')
-    else:
-
-        storage_client = storage.Client()
-        # Save to GCP bucket
-        blob_name_output = f'output/{BASE_FILENAME}-output.csv'  # Name of the CSV file in the bucket
-        blob_name_stats = f'stats/{BASE_FILENAME}-statistics.csv'  # Name of the CSV file in the bucket
-
-        with storage_client.bucket(BUCKET_NAME).blob(blob_name_output).open("w") as file:
-            final_df.to_csv(file, sep=';', encoding='utf-8', index=False)
-        with storage_client.bucket(BUCKET_NAME).blob(blob_name_stats).open("w") as file:
-            final_stats_df.to_csv(file, sep=';', encoding='utf-8', index=False)
-
-
-
-
-
-
-
+    with storage_client.bucket(bucket_name=bucket_name).blob(blob_name_output).open("w") as file:
+        final_df.to_csv(file, sep=';', encoding='utf-8', index=False)
+    with storage_client.bucket(bucket_name=bucket_name).blob(blob_name_stats).open("w") as file:
+        final_stats_df.to_csv(file, sep=';', encoding='utf-8', index=False)
