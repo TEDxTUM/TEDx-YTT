@@ -293,18 +293,6 @@ def trigger_pubsub(cloud_event):
     NEWOUTPUT_WEEKDAY = config.get('Advanced', 'NEWOUTPUT_WEEKDAY')
     SECRET_NAME = config.get('Advanced', 'GCP_SECRET')
 
-    PARAMETERS = [SEARCH_TERM,
-                  SEARCH,
-                  MAX_RESULTS,
-                  UPDATE,
-                  BASE_FILENAME,
-                  DIRECTORY,
-                  CONSOLE_LOG,
-                  LOG_RETURNS,
-                  NEWOUTPUT_WEEKDAY,
-                  NEWSTATS_DAY,
-                  ]
-
     # Youtube API
 
     # use gcp secret manager to get the youtube api key (save api key as a secret and copy path to config.ini
@@ -321,7 +309,8 @@ def trigger_pubsub(cloud_event):
     # rename file in regular intervals to avoid extreme file sizes
     if bucket_name:
         rename_cloud_storage_blobs(bucket_name, BASE_FILENAME, NEWOUTPUT_WEEKDAY, NEWSTATS_DAY)
-        old_df = load_data_from_bucket(bucket, f'output/{BASE_FILENAME}-output.csv')
+        # todo: put this in try except pass block!
+        old_df = load_data_from_bucket(bucket, f'output/{BASE_FILENAME}-output.csv', ['Date', 'ID'])
 
     # start here
     if SEARCH:
