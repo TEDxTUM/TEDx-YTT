@@ -310,7 +310,10 @@ def trigger_pubsub(cloud_event):
     if bucket_name:
         rename_cloud_storage_blobs(bucket_name, BASE_FILENAME, NEWOUTPUT_WEEKDAY, NEWSTATS_DAY)
         # todo: put this in try except pass block!
+        try:
         old_df = load_data_from_bucket(bucket, f'output/{BASE_FILENAME}-output.csv', ['Date', 'ID'])
+        except FileNotFoundError:
+        pass
 
     # start here
     if SEARCH:

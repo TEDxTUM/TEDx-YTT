@@ -20,7 +20,7 @@ import re
 
 
 
-df = pd.read_csv('all_data.csv', sep=';')
+df = pd.read_csv('../all_data.csv', sep=';')
 # some pre-processing of the data
 # generate unique string (needed for speakers with multiple talks)
 df['title_speaker'] = df['Title'].astype(str) + ' - ' + df['Speaker Name'].astype(str)

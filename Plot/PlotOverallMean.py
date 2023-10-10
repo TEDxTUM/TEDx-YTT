@@ -6,7 +6,7 @@ import seaborn as sns
 
 
 # set relative path to stats csv here
-path = r'stats'
+path = r'../stats'
 
 
 all_files = glob.glob(path + "/*.csv")
