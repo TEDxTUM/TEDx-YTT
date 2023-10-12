@@ -35,6 +35,8 @@ filtered_df = most_recent_df
 
 app = Dash(__name__)
 
+server = app.server()
+
 all_options = [{'label': 'Title and Speaker Name', 'value': 'title_speaker'},
                {'label': 'Title', 'value': 'Title'},
                {'label': 'Speaker Name', 'value': 'Speaker Name'}]

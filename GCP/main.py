@@ -1,9 +1,8 @@
-# todo: test locally using functions-framework - see chatgpt for guidance
 import base64
-import configparser
 import datetime
 import os
 import sys
+import copy
 
 import functions_framework
 import pandas as pd
@@ -19,22 +18,22 @@ def youtube_search(search_term, max_results, client):
     :param client: youtube API client
     :return: \n separated list of youtube IDs
     """
-    search_term = f"{search_term}|{search_term}Salon|{search_term}Youth|{search_term}"
-    videos = []
+    print("Searching Youtube..")
+    SEARCH_TERM = copy.copy(search_term) #seperates the term from the actual search string
+    search_term = f"{search_term}|{search_term}Salon|{search_term}Youth|{search_term}Studio"
     if max_results > 50:
         search_response = client.search().list(
             q=search_term,
             maxResults=50,
             part='id,snippet',
             type='video',
-            channelId='UCsT0YIqwnpJCM-mx7-gSA4Q'  # tedx youtube channel
+            channelId='UCsT0YIqwnpJCM-mx7-gSA4Q'
         ).execute()
 
-        videos.extend(
-            search_result['id']['videoId']
-            for search_result in search_response.get('items', [])
-            if SEARCH_TERM.upper() in search_result['snippet']['title'].upper()
-        )
+        videos = []
+        for search_result in search_response.get('items', []):
+            if SEARCH_TERM.upper() in search_result['snippet']['title'].upper():
+                videos.append(search_result['id']['videoId'])
 
         token = search_response.get('nextPageToken', None)
         remaining_results = max_results - 50
@@ -53,12 +52,17 @@ def youtube_search(search_term, max_results, client):
             for search_result in search_response.get('items', []):
                 if SEARCH_TERM.upper() in search_result['snippet']['title'].upper():
                     videos.append(search_result['id']['videoId'])
+                    print('Found new video: ' + search_result['snippet']['title'])
                 else:
+                    print('Discarded video: ' + search_result['snippet']['title'])
                     discard_counter += 1
+
+            print(f'Discarded video count:{discard_counter}')
 
             token = search_response.get('nextPageToken', None)
             remaining_results = max_results - 50
             resultsPerPage = search_response.get('pageInfo')['resultsPerPage']
+            print(f'ResultsPerPage:{resultsPerPage}')
 
     else:
         search_response = client.search().list(
@@ -68,11 +72,12 @@ def youtube_search(search_term, max_results, client):
             type='video',
             channelId='UCsT0YIqwnpJCM-mx7-gSA4Q'
         ).execute()
-        videos = [
-            search_result['id']['videoId']
-            for search_result in search_response.get('items', [])
-            if 'TEDXTUM' in search_result['snippet']['title'].upper()
-        ]
+        videos = []
+
+        for search_result in search_response.get('items', []):
+            if 'TEDXTUM' in search_result['snippet']['title'].upper():
+                videos.append(search_result['id']['videoId'])
+
     return '\n'.join(videos)
 
 
@@ -184,18 +189,17 @@ def load_ids(bucket, blob_name, searched_ids):
     :param searched_ids: result from yt search: \n separated string of yt ids
     :return: \n separated string of yt IDs that are either in the file or in the list from yt search
     """
-
+    print("Loading IDs...")
     blob = bucket.blob(blob_name)
     saved_ids = pd.read_csv(blob.download_as_text(),
                             encoding='utf-8').to_string(index=False)
-
     searched_ids_list = searched_ids.split('\n')
     saved_ids_list = saved_ids.split('\n')
 
     for item in saved_ids_list:
         if item not in searched_ids_list:
             searched_ids_list.append(item)
-
+    print("... done")
     return '\n'.join(searched_ids_list)
 
 
@@ -266,36 +270,43 @@ def load_data_from_bucket(bucket, blob_name, indices):
 def trigger_pubsub(cloud_event):
     # Print out the data from Pub/Sub, to prove that it worked
     print(base64.b64decode(cloud_event.data["message"]["data"]))
+    search_update = cloud_event.data["message"]["data"])
+
     ################
     # Preparations #
     ################
 
     # get bucket name from environment variables
     bucket_name = os.environ.get("GCP_BUCKET_NAME", None)
+    print(f"Bucket {bucket_name}")
     # set up storage client
     storage_client = storage.Client()
 
-    # Parse config
-    config = configparser.ConfigParser()
+    # Get Config from environment variables!
+    SEARCH_TERM = os.environ.get("SEARCH_TERM", "SEARCH_TERM is not set")
+    SEARCH = bool(os.environ.get("SEARCH", "SEARCH is not set"))
+    MAX_RESULTS = int(os.environ.get("MAX_RESULTS", "MAX_RESULTS is not set"))
+    UPDATE = bool(os.environ.get("UPDATE", "UPDATE is not set"))
+    BASE_FILENAME = os.environ.get("BASE_FILENAME", "BASE_FILENAME is not set")
+    NEWSTATS_DAY = int(os.environ.get("NEWSTATS_DAY", "NEWSTATS_DAY is not set"))
+    NEWOUTPUT_WEEKDAY = os.environ.get("NEWOUTPUT_WEEKDAY", "NEWOUTPUT_WEEKDAY is not set")
+    SECRET_NAME = os.environ.get("GCP_SECRET", "GCP_SECRET is not set")
 
-    bucket = storage_client.bucket(bucket_name)
-    blob = bucket.blob("config.ini")
-    config_content = blob.download_as_text()
-    config.read_string(config_content)
+    #check if pubsub topic sends search or update
+    if search_update == "search":
+        SEARCH = True
+    elif search_updatee == "update":
+        UPDATE = True
+        SEARCH = False
 
-    SEARCH_TERM = config.get('Standard', 'SEARCH_TERM')
-    SEARCH = config.getboolean('Standard', 'SEARCH')
-    MAX_RESULTS = config.getint('Standard', 'MAX_RESULTS')
-    UPDATE = config.getboolean('Standard', 'UPDATE')
-    BASE_FILENAME = config.get('Standard', 'BASE_FILENAME')
-    DIRECTORY = config.get('Standard', 'DIRECTORY')
-    NEWSTATS_DAY = config.getint('Advanced', 'NEWSTATS_DAY')
-    NEWOUTPUT_WEEKDAY = config.get('Advanced', 'NEWOUTPUT_WEEKDAY')
-    SECRET_NAME = config.get('Advanced', 'GCP_SECRET')
+    print(f"environment variables: {os.environ}")
+
+
+
 
     # Youtube API
 
-    # use gcp secret manager to get the youtube api key (save api key as a secret and copy path to config.ini
+    # use gcp secret manager to get the youtube api key
     client = secretmanager.SecretManagerServiceClient()
     secret_version = client.access_secret_version(name=SECRET_NAME)
     # collect parameters for API call
@@ -308,16 +319,17 @@ def trigger_pubsub(cloud_event):
     ####################################################################################################################
     # rename file in regular intervals to avoid extreme file sizes
     if bucket_name:
-        rename_cloud_storage_blobs(bucket_name, BASE_FILENAME, NEWOUTPUT_WEEKDAY, NEWSTATS_DAY)
-        # todo: put this in try except pass block!
         try:
-        old_df = load_data_from_bucket(bucket, f'output/{BASE_FILENAME}-output.csv', ['Date', 'ID'])
-        except FileNotFoundError:
-        pass
+            rename_cloud_storage_blobs(bucket_name, BASE_FILENAME, NEWOUTPUT_WEEKDAY, NEWSTATS_DAY)
+            old_df = load_data_from_bucket(bucket, f'output/{BASE_FILENAME}-output.csv',['Date', 'ID'])
+        except Exception:
+            old_df = None
 
     # start here
     if SEARCH:
         yt_ids = youtube_search(SEARCH_TERM, MAX_RESULTS, client=youtube)
+        print(f'yt-IDS:{yt_ids}')
+        print("...complete")
     else:
         try:
             yt_ids = '\n'.join(old_df.index.levels[1])
@@ -333,10 +345,12 @@ def trigger_pubsub(cloud_event):
     try:
         yt_ids = load_ids(bucket_name, 'yt_ids.csv', yt_ids)
 
-    except Exception:
-        pass
+    except:
+        print('No yt_id list available. Continuing with results from search / results from old data.')
 
+    print(f"YoutubeIDs:{yt_ids}")
     if UPDATE and yt_ids is not None:
+        print("Updating values..")
         new_df = get_youtube_data(yt_ids.replace('\n', ','), youtube)
         if old_df is not None:
             final_df = pd.concat([old_df, new_df], axis=0, join='inner')
