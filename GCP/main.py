@@ -270,7 +270,7 @@ def load_data_from_bucket(bucket, blob_name, indices):
 def trigger_pubsub(cloud_event):
     # Print out the data from Pub/Sub, to prove that it worked
     print(base64.b64decode(cloud_event.data["message"]["data"]))
-    search_update = cloud_event.data["message"]["data"])
+    search_update = cloud_event.data["message"]["data"]
 
     ################
     # Preparations #
