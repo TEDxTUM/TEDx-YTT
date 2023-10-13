@@ -2,25 +2,26 @@ from dash import Dash, dcc, html, dash_table
 from dash.dependencies import Input, Output
 import pandas as pd
 import plotly.graph_objects as go
+import os
+from google.cloud import storage
+from io import StringIO
 import re
 
+LOCAL_FILE_LOCATION = 'dashboard/all_data.csv'
+# Check if we are in GCP or locally
+GCP = bool(os.environ.get("GCP"))
 
-#def clean_label(label):
- #   # Remove special characters using regular expression
-  #  if pd.isna(label):
-   #     return "Unknown"  # Return a default label for NaN
+if GCP:
+    # code for gcp follows here
+    storage_client = storage.Client()
+    bucket_name = os.environ.get("BUCKET_NAME")
+    bucket = storage_client.get_bucket(bucket_name)
+    blob = bucket.blob('all_data.csv')
+    content = blob.download_as_text()
+    df = pd.read_csv(StringIO(content), sep=';')
+else:
+    df = pd.read_csv(LOCAL_FILE_LOCATION, sep=';')
 
-    #try:
-     ##   cleaned_label = re.sub(r'[^\w\s]', '', str(label))
-       # return cleaned_label
-    #except Exception as e:
-     #   print(f"Error cleaning label '{label}': {e}")
-      #  return str(label)  # Return the original label as a string
-
-
-
-
-df = pd.read_csv('../all_data.csv', sep=';')
 # some pre-processing of the data
 # generate unique string (needed for speakers with multiple talks)
 df['title_speaker'] = df['Title'].astype(str) + ' - ' + df['Speaker Name'].astype(str)
@@ -35,14 +36,14 @@ filtered_df = most_recent_df
 
 app = Dash(__name__)
 
-server = app.server()
+port = int(os.environ.get("PORT", 8050))
 
 all_options = [{'label': 'Title and Speaker Name', 'value': 'title_speaker'},
                {'label': 'Title', 'value': 'Title'},
                {'label': 'Speaker Name', 'value': 'Speaker Name'}]
 
 app.layout = html.Div([
-    html.H1('TEDx Video Dashboard'),
+    html.H1('TEDxTUM historical video views'),
     dcc.Dropdown(
         id='selection-dropdown',
         options=all_options,
@@ -143,4 +144,7 @@ def update_table(selected_years):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    if GCP:
+        app.run_server(debug=False, host="0.0.0.0", port=port)
+    else:
+        app.run_server(debug=False)
