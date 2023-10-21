@@ -12,3 +12,11 @@ Things to keep track of for Readme / Documentation of how to use it with GCP:
 4. upload config file(s)
 5. generate yapi
 6. add secret
+
+
+
+
+
+Environment Variables:
+ALLTABLE
+STATSTABLE

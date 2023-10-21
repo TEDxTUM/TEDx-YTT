@@ -12,13 +12,14 @@ LOCAL_FILE_LOCATION = 'dashboard/all_data.csv'
 GCP = bool(os.environ.get("GCP"))
 
 if GCP:
-    # code for gcp follows here
     storage_client = storage.Client()
     bucket_name = os.environ.get("BUCKET_NAME")
     bucket = storage_client.get_bucket(bucket_name)
     blob = bucket.blob('all_data.csv')
     content = blob.download_as_text()
     df = pd.read_csv(StringIO(content), sep=';')
+    # todo: add code to get data from gcp bigquery
+    # df = pd.read_gbq
 else:
     df = pd.read_csv(LOCAL_FILE_LOCATION, sep=';')
 
