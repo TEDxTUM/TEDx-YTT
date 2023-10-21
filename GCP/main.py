@@ -8,6 +8,7 @@ import functions_framework
 import pandas as pd
 from google.cloud import storage, secretmanager
 from googleapiclient.discovery import build
+import pandas_gbq
 
 
 def youtube_search(search_term, max_results, client):
