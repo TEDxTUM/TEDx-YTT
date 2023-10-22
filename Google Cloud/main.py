@@ -397,15 +397,21 @@ def trigger_pubsub(cloud_event):
     # Save Data to BigQuery
     all_table_id = os.environ.get("ALLTABLE")
     stats_table_id = os.environ.get("STATSTABLE")
-    print(f"all table id: {all_table_id}")
+
+    # Make sure there are no casting errors in automatic casting via too_gbq() - i.e. change them manually first
+    for stat in ['views', 'likes', 'dislikes', 'favoriteCount', 'commentCount']:
+        final_df[stat] = final_df[stat].astype('int64')
+    for stat in ['views', 'likes', 'dislikes', 'favoriteCount', 'commentCount']:
+        final_df[stat] = final_df[stat].astype('float64')
+
 
     try:
         print("appending output data")
         pandas_gbq.to_gbq(final_df, all_table_id, if_exists='append')
         print("...done")
     except:
-        print(f"BigQuery Table {ALLTABLE} does not exist.")
+        print(f"BigQuery Table {all_table_id} does not exist or cannot be created.")
     try:
         pandas_gbq.to_gbq(final_df, stats_table_id, if_exists='append')
     except:
-        print(f"BigQuery Table {STATSTABLE} does not exist.")
+        print(f"BigQuery Table {stats_table_id} does not exist or cannot be created.")

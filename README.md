@@ -1,8 +1,14 @@
 # THIS README IS WIP
 
 # TEDx-YTT
-A youtube tracker (YTT) for TEDx videos that tracks data of a specific TEDx using the google API. Through repeated usage, 
-historical data can be tracked and analyzed.
+A youtube tracker (YTT) for TEDx videos that tracks the performance of all videos filmed at a specific TEDx
+over time using the YoutTube API v2. Each run saves the current likes, views, comments of all videos so historical data
+can be tracked and analyzed.
+
+A version of this script has been collecting data for TEDxTUM for ~5 years now. 
+A webdashboard showing historical video views, likes and comments can be accessed here.
+
+
 
 This README consists of the following parts:
 - [General Information](#general-information)
@@ -12,7 +18,7 @@ This README consists of the following parts:
 - [Acknowledgments](#acknowledgments)
   
 ## General Information
-The script searches the youtube channel ["TEDxTalks"](https://www.youtube.com/user/TEDxTalks/) for a specific
+The script searches the YouTube channel [TEDxTalks](https://www.youtube.com/user/TEDxTalks/) for a specific
  `SEARCH_TERM` (e.g. the TEDx name) and returns all videos with `SEARCH_TERM` in their title as well as their:
 - Title
 - Youtube ID
@@ -24,17 +30,20 @@ The script searches the youtube channel ["TEDxTalks"](https://www.youtube.com/us
 - Thumbnail Image Link
 - Publish Day
 
-Data is then added with a time stamp in each row to the output file `[BASE_FILENAME]-output.csv` and statistics 
+Data is then augmented with a time stamp and safed to the output file `[BASE_FILENAME]-output.csv` and statistics 
 on all numerical data is output to `[BASE_FILENAME]-statistics.csv`. 
 
-There are two versions of this YouTube Scraper
+There are two versions of the script extracting the data
 1. local - that is intended to run locally on your machine or server
 2. Google Cloud - that is intended to be used in the Google Cloud
 
-As of today (2023), the google cloud version is the recommended and maintained version, the local version 
-(including data visualization scripts and a webdashboard) is provided in the `local` directory in this repository.
+As of today (2023), the google cloud version is the recommended and maintained version.
+The local version (including data visualization scripts and a web dashboard) is provided in the `local` directory
+in this repository.
+The Google Cloud version is provided in the `Google Cloud` directory and includes a requirements.txt
 
-# General Setup
+## Google Cloud Project Setup
+
 Cloud Function as serverless deployment
 Pub/Sub as Trigger
 Cloud Scheduler publishes message to topic that Cloud Function is subscribed to
@@ -51,6 +60,8 @@ To make sure little to no data is lost if files get corrupted due to unforseen i
 - Every week, the -output-File is renamed into `[BASE_FILENAME]-output_[year]_week[calendar_week].csv` and therefore effectifely 'stored' in a separate file.
 - Every month, the -statistics-File is renamed into `[BASE_FILENAME]-statistics_[year]_[month].csv` (where `[month]` is an integer) and therefore effectifely 'stored' in a separate file.
 
+# Usage
+In order to use the scraping tool and generate a 
 
 
 # Contributing
