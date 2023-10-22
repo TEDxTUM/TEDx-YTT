@@ -8,6 +8,7 @@ import functions_framework
 import pandas as pd
 from google.cloud import storage, secretmanager
 from googleapiclient.discovery import build
+from io import StringIO
 import pandas_gbq
 
 
@@ -15,12 +16,12 @@ def youtube_search(search_term, max_results, client):
     """
     Returns the IDs of videos (as \n separated string) that fit a certain search term
     :param search_term: The term to search for
-    :param max_results: Maximum number of search results to consider.
+    :param max_results: Maximum number of search results to consider
     :param client: youtube API client
-    :return: \n separated list of youtube IDs
+    :return: \n separated list of YouTube IDs
     """
-    print("Searching Youtube..")
-    SEARCH_TERM = copy.copy(search_term) #seperates the term from the actual search string
+    print("Searching YouTube..")
+    SEARCH_TERM = copy.copy(search_term)  # seperates the term from the actual search string
     search_term = f"{search_term}|{search_term}Salon|{search_term}Youth|{search_term}Studio"
     if max_results > 50:
         search_response = client.search().list(
@@ -84,9 +85,9 @@ def youtube_search(search_term, max_results, client):
 
 def get_youtube_data(ids_str, client):
     """
-    Get youtube data from a list of video IDs
-    :param ids_str: Youtube IDs of all videos to be analysed, comma separated
-    :param client: youtube client (from youtube API)
+    Get YouTube data from a list of video IDs
+    :param ids_str: YouTube IDs of all videos to be analysed, comma separated
+    :param client: YouTube client (from youtube API)
     :return:    Pandas Dataframe with video IDs and all metrics & information from snippet and statistics
     """
 
@@ -184,7 +185,7 @@ def get_youtube_data(ids_str, client):
 
 def load_ids(bucket, blob_name, searched_ids):
     """
-    Loads youtube IDs from 'yt_ids.csv' in directory and concats it with searched_ids (result from yt search)
+    Loads YouTube IDs from 'yt_ids.csv' in directory and concats it with searched_ids (result from yt search)
     :param bucket: directory where yt_ids is located
     :param blob_name: blob/filename where yt ids are saved
     :param searched_ids: result from yt search: \n separated string of yt ids
@@ -192,14 +193,17 @@ def load_ids(bucket, blob_name, searched_ids):
     """
     print("Loading IDs...")
     blob = bucket.blob(blob_name)
-    saved_ids = pd.read_csv(blob.download_as_text(),
+    saved_ids = pd.read_csv(StringIO(blob.download_as_text()),
                             encoding='utf-8').to_string(index=False)
-    searched_ids_list = searched_ids.split('\n')
-    saved_ids_list = saved_ids.split('\n')
+    if searched_ids is not None:
+        searched_ids_list = searched_ids.split('\n')
+        saved_ids_list = saved_ids.split('\n')
+        for item in saved_ids_list:
+            if item not in searched_ids_list:
+                searched_ids_list.append(item)
+    else:
+        searched_ids_list = saved_ids_list
 
-    for item in saved_ids_list:
-        if item not in searched_ids_list:
-            searched_ids_list.append(item)
     print("... done")
     return '\n'.join(searched_ids_list)
 
@@ -259,10 +263,15 @@ def rename_cloud_storage_blobs(bucket_name, BASE_FILENAME, NEWOUTPUT_WEEKDAY, NE
 
 
 def load_data_from_bucket(bucket, blob_name, indices):
+    print("Loading data from bucket")
     blob = bucket.blob(blob_name)
     data = blob.download_as_text()
-    df = pd.read_csv(data, sep=';', encoding='utf-8', parse_dates=['Date'])
+    print(f'data type of data{type(data)}')
+    data_io = StringIO(data)
+    df = pd.read_csv(data_io, sep=';', encoding='utf-8', parse_dates=['Date'])
     df.set_index(indices, inplace=True)
+    print(df)
+    print("..done")
     return df
 
 
@@ -270,8 +279,8 @@ def load_data_from_bucket(bucket, blob_name, indices):
 @functions_framework.cloud_event
 def trigger_pubsub(cloud_event):
     # Print out the data from Pub/Sub, to prove that it worked
-    print(base64.b64decode(cloud_event.data["message"]["data"]))
-    search_update = base64.b64decode(cloud_event.data["message"]["data"])
+    print(base64.b64decode(cloud_event.data["message"]["data"]).decode('utf-8'))
+    search_update = base64.b64decode(cloud_event.data["message"]["data"]).decode('utf-8')
 
     ################
     # Preparations #
@@ -282,6 +291,7 @@ def trigger_pubsub(cloud_event):
     print(f"Bucket {bucket_name}")
     # set up storage client
     storage_client = storage.Client()
+    bucket = storage_client.bucket(bucket_name)
 
     # Get Config from environment variables!
     SEARCH_TERM = os.environ.get("SEARCH_TERM", "SEARCH_TERM is not set")
@@ -293,23 +303,20 @@ def trigger_pubsub(cloud_event):
     NEWOUTPUT_WEEKDAY = os.environ.get("NEWOUTPUT_WEEKDAY", "NEWOUTPUT_WEEKDAY is not set")
     SECRET_NAME = os.environ.get("GCP_SECRET", "GCP_SECRET is not set")
 
-    #check if pubsub topic sends search or update
+    # check if pubsub topic sends search or update
     if search_update == "search":
         SEARCH = True
     elif search_update == "update":
         UPDATE = True
         SEARCH = False
     print(f"Search:{SEARCH}")
-    print(f"Update:{SEARCH}")
+    print(f"Update:{UPDATE}")
 
     print(f"environment variables: {os.environ}")
 
+    # YouTube API
 
-
-
-    # Youtube API
-
-    # use gcp secret manager to get the youtube api key
+    # use gcp secret manager to get the YouTube api key
     client = secretmanager.SecretManagerServiceClient()
     secret_version = client.access_secret_version(name=SECRET_NAME)
     # collect parameters for API call
@@ -324,11 +331,10 @@ def trigger_pubsub(cloud_event):
     if bucket_name:
         try:
             rename_cloud_storage_blobs(bucket_name, BASE_FILENAME, NEWOUTPUT_WEEKDAY, NEWSTATS_DAY)
-            old_df = load_data_from_bucket(bucket, f'output/{BASE_FILENAME}-output.csv',['Date', 'ID'])
+            old_df = load_data_from_bucket(bucket, f'output/{BASE_FILENAME}-output.csv', ['Date', 'ID']) # get old data
         except Exception:
             old_df = None
 
-    # start here
     if SEARCH:
         yt_ids = youtube_search(SEARCH_TERM, MAX_RESULTS, client=youtube)
         print(f'yt-IDS:{yt_ids}')
@@ -338,23 +344,29 @@ def trigger_pubsub(cloud_event):
             yt_ids = '\n'.join(old_df.index.levels[1])
         except Exception:
             try:
-                blob = bucket.blob('yt_ids.csv')
-                yt_ids = pd.read_csv(blob.download_as_text(),
-                                     encoding='utf-8').to_string(index=False)
+                yt_ids = load_ids(bucket, 'yt_ids.csv', None)
+                # storage_client = storage.Client()
+                # bucket = storage_client.bucket(bucket_name)
+                # blob = bucket.blob('yt_ids.csv')
+                # yt_ids = pd.read_csv(blob.download_as_text(),
+                #                     encoding='utf-8').to_string(index=False)
 
             except Exception:
                 yt_ids = None
                 exit(1)
     try:
-        yt_ids = load_ids(bucket_name, 'yt_ids.csv', yt_ids)
+        yt_ids = load_ids(bucket, 'yt_ids.csv', yt_ids)
 
-    except:
+    except Excption as e:
         print('No yt_id list available. Continuing with results from search / results from old data.')
+        print(e)
 
     print(f"YoutubeIDs:{yt_ids}")
     if UPDATE and yt_ids is not None:
         print("Updating values..")
-        new_df = get_youtube_data(yt_ids.replace('\n', ','), youtube)
+        new_df = get_youtube_data(yt_ids.replace('\n', ','), youtube)  # todo: check if leftover "ID" causes problems
+        print("Updated ... joinig old and new data")
+        print(new_df)
         if old_df is not None:
             final_df = pd.concat([old_df, new_df], axis=0, join='inner')
             final_df.drop_duplicates(inplace=True)
@@ -364,7 +376,7 @@ def trigger_pubsub(cloud_event):
         final_df = old_df
         new_df = old_df
     try:
-        old_stats_df = load_data_from_bucket(bucket, f'output/{BASE_FILENAME}-statistics.csv', ['Date', 'Metric'])
+        old_stats_df = load_data_from_bucket(bucket_name, f'output/{BASE_FILENAME}-statistics.csv', ['Date', 'Metric'])
 
     except Exception:
         old_stats_df = None
@@ -399,19 +411,20 @@ def trigger_pubsub(cloud_event):
     stats_table_id = os.environ.get("STATSTABLE")
 
     # Make sure there are no casting errors in automatic casting via too_gbq() - i.e. change them manually first
-    for stat in ['views', 'likes', 'dislikes', 'favoriteCount', 'commentCount']:
+    for stat in ['Views', 'Likes', 'Favourite Count', 'Comment Count']:
         final_df[stat] = final_df[stat].astype('int64')
-    for stat in ['views', 'likes', 'dislikes', 'favoriteCount', 'commentCount']:
+    for stat in ['Views', 'Likes', 'Favourite Count', 'Comment Count']:
         final_df[stat] = final_df[stat].astype('float64')
-
 
     try:
         print("appending output data")
         pandas_gbq.to_gbq(final_df, all_table_id, if_exists='append')
         print("...done")
-    except:
+    except Exception as e:
+        print(e)
         print(f"BigQuery Table {all_table_id} does not exist or cannot be created.")
     try:
         pandas_gbq.to_gbq(final_df, stats_table_id, if_exists='append')
-    except:
+    except Exception as e:
+        print(e)
         print(f"BigQuery Table {stats_table_id} does not exist or cannot be created.")
