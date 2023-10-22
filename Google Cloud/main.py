@@ -84,7 +84,7 @@ def youtube_search(search_term, max_results, client):
 
 def get_youtube_data(ids_str, client):
     """
-    Get youtube data from a list of videos
+    Get youtube data from a list of video IDs
     :param ids_str: Youtube IDs of all videos to be analysed, comma separated
     :param client: youtube client (from youtube API)
     :return:    Pandas Dataframe with video IDs and all metrics & information from snippet and statistics
@@ -271,7 +271,7 @@ def load_data_from_bucket(bucket, blob_name, indices):
 def trigger_pubsub(cloud_event):
     # Print out the data from Pub/Sub, to prove that it worked
     print(base64.b64decode(cloud_event.data["message"]["data"]))
-    search_update = cloud_event.data["message"]["data"]
+    search_update = base64.b64decode(cloud_event.data["message"]["data"])
 
     ################
     # Preparations #
@@ -299,6 +299,8 @@ def trigger_pubsub(cloud_event):
     elif search_update == "update":
         UPDATE = True
         SEARCH = False
+    print(f"Search:{SEARCH}")
+    print(f"Update:{SEARCH}")
 
     print(f"environment variables: {os.environ}")
 
@@ -381,8 +383,9 @@ def trigger_pubsub(cloud_event):
     else:
         final_stats_df = None
         exit(1)
-
+    print("...done")
     # Save Data to GCP bucket
+    print(f"Saving to {BASE_FILENAME}")
     blob_name_output = f'output/{BASE_FILENAME}-output.csv'  # Name of the CSV file in the bucket
     blob_name_stats = f'stats/{BASE_FILENAME}-statistics.csv'  # Name of the CSV file in the bucket
 
@@ -391,16 +394,18 @@ def trigger_pubsub(cloud_event):
     with storage_client.bucket(bucket_name=bucket_name).blob(blob_name_stats).open("w") as file:
         final_stats_df.to_csv(file, sep=';', encoding='utf-8', index=True)
 
-    # Save Data to Bigtable
-    all_table_id = os.environ.get(ALLTABLE)
-    # todo: build statstable and write to it stats_table_id = os.environ.get(STATSTABLE)
+    # Save Data to BigQuery
+    all_table_id = os.environ.get("ALLTABLE")
+    stats_table_id = os.environ.get("STATSTABLE")
+    print(f"all table id: {all_table_id}")
 
-    if all_table_id is not None:
-        try:
-            pandas_gbq.to_gbq(final_df, all_table_id, if_exists='append')
-        except:
-            print(f"BigQuery Table {ALLTABLE} does not exist.")
-        try:
-            pandas_gbq.to_gbq(final_df, all_table_id, if_exists='append')
-        except:
-            print(f"BigQuery Table {STATSTABLE} does not exist.")
+    try:
+        print("appending output data")
+        pandas_gbq.to_gbq(final_df, all_table_id, if_exists='append')
+        print("...done")
+    except:
+        print(f"BigQuery Table {ALLTABLE} does not exist.")
+    try:
+        pandas_gbq.to_gbq(final_df, stats_table_id, if_exists='append')
+    except:
+        print(f"BigQuery Table {STATSTABLE} does not exist.")

@@ -1,5 +1,3 @@
-#todo: Add chapters for dashboard, plots and gcp
-
 # TEDx-YTT
 A youtube tracker (YTT) for TEDx videos that tracks data of a specific TEDx using the google API.
 
@@ -47,7 +45,7 @@ To make sure little to no data is lost if files get corrupted due to unforseen i
 
 
 # Contributing
-If you want to contribute to the improvement of TEDx-YTT, please have a look [here](CONTRIBUTING.md)
+If you want to contribute to the improvement of TEDx-YTT, please have a look [here](../CONTRIBUTING.md)
 
 
 # Getting Started
@@ -330,9 +328,9 @@ and the  `[BASE_FILENAME]-statistics.csv` files in a folder named 'stats' within
 `PlotEachVideosStats.py` or `PlotOverallMean.py` respectively (or change the path in line 8 of both scripts).
 Running the scripts then produces output like this:\
 OverallMean
-![Overall Stats](Plot/plotted-stats.png)
+![Overall Stats](_plot functions/plotted-stats.png)
 EachVideoStats
-![Each Video Stats](Plot/SingleVideoStats.png)
+![Each Video Stats](_plot functions/SingleVideoStats.png)
 
 # Authors
 

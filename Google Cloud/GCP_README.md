@@ -1,8 +1,9 @@
 Things to keep track of for Readme / Documentation of how to use it with GCP:
 
-- Add yapi key as a secret and add the location of the secret to config.ini??
+- Add yapi key as a secret and add the location of the secret to Environment Variables
 - Add bucket name as GCP_BUCKET_NAME to environment variables of the function
 - Pub/Sub + google scheduler =  run cron-like job
+- BigQuery: Dataset with 2 Tables --> copy Table ID to Environment Variables
 
 
 
@@ -17,6 +18,5 @@ Things to keep track of for Readme / Documentation of how to use it with GCP:
 
 
 
-Environment Variables:
-ALLTABLE
-STATSTABLE
+Environment Variables
+![ENV](img.png)

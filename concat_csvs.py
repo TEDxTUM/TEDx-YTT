@@ -57,9 +57,9 @@ def run_on_gcp(folder_path, filename):
     data.to_csv(filename, sep=";")
 
 if "GOOGLE_CLOUD_PROJECT" in os.environ:
-    run_on_gcp("stats", "all_stats.csv")
-    run_on_gcp("output", "all_data.csv")
+    run_on_gcp("local/stats", "all_stats.csv")
+    run_on_gcp("local/output", "all_data.csv")
 else:
-    run_locally(r'stats', 'all_stats.csv')
-    run_locally(r'output', 'all_data.csv')
+    run_locally(r'local/stats', 'all_stats.csv')
+    run_locally(r'local/output', 'all_data.csv')
 
