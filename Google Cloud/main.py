@@ -435,8 +435,8 @@ def trigger_pubsub(cloud_event):
     print(f'Data Types: \n final_df: {final_df.dtypes}\n final_stats_df {final_stats_df.dtypes}')
 
     # Strip to avoid issues with whitespace
-    df_obj = final_df.select_dtypes(['object'])  # Select string columns
-    final_df[df_obj.columns] = df_obj.apply(str.strip)  # Strip whitespaces
+    # df_obj = final_df.select_dtypes(['object'])  # Select string columns
+    # final_df[df_obj.columns] = df_obj.apply(str.strip)  # Strip whitespaces
 
 
     # Set up Schemata
