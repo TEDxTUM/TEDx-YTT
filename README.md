@@ -37,31 +37,69 @@ There are two versions of the script extracting the data
 1. local - that is intended to run locally on your machine or server
 2. Google Cloud - that is intended to be used in the Google Cloud
 
-As of today (2023), the google cloud version is the recommended and maintained version.
+As of today (2023), the Google Cloud (GCP) version is the recommended and maintained version.
 The local version (including data visualization scripts and a web dashboard) is provided in the `local` directory
 in this repository.
-The Google Cloud version is provided in the `Google Cloud` directory and includes a requirements.txt
+The Google Cloud version is provided in the `Google Cloud` directory and includes the necessary 
+requirements.txt and main.py to be run as a Cloud Function on GCP
 
 ## Google Cloud Project Setup
+### General Setup
+The script that scrapes the data from the YouTube API is intended to be run as Google Cloud Function.
+All necessary information for the script is stored in the environment variables of the Cloud Function
+(including the YouTube API Key).
 
-Cloud Function as serverless deployment
-Pub/Sub as Trigger
-Cloud Scheduler publishes message to topic that Cloud Function is subscribed to
-YT API Key & Secret Manager
-Cloud Storage to store CSV as backup
-BigQuery to save data and make it accessible via Looker Studio
-Looker Studio as Dashboard
+The script is triggered by a Cloud Scheduler Job that uses a Pub/Sub action to publish either
+"update" or "search" as a payload, determining whether new videos should be searched or only data 
+from the alreay known videos should be updated.
 
-The behaviour is ... by environment variables.
-Future: Infrastructure as Code + Cloud Deploy for easy setup for other TEDx groups 
+The data is then saved as `csv` file on `Cloud Storage` as well as written to a table in a dataset on `BigQuery`. 
+The Bigquery dataset is then connected to LookerStudio to create accessible (BI) dashboard 
+that is accessible through http (and that can be embedded on your webpage).
 
-To make sure little to no data is lost if files get corrupted due to unforseen interrupts of the script (e.g. caused by server reboot if run on a server) data is saved according to the following scheme:
-- Current data always has the filename `[BASE_FILENAME]-output.csv` / `[BASE_FILENAME]-statistics.csv`
-- Every week, the -output-File is renamed into `[BASE_FILENAME]-output_[year]_week[calendar_week].csv` and therefore effectifely 'stored' in a separate file.
-- Every month, the -statistics-File is renamed into `[BASE_FILENAME]-statistics_[year]_[month].csv` (where `[month]` is an integer) and therefore effectifely 'stored' in a separate file.
+### Steps to get TEDxYTT running on GCP
+The following outlines the steps to be taken to manually set up TEDxYTT. Plans for the future include IaaS and CloudBuild code so this can be done in a few simple steps.
+Until then: 
+1. Set up a GCP Project including an associated payment account. The project will result in costs that have to be tracked regularily. (From experience, they are <1 USD per month)
+2. Activate the **YouTube API v2** for this project
+3. Copy the API key and safe it as secret in the **SecretManager**. Save the name of the secret where you can find it (will be needed for environment variables) this is to make sure you don't accidentally share your API with the public.
+4. Set up a **PUB/SUB** topic
+5. Set up a bucket (i.e. folder) in google **Cloud Storage** and save the name somewhere you can find it (will be needed for environment variables later). This is where the csv files will go and where the youtube IDs will be saved.
+6. Set up a **BigQuery** dataset including the two tables 'data-all' and 'stats-all'. They can be empty. Make sure to pick the same region as for google cloud storage (and later cloud function)
+7. Add `main.py` and `requirements.txt` to a zip and use this to set up a **CloudFunction**. Use the previously created PubSub as **Eventarc**-Trigger. Depending on the amount of videos you already published, you may need to set the RAM higher than the minimum (512 MiB should work for most, many will make due with 256 MiB). You also have to set the following environment variables:
 
-# Usage
-In order to use the scraping tool and generate a 
+| Name            | Value                                       | Description |
+|-----------------|---------------------------------------------| ----------- |
+| GCP_BUCKET_NAME | Name of the bucket created in step 5        | csv files and YouTube Ids will be saved here.
+| SEARCH_TERM     | Your TEDx's name, e.g. TEDxTUM              | Tells the script which term to search for. Will automatically also search for combinations of SEARCHTERM and Women, Salon and Youth.
+| SEARCH          | True or False                               | Determines whether new videos will be searched or not. Is overwritten by the payload of your pubsub message (see below)
+| MAX_RESULTS     | a number 1-1000                             | Maximum results analyzed from youtube search with `SEARCH_TERM`. Every API call returns 50 results, i.e. multiples of 50 make sense. You may run into quota issues with too high numbers (400 works just fine)
+| UPDATE          | True or False                               | Defines whether `[BASE_FILENAME]-output` and `[BASE_FILENAME]-stastics` are updated with new data from youtube. Set to `False` if you only want to run statistics on an old file without updating it with new data.
+| BASE_FILENAME   | string                                      | Defines how `[BASE_FILENAME]-output` and `[BASE_FILENAME]-stastics` are named.
+| NEWOUTPUT_WEEKDAY | a day between monday-sunday                 | Day of the week at which the current output file is renamed into `[BASE_FILENAME]-output_week[calendarweek]`
+| NEWSTATS_DAY    | a number between 1-27                       | Day of the month at which the current statistics file is renamed into  `[BASE_FILENAME]-stastics_[current month]`
+| GCP_SECRET | ID of the the secret generated in 3.        | Location of the YouTube API Key, that the scrip should use
+| ALLTABLE| name of the `all-data` table generated in 6 | Script writes data to this SQL database
+|STATSTABLE| name of the `all-data` table generated in 6 | Script writes calculated statistics to this SQL database
+
+Set the entry point for the Cloud Function to `trigger_pubsub`
+8. Set up your **CloudScheduler** to post either 'update' or 'search' to the pubsub topic defined in step 4. Cloud Scheduler follows Cron Syntax:
+```
+# * * * * * 
+# ┬ ┬ ┬ ┬ ┬
+# │ │ │ │ │
+# │ │ │ │ │
+# │ │ │ │ └───── day of week (0 - 7) (0 to 6 are Sunday to Saturday, or use names; 7 is Sunday, the same as 0)
+# │ │ │ └────────── month (1 - 12)
+# │ │ └─────────────── day of month (1 - 31)
+# │ └──────────────────── hour (0 - 23)
+# └───────────────────────── min (0 - 59
+```
+E.g. to post the message each day of the week at 7 am, you would add a Job with time '0 7 * * *'. For each monday at 9:05 am you would use '5 9 * * 1'
+9. Wait for the first execution of the function or go to **Cloud Scheduler**, select the job that includes search and click "Force Execution". Check in BigQuery whether the tables are filled (you can check the "schema" if its not empty, theres data)
+10. Use LookerStudio to set up a Dashboard.
+
+
 
 
 # Contributing

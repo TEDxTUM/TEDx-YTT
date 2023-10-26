@@ -6,7 +6,7 @@ import copy
 
 import functions_framework
 import pandas as pd
-from google.cloud import storage, secretmanager
+from google.cloud import storage, secretmanager, bigquery
 from googleapiclient.discovery import build
 from io import StringIO
 import pandas_gbq
@@ -428,11 +428,42 @@ def trigger_pubsub(cloud_event):
     final_df.columns = [col.replace(' ', '_') for col in final_df.columns]
     final_stats_df.columns = [col.replace(' ', '_') for col in final_stats_df.columns]
 
+    # Collapse multi-index
+    final_df.reset_index(inplace=True)
+    final_stats_df.reset_index(inplace=True)
+
     print(f'Data Types: \n final_df: {final_df.dtypes}\n final_stats_df {final_stats_df.dtypes}')
 
+    # Strip to avoid issues with whitespace
+    df_obj = final_df.select_dtypes(['object'])  # Select string columns
+    final_df[df_obj.columns] = df_obj.apply(str.strip)  # Strip whitespaces
+
+
+    # Set up Schemata
+    all_config = bigquery.LoadJobConfig(
+        write_disposition="WRITE_APPEND",
+        schema=[
+        bigquery.SchemaField("Date", "DATE"),
+        bigquery.SchemaField("ID", "STRING"),
+        bigquery.SchemaField("Title", "STRING"),
+        bigquery.SchemaField("Speaker_Name", "STRING"),
+        bigquery.SchemaField("Thumbnail", "STRING"),
+        bigquery.SchemaField("Tags", "STRING"),
+        bigquery.SchemaField("Views", "INTEGER"),
+        bigquery.SchemaField("Likes", "INTEGER"),
+        bigquery.SchemaField("Dislikes", "INTEGER"),
+        bigquery.SchemaField("Favourite_Count", "INTEGER"),
+        bigquery.SchemaField("Comment_Count", "INTEGER"),
+        bigquery.SchemaField("Published_on", "TIMESTAMP"),
+
+    ]
+    )
+    bqclient = bigquery.Client()
     try:
         print("appending output data")
-        pandas_gbq.to_gbq(final_df, all_table_id, if_exists='append')
+        # pandas_gbq.to_gbq(final_df, all_table_id, if_exists='append')
+        all_job = bqclient.load_table_from_dataframe(final_df, all_table_id, job_config=all_config)
+        all_job.result()
         print("...done")
     except Exception as e:
         print(e)
