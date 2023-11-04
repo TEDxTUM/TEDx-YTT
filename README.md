@@ -6,32 +6,44 @@ over time using the YoutTube API v2. Each run saves the current likes, views, co
 can be tracked and analyzed.
 
 A version of this script has been collecting data for TEDxTUM for ~5 years now. 
-A webdashboard showing historical video views, likes and comments can be accessed here.
+A webdashboard showing historical video views, likes and comments can be accessed [here](https://lookerstudio.google.com/reporting/154a6446-1fb1-4ecb-b941-aa4ed164ea83).
+Example Reports that can be generated in Looker studio using the data connection to BigQuery:
+![img.png](img.png)
+![img_1.png](img_1.png)
 
+## Table of Contents
+1. [Overview](#overview)
+   - [YouTube Video Search](#youtube-video-search)
+   - [Data Retrieval](#data-retrieval)
+   - [Data Storage](#data-storage)
+   - [Data Analysis](#data-analysis)
+   - [File Management](#file-management)
+   - [Pub/Sub Trigger](#pubsub-trigger)
+   - [BigQuery Integration](#bigquery-integration)
+   - [Script Versions](#script-versions)
+2. [Google Cloud Project Setup](#google-cloud-project-setup)
+   - [Google Cloud Function](#google-cloud-function)
+   - [Cloud Scheduler and Pub/Sub](#cloud-scheduler-and-pubsub)
+   - [Cloud Storage](#cloud-storage)
+   - [BigQuery](#bigquery)
+   - [LookerStudio (BI Dashboard)](#lookerstudio-bi-dashboard)
+3. [Steps to Get TEDxYTT Running on GCP](#steps-to-get-tedxytt-running-on-gcp)
+4. [Dependencies](#dependencies)
+5. [Contributing](#contributing)
+6. [Authors](#authors)
+7. [License](#license)
+8. [Acknowledgments](#acknowledgments)
 
+## Overview
 
-This README consists of the following parts:
-- [General Information](#general-information)
-- [Contributing](#contributing)
-- [Authors](#authors)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
-  
-## General Information
-The script searches the YouTube channel [TEDxTalks](https://www.youtube.com/user/TEDxTalks/) for a specific
- `SEARCH_TERM` (e.g. the TEDx name) and returns all videos with `SEARCH_TERM` in their title as well as their:
-- Title
-- Youtube ID
-- View Count
-- Like Count
-- Dislike Count (disc. in 2022)
-- Comment Count
-- Tags
-- Thumbnail Image Link
-- Publish Day
-
-Data is then augmented with a time stamp and safed to the output file `[BASE_FILENAME]-output.csv` and statistics 
-on all numerical data is output to `[BASE_FILENAME]-statistics.csv`. 
+The script performs the following tasks:
+1. **YouTube Video Search:** It uses the YouTube Data API to search for YouTube videos on the [TEDxTalks channel](https://www.youtube.com/user/TEDxTalks/) based on a specified  `SEARCH_TERM` (e.g. the TEDx name) . The search results are retrieved and processed to obtain video IDs.
+2. **Data Retrieval:** For each video ID obtained from the search, the script fetches detailed information about the video, including its title, speaker name, views, likes, dislikes, comments.
+3. **Data Storage:** The script stores the collected data in Google Cloud Storage, both as raw output data (file `[BASE_FILENAME]-output.csv`) and statistical data (file `[BASE_FILENAME]-statistics.csv`).
+4. **Data Analysis:** It can calculate statistics (e.g., using the describe function) on numeric columns and stores them separately.
+5. **File Management:** The script includes functions to rename and manage files in Google Cloud Storage, ensuring that file sizes do not become excessively large over time.
+6. **Pub/Sub Trigger:** The script can be triggered by Pub/Sub messages, making it suitable for scheduled or event-driven execution.
+7. **BigQuery Integration:** It uploads the collected data to BigQuery tables, allowing for further analysis and querying, e.g. using LookerStudio.
 
 There are two versions of the script extracting the data
 1. local - that is intended to run locally on your machine or server
@@ -39,25 +51,49 @@ There are two versions of the script extracting the data
 
 As of today (2023), the Google Cloud (GCP) version is the recommended and maintained version.
 The local version (including data visualization scripts and a web dashboard) is provided in the `local` directory
-in this repository.
-The Google Cloud version is provided in the `Google Cloud` directory and includes the necessary 
+in this repository. The Google Cloud version is provided in the `Google Cloud` directory and includes the necessary 
 requirements.txt and main.py to be run as a Cloud Function on GCP
 
 ## Google Cloud Project Setup
-### General Setup
-The script that scrapes the data from the YouTube API is intended to be run as Google Cloud Function.
-All necessary information for the script is stored in the environment variables of the Cloud Function
-(including the YouTube API Key).
 
-The script is triggered by a Cloud Scheduler Job that uses a Pub/Sub action to publish either
-"update" or "search" as a payload, determining whether new videos should be searched or only data 
-from the alreay known videos should be updated.
+### Google Cloud Function
 
-The data is then saved as `csv` file on `Cloud Storage` as well as written to a table in a dataset on `BigQuery`. 
-The Bigquery dataset is then connected to LookerStudio to create accessible (BI) dashboard 
-that is accessible through http (and that can be embedded on your webpage).
+- **Functionality:** The script responsible for scraping data from the YouTube API is designed to run as a [Google Cloud Function](https://cloud.google.com/functions).
 
-### Steps to get TEDxYTT running on GCP
+- **Purpose:** Google Cloud Functions allow for serverless execution of code, making it an ideal choice for automating the data collection process.
+
+- **Environment Variables:** All the essential information required for the script's operation, including the YouTube API Key, is securely stored within the environment variables of the Cloud Function. This ensures that sensitive information remains protected.
+
+### Cloud Scheduler and Pub/Sub
+
+- **Trigger Mechanism:** To initiate the execution of the script, a [Cloud Scheduler Job](https://cloud.google.com/scheduler) is used as the trigger. This job is configured to take a specific action: publishing a message to a [Pub/Sub](https://cloud.google.com/pubsub) topic.
+
+- **Message Payload:** The Pub/Sub action sends a message with a payload, which can be either "update" or "search." The choice of payload determines the script's behavior. If "update" is sent, the script updates existing data; if "search" is sent, the script searches for new videos.
+
+### Cloud Storage
+
+- **Data Storage:** The collected data, in the form of CSV files, is saved on [Google Cloud Storage](https://cloud.google.com/storage).
+
+- **Purpose:** Google Cloud Storage is used to securely store and manage the data collected from YouTube. The files can be accessed and shared as needed, and they are readily available for further analysis.
+
+### BigQuery
+
+- **Data Warehouse:** The data collected from YouTube is written to a table within a dataset on [Google BigQuery](https://cloud.google.com/bigquery).
+
+- **Data Analysis:** BigQuery provides powerful querying and data analysis capabilities. The collected data is structured and stored for analysis, reporting, and generating insights.
+
+### LookerStudio (BI Dashboard)
+
+- **BI Dashboard:** The BigQuery dataset containing the YouTube data is connected to [LookerStudio](https://looker.com/platform/google-cloud). LookerStudio is a Business Intelligence (BI) platform that allows the creation of accessible dashboards and reports.
+
+- **Accessibility:** The BI dashboard created in LookerStudio is accessible through a web interface, enabling users to interact with the data and gain insights.
+
+- **Embeddable:** The LookerStudio dashboard can be embedded on your webpage, making it accessible to a wider audience and seamlessly integrating data insights into your online presence.
+
+By utilizing these Google Cloud Platform (GCP) products, you can automate YouTube data collection, securely store and analyze the data, and present insights through an accessible BI dashboard, thereby facilitating informed decision-making and enhancing the user experience.
+
+
+## Steps to get TEDxYTT running on GCP
 The following outlines the steps to be taken to manually set up TEDxYTT. Plans for the future include IaaS and CloudBuild code so this can be done in a few simple steps.
 Until then: 
 1. Set up a GCP Project including an associated payment account. The project will result in costs that have to be tracked regularily. (From experience, they are <1 USD per month)
@@ -100,7 +136,18 @@ E.g. to post the message each day of the week at 7 am, you would add a Job with 
 10. Use LookerStudio to set up a Dashboard.
 
 
+# Dependencies
 
+The script relies on the following Python libraries and modules:
+
+- `base64`: For encoding and decoding data.
+- `datetime`: For working with date and time.
+- `os` and `sys`: For system-related operations.
+- `pandas`: For data manipulation and storage.
+- `google-cloud` libraries: For interacting with Google Cloud services, including Google Cloud Storage and BigQuery.
+- `googleapiclient.discovery`: For accessing the YouTube Data API.
+- `io.StringIO`: For reading and writing strings as file-like objects.
+- `pandas_gbq`: For working with Google BigQuery.
 
 # Contributing
 If you want to contribute to the improvement of TEDx-YTT, please have a look [here](../CONTRIBUTING.md)

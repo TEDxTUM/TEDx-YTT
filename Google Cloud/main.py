@@ -1,7 +1,6 @@
 import base64
 import datetime
 import os
-import sys
 import copy
 
 import functions_framework
@@ -289,7 +288,7 @@ def load_data_from_bucket(bucket_name, blob_name, indices):
     return df
 
 
-# this is the entry point
+# this is the entry point for the cloud function
 @functions_framework.cloud_event
 def trigger_pubsub(cloud_event):
     # Print out the data from Pub/Sub, to prove that it worked
@@ -342,6 +341,7 @@ def trigger_pubsub(cloud_event):
                     developerKey=DEVELOPER_KEY)
     ####################################################################################################################
     # rename file in regular intervals to avoid extreme file sizes
+
     if bucket_name:
         try:
             rename_cloud_storage_blobs(bucket_name, BASE_FILENAME, NEWOUTPUT_WEEKDAY, NEWSTATS_DAY)
@@ -373,7 +373,7 @@ def trigger_pubsub(cloud_event):
     if UPDATE and yt_ids is not None:
         print("Updating values..")
         new_df = get_youtube_data(yt_ids.replace('\n', ','), youtube)  # todo: check if leftover "ID" causes problems
-        print("Updated ... joinig old and new data")
+        print("...done.")
 
         if old_df is not None:
             final_df = pd.concat([old_df, new_df], axis=0, join='inner')
@@ -410,45 +410,46 @@ def trigger_pubsub(cloud_event):
     blob_name_output = f'output/{BASE_FILENAME}-output.csv'  # Name of the CSV file in the bucket
     blob_name_stats = f'stats/{BASE_FILENAME}-statistics.csv'  # Name of the CSV file in the bucket
 
-    # Save to csv - refactor later to function
+    # Save to csv
     with storage_client.bucket(bucket_name=bucket_name).blob(blob_name_output).open("w") as file:
         final_df.to_csv(file, sep=';', encoding='utf-8', index=True)
     with storage_client.bucket(bucket_name=bucket_name).blob(blob_name_stats).open("w") as file:
         final_stats_df.to_csv(file, sep=';', encoding='utf-8', index=True)
 
-    # Save Data to BigQuery - only use new data
+    # Save Data to BigQuery
     all_table_id = os.environ.get("ALLTABLE")
     stats_table_id = os.environ.get("STATSTABLE")
 
-    # Make sure there are no casting errors in automatic casting via too_gbq() - i.e. change data types manually first
+    # Manually cast datatypes to fit BigQuery table Schema
     for stat in ['Views', 'Likes', 'Dislikes', 'Favourite Count', 'Comment Count']:
-        new_df[stat] = final_df[stat].astype('int64')
+        try:
+            new_df[stat] = new_df[stat].astype('int64')
+            print(new_df[stat])
+        except ValueError as e:
+            print(f"Error converting {stat} column to int64: {e}")
+
     for stat in ['Views', 'Likes', 'Dislikes', 'Favourite Count', 'Comment Count']:
-        new_stats_df[stat] = final_df[stat].astype('float64')
-
-    new_df['Date'] = pd.to_datetime(new_df['Date'])
-    new_sats_df['Date'] = pd.to_datetime(new_stats_df['Date'])
-
-
-    new_df['Date'] =  new_df['Date'].dt.date
-    new_sats_df['Date'] =new_sats_df['Date'].dt.date
-
-    print(new_df.head())
-    print(new_stats_df.head())
-
-
-    new.columns = [col.replace(' ', '_') for col in new_df.columns]
-    new_stats_df.columns = [col.replace(' ', '_') for col in new_stats_df.columns]
+        try:
+            new_stats_df[stat] = new_stats_df[stat].astype('float64')
+        except ValueError as e:
+            print(f"Error converting {stat} column to int64: {e}")
 
     # Collapse multi-index
     new_df.reset_index(inplace=True)
     new_stats_df.reset_index(inplace=True)
 
-    print(f'Data Types: \n new_df: {new_df.dtypes}\n final_stats_df {new_stats_df.dtypes}')
+    # Convert to datetime objects that fit BigQuery Schema
+    new_df['Date'] = pd.to_datetime(new_df['Date']).dt.date
+    new_stats_df['Date'] = pd.to_datetime(new_stats_df['Date']).dt.date
 
-    # Strip to avoid issues with whitespace
-    # df_obj = final_df.select_dtypes(['object'])  # Select string columns
-    # final_df[df_obj.columns] = df_obj.apply(str.strip)  # Strip whitespaces
+    new_df['Published on'] = pd.to_datetime(new_df['Published on'])
+
+    # Convert indices to fit BigQuery Schema
+    new_df.columns = [col.replace(' ', '_') for col in new_df.columns]
+    new_stats_df.columns = [col.replace(' ', '_') for col in new_stats_df.columns]
+
+    print(f'Data Types: \n new_df: {new_df.dtypes}\n new_stats_df {new_stats_df.dtypes}')
+
 
 
     # Set up Schemata
@@ -470,11 +471,25 @@ def trigger_pubsub(cloud_event):
 
     ]
     )
+
+    stats_config = bigquery.LoadJobConfig(
+        write_disposition="WRITE_APPEND",
+        schema=[
+        bigquery.SchemaField("Date", "DATE"),
+        bigquery.SchemaField("Metric", "STRING"),
+        bigquery.SchemaField("Views", "FLOAT"),
+        bigquery.SchemaField("Likes", "FLOAT"),
+        bigquery.SchemaField("Dislikes", "FLOAT"),
+        bigquery.SchemaField("Favourite_Count", "FLOAT"),
+        bigquery.SchemaField("Comment_Count", "FLOAT"),
+
+    ]
+    )
+
     bqclient = bigquery.Client()
 
     try:
         print("appending output data")
-        # pandas_gbq.to_gbq(final_df, all_table_id, if_exists='append')
         all_job = bqclient.load_table_from_dataframe(new_df, all_table_id, job_config=all_config)
         all_job.result()
         print("...done")
@@ -482,7 +497,10 @@ def trigger_pubsub(cloud_event):
         print(e)
         print(f"BigQuery Table {all_table_id} does not exist or cannot be created.")
     try:
-        pandas_gbq.to_gbq(new_stats_df, stats_table_id, if_exists='append')
+        print("appending stats data")
+        stats_job = bqclient.load_table_from_dataframe(new_stats_df, stats_table_id, job_config=stats_config)
+        stats_job.result()
+        print("...done")
     except Exception as e:
         print(e)
         print(f"BigQuery Table {stats_table_id} does not exist or cannot be created.")
