@@ -20,8 +20,12 @@ For all your pull requests, please note that:
 - For the python code base we aim to be as PEP-8 consistent as possible. Please check your code before submitting.
 - We use docstrings to document functions and objects. If you add parameters or returns, adjust existing docstrings.
 - Update the README.md, if necessary.
-- For additional scripts to analyze/graph data please use a new folder within the main repo.
 
+If you want to contribute, but don't know where to start, here are some ideas:
+- write infrastructure code and CloudBuild code to get people with less knowledge in GCP running quickly
+- move environment variables to the pubsub message (so multiple TEDx can be served from the GCP project and only API Keys need to be set up, which can be done if a Billing Account can be supplied)
+- Make a video for a guided setup so ppl with no knowledge in GCP can set this up
+- make the channelID available outside the script (Environment Variable first, then pubsub message) so this script can be used to analyze other channels (+ take additional steps to track all video performance of a list of channel ids)
 ## Report bugs using Github's [issues](https://github.com/briandk/transcriptase-atom/issues)
 We use GitHub issues to track public bugs. Report a bug by [opening a new issue](); 
 

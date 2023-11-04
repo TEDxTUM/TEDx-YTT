@@ -6,7 +6,7 @@ import os
 
 
 # path to output csv files
-path = r'output'
+path = r'../output'
 
 
 all_files = glob.glob(path + "/*.csv")
@@ -60,7 +60,7 @@ for name in names:
             print("No legend to remove")
 
     plt.suptitle(f'{name} - YouTube Statistics')
-    if not os.path.exists('graphs'):
-        os.makedirs('graphs')
+    if not os.path.exists('../graphs'):
+        os.makedirs('../graphs')
     plt.savefig(f'graphs/{name}_stats.png')
     plt.close()
