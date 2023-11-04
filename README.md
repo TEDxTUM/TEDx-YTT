@@ -1,5 +1,3 @@
-# THIS README IS WIP
-
 # TEDx-YTT
 A youtube tracker (YTT) for TEDx videos that tracks the performance of all videos filmed at a specific TEDx
 over time using the YoutTube API v2. Each run saves the current likes, views, comments of all videos so historical data
