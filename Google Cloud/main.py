@@ -410,29 +410,41 @@ def trigger_pubsub(cloud_event):
     blob_name_output = f'output/{BASE_FILENAME}-output.csv'  # Name of the CSV file in the bucket
     blob_name_stats = f'stats/{BASE_FILENAME}-statistics.csv'  # Name of the CSV file in the bucket
 
+    # Save to csv - refactor later to function
     with storage_client.bucket(bucket_name=bucket_name).blob(blob_name_output).open("w") as file:
         final_df.to_csv(file, sep=';', encoding='utf-8', index=True)
     with storage_client.bucket(bucket_name=bucket_name).blob(blob_name_stats).open("w") as file:
         final_stats_df.to_csv(file, sep=';', encoding='utf-8', index=True)
 
-    # Save Data to BigQuery
+    # Save Data to BigQuery - only use new data
     all_table_id = os.environ.get("ALLTABLE")
     stats_table_id = os.environ.get("STATSTABLE")
 
     # Make sure there are no casting errors in automatic casting via too_gbq() - i.e. change data types manually first
     for stat in ['Views', 'Likes', 'Dislikes', 'Favourite Count', 'Comment Count']:
-        final_df[stat] = final_df[stat].astype('int64')
+        new_df[stat] = final_df[stat].astype('int64')
     for stat in ['Views', 'Likes', 'Dislikes', 'Favourite Count', 'Comment Count']:
-        final_stats_df[stat] = final_df[stat].astype('float64')
+        new_stats_df[stat] = final_df[stat].astype('float64')
 
-    final_df.columns = [col.replace(' ', '_') for col in final_df.columns]
-    final_stats_df.columns = [col.replace(' ', '_') for col in final_stats_df.columns]
+    new_df['Date'] = pd.to_datetime(new_df['Date'])
+    new_sats_df['Date'] = pd.to_datetime(new_stats_df['Date'])
+
+
+    new_df['Date'] =  new_df['Date'].dt.date
+    new_sats_df['Date'] =new_sats_df['Date'].dt.date
+
+    print(new_df.head())
+    print(new_stats_df.head())
+
+
+    new.columns = [col.replace(' ', '_') for col in new_df.columns]
+    new_stats_df.columns = [col.replace(' ', '_') for col in new_stats_df.columns]
 
     # Collapse multi-index
-    final_df.reset_index(inplace=True)
-    final_stats_df.reset_index(inplace=True)
+    new_df.reset_index(inplace=True)
+    new_stats_df.reset_index(inplace=True)
 
-    print(f'Data Types: \n final_df: {final_df.dtypes}\n final_stats_df {final_stats_df.dtypes}')
+    print(f'Data Types: \n new_df: {new_df.dtypes}\n final_stats_df {new_stats_df.dtypes}')
 
     # Strip to avoid issues with whitespace
     # df_obj = final_df.select_dtypes(['object'])  # Select string columns
@@ -459,17 +471,18 @@ def trigger_pubsub(cloud_event):
     ]
     )
     bqclient = bigquery.Client()
+
     try:
         print("appending output data")
         # pandas_gbq.to_gbq(final_df, all_table_id, if_exists='append')
-        all_job = bqclient.load_table_from_dataframe(final_df, all_table_id, job_config=all_config)
+        all_job = bqclient.load_table_from_dataframe(new_df, all_table_id, job_config=all_config)
         all_job.result()
         print("...done")
     except Exception as e:
         print(e)
         print(f"BigQuery Table {all_table_id} does not exist or cannot be created.")
     try:
-        pandas_gbq.to_gbq(final_stats_df, stats_table_id, if_exists='append')
+        pandas_gbq.to_gbq(new_stats_df, stats_table_id, if_exists='append')
     except Exception as e:
         print(e)
         print(f"BigQuery Table {stats_table_id} does not exist or cannot be created.")
